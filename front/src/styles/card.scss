@@ -1,7 +1,7 @@
 @import "./variables";
 
 .card {
-  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 5px 5px 1px rgba(0,0,0,.12);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 5px 5px 1px rgba(0, 0, 0, .12);
   padding-left: 2em;
   padding-right: 1em;
   padding-top: 1em;
@@ -10,7 +10,8 @@
   background-color: white;
 }
 
-.input-custom, .btn-custom {
+.input-custom,
+.btn-custom {
   border: 1px solid #282828;
   border-radius: $borderRadius;
   height: 35px;
