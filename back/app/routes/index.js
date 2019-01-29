@@ -16,16 +16,29 @@ const handleExceptions = require('../middlewares/errorHandlers').handleException
  * -------------------
  */
 
+const Tickets = require('./tickets');
+
 const main = express.Router();
 const tickets = express.Router();
 const error = express.Router();
 
+/* -- default -- */
 main.get('/', handleExceptions(require('./default')));
 main.get('/meagain', handleExceptions(require('./default')));
 
-tickets.get('/', handleExceptions(require('./ticket').index));
-tickets.get('/display', handleExceptions(require('./ticket').display));
+/* -- tickets -- */
+/* get */
+tickets.get('/', handleExceptions(Tickets.getTickets));
+tickets.get('/:id', handleExceptions(Tickets.getTicketsById));
+/* post */
+tickets.post('/', handleExceptions(Tickets.createTickets));
+/* put */
+tickets.put('/:ticketId', handleExceptions(Tickets.updateTicket));
+/* delete */
+tickets.delete('/:ticketId', handleExceptions(Tickets.deleteTicket));
 
+/* -- error -- */
+/* get */
 error.get('/', handleExceptions(require('./error')));
 
 module.exports = { main, tickets, error };

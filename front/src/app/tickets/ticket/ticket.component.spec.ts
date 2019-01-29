@@ -21,7 +21,7 @@ describe('TicketComponent', () => {
       title: 'test title',
       description: 'test description',
       date: dateToday,
-      author: 'test author'
+      // student: 1
     };
     fixture.detectChanges();
   });

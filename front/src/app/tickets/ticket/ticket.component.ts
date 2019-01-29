@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Ticket } from '../../../models/ticket';
+import { Ticket } from '../../../models/Ticket';
 
 @Component({
   selector: 'app-ticket',
@@ -15,8 +15,9 @@ export class TicketComponent implements OnInit {
   @Input()
   ticket: Ticket;
 
-  @Output()
-  ticketHasBeenSelected: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() ticketHasBeenSelected: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() ticketHasBeenDeleted: EventEmitter<Ticket> = new EventEmitter<Ticket>();
+  @Output() ticketHasBeenArchived: EventEmitter<Ticket> = new EventEmitter<Ticket>();
 
   constructor() {
   }
@@ -26,5 +27,13 @@ export class TicketComponent implements OnInit {
 
   selectTicket() {
     this.ticketHasBeenSelected.emit(true);
+  }
+
+  deleteTicket() {
+    this.ticketHasBeenDeleted.emit(this.ticket);
+  }
+
+  archiveTicket() {
+    this.ticketHasBeenArchived.emit(this.ticket);
   }
 }

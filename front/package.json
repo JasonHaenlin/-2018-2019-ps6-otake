@@ -10,11 +10,11 @@
     "e2e": "ng e2e",
     "sonar": "gulp sonar",
     "coverage": "ng test --watch=false --code-coverage --browsers=ChromeHeadless",
-    "deploy": "ng build --prod --output-path /var/www/html/ps6/ --base-href /ps6/"
+    "deploy": "ng build --prod"
   },
   "contributors": [
     {
-      "name": "爽爽陈 (shuangshuang chen)",
+      "name": "爽爽陈 (Shuangshuang Chen)",
       "email": "shuangshuang.chen@etu.univ-cotedazur.fr"
     },
     {
@@ -27,7 +27,7 @@
     },
     {
       "name": "Jason Haenlin",
-      "email": "contact@jareon.fr"
+      "email": "jason.haenlin@etu.univ-cotedazur.fr"
     }
   ],
   "keywords": [
@@ -47,26 +47,27 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~7.2.0",
-    "@angular/common": "~7.2.0",
-    "@angular/compiler": "~7.2.0",
-    "@angular/core": "~7.2.0",
-    "@angular/forms": "~7.2.0",
-    "@angular/platform-browser": "~7.2.0",
-    "@angular/platform-browser-dynamic": "~7.2.0",
-    "@angular/router": "~7.2.0",
-    "core-js": "^2.5.4",
+    "@angular/animations": "^7.2.7",
+    "@angular/cdk": "^7.3.3",
+    "@angular/common": "^7.2.7",
+    "@angular/compiler": "^7.2.7",
+    "@angular/core": "^7.2.7",
+    "@angular/forms": "^7.2.7",
+    "@angular/platform-browser": "^7.2.7",
+    "@angular/platform-browser-dynamic": "^7.2.7",
+    "@angular/router": "^7.2.7",
+    "core-js": "^2.6.5",
     "dotenv": "^6.2.0",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
-    "zone.js": "~0.8.26"
+    "zone.js": "^0.8.29"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.12.0",
-    "@angular/cli": "~7.2.2",
-    "@angular/compiler-cli": "~7.2.0",
-    "@angular/language-service": "~7.2.0",
-    "@types/jasmine": "~2.8.8",
+    "@angular-devkit/build-angular": "^0.12.4",
+    "@angular/cli": "^7.2.4",
+    "@angular/compiler-cli": "^7.2.7",
+    "@angular/language-service": "^7.2.7",
+    "@types/jasmine": "^2.8.16",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
@@ -75,13 +76,13 @@
     "gulp-mocha": "^6.0.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~3.1.1",
+    "karma": "^4.0.1",
     "karma-chrome-launcher": "~2.2.0",
-    "karma-coverage-istanbul-reporter": "~2.0.1",
+    "karma-coverage-istanbul-reporter": "^2.0.5",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.4.0",
-    "sonarqube-scanner": "^2.1.2",
+    "sonarqube-scanner": "^2.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"

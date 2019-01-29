@@ -2,11 +2,15 @@
 
 module.exports = {
   /* for all the positive response */
-  yahResponse: async (res, data) => {
-    res.status(200).json({ status: true, data });
+  yahResponse: async (res, data, create = false) => {
+    if (create) {
+      res.status(201).json({ status: true, data });
+    } else {
+      res.status(200).json({ status: true, data });
+    }
   },
   /* when something goes wrong */
-  nahResoonse: async (res, error, code) => {
+  nahResponse: async (res, error, code) => {
     res.status(500).json({ status: false, code });
   },
   /* when we want send manual error messages */

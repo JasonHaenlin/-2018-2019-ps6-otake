@@ -4,7 +4,7 @@ const ticket = require('../models/ticket');
 
 /**
  * All the table are created here
- * be sure to create then in the right order
+ * be sure to create them in the right order
  * when constraints are present
  */
 
@@ -17,7 +17,7 @@ exports.up = (knex) => {
 
 exports.down = (knex) => {
   return test.down(knex)
-    .then(() => author.down(knex))
     .then(() => ticket.down(knex))
+    .then(() => author.down(knex))
     .catch((err) => console.log(err));
 };

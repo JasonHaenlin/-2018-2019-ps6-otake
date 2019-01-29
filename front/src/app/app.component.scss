@@ -1,10 +1,5 @@
-.content {
-  display: flex;
-}
-app-ticket-form {
-  margin-left: 1em;
-}
-
-app-ticket-list {
-  flex: 1;
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
 }

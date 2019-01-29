@@ -8,7 +8,7 @@ const http = require('http');
 const config = require('@config').server;
 const LogTheInfo = require('@config').logger.LogTheInfo;
 const logTheError = require('@config').logger.logTheError;
-const app = require('./app/index.js');
+const app = require('./app');
 
 /**
  * Create HTTP server.

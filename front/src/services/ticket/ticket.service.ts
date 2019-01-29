@@ -1,18 +1,21 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Ticket } from '../../models/ticket';
-import { TICKETS_MOCKED } from '../../mocks/tickets.mock';
 import { BehaviorSubject } from 'rxjs/index';
+import { catchError } from 'rxjs/operators';
+import { Ticket } from '../../models/Ticket';
+import { API_URL, handleError, HTTP_OPTIONS } from '../httpHelper';
+
+const url = API_URL + 'tickets';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TicketService {
-  /**
-   * Services Documentation:
-   * https://angular.io/docs/ts/latest/tutorial/toh-pt4.html
-   */
 
-  private ticketList: Ticket[] = TICKETS_MOCKED;
+  constructor(private http: HttpClient) {
+    this.loadTickets();
+  }
+  private ticketList: Ticket[] = [];
 
   /**
    * Observable which contains the list of the tickets.
@@ -20,11 +23,48 @@ export class TicketService {
    */
   public tickets$: BehaviorSubject<Ticket[]> = new BehaviorSubject(this.ticketList);
 
-  constructor() {
+  archiveTicket(archivedticket: Ticket): void {
+    const studentId = [];
+    archivedticket.student.forEach(s => studentId.push(s.id));
+    const ticket = Object.assign({}, archivedticket, { 'studentId': studentId });
+    delete ticket.student;
+    const ticketUrl = `${url}/${ticket.id}`;
+    this.http.put<Ticket>(ticketUrl, ticket, HTTP_OPTIONS)
+      .pipe(catchError(handleError('archiveTicket')))
+      .subscribe(t => {
+        const newTicket: Ticket = t;
+        this.ticketList[this.ticketList.indexOf(archivedticket)].archived = newTicket.archived;
+      });
   }
 
-  addTicket(ticket: Ticket) {
-    // You need here to update the list of ticket and then update our observable (Subject) with the new list
-    // More info: https://angular.io/tutorial/toh-pt6#the-searchterms-rxjs-subject
+  deleteTicket(ticket: Ticket): void {
+    const ticketUrl = `${url}/${ticket.id}`;
+    this.http.delete<Ticket>(ticketUrl, HTTP_OPTIONS)
+      .pipe(catchError(handleError('deleteTicket')))
+      .subscribe(_ => this.ticketList.splice(this.ticketList.indexOf(ticket), 1));
+  }
+
+
+  addTicket(ticket: Ticket): void {
+    this.http.post<Ticket>(url, ticket)
+      .pipe(catchError(handleError<Ticket>('archiveTicket')))
+      .subscribe(t => {
+        if (t !== undefined) {
+          this.ticketList.push(t);
+          this.updateObs();
+        }
+      }, err => console.log('Error retrieving new Ticket'));
+
+  }
+
+  private updateObs(): void {
+    this.tickets$.next(this.ticketList);
+  }
+
+  loadTickets(): void {
+    this.http.get<Ticket[]>(url, HTTP_OPTIONS).subscribe(t => {
+      this.ticketList = t;
+      this.tickets$.next(t);
+    });
   }
 }

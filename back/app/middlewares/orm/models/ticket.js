@@ -13,6 +13,20 @@ class Ticket extends Model {
     return 'ticket';
   }
 
+  static get jsonSchema() {
+    return {
+      type: 'object',
+      required: ['title', 'author_id'],
+
+      properties: {
+        id: { type: 'integer' },
+        title: { type: 'string', minLength: 5, maxLength: 100 },
+        description: { type: ['string', 'null'], minLength: 5, maxLength: 255 },
+        author_id: { type: 'integer' }
+      }
+    };
+  }
+
   static get relationMappings() {
     // we need this to avoid circular dependency
     const Author = require('./author');
