@@ -1,6 +1,8 @@
+import { TicketComponent } from './../ticket/ticket.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TicketListComponent } from './ticket-list.component';
+import { TicketService } from 'src/services/ticket/ticket.service';
 
 describe('TicketListComponent', () => {
   let component: TicketListComponent;
@@ -8,9 +10,10 @@ describe('TicketListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TicketListComponent ]
+      declarations: [TicketListComponent, TicketComponent],
+      providers: [TicketService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -30,7 +30,7 @@ http://localhost:4200/
 
 ## Start the project
 
-Run 
+Run
 
 ```
 npm start
@@ -47,27 +47,19 @@ Note: The linter will be executed before each commit. If the linter fails then t
 
 ## Angular documentation
 
-The best documentation is the [Official Angular Documentation](https://angular.io/docs). 
+The best documentation is the [Official Angular Documentation](https://angular.io/docs).
 It contains everything and it is always up to date.
 
-#### Important note 
-We are working with Angular version 2+ (here Angular 7). When you look for some documentation, add "Angular 2" in your 
-research to be sure to find the right documentation. You might find documentation about AngularJS, run if it's the case! 
-It's a very old version totally different from our version.
+## sonarqube
 
-## Documentation - Liens
+To use sonar, you need a *.env* file in the root directory following the *.env.example* pattern.
 
-Documentation Angular 2: 
+```
+npm run coverage
+npm run sonar
+```
 
-- [Directives](https://angular.io/docs/ts/latest/guide/attribute-directives.html)
-- [Pipes](https://angular.io/docs/ts/latest/guide/pipes.html)
-- [Services](https://angular.io/docs/ts/latest/tutorial/toh-pt4.html)
-- [HTTP Request with Angular](https://angular.io/docs/ts/latest/guide/server-communication.html)
-- [NgOnInit](https://angular.io/docs/ts/latest/tutorial/toh-pt4.html#the-ngoninit-lifecycle-hook)
-- [@Input and @Ouput](https://angular.io/docs/ts/latest/cookbook/component-communication.html)
 
-Documentation on Observables:
-
-- [Official Documentation rxjs](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html)
-- [Video Tutorial for beginers - FR](http://www.meanjs.fr/rxjs-tutoriel-1-creer-un-observable/)
-- [Tutorial FR](http://home.heeere.com/tech-intro-programmation-reactive.html)
+## Inspiration
+based on that project
+- https://github.com/2018-2019-ps6/starter-waiting-list

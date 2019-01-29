@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TicketFormComponent } from './ticket-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('TicketFormComponent', () => {
   let component: TicketFormComponent;
@@ -8,9 +9,10 @@ describe('TicketFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TicketFormComponent ]
+      declarations: [TicketFormComponent],
+      imports: [ReactiveFormsModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

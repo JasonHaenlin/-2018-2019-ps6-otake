@@ -8,15 +8,27 @@ describe('TicketComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TicketComponent ]
+      declarations: [TicketComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TicketComponent);
     component = fixture.componentInstance;
+    const dateToday: Date = new Date();
+    component.ticket = {
+      title: 'test title',
+      description: 'test description',
+      date: dateToday,
+      author: 'test author'
+    };
     fixture.detectChanges();
+  });
+
+  it('should be display correctly', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h3').textContent).toContain('test title');
   });
 
   it('should create', () => {

@@ -3,10 +3,10 @@
   "env": {
     "browser": true,
     "node": true,
-    "es6": true
   },
   "plugins": [
-    "promise"
+    "promise",
+    "security"
   ],
   "ecmaFeatures": {
     "arrowFunctions": true,
@@ -34,7 +34,8 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:promise/recommended"
+    "plugin:promise/recommended",
+    "plugin:security/recommended"
   ],
   "rules": {
     //
@@ -67,7 +68,7 @@
     "no-sparse-arrays": 2, // disallow sparse arrays
     "no-unreachable": 2, // disallow unreachable statements after a return, throw, continue, or break statement
     "use-isnan": 2, // disallow comparisons with the value NaN
-    "valid-jsdoc": 2, // Ensure JSDoc comments are valid (off by default)
+    "valid-jsdoc": 0, // Ensure JSDoc comments are valid (off by default)
     "valid-typeof": 2, // Ensure that the results of typeof are compared against a valid string
     //
     // Best Practices
@@ -77,7 +78,7 @@
     //
     "block-scoped-var": 0, // treat var statements as if they were block scoped (off by default). 0: deep destructuring is not compatible https://github.com/eslint/eslint/issues/1863
     "complexity": 0, // specify the maximum cyclomatic complexity allowed in a program (off by default)
-    "consistent-return": 2, // require return statements to either always or never specify values
+    "consistent-return": 0, // require return statements to either always or never specify values
     "curly": 2, // specify curly brace conventions for all control statements
     "default-case": 2, // require default case in switch statements (off by default)
     "dot-notation": 2, // encourages use of dot notation whenever possible
@@ -144,10 +145,10 @@
     "no-catch-shadow": 2, // disallow the catch clause parameter name being the same as a variable in the outer scope (off by default in the node environment)
     "no-delete-var": 2, // disallow deletion of variables
     "no-label-var": 2, // disallow labels that share a name with a variable
-    "no-undef": 2, // disallow use of undeclared variables unless mentioned in a /*global */ block
+    "no-undef": 0, // disallow use of undeclared variables unless mentioned in a /*global */ block
     "no-undef-init": 2, // disallow use of undefined when initializing variables
     "no-undefined": 2, // disallow use of undefined variable (off by default)
-    "no-unused-vars": 2, // disallow declaration of variables that are not used in the code
+    "no-unused-vars": 1, // disallow declaration of variables that are not used in the code
     //
     //Stylistic Issues
     //

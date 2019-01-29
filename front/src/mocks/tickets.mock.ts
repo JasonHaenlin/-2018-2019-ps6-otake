@@ -15,4 +15,8 @@ export const TICKETS_MOCKED: Ticket[] = [
     date: dateToday,
     author: 'Anakin'
   },
+  {
+    date: dateToday,
+    author: 'Moi'
+  },
 ];
