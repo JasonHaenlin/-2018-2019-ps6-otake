@@ -1,16 +1,11 @@
-import { HeaderComponent } from './header/header.component';
-import { TestBed, async } from '@angular/core/testing';
+import { async, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { TicketComponent, TicketFormComponent, TicketListComponent } from './tickets';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        HeaderComponent,
-        TicketFormComponent,
-        TicketListComponent
       ],
     }).compileComponents();
   }));

@@ -13,9 +13,7 @@ const HTTP_OPTIONS = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-// const url = 'https://api.myjson.com/bins/ck44c';
-// const API_URL = 'http://localhost:9428/api/';
-const API_URL = 'https://api.otakedev.com/api/';
+const API_URL = 'http://localhost:3000/';
 
 export {
   // consts
