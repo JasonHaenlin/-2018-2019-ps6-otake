@@ -5,7 +5,15 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 const routes: Routes = [
 
-  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+
+  { path: 'home', component: PageNotFoundComponent },
+  { path: 'school', component: PageNotFoundComponent },
+  { path: 'exchangesUniversities', component: PageNotFoundComponent },
+  { path: 'testimonials', component: PageNotFoundComponent },
+  { path: 'financialAids', component: PageNotFoundComponent },
+  { path: 'calendar', component: PageNotFoundComponent },
+  { path: 'contacts', component: PageNotFoundComponent },
   // catch all the other routes
   { path: '**', component: PageNotFoundComponent },
 ];

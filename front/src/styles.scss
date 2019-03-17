@@ -1,5 +1,6 @@
 @import 'styles/variables';
 @import url('https://fonts.googleapis.com/css?family=Shojumaru');
+
 * {
   box-sizing: border-box;
 }
@@ -15,7 +16,7 @@ body {
   background-color: $background-color;
 }
 
-.otake {
+.otake-font {
   font-family: 'Shojumaru', cursive, 'Courier New', Courier, monospace;
   font-size: 1.5rem;
 }
