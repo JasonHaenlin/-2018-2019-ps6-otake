@@ -1,19 +1,16 @@
 <header>
   <div class="home">
-    <a [routerLink]="[ '/' ]"><span [ngClass]="icone"></span></a>
+    <a [routerLink]="[ '/' ]"><span [ngClass]="icon"></span></a>
   </div>
   <div class="nav-bar navigation-font">
     <a class="dropdown" [routerLink]="[ '/school' ]" routerLinkActive="active">
-      Notre Ecole <span [ngClass]="arrow_icone"></span>
+      Notre Ecole <span [ngClass]="arrow_icon"></span>
       <div class="dropdown-content">
         <a [routerLink]="[ '/school/1' ]">test1</a>
-        <a [routerLink]="[ '/school/2' ]">longtest2</a>
-        <a [routerLink]="[ '/school/2' ]">longlonglongtest2</a>
-        <a [routerLink]="[ '/school/2' ]">longlonglonglonglongtest2</a>
       </div>
     </a>
     <a class="dropdown" [routerLink]="[ '/exchangesUniversities' ]" routerLinkActive="active">
-      Universités d'échanges <span [ngClass]="arrow_icone"></span>
+      Universités d'échanges <span [ngClass]="arrow_icon"></span>
       <div class="dropdown-content">
         <a [routerLink]="[ '/exchangesUniversities/1' ]">test1</a>
         <a [routerLink]="[ '/exchangesUniversities/2' ]">longtest2</a>
