@@ -3,14 +3,26 @@
     <a [routerLink]="[ '/' ]"><span [ngClass]="icone"></span></a>
   </div>
   <div class="nav-bar navigation-font">
-    <a [routerLink]="[ '/school' ]" routerLinkActive="active">
-      Notre Ecole
+    <a class="dropdown" [routerLink]="[ '/school' ]" routerLinkActive="active">
+      Notre Ecole <span [ngClass]="arrow_icone"></span>
+      <div class="dropdown-content">
+        <a [routerLink]="[ '/school/1' ]">test1</a>
+        <a [routerLink]="[ '/school/2' ]">longtest2</a>
+        <a [routerLink]="[ '/school/2' ]">longlonglongtest2</a>
+        <a [routerLink]="[ '/school/2' ]">longlonglonglonglongtest2</a>
+      </div>
     </a>
-    <a [routerLink]="[ '/exchangesUniversities' ]" routerLinkActive="active">
-      Universités d'échanges
+    <a class="dropdown" [routerLink]="[ '/exchangesUniversities' ]" routerLinkActive="active">
+      Universités d'échanges <span [ngClass]="arrow_icone"></span>
+      <div class="dropdown-content">
+        <a [routerLink]="[ '/exchangesUniversities/1' ]">test1</a>
+        <a [routerLink]="[ '/exchangesUniversities/2' ]">longtest2</a>
+        <a [routerLink]="[ '/exchangesUniversities/2' ]">longlonglongtest2</a>
+        <a [routerLink]="[ '/exchangesUniversities/2' ]">longlonglonglonglongtest2</a>
+      </div>
     </a>
     <a [routerLink]="[ '/testimonials' ]" routerLinkActive="active">
-      Témoingnages
+      Témoignages
     </a>
     <a [routerLink]="[ '/financialAids' ]" routerLinkActive="active">
       Aides Financières

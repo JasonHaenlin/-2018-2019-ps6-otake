@@ -5,7 +5,7 @@ const handleError = <T>(operation = 'operation', result?: T)
   : (error: any) => Observable<T> => {
   return (error: any): Observable<T> => {
     console.log(error);
-    return of(result as T);
+    return of(result);
   };
 };
 
