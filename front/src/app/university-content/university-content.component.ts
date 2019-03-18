@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UniversityService } from 'src/services/university/university.service';
 import { Observable } from 'rxjs';
 import { University } from 'src/models/university';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-university-content',
@@ -11,14 +13,15 @@ import { University } from 'src/models/university';
 export class UniversityContentComponent implements OnInit {
 
   public university$: Observable<University>;
-  public university: University;
 
-  constructor(private universityService: UniversityService) { 
-  }
+  constructor(
+    private universityService: UniversityService,
+    private route: ActivatedRoute,
+    private location: Location
+  ) { }
 
   ngOnInit() {
-    this.university$ = this.universityService.getUniversity(0);
-    this.university$.subscribe(u => this.university = u);
+    this.university$ = this.universityService.getUniversity(+this.route.snapshot.paramMap.get('id'));
   }
 
 }
