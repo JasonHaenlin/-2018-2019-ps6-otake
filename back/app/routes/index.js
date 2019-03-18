@@ -17,10 +17,14 @@ const handleExceptions = require('../middlewares/errorHandlers').handleException
  */
 
 const Tickets = require('./tickets');
+const School = require('./school');
+const Universities = require('./universities');
 
 const main = express.Router();
 const tickets = express.Router();
 const error = express.Router();
+const school = express.Router();
+const universities = express.Router();
 
 /* -- default -- */
 main.get('/', handleExceptions(require('./default')));
@@ -37,8 +41,14 @@ tickets.put('/:ticketId', handleExceptions(Tickets.updateTicket));
 /* delete */
 tickets.delete('/:ticketId', handleExceptions(Tickets.deleteTicket));
 
+/* -- school -- */
+school.get('/majors', handleExceptions(School.getMajors));
+
+/* -- universities -- */
+universities.get('/areas', handleExceptions(Universities.getAreas));
+
 /* -- error -- */
 /* get */
 error.get('/', handleExceptions(require('./error')));
 
-module.exports = { main, tickets, error };
+module.exports = { main, tickets, school, universities, error };

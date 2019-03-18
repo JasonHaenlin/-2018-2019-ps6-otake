@@ -14,6 +14,10 @@ app.use(bodyParser.json());
 app.use('/', route.main);
 // ticket url
 app.use('/tickets', route.tickets);
+// school url
+app.use('/school', route.school);
+// universities url
+app.use('/universities', route.universities);
 // error url (for testing only)
 app.use('/error', route.error);
 
