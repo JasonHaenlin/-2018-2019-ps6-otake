@@ -6,16 +6,15 @@
     <a class="dropdown" [routerLink]="[ '/school' ]" routerLinkActive="active">
       Notre Ecole <span [ngClass]="arrow_icon"></span>
       <div class="dropdown-content">
-        <a [routerLink]="[ '/school/1' ]">test1</a>
+        <a *ngFor="let major of (majorList$ | async)"
+          [routerLink]="[ '/school/', major.title ]">{{major.title}}</a>
       </div>
     </a>
     <a class="dropdown" [routerLink]="[ '/exchangesUniversities' ]" routerLinkActive="active">
       Universités d'échanges <span [ngClass]="arrow_icon"></span>
       <div class="dropdown-content">
-        <a [routerLink]="[ '/exchangesUniversities/1' ]">test1</a>
-        <a [routerLink]="[ '/exchangesUniversities/2' ]">longtest2</a>
-        <a [routerLink]="[ '/exchangesUniversities/2' ]">longlonglongtest2</a>
-        <a [routerLink]="[ '/exchangesUniversities/2' ]">longlonglonglonglongtest2</a>
+        <a *ngFor="let univ of (areaList$ | async)"
+          [routerLink]="[ '/exchangesUniversities/', univ.name ]">{{univ.name}}</a>
       </div>
     </a>
     <a [routerLink]="[ '/testimonials' ]" routerLinkActive="active">
