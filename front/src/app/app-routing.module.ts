@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UniversityContentComponent } from './university-content/university-content.component';
 
 
 const routes: Routes = [
@@ -9,7 +10,7 @@ const routes: Routes = [
 
   { path: 'home', component: PageNotFoundComponent },
   { path: 'school', component: PageNotFoundComponent },
-  { path: 'exchangesUniversities', component: PageNotFoundComponent },
+  { path: 'exchangesUniversities', component: UniversityContentComponent },
   { path: 'testimonials', component: PageNotFoundComponent },
   { path: 'financialAids', component: PageNotFoundComponent },
   { path: 'calendar', component: PageNotFoundComponent },

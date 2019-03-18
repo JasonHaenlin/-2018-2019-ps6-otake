@@ -1,0 +1,24 @@
+<div class="container" *ngIf="university$ | async as univ">
+  
+  <div class="part-content">
+    <h1 class="content-title">Présentation</h1>
+    <p class="content-paragraph">{{ univ.presentation_text }}</p>
+  </div>
+  <div class="part-content">
+    <h1 class="content-title">Admission/contrat</h1>
+    <p class="content-paragraph">{{ univ.admission_text }}</p>
+  </div>
+  <div class="part-content">
+    <h1 class="content-title">Vie étudiante</h1>
+    <p class="content-paragraph">{{ univ.student_life_text }}</p>
+  </div>
+  <div class="part-content">
+    <h1 class="content-title">Coût de la vie</h1>
+    <p class="content-paragraph">{{ univ.cost_of_living_text }}</p>
+  </div>
+  <div class="part-content">
+    <h1 class="content-title">Avis</h1>
+    <p class="content-paragraph">Coming soon !</p>
+  </div>
+
+</div>
