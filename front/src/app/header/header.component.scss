@@ -1,5 +1,5 @@
 @import '../../styles/variables.scss';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
 header {
   display: flex;
   background-color: $blue2;
@@ -7,24 +7,25 @@ header {
 
 a {
   text-decoration: none;
-  color: white;
+  color: $white;
   padding: 16px 16px;
-  transition: color 0.2s ease;
 }
 
 .home {
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 6rem;
 }
 
 .nav-bar {
   width: 100%;
+  padding-right: 6rem;
   display: flex;
   justify-content: flex-end;
   align-content: center;
 }
 
 .nav-bar a:hover {
-  color: $blue3;
+  background-color: $blue1;
+  transition: background-color 0.2s ease;
 }
 
 .active {
@@ -32,6 +33,30 @@ a {
 }
 
 .navigation-font {
-  font-family: 'Open Sans', sans-serif, 'Courier New', Courier, monospace;
+  font-family: 'Roboto', sans-serif, 'Courier New', Courier, monospace;
   font-size: 0.8rem;
+}
+
+.dropdown-content {
+  top: 71px;
+  display: none;
+  position: absolute;
+  z-index: 10;
+  line-height: 0.3em;
+  min-width: 100%;
+  margin-left: -1em;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
+  background: $blue1;
+}
+
+.dropdown-content a:hover {
+  background-color: $blue2;
 }

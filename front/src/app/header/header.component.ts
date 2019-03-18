@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  public icone = 'fas fa-home';
+  public icon = 'fas fa-home fa-2x';
+  public arrow_icon = 'fas fa-angle-down';
 
   constructor() { }
 
