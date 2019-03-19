@@ -23,6 +23,7 @@ export class SectionSelectionComponent implements OnInit {
 
   selectSection(s: string) {
     this.sectionSelected.emit(s);
+    console.log(this.sectionSelected);
   }
 
 }
