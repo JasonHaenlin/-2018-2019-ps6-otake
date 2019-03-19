@@ -8,6 +8,7 @@ import { UniversityService } from 'src/services/university/university.service';
 })
 export class DetailContentComponent implements OnInit {
 
+  public sectionList: string[] = ['Présentation', 'Admission/Contrat', 'Vie Etudiante', 'Coût de la vie', 'Avis'];
 
   constructor(public universityService: UniversityService) { }
 
