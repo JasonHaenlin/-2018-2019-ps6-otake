@@ -26,4 +26,9 @@ export class UniversityContentComponent implements OnInit {
     this.university$ = this.universityService.getUniversity(+this.route.snapshot.paramMap.get('id'));
   }
 
+  replaceURLWithHTMLLinks(text) {
+      const exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+      return text.replace(exp, '<a href=\'$1\'>$1</a>');
+  }
+
 }
