@@ -8,7 +8,6 @@ import { UniversityService } from 'src/services/university/university.service';
 })
 export class DetailContentComponent implements OnInit {
 
-  
 
   constructor(public universityService: UniversityService) { }
 

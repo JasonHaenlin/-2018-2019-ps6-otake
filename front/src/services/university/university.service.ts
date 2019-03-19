@@ -8,13 +8,14 @@ import { Observable, throwError, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { University } from 'src/models/university';
 import { UNIVERSITIES_MOCKED } from 'src/mocks/universities.mock';
+import { API_URL } from '../httpHelper';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UniversityService {
 
-  url = 'http://localhost:3000/universities/';
+  url = API_URL + 'universities/';
   private universities = UNIVERSITIES_MOCKED;
 
   constructor(private http: HttpClient) { }
