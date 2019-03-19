@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { UniversitySection, SpecialitySection } from 'src/models/sections.enum';
 
 @Component({
   selector: 'app-section-selector',
@@ -8,22 +10,24 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class SectionSelectorComponent implements OnInit {
 
   @Input()
-  sectionList: string[];
+  sectionName: string;
 
-  @Input()
-  section: string;
+  public activeRoute: string = this.route.snapshot.url.toString().replace(',', '/');
+  public sections;
 
-  @Output()
-  sectionSelected:  EventEmitter<string> = new EventEmitter<string>();
-
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.sections = this.enumSelector(this.sectionName === 'university' ? UniversitySection : SpecialitySection);
   }
 
-  selectSection(s: string) {
-    this.section = s;
-    console.log(this.sectionSelected);
+  // selectSection(s: string) {
+  //   this.section = s;
+  //   console.log('selected:', s);
+  // }
+  enumSelector(definition) {
+    return Object.keys(definition)
+      .map(key => ({ value: definition[key], title: key }));
   }
 
 }

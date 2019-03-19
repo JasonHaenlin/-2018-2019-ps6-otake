@@ -14,9 +14,7 @@ export class UniversityContentComponent implements OnInit {
 
   public university$: Observable<University>;
 
-  public sectionList: string[] = ['presentation', 'admission', 'studentLife', 'costOfLife', 'adivce'];
-
-  public activeRoute: string = this.route.snapshot.url.toString().replace(',', '/');
+  public sectionName = 'university';
 
   constructor(
     private universityService: UniversityService,
@@ -26,7 +24,6 @@ export class UniversityContentComponent implements OnInit {
 
   ngOnInit() {
     this.university$ = this.universityService.getUniversity(+this.route.snapshot.paramMap.get('id'));
-    console.log('active route:', this.activeRoute);
   }
 
   replaceURLWithHTMLLinks(text) {
