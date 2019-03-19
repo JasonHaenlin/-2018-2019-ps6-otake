@@ -7,7 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeaderComponent } from './header/header.component';
-import { UniversityContentComponent } from './university-content/university-content.component';
+import { UniversityContentComponent } from './university/university-content/university-content.component';
+import { SectionComponent } from './university/section/section.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { UniversityContentComponent } from './university-content/university-cont
     PageNotFoundComponent,
     HeaderComponent,
     UniversityContentComponent,
+    SectionComponent
   ],
   imports: [
     BrowserModule,

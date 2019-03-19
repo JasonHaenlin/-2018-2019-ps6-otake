@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { UniversityContentComponent } from './university-content/university-content.component';
 import { CommonModule } from '@angular/common';
+import { UniversityContentComponent } from './university/university-content/university-content.component';
 
 
 const routes: Routes = [
