@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { DetailContentComponent } from './university/detail-content/detail-content.component';
 import { CommonModule } from '@angular/common';
+import { UniversityContentComponent } from './university/university-content/university-content.component';
 
 
 const routes: Routes = [
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'exchangeUniversityDetails/:id', component: DetailContentComponent},
+  { path: 'exchangeUniversityDetails/:id', component: UniversityContentComponent},
   { path: 'home', component: PageNotFoundComponent },
   { path: 'school', component: PageNotFoundComponent },
   { path: 'exchangesUniversities', component: PageNotFoundComponent },

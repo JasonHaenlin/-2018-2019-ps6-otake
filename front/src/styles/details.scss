@@ -1,0 +1,19 @@
+@import '../styles/variables.scss';
+
+.container {
+   margin: 30px; 
+}
+
+.part-content {
+
+}
+
+.content-title {
+    color: $blue2;
+    font-size: 29px;
+}
+
+.content-paragraph {
+    font-size: 17px;
+    text-align: justify;
+}
