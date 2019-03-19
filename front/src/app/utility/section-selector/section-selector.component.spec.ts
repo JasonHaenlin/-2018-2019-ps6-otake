@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DetailContentComponent } from './detail-content.component';
+import { SectionSelectionComponent } from './section-selector.component';
 
-describe('DetailContentComponent', () => {
-  let component: DetailContentComponent;
-  let fixture: ComponentFixture<DetailContentComponent>;
+describe('SectionSelectionComponent', () => {
+  let component: SectionSelectionComponent;
+  let fixture: ComponentFixture<SectionSelectionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DetailContentComponent ]
+      declarations: [ SectionSelectionComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DetailContentComponent);
+    fixture = TestBed.createComponent(SectionSelectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

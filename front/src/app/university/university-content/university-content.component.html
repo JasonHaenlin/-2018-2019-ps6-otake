@@ -1,6 +1,6 @@
 <div class="container" *ngIf="university$ | async as univ">
-  
-  <app-section-selection [sectionList] = "sectionList"></app-section-selection>
+
+  <app-section-selector [sectionList]="sectionList" [section]="'Présentation'"></app-section-selector>
   <div class="part-content">
     <h1 class="content-title">Présentation</h1>
     <div class="content-paragraph" [innerHTML]="replaceURLWithHTMLLinks(univ.presentation_text)"></div>

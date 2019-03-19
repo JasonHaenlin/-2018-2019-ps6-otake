@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeaderComponent } from './header/header.component';
 import { UniversityContentComponent } from './university/university-content/university-content.component';
-import { SectionSelectionComponent } from './utility/section-selection/section-selection.component';
+import { SectionSelectorComponent } from './utility/section-selector/section-selector.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { SectionSelectionComponent } from './utility/section-selection/section-s
     PageNotFoundComponent,
     HeaderComponent,
     UniversityContentComponent,
-    SectionSelectionComponent,
+    SectionSelectorComponent,
   ],
   imports: [
     BrowserModule,
