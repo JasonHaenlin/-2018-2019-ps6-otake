@@ -1,25 +1,39 @@
 <div class="container" *ngIf="university$ | async as univ">
-  
-  <app-section-selection [sectionList] = "sectionList"></app-section-selection>
-  <div class="part-content">
-    <h1 class="content-title">Présentation</h1>
+
+  <!-- <app-section-selection [sectionList]="sectionList"></app-section-selection> -->
+
+  <!-- TEST -->
+  <!-- <ul>
+    <li> <a [routerLink]="['/'] + activeRoute" fragment="presentation"> Presentation </a></li>
+    <li> <a [routerLink]="['/'] + activeRoute" fragment="admission"> Admission </a></li>
+    <li> <a [routerLink]="['/'] + activeRoute" fragment="studentLife"> Vie étudiante </a></li>
+    <li> <a [routerLink]="['/'] + activeRoute" fragment="costOfLife"> Coût de la vie </a></li>
+    <li> <a [routerLink]="['/'] + activeRoute" fragment="advice"> Avis </a></li>
+  </ul> -->
+
+  <section id="presentation" class="part-content">
+    <h2 class="content-title">Présentation</h2>
     <div class="content-paragraph" [innerHTML]="replaceURLWithHTMLLinks(univ.presentation_text)"></div>
-  </div>
-  <div class="part-content">
-    <h1 class="content-title">Admission/contrat</h1>
+  </section>
+
+  <section id="admission" class="part-content">
+    <h2 class="content-title">Admission/contrat</h2>
     <div class="content-paragraph" [innerHTML]="replaceURLWithHTMLLinks(univ.admission_text)"></div>
-  </div>
-  <div class="part-content">
-    <h1 class="content-title">Vie étudiante</h1>
+  </section>
+
+  <section id="studentLife" class="part-content">
+    <h2 class="content-title">Vie étudiante</h2>
     <div class="content-paragraph" [innerHTML]="replaceURLWithHTMLLinks(univ.student_life_text)"></div>
-  </div>
-  <div class="part-content">
-    <h1 class="content-title">Coût de la vie</h1>
+  </section>
+
+  <section id="costOfLife" class="part-content">
+    <h2 class="content-title">Coût de la vie</h2>
     <div class="content-paragraph" [innerHTML]="replaceURLWithHTMLLinks(univ.cost_of_living_text)"></div>
-  </div>
-  <div class="part-content">
-    <h1 class="content-title">Avis</h1>
+  </section>
+
+  <section id="advice" class="part-content">
+    <h2 class="content-title">Avis</h2>
     <div class="content-paragraph">Coming soon !</div>
-  </div>
+  </section>
 
 </div>

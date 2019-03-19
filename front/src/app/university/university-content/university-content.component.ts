@@ -14,7 +14,9 @@ export class UniversityContentComponent implements OnInit {
 
   public university$: Observable<University>;
 
-  public sectionList: string[] = ['Présentation', 'Admission/Contrat', 'Vie Etudiante', 'Coût de la Vie', 'Avis'];
+  public sectionList: string[] = ['presentation', 'admission', 'studentLife', 'costOfLife', 'adivce'];
+
+  public activeRoute: string = this.route.snapshot.url.toString().replace(',', '/');
 
   constructor(
     private universityService: UniversityService,
@@ -24,9 +26,11 @@ export class UniversityContentComponent implements OnInit {
 
   ngOnInit() {
     this.university$ = this.universityService.getUniversity(+this.route.snapshot.paramMap.get('id'));
+    console.log('active route:', this.activeRoute);
   }
 
   replaceURLWithHTMLLinks(text) {
+      // black magic happens here ...
       const exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
       return text.replace(exp, '<a href=\'$1\'>$1</a>');
   }
