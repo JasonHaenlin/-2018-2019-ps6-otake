@@ -1,8 +1,11 @@
 <header>
+  <!-- home page -->
   <div class="home">
     <a [routerLink]="[ '/' ]"><span [ngClass]="icon"></span></a>
   </div>
+
   <div class="nav-bar navigation-font">
+
     <a class="dropdown" [routerLink]="[ '/school' ]" routerLinkActive="active">
       Notre Ecole <span [ngClass]="arrow_icon"></span>
       <div class="dropdown-content">
@@ -10,6 +13,7 @@
           [routerLink]="[ '/school/', major.title ]">{{major.title}}</a>
       </div>
     </a>
+
     <a class="dropdown" [routerLink]="[ '/exchangesUniversities' ]" routerLinkActive="active">
       Universités d'échanges <span [ngClass]="arrow_icon"></span>
       <div class="dropdown-content">
@@ -17,17 +21,22 @@
           [routerLink]="[ '/exchangesUniversities/', univ.name ]">{{univ.name}}</a>
       </div>
     </a>
+
     <a [routerLink]="[ '/testimonials' ]" routerLinkActive="active">
       Témoignages
     </a>
+
     <a [routerLink]="[ '/financialAids' ]" routerLinkActive="active">
       Aides Financières
     </a>
+
     <a [routerLink]="[ '/calendar' ]" routerLinkActive="active">
       Calendrier
     </a>
+
     <a [routerLink]="[ '/contacts' ]" routerLinkActive="active">
       Contacts
     </a>
+
   </div>
 </header>

@@ -1,8 +1,11 @@
 @import '../../styles/variables.scss';
 @import url('https://fonts.googleapis.com/css?family=Roboto:700');
+$padding: calc(20% - 200px);
 header {
   display: flex;
+  justify-content: center;
   background-color: $blue2;
+  height: 100%;
 }
 
 a {
@@ -13,13 +16,14 @@ a {
 
 .home {
   padding: 0;
-  padding-left: 10%;
+  padding-left: $padding;
   margin-top: 0.5rem;
 }
 
 .nav-bar {
+  line-height: 1em;
   width: 100%;
-  padding-right: 6rem;
+  padding-right: $padding;
   display: flex;
   justify-content: flex-end;
   align-content: center;
@@ -40,7 +44,7 @@ a {
 }
 
 .dropdown-content {
-  top: 64px;
+  top: $baseTop;
   display: none;
   position: absolute;
   z-index: 10;
@@ -56,6 +60,7 @@ a {
 .dropdown:hover .dropdown-content {
   display: flex;
   flex-direction: column;
+  white-space: nowrap;
   background: $blue1;
 }
 

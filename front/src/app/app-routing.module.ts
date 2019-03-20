@@ -7,8 +7,7 @@ import { UniversityContentComponent } from './university/university-content/univ
 
 const routes: Routes = [
 
-  // { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'exchangeUniversityDetails/:id', component: UniversityContentComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: PageNotFoundComponent },
   { path: 'school', component: PageNotFoundComponent },
   { path: 'exchangesUniversities', component: PageNotFoundComponent },
