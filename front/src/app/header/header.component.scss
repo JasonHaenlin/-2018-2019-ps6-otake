@@ -21,7 +21,6 @@ a {
 }
 
 .nav-bar {
-  line-height: 1em;
   width: 100%;
   padding-right: $padding;
   display: flex;
@@ -70,4 +69,10 @@ a {
 
 .dropdown-content a:hover {
   background-color: $blue2;
+}
+
+@media (max-width: 921px) {
+  .nav-bar {
+    line-height: initial;
+  }
 }
