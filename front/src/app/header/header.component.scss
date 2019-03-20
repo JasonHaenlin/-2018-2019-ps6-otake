@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:700');
 $padding: calc(20% - 200px);
 header {
+  z-index: 100;
   display: flex;
   justify-content: center;
   background-color: $blue2;
