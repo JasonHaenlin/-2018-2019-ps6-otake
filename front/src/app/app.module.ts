@@ -8,11 +8,10 @@ import { ApplicationHttpClient, applicationHttpClientCreator } from 'src/core/ht
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UniversityModule } from './exchange-universities/university.module';
+import { FlowStarterComponent, FlowWindowComponent } from './flow-monitor';
 import { HeaderComponent } from './header/header.component';
 import { MySchoolModule } from './my-school/my-school.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { TaskStarterComponent } from './task-monitor/task-starter/task-starter.component';
-import { TaskWindowComponent } from './task-monitor/task-window/task-window.component';
 import { UtilityModule } from './utility/utility.module';
 
 @NgModule({
@@ -20,8 +19,8 @@ import { UtilityModule } from './utility/utility.module';
     AppComponent,
     HeaderComponent,
     PageNotFoundComponent,
-    TaskStarterComponent,
-    TaskWindowComponent,
+    FlowStarterComponent,
+    FlowWindowComponent,
   ],
   imports: [
     ReactiveFormsModule,

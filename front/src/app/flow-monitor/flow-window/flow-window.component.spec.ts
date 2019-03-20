@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TaskStarterComponent } from './task-starter.component';
+import { FlowWindowComponent } from './flow-window.component';
 
-describe('TaskStarterComponent', () => {
-  let component: TaskStarterComponent;
-  let fixture: ComponentFixture<TaskStarterComponent>;
+describe('TaskWindowComponent', () => {
+  let component: FlowWindowComponent;
+  let fixture: ComponentFixture<FlowWindowComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TaskStarterComponent ]
+      declarations: [FlowWindowComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TaskStarterComponent);
+    fixture = TestBed.createComponent(FlowWindowComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
