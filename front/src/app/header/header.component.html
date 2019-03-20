@@ -14,7 +14,7 @@
       </div>
     </a>
 
-    <a class="dropdown" [routerLink]="[ '/exchangesUniversities' ]" routerLinkActive="active">
+    <a class="dropdown" [routerLink]="[ '/exchange-universities' ]" routerLinkActive="active">
       Universités d'échanges <span [ngClass]="arrow_icon"></span>
       <div class="dropdown-content">
         <a *ngFor="let univ of (areaList$ | async)"

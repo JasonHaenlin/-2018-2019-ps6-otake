@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeaderComponent } from './header/header.component';
-import { UniversityContentComponent } from './university/university-content/university-content.component';
+import { UniversityDetailsComponent } from './university/university-details/university-details.component';
 import { SectionSelectorComponent } from './utility/section-selector/section-selector.component';
 
 @NgModule({
@@ -15,7 +15,7 @@ import { SectionSelectorComponent } from './utility/section-selector/section-sel
     AppComponent,
     PageNotFoundComponent,
     HeaderComponent,
-    UniversityContentComponent,
+    UniversityDetailsComponent,
     SectionSelectorComponent,
   ],
   imports: [

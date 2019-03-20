@@ -20,11 +20,11 @@ export class UniversityService {
 
   constructor(private http: HttpClient) { }
 
-  getUniversity(id: number): Observable<University> {
+  getUniversity(name: string): Observable<University> {
     // return this.http.get<University>(this.url + id).pipe(
     //   catchError(this.handleError)
     // );
-    return of(this.universities.find(u => u.id === id));
+    return of(this.universities.find(u => u.name === name));
   }
 
   getUniversities(): Observable<University[]> {

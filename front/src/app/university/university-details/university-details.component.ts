@@ -6,11 +6,11 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-university-content',
-  templateUrl: './university-content.component.html',
-  styleUrls: ['./university-content.component.scss']
+  selector: 'app-university-details',
+  templateUrl: './university-details.component.html',
+  styleUrls: ['./university-details.component.scss']
 })
-export class UniversityContentComponent implements OnInit {
+export class UniversityDetailsComponent implements OnInit {
 
   public university$: Observable<University>;
 
@@ -23,7 +23,7 @@ export class UniversityContentComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.university$ = this.universityService.getUniversity(+this.route.snapshot.paramMap.get('id'));
+    this.university$ = this.universityService.getUniversity(this.route.snapshot.paramMap.get('name'));
   }
 
   replaceURLWithHTMLLinks(text) {
