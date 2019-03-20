@@ -7,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FlowWindowComponent implements OnInit {
 
-  public windowState = true;
+  public windowState = false;
 
   constructor() { }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.windowState = true;
+    }, 100);
   }
 
   updateWindowState() {

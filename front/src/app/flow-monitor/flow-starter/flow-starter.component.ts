@@ -1,3 +1,4 @@
+import { FlowMonitorService } from './../../../services/flow/flow-monitor.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FlowStarterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private flowService: FlowMonitorService) { }
 
   ngOnInit() {
+  }
+
+  startFlow() {
+    console.log('event');
+
+    this.flowService.startFlow();
   }
 
 }

@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoaderService } from 'src/app/utility/loader/loader.service';
 import { ApplicationHttpClient, applicationHttpClientCreator } from 'src/core/http-client';
+import { FlowMonitorService } from 'src/services/flow/flow-monitor.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UniversityModule } from './exchange-universities/university.module';
@@ -40,6 +41,7 @@ import { UtilityModule } from './utility/utility.module';
       useFactory: applicationHttpClientCreator,
       deps: [HttpClient, LoaderService]
     },
+    FlowMonitorService,
   ],
   bootstrap: [AppComponent]
 })
