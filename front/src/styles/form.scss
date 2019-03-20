@@ -1,5 +1,6 @@
+@import './variables.scss';
 .text-danger {
-  color: #b6403e;
+  color: $danger;
 }
 
 small {
@@ -11,13 +12,13 @@ small {
 }
 
 .form-control.is-invalid {
-  color: #aa3c3a;
-  border-color: #7c2d2c;
+  color: $warning1;
+  border-color: $warning2;
 }
 
 .form-control.is-valid {
-  color: #3c803d;
-  border-color: #224923;
+  color: $success1;
+  border-color: $success2;
 }
 
 .form-group {

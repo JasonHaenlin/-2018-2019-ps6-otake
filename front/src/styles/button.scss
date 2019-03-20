@@ -1,6 +1,7 @@
+@import './variables.scss';
 .btn-cst {
-  color: #333;
-  background-color: #8aaefd;
+  color: $white;
+  background-color: $blue1;
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
@@ -10,7 +11,7 @@
 }
 
 .btn-cst:hover {
-  background-color: #8aaefd38;
+  background-color: $blue2;
   text-decoration: none;
   cursor: pointer;
 }
@@ -24,7 +25,7 @@
 }
 
 .btn-cst:disabled {
-  background-color: rgba(212, 96, 96, 0.418);
+  background-color: $warning2;
   pointer-events: none;
   cursor: not-allowed;
   opacity: .65;
