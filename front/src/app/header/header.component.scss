@@ -1,8 +1,6 @@
 @import '../../styles/variables.scss';
-@import url('https://fonts.googleapis.com/css?family=Roboto:700');
 $padding: calc(20% - 200px);
 header {
-  z-index: 100;
   display: flex;
   justify-content: center;
   background-color: $blue2;
@@ -46,7 +44,6 @@ a {
 }
 
 .navigation-font {
-  font-family: 'Roboto', sans-serif, 'Courier New', Courier, monospace;
   font-size: 0.8rem;
 }
 
@@ -54,13 +51,13 @@ a {
   top: $baseTop;
   display: none;
   position: absolute;
-  z-index: 10;
   line-height: 1em;
   min-width: 100%;
   margin-left: -1em;
 }
 
 .dropdown {
+  z-index: 11;
   position: relative;
 }
 

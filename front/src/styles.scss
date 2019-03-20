@@ -1,7 +1,10 @@
 @import 'styles/variables';
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css?family=Shojumaru');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+=======
+>>>>>>> GH-8 modifie la disposition du bouton
 * {
   box-sizing: border-box;
 }
@@ -17,6 +20,7 @@ body {
   background-color: $background-color;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Shojumaru');
 .otake-font {
   font-family: 'Shojumaru', cursive, 'Courier New', Courier, monospace;
   font-size: 1.5rem;

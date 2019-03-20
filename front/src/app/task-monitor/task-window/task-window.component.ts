@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskWindowComponent implements OnInit {
 
+  public windowState = true;
+
   constructor() { }
 
   ngOnInit() {

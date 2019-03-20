@@ -1,35 +1,31 @@
 @import '../../../styles/button.scss';
 @import '../../../styles/variables.scss';
-.task-starter {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 2rem;
-}
-
 .task-btn {
   height: 3rem;
   width: 5rem;
   border-radius: 20%;
   box-shadow: $shadow;
+  font-weight: bold;
 }
 
 .flow {
   color: $blue2;
-  padding-bottom: 0.5rem;
-  padding-right: 1rem;
-  transition: padding-bottom 1s, color 1s;
+  transition: transform 1s, color 1s;
 }
 
 div>div:nth-child(1) {
-  z-index: 99;
+  position: absolute;
+  z-index: 8;
 }
 
 div>div:nth-child(2) {
-  z-index: 98;
+  position: absolute;
+  z-index: 7;
+  right: -3.5rem;
 }
 
 div:hover .flow {
   color: $yellow;
   padding-bottom: 2.5rem;
+  transform: translate(0, -0.8em);
 }
