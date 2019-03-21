@@ -17,6 +17,11 @@ export class UniversityDetailsComponent implements OnInit {
 
   public university: University;
   public universitySections: Section[] = [];
+  // public sectionList: Section[] = [{id: 'presentation', name: 'Présentation', icon: 'fas fa-info'},
+  //   {id: 'admission', name: 'Admission/contrat', icon: 'fas fa-file-contract'},
+  //   {id: 'studentLife', name: 'Vie étudiante', icon: 'fas fa-graduation-cap'},
+  //   {id: 'costOfLife', name: 'Coût de la vie', icon: 'fas fa-money-bill-alt'},
+  //   {id: 'advice', name: 'Avis', icon: 'fas fa-users'}];
 
   constructor(
     private universityService: UniversityService,
