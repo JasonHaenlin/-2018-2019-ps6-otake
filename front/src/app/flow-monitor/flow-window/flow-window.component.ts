@@ -1,5 +1,6 @@
-import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
-import { trigger, transition, style, animate } from '@angular/animations';
+import { animate, style, transition, trigger } from '@angular/animations';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
+import { Step } from '../flow-step/step';
 
 @Component({
   selector: 'app-flow-window',
@@ -21,6 +22,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
 export class FlowWindowComponent implements OnInit {
 
   public windowState = true;
+  public stepList: Step[] = [];
 
   @HostListener('document:click', ['$event'])
   clickout(event) {

@@ -3,10 +3,8 @@
     <div class=" btn-hide">
 
     </div>
-    <div class="window">
-      <app-flow-step></app-flow-step>
-      <app-flow-step></app-flow-step>
-      <app-flow-step></app-flow-step>
+    <div class="window" *ngFor="let step of stepList">
+      <app-flow-step [stage]="step"></app-flow-step>
     </div>
   </div>
   <div class="arrow-container">
