@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UniversityModule } from './exchange-universities/university.module';
 import { FlowStarterComponent, FlowWindowComponent } from './flow-monitor';
+import { FlowStepComponent } from './flow-monitor/flow-step/flow-step.component';
 import { HeaderComponent } from './header/header.component';
 import { MySchoolModule } from './my-school/my-school.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -22,6 +23,7 @@ import { UtilityModule } from './utility/utility.module';
     PageNotFoundComponent,
     FlowStarterComponent,
     FlowWindowComponent,
+    FlowStepComponent,
   ],
   imports: [
     ReactiveFormsModule,

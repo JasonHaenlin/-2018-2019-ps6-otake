@@ -1,9 +1,22 @@
 import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-flow-window',
   templateUrl: './flow-window.component.html',
-  styleUrls: ['./flow-window.component.scss']
+  styleUrls: ['./flow-window.component.scss'],
+  animations: [
+    trigger('openClose', [
+      transition(':enter', [
+        style({ width: 0 }),
+        animate('500ms ease-in', style({ width: '*' }))
+      ]),
+      transition(':leave', [
+        style({ width: '*' }),
+        animate('500ms ease-out', style({ width: 0 }))
+      ])
+    ]),
+  ]
 })
 export class FlowWindowComponent implements OnInit {
 
@@ -11,9 +24,6 @@ export class FlowWindowComponent implements OnInit {
 
   @HostListener('document:click', ['$event'])
   clickout(event) {
-    console.log(event.target);
-    console.log(this.eRef.nativeElement);
-
     if (this.eRef.nativeElement.contains(event.target)) {
       this.windowState = true;
     } else {
