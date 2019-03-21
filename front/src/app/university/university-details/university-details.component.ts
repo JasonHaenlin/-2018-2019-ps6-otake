@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { UniversityService } from 'src/services/university/university.service';
-import { Observable } from 'rxjs';
 import { University } from 'src/models/university';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { Section } from 'src/models/section';
+import { DetailsService } from 'src/services/details/details.service';
+import { UNIVERSITY_SECTIONS } from './university.sections.enum';
+import { SectionSelectorComponent } from 'src/app/utility/section-selector/section-selector.component';
 
 @Component({
   selector: 'app-university-details',
@@ -12,24 +15,32 @@ import { Location } from '@angular/common';
 })
 export class UniversityDetailsComponent implements OnInit {
 
-  public university$: Observable<University>;
-
-  public sectionName = 'university';
+  public university: University;
+  public universitySections: Section[] = [];
 
   constructor(
     private universityService: UniversityService,
+    private detailsService: DetailsService,
     private route: ActivatedRoute,
     private location: Location
   ) { }
 
   ngOnInit() {
-    this.university$ = this.universityService.getUniversity(this.route.snapshot.paramMap.get('name'));
+    this.universityService.getUniversity(this.route.snapshot.paramMap.get('name')).subscribe(uni => this.university = uni);
+    this.detailsService.enumSelector(UNIVERSITY_SECTIONS).forEach(obj => {
+      this.universitySections.push(<Section>{ id: obj.title, name: obj.value });
+    });
+    // this.universitySections.forEach(e => console.log(`element:`, e.id, e.name));
   }
 
-  replaceURLWithHTMLLinks(text) {
-    // black magic happens here ...
-    const exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-    return text.replace(exp, '<a href=\'$1\'>$1</a>');
+  getSectionText(sectionName: string): string {
+    switch (sectionName) {
+      case 'presentation': return this.university.presentation_text;
+      case 'admission': return this.university.admission_text;
+      case 'student': return this.university.student_life_text;
+      case 'cost': return this.university.cost_of_living_text;
+    }
   }
+
 
 }
