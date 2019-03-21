@@ -1,4 +1,4 @@
-import { University } from 'src/models/university';
+import { University } from 'src/models/University';
 
 export const UNIVERSITIES_MOCKED: University[] = [
   {

@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { UniversityService } from 'src/services/university/university.service';
-import { University } from 'src/models/university';
+import { University } from 'src/models/University';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
-import { Section } from 'src/models/section';
+import { Section } from 'src/models/Section';
 import { DetailsService } from 'src/services/details/details.service';
-import { UNIVERSITY_SECTIONS } from './university.sections.enum';
-import { SectionSelectorComponent } from 'src/app/utility/section-selector/section-selector.component';
+import { UNIVERSITY_SECTIONS, UNIVERSITY_SECTION_ICONS } from './UniversitySections.enum';
 
 @Component({
   selector: 'app-university-details',
@@ -17,25 +15,16 @@ export class UniversityDetailsComponent implements OnInit {
 
   public university: University;
   public universitySections: Section[] = [];
-  // public sectionList: Section[] = [{id: 'presentation', name: 'Présentation', icon: 'fas fa-info'},
-  //   {id: 'admission', name: 'Admission/contrat', icon: 'fas fa-file-contract'},
-  //   {id: 'studentLife', name: 'Vie étudiante', icon: 'fas fa-graduation-cap'},
-  //   {id: 'costOfLife', name: 'Coût de la vie', icon: 'fas fa-money-bill-alt'},
-  //   {id: 'advice', name: 'Avis', icon: 'fas fa-users'}];
 
   constructor(
     private universityService: UniversityService,
     private detailsService: DetailsService,
-    private route: ActivatedRoute,
-    private location: Location
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
     this.universityService.getUniversity(this.route.snapshot.paramMap.get('name')).subscribe(uni => this.university = uni);
-    this.detailsService.enumSelector(UNIVERSITY_SECTIONS).forEach(obj => {
-      this.universitySections.push(<Section>{ id: obj.title, name: obj.value });
-    });
-    // this.universitySections.forEach(e => console.log(`element:`, e.id, e.name));
+    this.fillSectionContent();
   }
 
   getSectionText(sectionName: string): string {
@@ -47,5 +36,10 @@ export class UniversityDetailsComponent implements OnInit {
     }
   }
 
+  fillSectionContent() {
+    this.detailsService.enumSelector(UNIVERSITY_SECTIONS).forEach(obj => {
+      this.universitySections.push(<Section>{ id: obj.title, name: obj.value, icon: UNIVERSITY_SECTION_ICONS[obj.title]});
+    });
+  }
 
 }

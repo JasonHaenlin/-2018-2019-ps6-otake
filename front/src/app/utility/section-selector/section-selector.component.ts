@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Section } from 'src/models/section';
+import { Section } from 'src/models/Section';
 
 @Component({
   selector: 'app-section-selector',

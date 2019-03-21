@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { University } from 'src/models/university';
-import { UNIVERSITIES_MOCKED } from 'src/mocks/universities.mock';
+import { University } from 'src/models/University';
+import { UNIVERSITIES_MOCKED } from 'src/mocks/Universities.mock';
 import { API_URL } from '../httpHelper';
 
 @Injectable({
