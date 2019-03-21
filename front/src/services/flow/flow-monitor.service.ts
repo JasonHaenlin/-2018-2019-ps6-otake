@@ -10,7 +10,7 @@ export class FlowMonitorService {
 
   constructor() { }
 
-  getFlowControl(): Observable<boolean> {
+  getFlowUpdate(): Observable<boolean> {
     return this.flowStarted$;
   }
 

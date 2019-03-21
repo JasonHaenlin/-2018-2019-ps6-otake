@@ -7,21 +7,28 @@
 
 .window-container {
   background-color: $blue3;
-  z-index: 9;
+  z-index: 8;
   transition: width 1s;
+  box-shadow: $shadow;
+  display: grid;
+}
+
+.btn-hide {
+  height: 1rem;
+  width: 100%;
 }
 
 .arrow-container {
   display: flex;
   align-items: center;
-  z-index: 8;
+  z-index: 9;
 }
 
 .arrow {
   display: flex;
   align-items: center;
   background-color: $blue3;
-  box-shadow: $shadow;
+  box-shadow: 6px 2px 6px 0 rgba(0, 0, 0, 0.1);
   width: 1rem;
   height: 4rem;
   border-bottom-right-radius: 1em;
@@ -29,7 +36,7 @@
   transition: transform 0.5s, font-size 0.5s;
 }
 
-i {
+span {
   color: $white;
 }
 
@@ -40,7 +47,7 @@ i {
 }
 
 .closed {
-  width: 0.5rem;
+  width: 3rem;
 }
 
 .opened {

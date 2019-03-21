@@ -1,13 +1,16 @@
 <div class="task">
   <div class="window-container" [ngClass]="windowState ? 'opened' : 'closed'">
+    <div class="btn-hide">
+
+    </div>
     <div class="window">
 
     </div>
   </div>
   <div class="arrow-container">
     <div class="arrow" (click)="updateWindowState()">
-      <i [ngClass]="windowState ?'fas fa-angle-left': 'fas fa-angle-right'">
-      </i>
+      <span [ngClass]="windowState ?'fas fa-angle-left': 'fas fa-angle-right'">
+      </span>
     </div>
   </div>
 </div>
