@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-flow-window',
@@ -9,7 +9,18 @@ export class FlowWindowComponent implements OnInit {
 
   public windowState = true;
 
-  constructor() { }
+  @HostListener('document:click', ['$event'])
+  clickout(event) {
+    console.log(event.target);
+    console.log(this.eRef.nativeElement);
+
+    if (this.eRef.nativeElement.contains(event.target)) {
+      this.windowState = true;
+    } else {
+      this.windowState = false;
+    }
+  }
+  constructor(private eRef: ElementRef) { }
 
   ngOnInit() {
   }
