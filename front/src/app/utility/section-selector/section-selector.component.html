@@ -1,15 +1,12 @@
-<!-- <div id="sectionList" *ngFor="let s of sectionList">
-  <ng-container *ngIf="s === section; else elseTemplate">
-    <div (click)="selectSection(s)"><b>{{ s }}</b></div>
-  </ng-container>
-  <ng-template #elseTemplate>
-    <div (click)="selectSection(s)">{{ s }}</div>
-  </ng-template>
+<div id="sectionList" *ngFor="let s of sectionList">
+  <a [routerLink]="['/'] + activeRoute" fragment="{{s.id}}">
+    <div><strong><span [ngClass]="s.icon"></span>{{ s.name }}</strong></div>
+  </a>
   <br>
-</div> -->
+</div>
 
-<ul class="section-list">
+<!-- <ul class="section-list">
   <li *ngFor="let s of sections">
       <a [routerLink]="['/'] + activeRoute" fragment="{{s.title}}">{{ s.value }}</a>
   </li>
-</ul>
+</ul> -->
