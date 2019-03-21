@@ -52,8 +52,7 @@ span {
   transform: translate(-26em, 0);
 }
 
-// Cette fonction est expérimentale,
-// marche principalement pour Firefox
+// experimental function, work for Firefox
 .scroller {
   overflow-y: auto;
   scrollbar-color: $blue3 $blue4;
@@ -76,3 +75,5 @@ span {
 #scroller-alt::-webkit-scrollbar {
   width: 10px;
 }
+
+// need something for edge and IE ?

@@ -15,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import { MySchoolModule } from './my-school/my-school.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UtilityModule } from './utility/utility.module';
+import { FlowPageComponent } from './flow-monitor/flow-page/flow-page.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { UtilityModule } from './utility/utility.module';
     FlowStarterComponent,
     FlowWindowComponent,
     FlowStepComponent,
+    FlowPageComponent,
   ],
   imports: [
     ReactiveFormsModule,

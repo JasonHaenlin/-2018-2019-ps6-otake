@@ -1,5 +1,5 @@
 <div class="task" [ngClass]="{'closed': !windowState}">
-  <div class="window-container scroller" id="scroll">
+  <div class="window-container scroller" id="scroller-alt">
     <div class="window" *ngFor="let step of stepList">
       <app-flow-step [stage]="step"></app-flow-step>
     </div>

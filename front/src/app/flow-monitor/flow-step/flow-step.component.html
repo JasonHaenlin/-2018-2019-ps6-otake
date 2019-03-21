@@ -3,12 +3,12 @@
     {{stage.label}}
     <label class="container" *ngFor="let text of stage.text">
       {{text}}
-      <input type="checkbox">
-      <span class="checkmark"></span>
+      <input type="checkbox" (change)="onChangeCategory($event.target.checked)">
+      <span class=" checkmark"></span>
     </label>
   </div>
   <div class="trace-box">
-    <div class="step">{{stage.id}}</div>
+    <div class="step" [class.done]="isDone">{{stage.id}}</div>
     <div class="arrow">
       <span class="fas fa-chevron-down"></span>
     </div>
