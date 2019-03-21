@@ -29,7 +29,7 @@ export const STEP_LIST: Step[] = [
   },
   {
     id: 4,
-    label: 'Renseignement personnels',
+    label: 'Renseignements personnels',
     text: [
       'Télécharger le dossier de mobilité',
       'Vérifier vos cours (ex: 30 ECTS ou 10 Crédits)'

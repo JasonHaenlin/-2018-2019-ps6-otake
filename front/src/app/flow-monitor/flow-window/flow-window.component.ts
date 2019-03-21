@@ -1,3 +1,4 @@
+import { STEP_LIST } from './step.data';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { Step } from '../flow-step/step';
@@ -22,7 +23,7 @@ import { Step } from '../flow-step/step';
 export class FlowWindowComponent implements OnInit {
 
   public windowState = true;
-  public stepList: Step[] = [];
+  public stepList: Step[] = STEP_LIST;
 
   @HostListener('document:click', ['$event'])
   clickout(event) {

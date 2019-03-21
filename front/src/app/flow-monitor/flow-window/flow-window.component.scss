@@ -49,5 +49,30 @@ span {
 }
 
 .closed {
-  transform: translate(-25em, 0);
+  transform: translate(-26em, 0);
+}
+
+// Cette fonction est expérimentale,
+// marche principalement pour Firefox
+.scroller {
+  overflow-y: auto;
+  scrollbar-color: $blue3 $blue4;
+  scrollbar-width: thin;
+}
+
+// Work on most IOS browser and Chrome.
+#scroller-alt::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: $blue4;
+}
+
+#scroller-alt::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: $blue3;
+}
+
+#scroller-alt::-webkit-scrollbar {
+  width: 10px;
 }
