@@ -1,5 +1,4 @@
 @import '../styles/variables.scss';
-
 .container {
    margin: 30px; 
 }
@@ -9,11 +8,11 @@
 }
 
 .content-title {
-    color: $blue2;
-    font-size: 29px;
+    font-size: 24px;
 }
 
 .content-paragraph {
-    font-size: 17px;
     text-align: justify;
+    line-height: 1.6;
+    font-size: 18px;
 }
