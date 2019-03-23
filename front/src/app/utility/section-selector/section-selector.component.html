@@ -1,5 +1,5 @@
 <div class="sectionList" *ngFor="let s of sectionList">
-  <a [routerLink]="['/'] + activeRoute" fragment="{{s.id}}">
+  <a [routerLink]="['./']" fragment="{{s.id}}">
     <div><strong><span [ngClass]="s.icon"></span>{{ s.name }}</strong></div>
   </a>
   <br>

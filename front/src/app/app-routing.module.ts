@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CommonModule } from '@angular/common';
 import { UniversityDetailsComponent } from './university/university-details/university-details.component';
+import { UniversityListComponent } from './university/university-list/university-list.component';
 
 
 const routes: Routes = [
@@ -10,8 +11,13 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: PageNotFoundComponent },
   { path: 'school', component: PageNotFoundComponent },
-  { path: 'university-details/:name', component: UniversityDetailsComponent},
-  { path: 'exchange-universities/:id', component: PageNotFoundComponent },
+  // { path: 'university-details/:name', component: UniversityDetailsComponent},
+  { path: 'exchange-universities', component: UniversityListComponent,
+    children: [
+      { path: 'details', component: UniversityDetailsComponent},
+      // { path: 'map', component: xxxx}
+    ]
+  },
   { path: 'testimonials', component: PageNotFoundComponent },
   { path: 'financialAids', component: PageNotFoundComponent },
   { path: 'calendar', component: PageNotFoundComponent },

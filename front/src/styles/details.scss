@@ -9,10 +9,23 @@
 
 .content-title {
     font-size: 24px;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .content-paragraph {
     text-align: justify;
     line-height: 1.6;
     font-size: 18px;
+    color: $paragraphsText;
+}
+
+hr {
+    margin-top: 0px !important; 
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #CCC;
+    margin: 1em 0;
+    padding: 0; 
 }
