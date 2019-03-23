@@ -9,6 +9,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HeaderComponent } from './header/header.component';
 import { UniversityDetailsComponent } from './university/university-details/university-details.component';
 import { SectionSelectorComponent } from './utility/section-selector/section-selector.component';
+import { UniversityCardComponent } from './university/university-card/university-card.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { SectionSelectorComponent } from './utility/section-selector/section-sel
     HeaderComponent,
     UniversityDetailsComponent,
     SectionSelectorComponent,
+    UniversityCardComponent,
   ],
   imports: [
     BrowserModule,
