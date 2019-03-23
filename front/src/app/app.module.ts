@@ -9,7 +9,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HeaderComponent } from './header/header.component';
 import { UniversityDetailsComponent } from './university/university-details/university-details.component';
 import { SectionSelectorComponent } from './utility/section-selector/section-selector.component';
+<<<<<<< HEAD
 import { UniversityListComponent } from './university/university-list/university-list.component';
+=======
+import { UniversityCardComponent } from './university/university-card/university-card.component';
+>>>>>>> 678b441637e446a5e9c2bfb4a45293a300b0c224
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { UniversityListComponent } from './university/university-list/university
     HeaderComponent,
     UniversityDetailsComponent,
     SectionSelectorComponent,
+<<<<<<< HEAD
     UniversityListComponent,
+=======
+    UniversityCardComponent,
+>>>>>>> 678b441637e446a5e9c2bfb4a45293a300b0c224
   ],
   imports: [
     BrowserModule,
