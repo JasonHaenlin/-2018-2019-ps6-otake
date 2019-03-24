@@ -1,7 +1,8 @@
-<div class="container" *ngIf="university">
+<div class="university-details">
+  <div class="container" *ngIf="university">
 
-  <!-- TEST -->
-  <!-- <ul>
+    <!-- TEST -->
+    <!-- <ul>
     <li> <a [routerLink]="['/'] + activeRoute" fragment="presentation"> Presentation </a></li>
     <li> <a [routerLink]="['/'] + activeRoute" fragment="admission"> Admission </a></li>
     <li> <a [routerLink]="['/'] + activeRoute" fragment="student"> Vie étudiante </a></li>
@@ -9,11 +10,16 @@
     <li> <a [routerLink]="['/'] + activeRoute" fragment="advice"> Avis </a></li>
   </ul> -->
 
-  <section *ngFor="let section of universitySections" id="{{ section.id }}" class="part-content">
-    <h2 class="content-title">{{ section.name }}</h2>
-    <div class="content-paragraph">{{ getSectionText(section.id) }}</div>
-  </section>
-  
-</div>
+    <section *ngFor="let section of universitySections" id="{{ section.id }}" class="part-content">
+      <h2 class="content-title">{{ section.name }}</h2>
+      <div class="content-paragraph">{{ getSectionText(section.id) }}</div>
+    </section>
 
-<app-section-selector [sectionList]="universitySections"></app-section-selector>
+  </div>
+  <br>
+  <div class="selector-container">
+    <div class="selector">
+      <app-section-selector [sectionList]="universitySections"></app-section-selector>
+    </div>
+  </div>
+</div>
