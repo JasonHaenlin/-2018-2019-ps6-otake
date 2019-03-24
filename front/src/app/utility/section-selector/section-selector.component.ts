@@ -13,10 +13,7 @@ export class SectionSelectorComponent implements OnInit {
   @Input()
   sectionList: Section[];
 
-  public activeRoute: string = this.route.snapshot.url.toString().replace(',', '/');
-
-  constructor(private route: ActivatedRoute
-    ) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {  }
 
