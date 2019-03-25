@@ -15,7 +15,7 @@ export class UniversityCardComponent implements OnInit {
   university: UniversityCard;
 
   constructor() {
-    this.university = this.universityCards.pop()
+    this.university = this.universityCards.pop();
   }
 
   ngOnInit() {

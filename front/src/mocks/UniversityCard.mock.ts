@@ -12,4 +12,4 @@ export const UNIVERCITY_CARD_MOCKED: UniversityCard[] = [
     nb_of_place: 4,
     language: ' Cantonese, English'
   }
-]
+];

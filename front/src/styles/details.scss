@@ -3,10 +3,6 @@
    margin: 30px; 
 }
 
-.part-content {
-
-}
-
 .content-title {
     font-size: 24px;
     margin-bottom: 0;
@@ -21,12 +17,10 @@
 }
 
 .selector-container {
-    // position: fixed;
-    // left: 0;
     position: relative;
     float: right;
     top: 20%;
-    width: 100em;
+    width: 11em;
     margin-top: -1.5em;
 }
 
@@ -36,6 +30,7 @@
     top: 30%;
 }
 
+// Horizontal line under titles
 hr {
     margin-top: 0px !important; 
     display: block;

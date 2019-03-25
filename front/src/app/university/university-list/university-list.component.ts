@@ -11,7 +11,7 @@ export class UniversityListComponent implements OnInit {
   destination: string;
   department: string;
   language: string;
-  onDetails: boolean = false;
+  onDetails: boolean;
 
   constructor(private route: ActivatedRoute, private router: Router, private location: Location) { }
 
@@ -21,13 +21,14 @@ export class UniversityListComponent implements OnInit {
       this.department = params.department;
       this.language = params.department;
     });
+    this.onDetails = false;
   }
 
   switchDetailsOrListView() {
     this.onDetails = !this.onDetails;
   }
 
-  goBack(){
+  goBack() {
     this.location.back();
   }
 
