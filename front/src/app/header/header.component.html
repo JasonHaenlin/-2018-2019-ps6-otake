@@ -6,11 +6,11 @@
 
   <div class="nav-bar navigation-font">
 
-    <a class="dropdown" [routerLink]="[ '/school' ]" routerLinkActive="active">
+    <a class="dropdown" routerLinkActive="active">
       Notre Ecole <span [ngClass]="arrow_icon"></span>
       <div class="dropdown-content">
         <a *ngFor="let major of (majorList$ | async)"
-          [routerLink]="[ '/school/', major.title ]">{{major.title}}</a>
+          [routerLink]="[ '/school/', major.shorthand ]">{{major.title}}</a>
       </div>
     </a>
 
@@ -19,7 +19,7 @@
       <span [ngClass]="arrow_icon"></span>
       <div class="dropdown-content">
         <a *ngFor="let area of (areaList$ | async)"
-          (click)="goToUniversityList(area.id)">{{area.name}}</a>
+          (click)="goToUniversityList(area.shorthand)">{{area.name}}</a>
       </div>
     </a>
 
