@@ -3,11 +3,11 @@
 
     <!-- TEST -->
     <!-- <ul>
-    <li> <a [routerLink]="['/'] + activeRoute" fragment="presentation"> Presentation </a></li>
-    <li> <a [routerLink]="['/'] + activeRoute" fragment="admission"> Admission </a></li>
-    <li> <a [routerLink]="['/'] + activeRoute" fragment="student"> Vie étudiante </a></li>
-    <li> <a [routerLink]="['/'] + activeRoute" fragment="cost"> Coût de la vie </a></li>
-    <li> <a [routerLink]="['/'] + activeRoute" fragment="advice"> Avis </a></li>
+    <li> <a [routerLink]="['./']" fragment="presentation"> Presentation </a></li>
+    <li> <a [routerLink]="['./']" fragment="admission"> Admission </a></li>
+    <li> <a [routerLink]="['./']" fragment="student"> Vie étudiante </a></li>
+    <li> <a [routerLink]="['./']" fragment="cost"> Coût de la vie </a></li>
+    <li> <a [routerLink]="['./']" fragment="advice"> Avis </a></li>
   </ul> -->
 
     <section *ngFor="let section of universitySections" id="{{ section.id }}" class="part-content">
@@ -16,10 +16,13 @@
     </section>
 
   </div>
+  
   <br>
+
   <div class="selector-container">
     <div class="selector">
       <app-section-selector [sectionList]="universitySections"></app-section-selector>
     </div>
   </div>
+
 </div>
