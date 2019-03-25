@@ -7,8 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UniversityModule } from './exchange-universities/university.module';
 import { HeaderComponent } from './header/header.component';
-import { MajorDetailsComponent } from './my-school/major-details/major-details.component';
-import { SpecialityDetailsComponent } from './my-school/speciality-details/speciality-details.component';
+import { MySchoolModule } from './my-school/my-school.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UtilityModule } from './utility/utility.module';
 
@@ -17,17 +16,18 @@ import { UtilityModule } from './utility/utility.module';
     AppComponent,
     HeaderComponent,
     PageNotFoundComponent,
-    MajorDetailsComponent,
-    SpecialityDetailsComponent,
   ],
   imports: [
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+
     BrowserAnimationsModule,
     BrowserModule,
-    UniversityModule,
+
     UtilityModule,
+    UniversityModule,
+    MySchoolModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

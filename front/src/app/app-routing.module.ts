@@ -1,3 +1,4 @@
+import { MySchoolModule } from './my-school/my-school.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
@@ -8,20 +9,16 @@ import { UniversityModule } from './exchange-universities/university.module';
 
 
 const routes: Routes = [
-
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+
   { path: 'home', component: PageNotFoundComponent },
-  {
-    path: 'school/:major', component: MajorDetailsComponent,
-    children: [
-      { path: 'speciality/:name', component: SpecialityDetailsComponent }
-    ]
-  },
+  { path: 'school', loadChildren: () => MySchoolModule },
   { path: 'exchange-universities', loadChildren: () => UniversityModule },
   { path: 'testimonials', component: PageNotFoundComponent },
   { path: 'financial-aids', component: PageNotFoundComponent },
   { path: 'calendar', component: PageNotFoundComponent },
   { path: 'contacts', component: PageNotFoundComponent },
+
   // catch all the other routes
   { path: '**', component: PageNotFoundComponent },
 ];
