@@ -1,4 +1,5 @@
-.university-card {
+@import '../../../styles/card.scss';
+.card {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -8,6 +9,13 @@
 div>div {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  justify-content: space-evenly;
 }
+
+img {
+  height: 80%;
+  width: 80%;
+}
+
+
