@@ -8,6 +8,8 @@ import { Observable, throwError, of } from 'rxjs';
 import { University } from 'src/models/University';
 import { UNIVERSITIES_MOCKED } from 'src/mocks/Universities.mock';
 import { API_URL } from '../httpHelper';
+import {UNIVERCITY_CARD_MOCKED} from "../../mocks/UniversityCard.mock";
+import {Location, UniversityCard} from "../../models/UniversityCard";
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +18,7 @@ export class UniversityService {
 
   url = API_URL + 'universities/';
   private universities = UNIVERSITIES_MOCKED;
+  private universityCards = UNIVERCITY_CARD_MOCKED;
 
   constructor(private http: HttpClient) { }
 
@@ -28,6 +31,25 @@ export class UniversityService {
 
   getUniversities(): Observable<University[]> {
     return of(this.universities);
+  }
+
+  getUniversityCard(name: string): Observable<UniversityCard> {
+    return of(this.universityCards.find( u => u.name === name));
+  }
+
+  getUniversityCardList(location: Location): Observable<UniversityCard[]> {
+    const universityCardList: UniversityCard[] = [];
+    this.universityCards.forEach( u => {
+        if(u.location === location){
+          universityCardList.push(u);
+        }
+      }
+    )
+    return of(universityCardList);
+  }
+
+  getUniversityCards(): Observable<UniversityCard[]>{
+    return of(this.universityCards)
   }
 
   getMajors(): Observable<Major[]> {
