@@ -7,7 +7,9 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SectionSelectorComponent } from './utility/section-selector/section-selector.component';
-import { UniversityCardComponent } from './university/university-card/university-card.component';
+import { UniversityCardComponent } from './exchange-universities/university-card/university-card.component';
+import { MajorDetailsComponent } from './my-school/major-details/major-details.component';
+import { SpecialityDetailsComponent } from './my-school/speciality-details/speciality-details.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { UniversityCardComponent } from './university/university-card/university
     HeaderComponent,
     SectionSelectorComponent,
     UniversityCardComponent,
-    routingComponents
+    routingComponents,
+    MajorDetailsComponent,
+    SpecialityDetailsComponent
   ],
   imports: [
     BrowserModule,

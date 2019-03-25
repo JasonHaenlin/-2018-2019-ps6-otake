@@ -3,8 +3,8 @@ import { UniversityService } from 'src/services/university/university.service';
 import { University } from 'src/models/University';
 import { ActivatedRoute } from '@angular/router';
 import { Section } from 'src/models/Section';
-import { DetailsService } from 'src/services/details/details.service';
 import { UNIVERSITY_SECTIONS, UNIVERSITY_SECTION_ICONS } from './UniversitySections.enum';
+import { enumSelector } from 'src/app/utility/utilitary-functions';
 
 @Component({
   selector: 'app-university-details',
@@ -18,7 +18,6 @@ export class UniversityDetailsComponent implements OnInit {
 
   constructor(
     private universityService: UniversityService,
-    private detailsService: DetailsService,
     private route: ActivatedRoute
   ) { }
 
@@ -38,7 +37,7 @@ export class UniversityDetailsComponent implements OnInit {
   }
 
   fillSectionContent() {
-    this.detailsService.enumSelector(UNIVERSITY_SECTIONS).forEach(obj => {
+    enumSelector(UNIVERSITY_SECTIONS).forEach(obj => {
       this.universitySections.push(<Section>{ id: obj.title, name: obj.value, icon: UNIVERSITY_SECTION_ICONS[obj.title] });
     });
   }
