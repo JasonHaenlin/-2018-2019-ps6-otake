@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {UNIVERCITY_CARD_MOCKED} from '../../../mocks/UniversityCard.mock';
-import {UniversityCard} from '../../../models/UniversityCard';
+import { Component, Input, OnInit } from '@angular/core';
+import { UNIVERCITY_CARD_MOCKED } from '../../../mocks/UniversityCard.mock';
+import { UniversityCard } from '../../../models/UniversityCard';
 
 @Component({
   selector: 'app-university-card',

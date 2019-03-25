@@ -1,42 +1,41 @@
 @import '../styles/variables.scss';
 .container {
-   margin: 30px; 
+  margin: 30px;
 }
 
 .content-title {
-    font-size: 24px;
-    margin-bottom: 0;
-    padding-bottom: 0;
+  font-size: 24px;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .content-paragraph {
-    text-align: justify;
-    line-height: 1.6;
-    font-size: 18px;
-    color: $paragraphsText;
+  text-align: justify;
+  line-height: 1.6;
+  font-size: 18px;
+  color: $paragraphsText;
 }
 
 .selector-container {
-    position: relative;
-    float: right;
-    top: 20%;
-    width: 11em;
-    margin-top: -1.5em;
+  position: relative;
+  float: right;
+  top: 20%;
+  width: 11em;
+  margin-top: -1.5em;
 }
 
 .selector {
-    position: fixed;
-    float: right;
-    top: 30%;
+  position: fixed;
+  float: right;
+  top: 30%;
 }
 
-// Horizontal line under titles
 hr {
-    margin-top: 0px !important; 
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #CCC;
-    margin: 1em 0;
-    padding: 0; 
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #CCC;
+  margin: 1em 0;
+  margin-top: 0px;
+  padding: 0;
 }

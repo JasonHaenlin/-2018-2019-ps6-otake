@@ -11,15 +11,14 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: PageNotFoundComponent },
   { path: 'school', component: PageNotFoundComponent },
-  // { path: 'university-details/:name', component: UniversityDetailsComponent},
-  { path: 'exchange-universities', component: UniversityListComponent,
+  {
+    path: 'exchange-universities', component: UniversityListComponent,
     children: [
-      { path: 'details/:name', component: UniversityDetailsComponent},
-      // { path: 'map', component: xxxx}
+      { path: 'details/:name', component: UniversityDetailsComponent },
     ]
   },
   { path: 'testimonials', component: PageNotFoundComponent },
-  { path: 'financialAids', component: PageNotFoundComponent },
+  { path: 'financial-aids', component: PageNotFoundComponent },
   { path: 'calendar', component: PageNotFoundComponent },
   { path: 'contacts', component: PageNotFoundComponent },
   // catch all the other routes

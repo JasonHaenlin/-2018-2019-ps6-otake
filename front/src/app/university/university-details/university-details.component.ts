@@ -39,7 +39,7 @@ export class UniversityDetailsComponent implements OnInit {
 
   fillSectionContent() {
     this.detailsService.enumSelector(UNIVERSITY_SECTIONS).forEach(obj => {
-      this.universitySections.push(<Section>{ id: obj.title, name: obj.value, icon: UNIVERSITY_SECTION_ICONS[obj.title]});
+      this.universitySections.push(<Section>{ id: obj.title, name: obj.value, icon: UNIVERSITY_SECTION_ICONS[obj.title] });
     });
   }
 
