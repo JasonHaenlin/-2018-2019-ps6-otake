@@ -10,11 +10,10 @@ import { Section } from 'src/models/Section';
 
 export class SectionSelectorComponent implements OnInit {
 
-  @Input()
-  sectionList: Section[];
+  @Input() sectionList: Section[];
 
   constructor(private route: ActivatedRoute) { }
 
-  ngOnInit() {  }
+  ngOnInit() { }
 
 }

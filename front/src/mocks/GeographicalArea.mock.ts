@@ -1,4 +1,4 @@
-import { GeographicalArea } from '../models/GeographicalArea';
+import { GeographicalArea } from '../models/geographicalArea';
 
 export const GEOGRAPHICAL_AREA_MOCKED: GeographicalArea[] = [
   {

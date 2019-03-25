@@ -1,4 +1,4 @@
-import { Major } from '../models/Major';
+import { Major } from '../models/major';
 
 export const MAJOR_MOCKED: Major[] = [
   {

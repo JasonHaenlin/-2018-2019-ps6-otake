@@ -1,7 +1,7 @@
 import { GEOGRAPHICAL_AREA_MOCKED } from './../../mocks/GeographicalArea.mock';
-import { Major } from './../../models/Major';
+import { Major } from '../../models/Major';
 import { MAJOR_MOCKED } from './../../mocks/Major.mock';
-import { GeographicalArea } from './../../models/GeographicalArea';
+import { GeographicalArea } from '../../models/GeographicalArea';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError, of } from 'rxjs';

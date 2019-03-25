@@ -1,5 +1,5 @@
-import { Major } from './../../models/Major';
-import { GeographicalArea } from './../../models/GeographicalArea';
+import { Major } from '../../models/Major';
+import { GeographicalArea } from '../../models/GeographicalArea';
 import { Component, OnInit } from '@angular/core';
 import { UniversityService } from './../../services/university/university.service';
 import { Observable } from 'rxjs';
@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
   }
 
   goToUniversityList(area: string) {
-    this.router.navigate(['/exchange-universities'], { queryParams: { destination : area }, queryParamsHandling: 'merge' });
+    this.router.navigate(['/exchange-universities'], { queryParams: { destination: area }, queryParamsHandling: 'merge' });
   }
 
 }
