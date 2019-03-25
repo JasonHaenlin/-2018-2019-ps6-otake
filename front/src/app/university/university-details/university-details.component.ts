@@ -23,6 +23,7 @@ export class UniversityDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log('ng init details !');
     this.universityService.getUniversity(this.route.snapshot.paramMap.get('name')).subscribe(uni => this.university = uni);
     this.fillSectionContent();
   }

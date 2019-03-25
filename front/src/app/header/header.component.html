@@ -14,11 +14,10 @@
       </div>
     </a>
 
-    <a class="dropdown" [routerLink]="[ '/exchange-universities' ]" routerLinkActive="active">
-      Universités d'échanges <span [ngClass]="arrow_icon"></span>
+    <a class="dropdown" routerLinkActive="active">
+      <a (click)="goToUniversityList('all')">Universités d'échanges </a><span [ngClass]="arrow_icon"></span>
       <div class="dropdown-content">
-        <a *ngFor="let univ of (areaList$ | async)"
-          [routerLink]="[ '/exchangesUniversities/', univ.name ]">{{univ.name}}</a>
+        <a *ngFor="let area of (areaList$ | async)" (click)="goToUniversityList(area.id)">{{area.name}}</a>
       </div>
     </a>
 

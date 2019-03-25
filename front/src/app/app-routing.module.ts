@@ -14,7 +14,7 @@ const routes: Routes = [
   // { path: 'university-details/:name', component: UniversityDetailsComponent},
   { path: 'exchange-universities', component: UniversityListComponent,
     children: [
-      { path: 'details', component: UniversityDetailsComponent},
+      { path: 'details/:name', component: UniversityDetailsComponent},
       // { path: 'map', component: xxxx}
     ]
   },
@@ -40,3 +40,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+export const routingComponents = [UniversityDetailsComponent, UniversityListComponent, PageNotFoundComponent];

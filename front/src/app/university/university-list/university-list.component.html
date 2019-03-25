@@ -1,4 +1,11 @@
-<p>
-  university-list works!
-  <a [routerLink]="[ '/path', routeParam ]">go to cityU details</a>
-</p>
+<!-- TEST queryParams -->
+<!-- <p>
+  university-list works!<br>
+  dest: {{ destination }}<br>
+  dept: {{ department }}<br>
+  lang: {{ language }}
+</p> -->
+<!-- <button (click)="goToDetails('California Institute Of Technology')">Go to cityU details</button>/ -->
+<a (click)="switchDetailsOrListView()" [routerLink]="[ 'details', 'California Institute Of Technology' ]"> to details!</a>
+<button *ngIf="onDetails" (click)="switchDetailsOrListView(); goBack()">Back</button>
+<router-outlet *ngIf="onDetails"></router-outlet>
