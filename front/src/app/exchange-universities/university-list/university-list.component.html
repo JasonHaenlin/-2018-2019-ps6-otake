@@ -1,2 +1,7 @@
 <a [routerLink]="[ 'details', 'California Institute Of Technology' ]"> to details!</a>
-<app-university-card></app-university-card>
+<div class="university-card-list">
+  <div class="university-card" *ngFor="let universityCard of universityCardList">
+    <app-university-card [university]="universityCard">
+    </app-university-card>
+  </div>
+</div>

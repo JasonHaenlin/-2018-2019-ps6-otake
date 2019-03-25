@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { UNIVERCITY_CARD_MOCKED } from '../../../mocks/UniversityCard.mock';
 import { UniversityCard } from '../../../models/UniversityCard';
 
 @Component({
@@ -9,13 +8,10 @@ import { UniversityCard } from '../../../models/UniversityCard';
 })
 export class UniversityCardComponent implements OnInit {
 
-  public universityCards = UNIVERCITY_CARD_MOCKED;
-
   @Input()
   university: UniversityCard;
 
   constructor() {
-    this.university = this.universityCards.pop();
   }
 
   ngOnInit() {
