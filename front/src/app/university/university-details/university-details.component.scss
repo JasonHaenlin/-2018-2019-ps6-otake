@@ -1,1 +1,27 @@
 @import '../../../styles/details.scss';
+
+.university-details {
+    display: flex;
+}
+
+.container {
+    justify-content: center;
+    position: relative;
+    float: left;
+}
+
+.selector-container {
+    // position: fixed;
+    // left: 0;
+    position: relative;
+    float: right;
+    top: 20%;
+    width: 100em;
+    margin-top: -1.5em;
+}
+
+.selector {
+    position: fixed;
+    float: right;
+    top: 30%;
+}

@@ -1,3 +1,16 @@
 span {
     margin: 5px;
 }
+
+.link {
+    text-decoration: none;
+}
+
+.text {
+    color : black;
+    text-decoration: none;
+}
+
+.text:hover {
+    color : blue;
+}
