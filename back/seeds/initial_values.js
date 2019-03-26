@@ -3,7 +3,8 @@ const {
   valueCountry,
   valueGeographicalArea,
   valueMajor,
-  valueTicket
+  valueTicket,
+  valueCity
 } = require('../models/values');
 
 
@@ -13,5 +14,6 @@ exports.seed = (knex) => {
     .then(() => valueAuthor.seed(knex))
     .then(() => valueTicket.seed(knex))
     .then(() => valueGeographicalArea.seed(knex))
-    .then(() => valueCountry.seed(knex));
+    .then(() => valueCountry.seed(knex))
+    .then(() => valueCity.seed(knex));
 };

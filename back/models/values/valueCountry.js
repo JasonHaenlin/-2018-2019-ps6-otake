@@ -4,8 +4,8 @@ exports.seed = (knex) => {
     .then(() => {
       // Inserts seed entries
       return knex('country').insert([
-        { id: 0, name: 'HongKong', area_id: 1 },
-        { id: 1, name: 'Pasadena', area_id: 2 }
+        { id: 0, name: 'Chine', area_id: 1 },
+        { id: 1, name: 'Amérique', area_id: 2 }
       ]);
     });
 };

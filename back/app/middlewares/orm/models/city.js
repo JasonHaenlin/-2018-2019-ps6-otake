@@ -1,3 +1,4 @@
+
 const Model = require('./config');
 
 /**
@@ -8,49 +9,39 @@ const Model = require('./config');
  * within the child object has the value *Model.BelongsToOneRelation*
  * which says that each ticket is going to have one parent author.
  */
-class Country extends Model {
+class City extends Model {
   static get tableName() {
-    return 'country';
+    return 'city';
   }
 
   static get jsonSchema() {
     return {
       type: 'object',
-      required: ['name', 'area_id'],
+      required: ['name', 'country_id'],
 
       properties: {
         id: { type: 'integer' },
         name: { type: 'string', minLength: 5, maxLength: 100 },
-        area_id: { type: 'integer' }
+        country_id: { type: 'integer' }
       }
     };
   }
 
   static get relationMappings() {
     // we need this to avoid circular dependency
-    const GeographicalArea = require('./geographicalArea');
-    const City = require('./country');
+    const Country = require('./country');
 
     return {
-      geographical_area: {
+      country: {
         relation: Model.BelongsToOneRelation,
-        modelClass: GeographicalArea,
+        modelClass: Country,
         join: {
-          from: 'country.area_id',
-          to: 'geographical_area.id'
-        }
-      },
-
-      city: {
-        relation: Model.HasManyRelation,
-        modelClass: City,
-        join: {
-          from: 'country.id',
-          to: 'city.country_id'
+          from: 'city.country_id',
+          to: 'country.id'
         }
       }
     };
   }
 }
 
-module.exports = Country;
+module.exports = City;
