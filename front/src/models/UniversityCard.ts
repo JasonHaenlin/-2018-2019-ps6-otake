@@ -10,12 +10,3 @@ export interface UniversityCard {
   language?: string[];
   location?: string;
 }
-
-export enum Location {
-  Asia = 'Asie',
-  Europe = 'Europe',
-  North_America = 'Amérique du Nord',
-  South_America = 'Amérique du Sud',
-  African = 'Afrique',
-  Oceania = 'Australie',
-}

@@ -40,7 +40,6 @@ class GeographicalArea extends Model {
       }
     };
   }
-
 }
 
 module.exports = GeographicalArea;

@@ -44,6 +44,5 @@ describe('index route', () => {
         .get('/testErrorhandler')
         .expect(500);
     });
-
   });
 });

@@ -1,4 +1,4 @@
-import {Location, UniversityCard} from '../models/UniversityCard';
+import { UniversityCard } from '../models/UniversityCard';
 
 export const UNIVERCITY_CARD_MOCKED: UniversityCard[] = [
   {
@@ -10,7 +10,7 @@ export const UNIVERCITY_CARD_MOCKED: UniversityCard[] = [
     cost: '€€€€',
     small_picture: 'https://template.cityu.edu.hk/template/img/logos/cityu.png',
     nb_of_place: 4,
-    language: ['Cantonese','English'],
+    language: ['Cantonese', 'English'],
     location: 'Asie',
   },
   {

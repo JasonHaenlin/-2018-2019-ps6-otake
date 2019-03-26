@@ -26,4 +26,4 @@ exports.updateTicket = async (req, res) => {
 exports.deleteTicket = async (req, res) => {
   const deletedTicket = await ticket.deleteTicket(req.params.ticketId);
   resHandler.yahResponse(res, deletedTicket);
-}
+};

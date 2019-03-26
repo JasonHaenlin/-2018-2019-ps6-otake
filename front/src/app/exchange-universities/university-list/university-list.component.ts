@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {UniversityCard} from "../../../models/UniversityCard";
-import {UniversityService} from "../../../services/university/university.service";
+import { Component, OnInit } from '@angular/core';
+import { UniversityCard } from '../../../models/UniversityCard';
+import { UniversityService } from '../../../services/university/university.service';
 
 @Component({
   selector: 'app-university-list',
@@ -14,9 +14,9 @@ export class UniversityListComponent implements OnInit {
   constructor(public universityService: UniversityService) { }
 
   ngOnInit() {
-    this.universityService.getUniversityCards().subscribe( (universityCards) => {
+    this.universityService.getUniversityCards().subscribe((universityCards) => {
       this.universityCardList = universityCards;
-    })
+    });
   }
 
 }

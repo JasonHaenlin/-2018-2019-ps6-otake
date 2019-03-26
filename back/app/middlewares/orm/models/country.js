@@ -9,38 +9,38 @@ const Model = require('./config');
  * which says that each ticket is going to have one parent author.
  */
 class Country extends Model {
-    static get tableName() {
-        return 'country';
-    }
+  static get tableName() {
+    return 'country';
+  }
 
-    static get jsonSchema() {
-        return {
-            type: 'object',
-            required: ['name', 'area_id'],
+  static get jsonSchema() {
+    return {
+      type: 'object',
+      required: ['name', 'area_id'],
 
-            properties: {
-                id: { type: 'integer' },
-                name: { type: 'string', minLength: 5, maxLength: 100 },
-                area_id: { type: 'integer' }
-            }
-        };
-    }
+      properties: {
+        id: { type: 'integer' },
+        name: { type: 'string', minLength: 5, maxLength: 100 },
+        area_id: { type: 'integer' }
+      }
+    };
+  }
 
-    static get relationMappings() {
-        // we need this to avoid circular dependency
-        const GeographicalArea = require('./geographicalArea');
+  static get relationMappings() {
+    // we need this to avoid circular dependency
+    const GeographicalArea = require('./geographicalArea');
 
-        return {
-            geographical_area: {
-                relation: Model.BelongsToOneRelation,
-                modelClass: GeographicalArea,
-                join: {
-                    from: 'country.area_id',
-                    to: 'geographical_area.id'
-                }
-            }
-        };
-    }
+    return {
+      geographical_area: {
+        relation: Model.BelongsToOneRelation,
+        modelClass: GeographicalArea,
+        join: {
+          from: 'country.area_id',
+          to: 'geographical_area.id'
+        }
+      }
+    };
+  }
 }
 
 module.exports = Country;

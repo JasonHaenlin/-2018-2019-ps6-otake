@@ -5,9 +5,9 @@ const valueGeographicalArea = require('./valueGeographicalArea');
 const valueCountry = require('./valueCountry');
 
 module.exports = {
-    valueAuthor,
-    valueTicket,
-    valueMajor,
-    valueGeographicalArea,
-    valueCountry
+  valueAuthor,
+  valueTicket,
+  valueMajor,
+  valueGeographicalArea,
+  valueCountry
 };

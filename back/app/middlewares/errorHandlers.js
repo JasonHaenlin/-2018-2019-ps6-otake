@@ -4,6 +4,7 @@
 const logTheError = require('../config').logger.logTheError;
 
 module.exports = {
+  // eslint-disable-next-line no-unused-vars
   handleDevErrors: async (err, req, res, next) => {
     /* log the error using winston for all production errors */
     logTheError(err.stack || err);
@@ -20,6 +21,7 @@ module.exports = {
   /* centralizing all the errors */
   handleExceptions: fn =>
     (req, res, next) => {
+      // eslint-disable-next-line promise/no-callback-in-promise
       fn(req, res).catch((error) => next(error));
     }
 };

@@ -8,8 +8,8 @@ import { Observable, throwError, of } from 'rxjs';
 import { University } from 'src/models/University';
 import { UNIVERSITIES_MOCKED } from 'src/mocks/Universities.mock';
 import { API_URL } from '../httpHelper';
-import {UNIVERCITY_CARD_MOCKED} from "../../mocks/UniversityCard.mock";
-import {UniversityCard} from "../../models/UniversityCard";
+import { UNIVERCITY_CARD_MOCKED } from '../../mocks/UniversityCard.mock';
+import { UniversityCard } from '../../models/UniversityCard';
 
 @Injectable({
   providedIn: 'root'
@@ -34,22 +34,22 @@ export class UniversityService {
   }
 
   getUniversityCard(name: string): Observable<UniversityCard> {
-    return of(this.universityCards.find( u => u.name === name));
+    return of(this.universityCards.find(u => u.name === name));
   }
 
   getUniversityCardList(location: string): Observable<UniversityCard[]> {
     const universityCardList: UniversityCard[] = [];
-    this.universityCards.forEach( u => {
-        if(u.location === location){
-          universityCardList.push(u);
-        }
+    this.universityCards.forEach(u => {
+      if (u.location === location) {
+        universityCardList.push(u);
       }
+    }
     );
     return of(universityCardList);
   }
 
-  getUniversityCards(): Observable<UniversityCard[]>{
-    return of(this.universityCards)
+  getUniversityCards(): Observable<UniversityCard[]> {
+    return of(this.universityCards);
   }
 
   getMajors(): Observable<Major[]> {
