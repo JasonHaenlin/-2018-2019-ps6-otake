@@ -1,6 +1,6 @@
 import { UniversityCard } from '../models/UniversityCard';
-import {GeographicalArea} from "../models/GeographicalArea";
-import {GEOGRAPHICAL_AREA_MOCKED} from "./GeographicalArea.mock";
+import { GeographicalArea } from '../models/GeographicalArea';
+import { GEOGRAPHICAL_AREA_MOCKED } from './GeographicalArea.mock';
 
 export const UNIVERCITY_CARD_MOCKED: UniversityCard[] = [
   {

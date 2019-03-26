@@ -21,7 +21,7 @@ class City extends Model {
 
       properties: {
         id: { type: 'integer' },
-        name: { type: 'string', minLength: 5, maxLength: 100 },
+        name: { type: 'string', minLength: 5, maxLength: 50 },
         country_id: { type: 'integer' }
       }
     };

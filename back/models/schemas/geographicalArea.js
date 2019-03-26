@@ -2,9 +2,9 @@
 exports.up = (knex) => {
   return knex.schema.createTable('geographical_area', t => {
     t.increments('id').primary();
-    t.string('name').unique();
-    t.sting('shorthand');
-    t.string('icon');
+    t.string('name', 30).unique();
+    t.string('shorthand', 10);
+    t.string('icon', 100);
   }).catch((e) => {
     console.log('There was an error with the geographical_area table');
     console.log(e);

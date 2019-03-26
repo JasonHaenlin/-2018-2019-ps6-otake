@@ -21,7 +21,7 @@ class Ticket extends Model {
       properties: {
         id: { type: 'integer' },
         title: { type: 'string', minLength: 5, maxLength: 100 },
-        description: { type: ['string', 'null'], minLength: 5, maxLength: 255 },
+        description: { type: 'string', minLength: 5, maxLength: 255 },
         author_id: { type: 'integer' }
       }
     };

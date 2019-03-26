@@ -20,9 +20,9 @@ class Major extends Model {
 
       properties: {
         id: { type: 'integer' },
-        title: { type: 'string', minLength: 3, maxLength: 100 },
-        shorthand: { type: 'string', minLength: 1, maxLength: 9 },
-        icon: { type: ['string', 'null'], minLength: 5, maxLength: 255 }
+        title: { type: 'string', minLength: 5, maxLength: 50 },
+        shorthand: { type: 'string', minLength: 1, maxLength: 10 },
+        icon: { type: 'string', minLength: 5, maxLength: 100 }
       }
     };
   }

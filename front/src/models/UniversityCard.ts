@@ -1,4 +1,4 @@
-import {GeographicalArea} from "./GeographicalArea";
+import { GeographicalArea } from './GeographicalArea';
 
 export interface UniversityCard {
   name?: string;

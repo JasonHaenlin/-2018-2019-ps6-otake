@@ -20,7 +20,7 @@ class Country extends Model {
 
       properties: {
         id: { type: 'integer' },
-        name: { type: 'string', minLength: 5, maxLength: 100 },
+        name: { type: 'string', minLength: 5, maxLength: 50 },
         area_id: { type: 'integer' }
       }
     };

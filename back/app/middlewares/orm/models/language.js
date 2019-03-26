@@ -19,7 +19,7 @@ class Language extends Model {
       required: ['university_id', 'language', 'level'],
       properties: {
         university_id: { type: 'integer' },
-        language: { type: 'string' },
+        language: { type: 'string', minLength: 2, maxLength: 20 },
         level: { type: 'string', enum: ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'] }
       }
     };

@@ -21,17 +21,17 @@ class ExchangeUniversity extends Model {
 
       properties: {
         id: { type: 'integer' },
-        name: { type: 'string', minLength: 5, maxLength: 100 },
+        name: { type: 'string', minLength: 5, maxLength: 50 },
         city_id: { type: 'integer' },
         cost_of_living: { type: 'integer' },
         nb_of_place: { type: 'integer' },
         admission_rate: { type: 'integer' },
-        small_picture: { type: 'string', minLength: 5, maxLength: 500 },
-        big_picture: { type: 'string', minLength: 5, maxLength: 500 },
-        presentation_text: { type: 'string', minLength: 5, maxLength: 500 },
-        admission_text: { type: 'string', minLength: 5, maxLength: 500 },
-        student_life_text: { type: 'string', minLength: 5, maxLength: 500 },
-        cost_of_living_text: { type: 'string', minLength: 5, maxLength: 500 }
+        small_picture: { type: 'string', minLength: 5, maxLength: 100 },
+        big_picture: { type: 'string', minLength: 5, maxLength: 100 },
+        presentation_text: { type: 'string', minLength: 5, maxLength: 1000 },
+        admission_text: { type: 'string', minLength: 5, maxLength: 1000 },
+        student_life_text: { type: 'string', minLength: 5, maxLength: 1000 },
+        cost_of_living_text: { type: 'string', minLength: 5, maxLength: 1000 }
       }
     };
   }

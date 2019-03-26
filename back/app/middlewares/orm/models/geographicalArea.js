@@ -20,8 +20,9 @@ class GeographicalArea extends Model {
 
       properties: {
         id: { type: 'integer' },
-        name: { type: 'string', minLength: 3, maxLength: 100 },
-        icon: { type: ['string', 'null'], minLength: 5, maxLength: 255 }
+        name: { type: 'string', minLength: 3, maxLength: 30 },
+        shorthand: { type: 'string', minLength: 2, maxLength: 10 },
+        icon: { type: 'string', minLength: 5, maxLength: 100 }
       }
     };
   }
