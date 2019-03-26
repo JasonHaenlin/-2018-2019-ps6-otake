@@ -6,12 +6,12 @@ exports.up = (knex) => {
     t.integer('cost_of_living');
     t.integer('nb_of_place');
     t.integer('admission_rate');
-    t.string('small_picture', 100);
-    t.string('big_picture', 100);
-    t.string('presentation_text', 1000);
-    t.string('admission_text', 1000);
-    t.string('student_life_text', 1000);
-    t.string('cost_of_living_text', 1000);
+    t.string('small_picture', 255);
+    t.string('big_picture', 255);
+    t.string('presentation_text', 2000);
+    t.string('admission_text', 2000);
+    t.string('student_life_text', 2000);
+    t.string('cost_of_living_text', 2000);
   }).catch((e) => {
     console.log('There was an error with the exchange_university table');
     console.log(e);

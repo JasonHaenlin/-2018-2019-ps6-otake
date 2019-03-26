@@ -4,7 +4,7 @@ exports.up = (knex) => {
     t.increments('id').primary();
     t.string('name', 30).unique();
     t.string('shorthand', 10);
-    t.string('icon', 100);
+    t.string('icon', 255);
   }).catch((e) => {
     console.log('There was an error with the geographical_area table');
     console.log(e);

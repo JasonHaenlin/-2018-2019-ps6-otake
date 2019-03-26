@@ -1,13 +1,4 @@
 const Model = require('./config');
-
-/**
- * *tableName* return the name of the table
- * and relationMappings describe the relationship.
- * In this case, the key of the outside object ticket is how
- * we will refer to the parent class. The relation key
- * within the child object has the value *Model.HasManyRelation*
- * which says that each author can have multiple tickets.
- */
 class Language extends Model {
   static get tableName() {
     return 'language';
@@ -21,6 +12,21 @@ class Language extends Model {
         university_id: { type: 'integer' },
         language: { type: 'string', minLength: 2, maxLength: 20 },
         level: { type: 'string', enum: ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'] }
+      }
+    };
+  }
+  static get relationMappings() {
+    // we need this to avoid circular dependency
+    const University = require('./exchangeUniversity');
+
+    return {
+      university: {
+        relation: Model.HasManyRelation,
+        modelClass: University,
+        join: {
+          from: 'exchange_university.id',
+          to: 'language.university_id'
+        }
       }
     };
   }
