@@ -4,7 +4,8 @@ const {
   major,
   geographicalArea,
   country,
-  city
+  city,
+  exchangeUniversity
 } = require('../models/schemas');
 /**
  * All the table are created here
@@ -17,6 +18,7 @@ exports.up = (knex) => {
     .then(() => geographicalArea.up(knex))
     .then(() => country.up(knex))
     .then(() => city.up(knex))
+    .then(() => exchangeUniversity.up(knex))
     .then(() => author.up(knex))
     .then(() => ticket.up(knex))
     .catch((err) => console.log(err));
@@ -24,6 +26,7 @@ exports.up = (knex) => {
 
 exports.down = (knex) => {
   return major.down(knex)
+    .then(() => exchangeUniversity.down(knex))
     .then(() => city.down(knex))
     .then(() => country.down(knex))
     .then(() => geographicalArea.down(knex))

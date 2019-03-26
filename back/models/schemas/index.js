@@ -4,6 +4,7 @@ const major = require('./major');
 const geographicalArea = require('./geographicalArea');
 const country = require('./country');
 const city = require('./city');
+const exchangeUniversity = require('./exchangeUniversity');
 
 module.exports = {
   author,
@@ -11,5 +12,6 @@ module.exports = {
   major,
   geographicalArea,
   country,
-  city
+  city,
+  exchangeUniversity
 };

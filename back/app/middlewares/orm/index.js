@@ -4,6 +4,7 @@ const Major = require('./models/major');
 const GeographicalArea = require('./models/geographicalArea');
 const Country = require('./models/country');
 const City = require('./models/city');
+const ExchangeUniversity = require('./models/exchangeUniversity');
 
 // add all the tables here
 module.exports = {
@@ -13,4 +14,5 @@ module.exports = {
   GeographicalArea,
   Country,
   City,
+  ExchangeUniversity
 };
