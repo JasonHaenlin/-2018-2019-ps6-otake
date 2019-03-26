@@ -10,6 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // add all the routes
+app.use('/status', route.main);
 // school url
 app.use('/school', route.school);
 // universities url
