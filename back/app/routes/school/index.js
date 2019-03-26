@@ -1,8 +1,11 @@
-const resHandler = require('@utils/responseHandler');
-const major = require('@controller/school').major;
+const express = require('express');
+const handleExceptions = require('../../middlewares/errorHandlers').handleExceptions;
 
-// using the database
-exports.getMajors = async (req, res) => {
-  const majors = await major.getMajors();
-  resHandler.yahResponse(res, majors);
-};
+const major = require('./major');
+
+const school = express.Router();
+
+/* -- major -- */
+school.get('/majors', handleExceptions(major.getMajors));
+
+module.exports = school;

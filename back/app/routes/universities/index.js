@@ -1,8 +1,11 @@
-const resHandler = require('@utils/responseHandler');
-const geographicalArea = require('@controller/universities').geographicalArea;
+const express = require('express');
+const handleExceptions = require('../../middlewares/errorHandlers').handleExceptions;
 
-// using the database
-exports.getAreas = async (req, res) => {
-  const area = await geographicalArea.getAreas();
-  resHandler.yahResponse(res, area);
-};
+const geographicalArea = require('./geographicalArea');
+
+const universities = express.Router();
+
+/* -- geographicalArea -- */
+universities.get('/areas', handleExceptions(geographicalArea.getAreas));
+
+module.exports = universities;
