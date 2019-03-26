@@ -1,6 +1,6 @@
-import { GEOGRAPHICAL_AREA_MOCKED } from './../../mocks/GeographicalArea.mock';
+import { GEOGRAPHICAL_AREA_MOCKED } from '../../mocks/GeographicalArea.mock';
 import { Major } from '../../models/Major';
-import { MAJOR_MOCKED } from './../../mocks/Major.mock';
+import { MAJOR_MOCKED } from '../../mocks/Major.mock';
 import { GeographicalArea } from '../../models/GeographicalArea';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
@@ -9,7 +9,7 @@ import { University } from 'src/models/University';
 import { UNIVERSITIES_MOCKED } from 'src/mocks/Universities.mock';
 import { API_URL } from '../httpHelper';
 import {UNIVERCITY_CARD_MOCKED} from "../../mocks/UniversityCard.mock";
-import {Location, UniversityCard} from "../../models/UniversityCard";
+import {UniversityCard} from "../../models/UniversityCard";
 
 @Injectable({
   providedIn: 'root'
@@ -37,14 +37,14 @@ export class UniversityService {
     return of(this.universityCards.find( u => u.name === name));
   }
 
-  getUniversityCardList(location: Location): Observable<UniversityCard[]> {
+  getUniversityCardList(location: string): Observable<UniversityCard[]> {
     const universityCardList: UniversityCard[] = [];
     this.universityCards.forEach( u => {
         if(u.location === location){
           universityCardList.push(u);
         }
       }
-    )
+    );
     return of(universityCardList);
   }
 

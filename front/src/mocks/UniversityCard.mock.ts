@@ -10,8 +10,8 @@ export const UNIVERCITY_CARD_MOCKED: UniversityCard[] = [
     cost: '€€€€',
     small_picture: 'https://template.cityu.edu.hk/template/img/logos/cityu.png',
     nb_of_place: 4,
-    language: ' Cantonese, English',
-    location: Location.Asia,
+    language: ['Cantonese','English'],
+    location: 'Asie',
   },
   {
     name: 'California Institute Of Technology',
@@ -22,8 +22,8 @@ export const UNIVERCITY_CARD_MOCKED: UniversityCard[] = [
     cost: '€€€',
     small_picture: 'https://www.caltech.edu/static/core/img/caltech-new-logo.png',
     nb_of_place: 6,
-    language: 'English',
-    location: Location.North_America,
+    language: ['English'],
+    location: 'Amérique du Nord',
 
   }
 ];

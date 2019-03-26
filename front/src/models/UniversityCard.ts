@@ -7,8 +7,8 @@ export interface UniversityCard {
   cost?: string;
   small_picture?: string;
   nb_of_place?: number;
-  language?: string;
-  location?: Location;
+  language?: string[];
+  location?: string;
 }
 
 export enum Location {

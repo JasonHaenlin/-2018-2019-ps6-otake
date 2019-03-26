@@ -25,6 +25,22 @@ class GeographicalArea extends Model {
       }
     };
   }
+  static get relationMappings() {
+    // we need this to avoid circular dependency
+    const Country = require('./country');
+
+    return {
+      country: {
+        relation: Model.HasManyRelation,
+        modelClass: Country,
+        join: {
+          from: 'geographical_area.id',
+          to: 'country.area_id'
+        }
+      }
+    };
+  }
+
 }
 
 module.exports = GeographicalArea;
