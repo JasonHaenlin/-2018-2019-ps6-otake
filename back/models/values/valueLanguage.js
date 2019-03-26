@@ -5,7 +5,7 @@ exports.seed = (knex) => {
     .then(() => {
       // Inserts seed entries
       return knex('language').insert([
-        // { university_id: 1, language: '', level: B1 }
+        { university_id: 1, language: '', level: B1 }
       ]);
     });
 };
