@@ -1,4 +1,6 @@
 import { UniversityCard } from '../models/UniversityCard';
+import {GeographicalArea} from "../models/GeographicalArea";
+import {GEOGRAPHICAL_AREA_MOCKED} from "./GeographicalArea.mock";
 
 export const UNIVERCITY_CARD_MOCKED: UniversityCard[] = [
   {
@@ -11,7 +13,7 @@ export const UNIVERCITY_CARD_MOCKED: UniversityCard[] = [
     small_picture: 'https://template.cityu.edu.hk/template/img/logos/cityu.png',
     nb_of_place: 4,
     language: ['Cantonese', 'English'],
-    location: 'Asie',
+    location: GEOGRAPHICAL_AREA_MOCKED[1],
   },
   {
     name: 'California Institute Of Technology',
@@ -23,7 +25,7 @@ export const UNIVERCITY_CARD_MOCKED: UniversityCard[] = [
     small_picture: 'https://www.caltech.edu/static/core/img/caltech-new-logo.png',
     nb_of_place: 6,
     language: ['English'],
-    location: 'Amérique du Nord',
+    location: GEOGRAPHICAL_AREA_MOCKED[2],
 
   }
 ];

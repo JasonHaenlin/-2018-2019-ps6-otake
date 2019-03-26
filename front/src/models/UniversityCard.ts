@@ -1,3 +1,5 @@
+import {GeographicalArea} from "./GeographicalArea";
+
 export interface UniversityCard {
   name?: string;
   city?: string;
@@ -8,5 +10,5 @@ export interface UniversityCard {
   small_picture?: string;
   nb_of_place?: number;
   language?: string[];
-  location?: string;
+  location?: GeographicalArea;
 }
