@@ -1,5 +1,5 @@
-module.exports = class baseModels {
-  constructor(name, schema) {
+module.exports = class BaseModel {
+  constructor(name, schema, value = []) {
     if (!name) {
       throw new Error('You must provide a name in constructor of BaseModel');
     }
@@ -8,13 +8,14 @@ module.exports = class baseModels {
     }
     this.name = name;
     this.schema = schema;
+    this.value = value;
   }
 
   up(knex) {
     return knex.schema
       .createTable(this.name, this.schema)
       .then(() => console.log(this.name + ' Table created'))
-      .catch((e) => {
+      .catch(e => {
         console.log('There was an error with the ' + this.name + ' table');
         console.log(e);
       });
@@ -24,8 +25,19 @@ module.exports = class baseModels {
     return knex.schema
       .dropTable(this.name, this.schema)
       .then(() => console.log(this.name + ' table deleted'))
-      .catch((e) => {
-        console.log('there was an error deleting ' + this.name + ' table');
+      .catch(e => {
+        console.log('There was an error deleting ' + this.name + ' table');
+        console.log(e);
+      });
+  }
+
+  seed(knex) {
+    return knex(this.name)
+      .del()
+      .then(() => knex(this.name).insert(this.value))
+      .then(() => console.log('Values inserted in table ' + this.name))
+      .catch(e => {
+        console.log('There was an error seeding ' + this.name + ' table');
         console.log(e);
       });
   }

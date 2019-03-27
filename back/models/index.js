@@ -1,10 +1,10 @@
 const major = require('./major');
-const geographicalArea = require('./geographicalArea');
+const geographicalArea = require('./geographical-area');
 const country = require('./country');
 const city = require('./city');
-const exchangeUniversity = require('./exchangeUniversity');
+const exchangeUniversity = require('./exchange-university');
 const language = require('./language');
-const studyDepartement = require('./studyDepartement');
+const studyDepartement = require('./study-departement');
 
 module.exports = {
   major,

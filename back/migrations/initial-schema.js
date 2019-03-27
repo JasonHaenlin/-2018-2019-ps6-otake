@@ -4,7 +4,8 @@ const {
   country,
   city,
   exchangeUniversity
-} = require('../models/schemas');
+} = require('../models');
+
 /**
  * All the table are created here
  * be sure to create them in the right order
@@ -16,8 +17,7 @@ exports.up = (knex) => {
     .then(() => geographicalArea.up(knex))
     .then(() => country.up(knex))
     .then(() => city.up(knex))
-    .then(() => exchangeUniversity.up(knex))
-    .catch((err) => console.log(err));
+    .then(() => exchangeUniversity.up(knex));
 };
 
 exports.down = (knex) => {
@@ -25,6 +25,5 @@ exports.down = (knex) => {
     .then(() => exchangeUniversity.down(knex))
     .then(() => city.down(knex))
     .then(() => country.down(knex))
-    .then(() => geographicalArea.down(knex))
-    .catch((err) => console.log(err));
+    .then(() => geographicalArea.down(knex));
 };
