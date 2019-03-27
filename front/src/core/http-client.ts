@@ -1,11 +1,11 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { catchError } from 'rxjs/internal/operators';
+import { Observable, UnaryFunction, pipe } from 'rxjs';
 import { httpOptionsBase, serverUrl } from 'src/config/server.config';
-import { handleError } from './http-error';
+import { catchError, finalize, timeout } from 'rxjs/internal/operators';
+import { handleError } from './http-utils';
 
-
+const requestTimeout = 5000;
 @Injectable()
 export class ApplicationHttpClient {
 
@@ -28,7 +28,7 @@ export class ApplicationHttpClient {
     backupValue: any = null,
     options: Object = httpOptionsBase): Observable<T> {
     return this.http.get<T>(this.api + endPoint, options)
-      .pipe(catchError(handleError(operation, backupValue)));
+      .pipe(this.processPipe<T>(operation, backupValue));
   }
 
   /**
@@ -46,7 +46,7 @@ export class ApplicationHttpClient {
     backupValue: any = null,
     options: Object = httpOptionsBase): Observable<T> {
     return this.http.post<T>(this.api + endPoint, params, options)
-      .pipe(catchError(handleError(operation, backupValue)));
+      .pipe(this.processPipe<T>(operation, backupValue));
   }
 
   /**
@@ -64,7 +64,7 @@ export class ApplicationHttpClient {
     backupValue: any = null,
     options: Object = httpOptionsBase): Observable<T> {
     return this.http.put<T>(this.api + endPoint, params, options)
-      .pipe(catchError(handleError(operation, backupValue)));
+      .pipe(this.processPipe<T>(operation, backupValue));
   }
 
   /**
@@ -80,9 +80,17 @@ export class ApplicationHttpClient {
     backupValue: any = null,
     options: Object = httpOptionsBase): Observable<T> {
     return this.http.delete<T>(this.api + endPoint, options)
-      .pipe(catchError(handleError(operation, backupValue)));
+      .pipe(this.processPipe<T>(operation, backupValue));
   }
+
+  private processPipe = <T>(operation: string, backupValue?: T): UnaryFunction<Observable<{}>, Observable<any>> =>
+    pipe(
+      timeout(requestTimeout),
+      catchError(handleError<T>(operation, backupValue)),
+      finalize(() => { })
+    )
 }
+
 
 export function applicationHttpClientCreator(http: HttpClient) {
   return new ApplicationHttpClient(http);
