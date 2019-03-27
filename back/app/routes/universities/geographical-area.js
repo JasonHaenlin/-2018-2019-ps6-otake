@@ -1,4 +1,4 @@
-const resHandler = require('@utils/responseHandler');
+const resHandler = require('@utils/response-handler');
 const geographicalArea = require('@controller/universities').geographicalArea;
 
 // using the database

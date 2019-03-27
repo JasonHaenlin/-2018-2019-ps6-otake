@@ -22,7 +22,7 @@ class City extends Model {
   static get relationMappings() {
     // we need this to avoid circular dependency
     const Country = require('./country');
-    const ExchangeUniversity = require('./exchangeUniversity');
+    const ExchangeUniversity = require('./exchange-university');
 
     return {
       country: {

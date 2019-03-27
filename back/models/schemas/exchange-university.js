@@ -1,5 +1,5 @@
 
-const BaseModels = require('./baseModels');
+const BaseModels = require('./base-model');
 
 module.exports = new BaseModels('exchange_university', t => {
   t.increments('id').primary();

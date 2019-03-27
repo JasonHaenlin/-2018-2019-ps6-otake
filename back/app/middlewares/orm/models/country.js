@@ -32,7 +32,7 @@ class Country extends Model {
 
   static get relationMappings() {
     // we need this to avoid circular dependency
-    const GeographicalArea = require('./geographicalArea');
+    const GeographicalArea = require('./geographical-area');
     const City = require('./country');
 
     return {

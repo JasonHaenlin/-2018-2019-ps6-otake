@@ -1,5 +1,5 @@
 const express = require('express');
-const handleExceptions = require('../../middlewares/errorHandlers').handleExceptions;
+const handleExceptions = require('../../middlewares/error-handlers').handleExceptions;
 
 const major = require('./major');
 

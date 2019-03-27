@@ -1,7 +1,7 @@
 const express = require('express');
-const handleExceptions = require('../../middlewares/errorHandlers').handleExceptions;
+const handleExceptions = require('../../middlewares/error-handlers').handleExceptions;
 
-const geographicalArea = require('./geographicalArea');
+const geographicalArea = require('./geographical-area');
 
 const universities = express.Router();
 

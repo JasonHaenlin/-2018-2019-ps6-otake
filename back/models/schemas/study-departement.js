@@ -1,4 +1,4 @@
-const BaseModels = require('./baseModels');
+const BaseModels = require('./base-model');
 
 module.exports = new BaseModels('study_departement', t => {
   t.number('university_id').references('id').inTable('exchange_university');

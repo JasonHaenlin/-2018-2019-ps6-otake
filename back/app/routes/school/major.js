@@ -1,4 +1,4 @@
-const resHandler = require('@utils/responseHandler');
+const resHandler = require('@utils/response-handler');
 const major = require('@controller/school').major;
 
 // using the database

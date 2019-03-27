@@ -2,7 +2,7 @@ const express = require('express');
 const route = require('./routes');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
-const { handle404Error, handleDevErrors } = require('./middlewares/errorHandlers');
+const { handle404Error, handleDevErrors } = require('./middlewares/error-handlers');
 const app = express();
 
 app.use(logger('dev'));
