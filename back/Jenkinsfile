@@ -22,7 +22,7 @@ pipeline {
       steps {
         echo 'javascript Linter'
         dir('./back/'){
-          sh 'npm run eslint'
+          sh 'npm run lint'
         }
       }
     }
