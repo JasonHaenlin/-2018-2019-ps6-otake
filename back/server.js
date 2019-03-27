@@ -1,13 +1,12 @@
 /**
  * Module dependencies.
  */
-require('module-alias/register');
 require('dotenv').config();
 
 const http = require('http');
-const config = require('@config').server;
-const LogTheInfo = require('@config').logger.LogTheInfo;
-const logTheError = require('@config').logger.logTheError;
+const config = require('./app/config').server;
+const LogTheInfo = require('./app/config').logger.LogTheInfo;
+const logTheError = require('./app/config').logger.logTheError;
 const app = require('./app');
 
 /**

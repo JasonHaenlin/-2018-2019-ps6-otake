@@ -63,10 +63,10 @@
   "dependencies": {
     "babel-preset-es2015": "^6.24.1",
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "knex": "^0.16.3",
-    "module-alias": "^2.2.0",
     "morgan": "^1.9.1",
     "objection": "^1.6.3",
     "pg": "^7.8.1",
@@ -84,12 +84,5 @@
     "exclude": [
       "tests/**/*.spec.js"
     ]
-  },
-  "_moduleAliases": {
-    "@root": ".",
-    "@config": "app/config",
-    "@orm": "app/middlewares/orm",
-    "@utils": "app/utils",
-    "@controller": "app/controller"
   }
 }

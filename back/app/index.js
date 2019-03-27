@@ -1,10 +1,14 @@
 const express = require('express');
 const route = require('./routes');
+const cors = require('cors');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const { handle404Error, handleDevErrors, handleClientErrors } = require('./middlewares/error-handlers');
 const app = express();
 
+app.disable('x-powered-by');
+
+app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

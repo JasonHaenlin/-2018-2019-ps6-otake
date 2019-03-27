@@ -1,5 +1,5 @@
-const resHandler = require('@utils/response-handler');
-const major = require('@controller/school').major;
+const resHandler = require('../../utils/response-handler');
+const { major } = require('../../controller/school');
 
 // using the database
 exports.getMajors = async (req, res) => {

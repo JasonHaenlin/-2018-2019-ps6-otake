@@ -1,5 +1,5 @@
 // simple example using objection and knex
-const GeographicalArea = require('@orm').GeographicalArea;
+const { GeographicalArea } = require('../../middlewares/orm');
 
 module.exports = {
   getAreas() {
