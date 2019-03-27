@@ -2,7 +2,7 @@ const express = require('express');
 const route = require('./routes');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
-const { handle404Error, handleDevErrors } = require('./middlewares/error-handlers');
+const { handle404Error, handleDevErrors, handleClientErrors } = require('./middlewares/error-handlers');
 const app = express();
 
 app.use(logger('dev'));
@@ -18,7 +18,11 @@ app.use('/universities', route.universities);
 
 // catch 404 and forward to error handler
 app.use(handle404Error);
-// error handler
+
+// client error handler
+app.use(handleClientErrors);
+
+// dev error handler
 app.use(handleDevErrors);
 
 module.exports = app;
