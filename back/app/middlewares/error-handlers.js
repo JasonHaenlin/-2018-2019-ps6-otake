@@ -1,15 +1,18 @@
+/* eslint-disable promise/no-callback-in-promise */
+/* eslint-disable no-unused-vars */
 
-/* this js file halps us in handling erros */
+/* this js file helps us in handling errors */
+/* we will be centralizing all the errors at one place */
 
 const logTheError = require('../config').logger.logTheError;
 
-/* we will be centralizing all the errors at one place */
 module.exports = {
-  // eslint-disable-next-line no-unused-vars
-  handleClientErrors: async (err, req, res, next) => {
+  logErrors(err, req, res, next) {
     /* log the error using winston for all production errors */
     logTheError(err.stack || err);
-    /* this is for pure API base */
+    next(err);
+  },
+  handleClientErrors: async (err, req, res, next) => {
     let message = 'something went wrong';
     if (process.env.NODE_ENV === 'development') {
       message = err.stack || err;
@@ -21,7 +24,6 @@ module.exports = {
       default: next(err);
     }
   },
-  // eslint-disable-next-line no-unused-vars
   handleDevErrors: async (err, req, res, next) => {
     if (process.env.NODE_ENV === 'development') {
       return res.status(500).json({ status: false, stack: err.stack || err });
@@ -35,7 +37,6 @@ module.exports = {
   /* centralizing all the errors */
   handleExceptions: fn =>
     (req, res, next) => {
-      // eslint-disable-next-line promise/no-callback-in-promise
       fn(req, res).catch((err) => next(err));
     }
 };

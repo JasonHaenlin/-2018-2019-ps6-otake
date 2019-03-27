@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha tests/ -R spec --recursive --exit",
-    "eslint": "./node_modules/.bin/eslint .",
+    "lint": "./node_modules/.bin/eslint -c .eslintrc.js app/",
+    "lint:fix": "./node_modules/.bin/eslint -c .eslintrc.js app/ --fix",
     "dev": "nodemon -e js -w ./ ./server.js",
     "start": "node --trace-warnings ./server.js",
     "knex": "knex",

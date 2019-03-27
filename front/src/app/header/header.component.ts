@@ -1,9 +1,10 @@
-import { Major } from '../../models/Major';
-import { GeographicalArea } from '../../models/GeographicalArea';
 import { Component, OnInit } from '@angular/core';
-import { UniversityService } from './../../services/university/university.service';
-import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { serverUrl } from 'src/config/server.config';
+import { GeographicalArea } from '../../models/GeographicalArea';
+import { Major } from '../../models/Major';
+import { UniversityService } from './../../services/university/university.service';
 
 @Component({
   selector: 'app-header',

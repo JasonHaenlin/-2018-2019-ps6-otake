@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { MySchoolModule } from './my-school/my-school.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UtilityModule } from './utility/utility.module';
+import { ApplicationHttpClient, applicationHttpClientCreator } from 'src/core/http-client';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,13 @@ import { UtilityModule } from './utility/utility.module';
     UniversityModule,
     MySchoolModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: ApplicationHttpClient,
+      useFactory: applicationHttpClientCreator,
+      deps: [HttpClient]
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

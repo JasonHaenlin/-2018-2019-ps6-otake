@@ -4,9 +4,9 @@ module.exports = {
   /* for all the positive response */
   yahResponse: async (res, data, create = false) => {
     if (create) {
-      res.status(201).json({ status: true, data });
+      res.status(201).json(data);
     } else {
-      res.status(200).json({ status: true, data });
+      res.status(200).json(data);
     }
   },
   /* when something goes wrong */

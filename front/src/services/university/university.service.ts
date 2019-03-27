@@ -1,31 +1,27 @@
-import { GEOGRAPHICAL_AREA_MOCKED } from '../../mocks/GeographicalArea.mock';
-import { Major } from '../../models/Major';
-import { MAJOR_MOCKED } from '../../mocks/Major.mock';
-import { GeographicalArea } from '../../models/GeographicalArea';
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError, of } from 'rxjs';
-import { University } from 'src/models/University';
+import { Injectable } from '@angular/core';
+import { Observable, of, throwError } from 'rxjs';
 import { UNIVERSITIES_MOCKED } from 'src/mocks/Universities.mock';
-import { API_URL } from '../httpHelper';
+import { University } from 'src/models/University';
+import { GEOGRAPHICAL_AREA_MOCKED } from '../../mocks/GeographicalArea.mock';
+import { MAJOR_MOCKED } from '../../mocks/Major.mock';
 import { UNIVERCITY_CARD_MOCKED } from '../../mocks/UniversityCard.mock';
+import { GeographicalArea } from '../../models/GeographicalArea';
+import { Major } from '../../models/Major';
 import { UniversityCard } from '../../models/UniversityCard';
+import { ApplicationHttpClient } from 'src/core/http-client';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UniversityService {
 
-  url = API_URL + 'universities/';
   private universities = UNIVERSITIES_MOCKED;
   private universityCards = UNIVERCITY_CARD_MOCKED;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: ApplicationHttpClient) { }
 
   getUniversity(name: string): Observable<University> {
-    // return this.http.get<University>(this.url + id).pipe(
-    //   catchError(this.handleError)
-    // );
     return of(this.universities.find(u => u.name === name));
   }
 

@@ -3,7 +3,7 @@ const route = require('./routes');
 const cors = require('cors');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
-const { handle404Error, handleDevErrors, handleClientErrors } = require('./middlewares/error-handlers');
+const { handle404Error, handleDevErrors, handleClientErrors, logErrors } = require('./middlewares/error-handlers');
 const app = express();
 
 app.disable('x-powered-by');
@@ -21,7 +21,11 @@ app.use('/school', route.school);
 app.use('/universities', route.universities);
 
 // catch 404 and forward to error handler
+// triggered when a non-existent route attempts to be accessed
 app.use(handle404Error);
+
+// log the errors
+app.use(logErrors);
 
 // client error handler
 app.use(handleClientErrors);
