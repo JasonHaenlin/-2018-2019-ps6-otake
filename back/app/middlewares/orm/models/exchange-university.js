@@ -18,6 +18,7 @@ class ExchangeUniversity extends Model {
         cost_of_living: { type: 'integer' },
         nb_of_place: { type: 'integer' },
         admission_rate: { type: 'integer' },
+        type_of_file: { type: 'string', minLength: 5, maxLength: 20 },
         small_picture: { type: 'string', minLength: 5, maxLength: 255 },
         big_picture: { type: 'string', minLength: 5, maxLength: 255 },
         presentation_text: { type: 'string', minLength: 5, maxLength: 2000 },

@@ -7,7 +7,7 @@ module.exports = new BaseModel('geographical_area', t => {
   t.string('icon', 255);
 },
 [
-  { id: 0, name: 'Europe', shorthand: 'NA' },
+  { id: 0, name: 'Europe', shorthand: 'EU' },
   { id: 1, name: 'Asie', shorthand: 'AS' },
   { id: 2, name: 'Amérique du Nord', shorthand: 'NA' },
   { id: 3, name: 'Amérique du Sud', shorthand: 'SA' },
