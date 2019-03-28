@@ -16,7 +16,15 @@ const {
 
 exports.seed = (knex) => {
   // Deletes ALL existing entries
-  return major.seed(knex)
+  return studyDepartement.del(knex)
+    .then(() => language.del(knex))
+    .then(() => exchangeUniversity.del(knex))
+    .then(() => city.del(knex))
+    .then(() => country.del(knex))
+    .then(() => geographicalArea.del(knex))
+    .then(() => major.del(knex))
+    // Insert ALL Values
+    .then(() => major.seed(knex))
     .then(() => geographicalArea.seed(knex))
     .then(() => country.seed(knex))
     .then(() => city.seed(knex))

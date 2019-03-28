@@ -11,7 +11,7 @@ import { LoaderService } from './loader.service';
 ) export class LoaderComponent implements OnInit, OnDestroy {
 
   public show = false;
-  public loaderActived = false;
+  public loaderActivated = false;
   public transitionTime = 750; // ms
   public load: number;
 
@@ -37,7 +37,7 @@ import { LoaderService } from './loader.service';
     this.subscription.unsubscribe();
   }
 
-  private shallBeActivated() { if (this.show && !this.loaderActived) { this.startProgress(); } }
+  private shallBeActivated() { if (this.show && !this.loaderActivated) { this.startProgress(); } }
   private shallBeDesactivated() { if (!this.show) { this.stopProgress(); } }
 
   private initAnimation() { this.load = 0; }
@@ -48,7 +48,7 @@ import { LoaderService } from './loader.service';
 
   startProgress() {
     this.initAnimation();
-    this.loaderActived = true;
+    this.loaderActivated = true;
     this.timer = setInterval(() => {
       this.updateAnimation();
       this.shallBeDesactivated();
@@ -57,7 +57,7 @@ import { LoaderService } from './loader.service';
 
   stopProgress() {
     clearInterval(this.timer);
-    this.loaderActived = false;
+    this.loaderActivated = false;
     this.initAnimation();
   }
 

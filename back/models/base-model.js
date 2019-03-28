@@ -31,9 +31,18 @@ module.exports = class BaseModel {
       });
   }
 
-  seed(knex) {
+  del(knex) {
     return knex(this.name)
       .del()
+      .then(() => console.log('Values deleted in table ' + this.name))
+      .catch(e => {
+        console.log('There was an error deleting ' + this.name + ' values');
+        console.log(e);
+      });
+  }
+
+  seed(knex) {
+    return knex(this.name)
       .then(() => knex(this.name).insert(this.value))
       .then(() => console.log('Values inserted in table ' + this.name))
       .catch(e => {
