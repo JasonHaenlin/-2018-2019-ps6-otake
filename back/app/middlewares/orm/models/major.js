@@ -18,6 +18,22 @@ class Major extends Model {
       }
     };
   }
+
+  static get relationMappings() {
+    // we need this to avoid circular dependency
+    const StudyDepartement = require('./study-departement');
+
+    return {
+      studyDepartement: {
+        relation: Model.HasManyRelation,
+        modelClass: StudyDepartement,
+        join: {
+          from: 'study_departement.study_id',
+          to: 'major.id'
+        }
+      }
+    };
+  }
 }
 
 module.exports = Major;

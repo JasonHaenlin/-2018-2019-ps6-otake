@@ -3,7 +3,9 @@ const {
   geographicalArea,
   country,
   city,
-  exchangeUniversity
+  exchangeUniversity,
+  language,
+  studyDepartement
 } = require('../models');
 
 /**
@@ -17,11 +19,15 @@ exports.up = (knex) => {
     .then(() => geographicalArea.up(knex))
     .then(() => country.up(knex))
     .then(() => city.up(knex))
-    .then(() => exchangeUniversity.up(knex));
+    .then(() => exchangeUniversity.up(knex))
+    .then(() => studyDepartement.up(knex))
+    .then(() => language.up(knex));
 };
 
 exports.down = (knex) => {
   return major.down(knex)
+    .then(() => language.down(knex))
+    .then(() => studyDepartement.down(knex))
     .then(() => exchangeUniversity.down(knex))
     .then(() => city.down(knex))
     .then(() => country.down(knex))

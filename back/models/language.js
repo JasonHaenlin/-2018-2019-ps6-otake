@@ -7,5 +7,7 @@ module.exports = new BaseModel('language', t => {
   t.primary(['university_id', 'language']);
 },
 [
-  { university_id: 1, language: '', level: 'B1' }
+  { university_id: 0, language: 'Anglais', level: 'B1' },
+  { university_id: 1, language: 'Cantonais', level: 'B1' },
+  { university_id: 1, language: 'Anglais', level: 'B2' }
 ]);

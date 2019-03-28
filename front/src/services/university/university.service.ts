@@ -21,10 +21,6 @@ export class UniversityService {
 
   constructor(private http: ApplicationHttpClient) { }
 
-  sample() {
-    this.http.get<any[]>('universities/areas', 'I\'m an error', []).subscribe(e => console.log(e));
-  }
-
   getUniversity(name: string): Observable<University> {
     return of(this.universities.find(u => u.name === name));
   }

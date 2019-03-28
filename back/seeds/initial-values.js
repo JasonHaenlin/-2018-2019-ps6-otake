@@ -3,7 +3,9 @@ const {
   geographicalArea,
   country,
   city,
-  exchangeUniversity
+  exchangeUniversity,
+  language,
+  studyDepartement
 } = require('../models');
 
 /**
@@ -18,5 +20,7 @@ exports.seed = (knex) => {
     .then(() => geographicalArea.seed(knex))
     .then(() => country.seed(knex))
     .then(() => city.seed(knex))
-    .then(() => exchangeUniversity.seed(knex));
+    .then(() => exchangeUniversity.seed(knex))
+    .then(() => language.seed(knex))
+    .then(() => studyDepartement.seed(knex));
 };
