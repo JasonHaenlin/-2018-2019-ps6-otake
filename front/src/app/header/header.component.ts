@@ -24,6 +24,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.areaList$ = this.universityService.getGeographicalAreas();
     this.majorList$ = this.universityService.getMajors();
+    this.universityService.sample();
   }
 
   goToUniversityList(area: string) {

@@ -2,8 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, UnaryFunction, pipe } from 'rxjs';
 import { httpOptionsBase, serverUrl } from 'src/config/server.config';
-import { catchError, finalize, timeout } from 'rxjs/internal/operators';
+import { catchError, finalize, timeout, delay } from 'rxjs/internal/operators';
 import { handleError } from './http-utils';
+import { LoaderService } from 'src/app/utility/loader/loader.service';
 
 const requestTimeout = 5000;
 @Injectable()
@@ -11,7 +12,7 @@ export class ApplicationHttpClient {
 
   private api = serverUrl;
 
-  public constructor(public http: HttpClient) {
+  public constructor(public http: HttpClient, public loader: LoaderService) {
     // you can use the default http too if you want
   }
 
@@ -27,13 +28,17 @@ export class ApplicationHttpClient {
     operation: string = '',
     backupValue: any = null,
     options: Object = httpOptionsBase): Observable<T> {
+    this.activateLoader();
     return this.http.get<T>(this.api + endPoint, options)
-      .pipe(this.processPipe<T>(operation, backupValue));
+      .pipe(
+        this.processPipe<T>(operation, backupValue),
+        finalize(() => this.deactivateLoader())
+      );
   }
 
   /**
    * POST request
-   * @param string endPoint end point of the api
+   * @param string endPoint it doesn't need / in front of the end point
    * @param Object params body of the request.
    * @param string operation to be display when an error is catch
    * @param any backupValue is used when an error occured. Can be `[]` for example or something else
@@ -51,7 +56,7 @@ export class ApplicationHttpClient {
 
   /**
    * PUT request
-   * @param string endPoint end point of the api
+   * @param string endPoint it doesn't need / in front of the end point
    * @param Object params body of the request.
    * @param string operation to be display when an error is catch
    * @param any backupValue is used when an error occured. Can be `[]` for example or something else
@@ -69,7 +74,7 @@ export class ApplicationHttpClient {
 
   /**
    * DELETE request
-   * @param string endPoint end point of the api
+   * @param string endPoint it doesn't need / in front of the end point
    * @param options options options of the request like headers, body, etc.
    * @param string operation to be display when an error is catch
    * @param any backupValue is used when an error occured. Can be `[]` for example or something else
@@ -83,15 +88,17 @@ export class ApplicationHttpClient {
       .pipe(this.processPipe<T>(operation, backupValue));
   }
 
+  private activateLoader = () => this.loader.show();
+  private deactivateLoader = () => this.loader.hide();
+
   private processPipe = <T>(operation: string, backupValue?: T): UnaryFunction<Observable<{}>, Observable<any>> =>
     pipe(
       timeout(requestTimeout),
-      catchError(handleError<T>(operation, backupValue)),
-      finalize(() => { })
+      catchError(handleError<T>(operation, backupValue))
     )
 }
 
 
-export function applicationHttpClientCreator(http: HttpClient) {
-  return new ApplicationHttpClient(http);
+export function applicationHttpClientCreator(http: HttpClient, loader: LoaderService) {
+  return new ApplicationHttpClient(http, loader);
 }

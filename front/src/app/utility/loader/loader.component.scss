@@ -1,0 +1,18 @@
+@import '../../../styles/variables.scss';
+
+.loader-hidden {
+  visibility: hidden;
+}
+
+.loader-overlay {
+  opacity: 1;
+  height: 5px;
+  overflow: hidden;
+  background-color: $white;
+}
+
+.loader-bar {
+  height: 100%;
+  width: 30%;
+  background-color: $blue3;
+}

@@ -1,3 +1,4 @@
+import { LoaderService } from 'src/app/utility/loader/loader.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -34,7 +35,7 @@ import { ApplicationHttpClient, applicationHttpClientCreator } from 'src/core/ht
     {
       provide: ApplicationHttpClient,
       useFactory: applicationHttpClientCreator,
-      deps: [HttpClient]
+      deps: [HttpClient, LoaderService]
     },
   ],
   bootstrap: [AppComponent]
