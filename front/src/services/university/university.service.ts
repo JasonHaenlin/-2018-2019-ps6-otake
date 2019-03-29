@@ -1,6 +1,7 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
+import { ApplicationHttpClient } from 'src/core/http-client';
 import { UNIVERSITIES_MOCKED } from 'src/mocks/Universities.mock';
 import { University } from 'src/models/University';
 import { GEOGRAPHICAL_AREA_MOCKED } from '../../mocks/GeographicalArea.mock';
@@ -9,7 +10,6 @@ import { UNIVERCITY_CARD_MOCKED } from '../../mocks/UniversityCard.mock';
 import { GeographicalArea } from '../../models/GeographicalArea';
 import { Major } from '../../models/Major';
 import { UniversityCard } from '../../models/UniversityCard';
-import { ApplicationHttpClient } from 'src/core/http-client';
 
 @Injectable({
   providedIn: 'root'

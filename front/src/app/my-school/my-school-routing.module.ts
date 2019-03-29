@@ -5,8 +5,13 @@ import { SpecialityDetailsComponent } from './speciality-details/speciality-deta
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: ':major', component: MajorDetailsComponent },
-  { path: 'speciality/:name', component: SpecialityDetailsComponent },
+  {
+    path: ':major', children: [
+      { path: '', component: MajorDetailsComponent},
+      { path: ':name', component: SpecialityDetailsComponent }
+    ]
+  }
+
 ];
 
 @NgModule({

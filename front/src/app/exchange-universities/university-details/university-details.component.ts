@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Section } from 'src/models/Section';
 import { UNIVERSITY_SECTIONS, UNIVERSITY_SECTION_ICONS } from './UniversitySections.enum';
 import { enumSelector } from 'src/app/utility/utilitary-functions';
+import { log } from 'util';
 
 @Component({
   selector: 'app-university-details',
