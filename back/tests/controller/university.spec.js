@@ -3,6 +3,8 @@ const assert = require('assert');
 
 const { ExchangeUniversity } = require('../../app/middlewares/orm');
 
+const { university } = require('../../app/controller/universities');
+
 
 describe('ExchangeUniversity controller to database', () => {
   it('should get the list of ExchangeUniversity from the database', async () => {
@@ -90,6 +92,10 @@ describe('ExchangeUniversity controller to database', () => {
       r.language = language;
     });
 
+    assert.ok(res.length > 0);
+  });
+  it('should get the list of ExchangeUniversity card from the database', async () => {
+    const res = await university.getUniversitiesShortInfo();
     assert.ok(res.length > 0);
   });
 });
