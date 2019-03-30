@@ -22,6 +22,7 @@ class Major extends Model {
   static get relationMappings() {
     // we need this to avoid circular dependency
     const StudyDepartement = require('./study-departement');
+    const ExchangeUniversity = require('./exchange-university');
 
     return {
       studyDepartement: {
@@ -30,6 +31,18 @@ class Major extends Model {
         join: {
           from: 'study_departement.study_id',
           to: 'major.id'
+        }
+      },
+      university: {
+        relation: Model.ManyToManyRelation,
+        modelClass: ExchangeUniversity,
+        join: {
+          from: 'major.id',
+          through: {
+            from: 'study_departement.study_id',
+            to: 'study_departement.university_id'
+          },
+          to: 'exchange_university.id'
         }
       }
     };

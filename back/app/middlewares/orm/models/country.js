@@ -1,7 +1,7 @@
 const Model = require('./config');
 
 /**
- * *tableName* return the name of the table
+ * *tableName* return the country_name of the table
  * and relationMappings describe the relationship.
  * In this case, the key of the outside object author is how
  * we will refer to the parent class.
@@ -20,11 +20,11 @@ class Country extends Model {
   static get jsonSchema() {
     return {
       type: 'object',
-      required: ['name', 'area_id'],
+      required: ['country_name', 'area_id'],
 
       properties: {
         id: { type: 'integer' },
-        name: { type: 'string', minLength: 5, maxLength: 50 },
+        country_name: { type: 'string', minLength: 5, maxLength: 50 },
         area_id: { type: 'integer' }
       }
     };

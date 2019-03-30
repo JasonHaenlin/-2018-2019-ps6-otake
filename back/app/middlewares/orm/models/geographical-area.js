@@ -8,11 +8,11 @@ class GeographicalArea extends Model {
   static get jsonSchema() {
     return {
       type: 'object',
-      required: ['name', 'shorthand'],
+      required: ['area_name', 'shorthand'],
 
       properties: {
         id: { type: 'integer' },
-        name: { type: 'string', minLength: 3, maxLength: 30 },
+        area_name: { type: 'string', minLength: 3, maxLength: 30 },
         shorthand: { type: 'string', minLength: 2, maxLength: 10 },
         icon: { type: 'string', minLength: 5, maxLength: 100 }
       }

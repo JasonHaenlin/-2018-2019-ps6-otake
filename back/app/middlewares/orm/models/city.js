@@ -9,11 +9,11 @@ class City extends Model {
   static get jsonSchema() {
     return {
       type: 'object',
-      required: ['name', 'country_id'],
+      required: ['city_name', 'country_id'],
 
       properties: {
         id: { type: 'integer' },
-        name: { type: 'string', minLength: 5, maxLength: 50 },
+        city_name: { type: 'string', minLength: 5, maxLength: 50 },
         country_id: { type: 'integer' }
       }
     };

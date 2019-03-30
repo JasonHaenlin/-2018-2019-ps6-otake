@@ -21,11 +21,11 @@ class Language extends Model {
 
     return {
       university: {
-        relation: Model.HasManyRelation,
+        relation: Model.BelongsToOneRelation,
         modelClass: University,
         join: {
-          from: 'exchange_university.id',
-          to: 'language.university_id'
+          from: 'language.university_id',
+          to: 'exchange_university.id'
         }
       }
     };
