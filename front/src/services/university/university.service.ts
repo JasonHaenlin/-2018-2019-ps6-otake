@@ -25,18 +25,18 @@ export class UniversityService {
     return of(this.universities.find(u => u.name === name));
   }
 
-  getUniversities(): Observable<University[]> {
-    return of(this.universities);
+  getUniversities(): Observable<UniversityCard[]> {
+    return this.http.get<UniversityCard[]>('universities/', 'get Universitie lists', []);
   }
 
   getUniversityCard(name: string): Observable<UniversityCard> {
     return of(this.universityCards.find(u => u.name === name));
   }
 
-  getUniversityCardList(location: string): Observable<UniversityCard[]> {
+  getUniversityCardList(area: string): Observable<UniversityCard[]> {
     const universityCardList: UniversityCard[] = [];
     this.universityCards.forEach(u => {
-      if (u.location === location) {
+      if (u.area === area) {
         universityCardList.push(u);
       }
     }

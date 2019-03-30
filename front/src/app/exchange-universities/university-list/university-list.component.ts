@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UniversityCard } from '../../../models/UniversityCard';
 import { UniversityService } from '../../../services/university/university.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-university-list',
@@ -9,14 +10,12 @@ import { UniversityService } from '../../../services/university/university.servi
 })
 export class UniversityListComponent implements OnInit {
 
-  public universityCardList: UniversityCard[] = [];
+  public universityList$: Observable<UniversityCard[]>;
 
   constructor(public universityService: UniversityService) { }
 
   ngOnInit() {
-    this.universityService.getUniversityCards().subscribe((universityCards) => {
-      this.universityCardList = universityCards;
-    });
+    this.universityList$ = this.universityService.getUniversities();
   }
 
 }
