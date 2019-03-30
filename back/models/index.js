@@ -6,12 +6,12 @@ const exchangeUniversity = require('./exchange-university');
 const language = require('./language');
 const studyDepartement = require('./study-departement');
 
-module.exports = {
-  major,
+module.exports = [
   geographicalArea,
   country,
   city,
   exchangeUniversity,
   language,
+  major,
   studyDepartement
-};
+];

@@ -1,11 +1,9 @@
-import { MySchoolModule } from './my-school/my-school.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { MajorDetailsComponent } from './my-school/major-details/major-details.component';
-import { SpecialityDetailsComponent } from './my-school/speciality-details/speciality-details.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UniversityModule } from './exchange-universities/university.module';
+import { MySchoolModule } from './my-school/my-school.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 const routes: Routes = [

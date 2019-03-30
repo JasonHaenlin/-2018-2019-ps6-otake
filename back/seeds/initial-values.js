@@ -1,12 +1,4 @@
-const {
-  major,
-  geographicalArea,
-  country,
-  city,
-  exchangeUniversity,
-  language,
-  studyDepartement
-} = require('../models');
+const tables = require('../models');
 
 /**
  * All the values are insert here
@@ -14,21 +6,9 @@ const {
  * when constraints are present
  */
 
-exports.seed = (knex) => {
-  // Deletes ALL existing entries
-  return studyDepartement.del(knex)
-    .then(() => language.del(knex))
-    .then(() => exchangeUniversity.del(knex))
-    .then(() => city.del(knex))
-    .then(() => country.del(knex))
-    .then(() => geographicalArea.del(knex))
-    .then(() => major.del(knex))
-    // Insert ALL Values
-    .then(() => major.seed(knex))
-    .then(() => geographicalArea.seed(knex))
-    .then(() => country.seed(knex))
-    .then(() => city.seed(knex))
-    .then(() => exchangeUniversity.seed(knex))
-    .then(() => language.seed(knex))
-    .then(() => studyDepartement.seed(knex));
+exports.seed = (knex, Promise) => {
+  return Promise.all([
+    Promise.all(tables.reverse().map(t => t.del(knex))),
+    Promise.all(tables.reverse().map(t => t.seed(knex)))
+  ]);
 };
