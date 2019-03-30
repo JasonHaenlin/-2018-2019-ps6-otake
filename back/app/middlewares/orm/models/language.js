@@ -15,6 +15,13 @@ class Language extends Model {
       }
     };
   }
+
+  static get modifiers() {
+    return {
+      languageOnly: builder => builder.select('language')
+    };
+  }
+
   static get relationMappings() {
     // we need this to avoid circular dependency
     const University = require('./exchangeUniversity');

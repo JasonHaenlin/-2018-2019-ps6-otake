@@ -19,6 +19,12 @@ class Major extends Model {
     };
   }
 
+  static get modifiers() {
+    return {
+      titleOnly: builder => builder.select('title')
+    };
+  }
+
   static get relationMappings() {
     // we need this to avoid circular dependency
     const StudyDepartement = require('./study-departement');
