@@ -1,4 +1,5 @@
 @import '../../../styles/variables.scss';
+
 span {
   color: $white;
 }
@@ -49,13 +50,13 @@ span {
 }
 
 .closed {
-  transform: translate(-26em, 0);
+  transform: translate(-27em, 0);
 }
 
 // experimental function, work for Firefox
 .scroller {
   overflow-y: auto;
-  scrollbar-color: $blue3 $blue4;
+  scrollbar-color: $blue4 $blue3;
   scrollbar-width: thin;
 }
 
@@ -63,13 +64,13 @@ span {
 #scroller-alt::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: $blue4;
+  background-color: $blue3;
 }
 
 #scroller-alt::-webkit-scrollbar-thumb {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: $blue3;
+  background-color: $blue4;
 }
 
 #scroller-alt::-webkit-scrollbar {

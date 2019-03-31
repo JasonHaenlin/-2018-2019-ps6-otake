@@ -1,16 +1,11 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/checkbox.scss';
+
 .step-box {
   display: flex;
   flex-direction: row;
   margin: 0.5em;
   min-height: 4em;
-}
-
-.trace-box {
-  flex-shrink: 0;
-  width: 3em;
-  align-items: center;
 }
 
 .trace-step {
@@ -21,17 +16,24 @@
 }
 
 .step {
-  background-color: $blue4;
   padding-top: 0.5em;
   height: 2em;
   text-align: center;
   font-size: 1.5em;
+  color: $white;
+}
+
+.trace-arrow {
+  flex-shrink: 0;
+  width: 2em;
+  align-items: center;
 }
 
 .arrow {
   padding-top: 0.5em;
   display: flex;
   justify-content: center;
+  color: $white;
 }
 
 .done {
