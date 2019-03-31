@@ -46,6 +46,7 @@ a {
 
 .dropdown-content {
   top: $baseTop;
+  box-shadow: $shadow;
   display: none;
   position: absolute;
   line-height: 1em;
