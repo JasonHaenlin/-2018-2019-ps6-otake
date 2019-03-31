@@ -47,8 +47,9 @@ import { LoaderService } from './loader.service';
   }
 
   startProgress() {
-    this.initAnimation();
     this.loaderActivated = true;
+    this.initAnimation();
+    this.updateAnimation();
     this.timer = setInterval(() => {
       this.updateAnimation();
       this.shallBeDesactivated();
