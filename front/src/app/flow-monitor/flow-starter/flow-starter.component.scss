@@ -1,5 +1,6 @@
 @import '../../../styles/button.scss';
 @import '../../../styles/variables.scss';
+
 .task-btn {
   height: 3rem;
   width: 5rem;
@@ -8,24 +9,24 @@
   font-weight: bold;
 }
 
-.flow {
+div>div {
   color: $blue2;
-  transition: transform 0.5s, color 0.5s;
+  transition: bottom 0.5s, color 0.5s;
 }
 
 div>div:nth-child(1) {
-  position: absolute;
+  position: fixed;
   z-index: 8;
 }
 
 div>div:nth-child(2) {
-  position: absolute;
+  position: fixed;
   z-index: 7;
-  right: -3.5rem;
+  right: 4rem;
+  bottom: 40px;
 }
 
-div:hover .flow {
+div:hover>div:nth-child(2) {
   color: $yellow;
-  padding-bottom: 2.5rem;
-  transform: translate(0, -0.8em);
+  bottom: 90px;
 }

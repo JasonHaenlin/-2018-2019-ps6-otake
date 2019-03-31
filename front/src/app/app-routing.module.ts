@@ -1,3 +1,4 @@
+import { HomePageComponent } from './home-page/home-page.component';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
@@ -9,7 +10,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 
-  { path: 'home', component: PageNotFoundComponent },
+  { path: 'home', component: HomePageComponent },
   { path: 'school', loadChildren: () => MySchoolModule },
   { path: 'exchange-universities', loadChildren: () => UniversityModule },
   { path: 'testimonials', component: PageNotFoundComponent },

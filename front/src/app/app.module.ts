@@ -13,12 +13,14 @@ import { HeaderComponent } from './header/header.component';
 import { MySchoolModule } from './my-school/my-school.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UtilityModule } from './utility/utility.module';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     PageNotFoundComponent,
+    HomePageComponent,
   ],
   imports: [
     ReactiveFormsModule,

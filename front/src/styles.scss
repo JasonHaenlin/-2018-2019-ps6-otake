@@ -10,11 +10,13 @@
 
 html {
   font: 500 20px/32px 'Roboto', "Helvetica Neue", sans-serif;
+  height: 100%;
 }
 
 body {
   margin: 0;
   background-color: $background-color;
+  height: 100%;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Shojumaru');
