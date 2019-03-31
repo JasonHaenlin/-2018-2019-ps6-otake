@@ -3,9 +3,4 @@
 <div id="content">
   <router-outlet></router-outlet>
 </div>
-<div (click)="$event.stopPropagation()">
-  <app-flow-window [@openClose] *ngIf="flowInAction === true" id="flow-window">
-  </app-flow-window>
-  <app-flow-starter [@openClose] *ngIf="flowInAction === false" id="flow-starter">
-  </app-flow-starter>
-</div>
+<app-flow-page></app-flow-page>

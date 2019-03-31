@@ -1,0 +1,17 @@
+@import '../../../styles/variables.scss';
+
+#flow-window {
+  z-index: 9;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: $baseTop;
+}
+
+#flow-starter {
+  z-index: 8;
+  position: absolute;
+  bottom: 100px;
+  right: 160px;
+  transform-origin: bottom right;
+}

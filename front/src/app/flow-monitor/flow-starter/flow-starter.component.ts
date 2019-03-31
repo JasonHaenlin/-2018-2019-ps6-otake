@@ -1,5 +1,4 @@
-import { FlowMonitorService } from './../../../services/flow/flow-monitor.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-flow-starter',
@@ -8,15 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FlowStarterComponent implements OnInit {
 
-  constructor(private flowService: FlowMonitorService) { }
+  @Output() updateFlow: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+
+  constructor() { }
 
   ngOnInit() {
   }
 
   startFlow() {
-    console.log('event');
-
-    this.flowService.startFlow();
+    this.updateFlow.emit(true);
   }
 
 }

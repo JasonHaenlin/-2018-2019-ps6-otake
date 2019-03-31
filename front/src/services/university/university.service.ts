@@ -26,7 +26,7 @@ export class UniversityService {
   }
 
   getUniversities(): Observable<UniversityCard[]> {
-    return this.http.get<UniversityCard[]>('universities/', 'get Universitie lists', []);
+    return this.http.get<UniversityCard[]>('universities/', 'get Universities list', []);
   }
 
   getUniversityCard(name: string): Observable<UniversityCard> {
