@@ -6,17 +6,37 @@
   justify-content: space-between;
   margin: 1%;
   height: 9em;
-  width: 98%;
+  width: 35em;
+  padding-left: 0;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-div>div {
+:host>div>div {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-evenly;
+  font-size:12px;
+  width: 95%;
+  line-height: 1.5em;
+  text-align: left;
 }
 
-img {
-  height: 80%;
-  width: 80%;
+div>div.name{
+  font-size:15px;
+  font-weight:900;
 }
+
+
+img {
+  height: auto;
+  max-height: 15em;
+  width: 13em;
+}
+
+h4 {
+  margin: 0;
+  display: inline;
+}
+

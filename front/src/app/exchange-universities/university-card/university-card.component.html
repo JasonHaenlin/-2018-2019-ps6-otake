@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" [routerLink]="[ 'details', university.name]">
   <div class="image">
     <img src="{{university.small_picture}}" alt="[x] : university logo" />
   </div>
@@ -11,27 +11,25 @@
     </div>
   </div>
   <div>
-    <div class="major">
-      Département.s: {{university.major}}
-    </div>
-    <div class="rate">
-      Taux d'admis: {{university.admission_rate}}
-    </div>
-  </div>
-  <div>
     <div class="file">
-      {{university.type_of_file}}
+      <h4>Dossier: </h4>{{university.type_of_file}}
+    </div>
+    <div class="major">
+      <h4>Département.s:  </h4>{{university.major}}
     </div>
     <div class="cost">
-      Coût: {{university.cost_of_living}}
+      <h4>Coût:  </h4>{{university.cost_of_living}}
+    </div>
+    <div class="language">
+      <h4>Langues:  </h4>{{university.language}}
     </div>
   </div>
   <div>
     <div class="nb-of-place">
-      Nb de place: {{university.nb_of_place}}
+      <h4>Nb de place:  </h4>{{university.nb_of_place}}
     </div>
-    <div class="language">
-      Langues: {{university.language}}
+    <div class="rate">
+      <h4>Taux d'admis:  </h4>{{university.admission_rate}}
     </div>
   </div>
 </div>
