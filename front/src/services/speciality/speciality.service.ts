@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SPECIALITY_MOCKED_SI } from 'src/mocks/Speciality.mock';
+import { SPECIALITY_MOCKED_IMAFA } from 'src/mocks/Speciality.mock';
 import { of, Observable } from 'rxjs';
 import { Speciality } from 'src/models/Speciality';
 
@@ -7,7 +7,7 @@ import { Speciality } from 'src/models/Speciality';
   providedIn: 'root'
 })
 export class SpecialityService {
-  private specialities =  SPECIALITY_MOCKED_SI;
+  private specialities = SPECIALITY_MOCKED_IMAFA;
 
   constructor() { }
 

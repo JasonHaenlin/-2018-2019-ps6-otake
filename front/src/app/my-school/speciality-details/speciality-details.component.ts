@@ -19,8 +19,7 @@ export class SpecialityDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private specialityService: SpecialityService,
-    ) { }
+    private specialityService: SpecialityService) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
