@@ -5,6 +5,7 @@ export interface Step {
 }
 
 export interface TextDetail {
+  id: number;
   text: string;
   redirection?: string;
   link?: string;

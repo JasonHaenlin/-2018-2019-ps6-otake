@@ -1,3 +1,4 @@
+import { FlowService } from './../flow.service';
 import { Step } from './step';
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -13,12 +14,27 @@ export class FlowStepComponent implements OnInit {
   private nbOfChecked = 0;
   public isDone = false;
 
-  constructor() { }
+  constructor(private flowService: FlowService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.flowService.initStep(this.stage.id, this.stage.description.length)
+      .forEach(s => {
+        if (s) {
+          this.nbOfChecked++;
 
-  onChangeCategory(isChecked: boolean) {
+        }
+      });
+    this.checkStepValidation();
+
+  }
+
+  onChangeStep(id: number, isChecked: boolean) {
     isChecked ? this.nbOfChecked++ : this.nbOfChecked--;
+    this.flowService.writeStep(this.stage.id, id, isChecked);
+    this.checkStepValidation();
+  }
+
+  private checkStepValidation() {
     if (this.nbOfChecked === this.stage.description.length) {
       this.isDone = true;
     } else {
