@@ -17,13 +17,12 @@ export class FlowStepComponent implements OnInit {
   constructor(private flowService: FlowService) { }
 
   ngOnInit() {
-    this.flowService.initStep(this.stage.id, this.stage.description.length)
-      .forEach(s => {
-        if (s) {
-          this.nbOfChecked++;
+    const initStep = this.flowService.initStep(this.stage.id, this.stage.description.length);
+    for (let i = 0; i < initStep.length; i++) {
+      this.stage.description[i].done = initStep[i];
+      if (initStep[i]) { this.nbOfChecked++; }
+    }
 
-        }
-      });
     this.checkStepValidation();
 
   }

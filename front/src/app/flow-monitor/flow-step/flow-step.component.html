@@ -4,8 +4,9 @@
     <div *ngFor="let d of stage.description">
       <label class="container">
         {{d.text}}
-        <input type="checkbox" (change)="onChangeStep(d.id, $event.target.checked)">
-        <span class=" checkmark"></span>
+        <input type="checkbox" [checked]="d.done"
+          (change)="onChangeStep(d.id, $event.target.checked)">
+        <span class="checkmark"></span>
       </label>
       <a class="link" target="_blank" rel="noopener noreferrer" href="{{d?.link}}"
         *ngIf="d?.link"><em class="fas fa-external-link-square-alt"></em></a>
