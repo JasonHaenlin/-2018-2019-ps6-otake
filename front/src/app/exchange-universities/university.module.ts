@@ -15,9 +15,9 @@ import { UtilityModule } from '../utility/utility.module';
     UniversityListComponent,
   ],
   imports: [
-    CommonModule,
+    UniversityRoutingModule,
     UtilityModule,
-    UniversityRoutingModule
+    CommonModule,
   ]
 })
 export class UniversityModule { }

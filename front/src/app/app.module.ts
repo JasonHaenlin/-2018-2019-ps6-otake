@@ -25,15 +25,13 @@ import { HomePageComponent } from './home-page/home-page.component';
   imports: [
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule,
 
     BrowserAnimationsModule,
     BrowserModule,
-
     UtilityModule,
-    UniversityModule,
-    MySchoolModule,
     FlowMonitorModule,
+
+    AppRoutingModule,
   ],
   providers: [
     {

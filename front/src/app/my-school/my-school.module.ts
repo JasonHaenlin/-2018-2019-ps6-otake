@@ -14,9 +14,9 @@ import { UtilityModule } from '../utility/utility.module';
     SpecialityDetailsComponent,
   ],
   imports: [
-    CommonModule,
     MySchoolRoutingModule,
     UtilityModule,
+    CommonModule,
   ]
 })
 export class MySchoolModule { }
