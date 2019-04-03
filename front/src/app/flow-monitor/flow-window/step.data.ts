@@ -1,55 +1,61 @@
-import { Step } from './../flow-step/step';
+import { Step, TextDetail } from './../flow-step/step';
 
 export const STEP_LIST: Step[] = [
   {
     id: 1,
     label: 'Trouver une destination',
-    text: [
-      'aller dans la liste des universités concernant une destination',
-      'Trier par formation pour avoir vos possibilités'
+    description: [
+      { text: 'Aller dans "Universités d\'échanges" et sélectionner une destination' },
+      { text: 'Filtrer par formation pour voir les Universités vous concernants' },
     ]
   },
   {
     id: 2,
     label: 'Estimer le coût de la vie',
-    text: [
-      'Vérifier le coût de la vie d\'une université',
-      'Aller dans la section Aides Financière'
+    description: [
+      { text: 'Vérifier le coût de la vie d\'une université Dans les détails de celle-ci' },
+      { text: 'Aller dans la section "Aides Financière"' },
     ]
   },
   {
     id: 3,
     label: 'Choisir ses cours',
-    text: [
-      'Aller dans Notre école par rapport à votre cursus',
-      'Chercher une spécialité qui vous plait',
-      'Prener connaissance des thématiques de cours',
-      'Penser à feuilleter les anciens contrats'
+    description: [
+      { text: 'Aller dans "Notre école" par rapport à votre cursus' },
+      { text: 'Chercher une "Spécialité" qui vous plait' },
+      { text: 'Prener connaissance des "Thématiques des cours"' },
+      { text: 'Penser à feuilleter les anciens contrats' },
     ]
   },
   {
     id: 4,
     label: 'Renseignements personnels',
-    text: [
-      'Télécharger le dossier de mobilité',
-      'Vérifier vos cours (ex: 30 ECTS ou 10 Crédits)'
+    description: [
+      {
+        text: 'Télécharger le dossier de mobilité sur le site de "Polytech Nice"',
+        link: 'http://unice.fr/polytechnice/fr/international/etudes-a-letranger/partir-a-letranger'
+      },
+      {
+        text: 'Vérifier vos cours et les équivalences aux ECTS qui varies selon la destination',
+      },
     ],
-    outerLink: 'http://unice.fr/polytechnice/fr/international/etudes-a-letranger/partir-a-letranger'
   },
   {
     id: 5,
     label: 'Constituer son budget prévisionel',
-    text: [
-      'Penser à vérifier les Aides Financières',
-      'Remplir soignesement le budget'
+    description: [
+      { text: 'Penser à vérifier les "Aides Financières" si besoin' },
+      { text: 'Remplir soignesement le budget pour éviter les mauvaises surprises' },
     ]
   },
   {
     id: 6,
     label: 'Faire son CV Europass',
-    text: [
-      'Faire son cv en ligne',
+    description: [
+      {
+        text: 'Faire son cv en ligne"',
+        link: 'https://europass.cedefop.europa.eu/editors/fr/cv/compose'
+      },
     ],
-    outerLink: 'https://europass.cedefop.europa.eu/editors/fr/cv/compose'
   }
 ];

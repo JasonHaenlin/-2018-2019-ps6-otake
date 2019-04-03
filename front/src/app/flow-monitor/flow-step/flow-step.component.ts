@@ -19,7 +19,7 @@ export class FlowStepComponent implements OnInit {
 
   onChangeCategory(isChecked: boolean) {
     isChecked ? this.nbOfChecked++ : this.nbOfChecked--;
-    if (this.nbOfChecked === this.stage.text.length) {
+    if (this.nbOfChecked === this.stage.description.length) {
       this.isDone = true;
     } else {
       this.isDone = false;

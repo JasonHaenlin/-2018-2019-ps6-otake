@@ -1,11 +1,15 @@
 <div class="step-box">
   <div class="trace-step">
     {{stage.label}}
-    <label class="container" *ngFor="let text of stage.text">
-      {{text}}
-      <input type="checkbox" (change)="onChangeCategory($event.target.checked)">
-      <span class=" checkmark"></span>
-    </label>
+    <div *ngFor="let d of stage.description">
+      <label class="container">
+        {{d.text}}
+        <input type="checkbox" (change)="onChangeCategory($event.target.checked)">
+        <span class=" checkmark"></span>
+      </label>
+      <a class="link" target="_blank" rel="noopener noreferrer" href="{{d?.link}}"
+        *ngIf="d?.link"><em class="fas fa-external-link-square-alt"></em></a>
+    </div>
   </div>
   <div class="trace-arrow">
     <div class="step" [class.done]="isDone">{{stage.id}}</div>
