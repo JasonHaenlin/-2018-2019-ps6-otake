@@ -9,14 +9,6 @@ header {
   box-shadow: $shadow;
 }
 
-a {
-  text-decoration: none;
-  color: $white;
-  padding: 16px 16px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
 .home {
   padding: 0;
   padding-left: $padding;
@@ -31,7 +23,7 @@ a {
   align-content: center;
 }
 
-.nav-bar a:hover {
+.nav-bar .route:hover {
   background-color: $blue1;
   transition: background-color 0.2s ease;
 }
@@ -52,6 +44,15 @@ a {
   line-height: 1em;
   min-width: 100%;
   margin-left: -1em;
+}
+
+a,
+.route {
+  text-decoration: none;
+  color: $white;
+  padding: 16px 16px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .dropdown {

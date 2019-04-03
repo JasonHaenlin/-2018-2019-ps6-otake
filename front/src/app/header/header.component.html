@@ -6,36 +6,37 @@
 
   <div class="nav-bar navigation-font">
 
-    <a class="dropdown" routerLinkActive="active">
+    <div class="dropdown route" routerLinkActive="active">
       Notre Ecole <span [ngClass]="arrow_icon"></span>
       <div class="dropdown-content">
         <a *ngFor="let major of (majorList$ | async)"
           [routerLink]="[ '/school/', major.shorthand ]">{{major.title}}</a>
       </div>
-    </a>
+    </div>
 
-    <a class="dropdown" routerLinkActive="active">
-      <a [routerLink]="[ '/exchange-universities' ]">Universités d'échanges </a>
+    <div class="dropdown route" routerLinkActive="active">
+      <a [routerLink]="[ '/exchange-universities' ]">
+        Universités d'échanges </a>
       <span [ngClass]="arrow_icon"></span>
       <div class="dropdown-content">
         <a *ngFor="let area of (areaList$ | async)"
           (click)="goToUniversityList(area.shorthand)">{{area.name}}</a>
       </div>
-    </a>
+    </div>
 
-    <a [routerLink]="[ '/testimonials' ]" routerLinkActive="active">
+    <a class="route" [routerLink]="[ '/testimonials' ]" routerLinkActive="active">
       Témoignages
     </a>
 
-    <a [routerLink]="[ '/financial-aids' ]" routerLinkActive="active">
+    <a class="route" [routerLink]="[ '/financial-aids' ]" routerLinkActive="active">
       Aides Financières
     </a>
 
-    <a [routerLink]="[ '/calendar' ]" routerLinkActive="active">
+    <a class="route" [routerLink]="[ '/calendar' ]" routerLinkActive="active">
       Calendrier
     </a>
 
-    <a [routerLink]="[ '/contacts' ]" routerLinkActive="active">
+    <a class="route" [routerLink]="[ '/contacts' ]" routerLinkActive="active">
       Contacts
     </a>
 
