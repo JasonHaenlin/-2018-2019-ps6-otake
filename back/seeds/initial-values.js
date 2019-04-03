@@ -6,9 +6,21 @@ const tables = require('../models');
  * when constraints are present
  */
 
-exports.seed = (knex, Promise) => {
-  return Promise.all([
-    Promise.all(tables.reverse().map(t => t.del(knex))),
-    Promise.all(tables.reverse().map(t => t.seed(knex)))
-  ]);
+exports.seed = (knex) => {
+  return iterPromiseDel(tables.reverse(), knex)
+    .then(() => iterPromiseSeed(tables.reverse(), knex));
+};
+
+const iterPromiseSeed = (obj, knex) => {
+  return obj.reduce(async (previousPromise, nextTables) => {
+    await previousPromise;
+    return nextTables.seed(knex);
+  }, Promise.resolve());
+};
+
+const iterPromiseDel = (obj, knex) => {
+  return obj.reduce(async (previousPromise, nextTables) => {
+    await previousPromise;
+    return nextTables.del(knex);
+  }, Promise.resolve());
 };

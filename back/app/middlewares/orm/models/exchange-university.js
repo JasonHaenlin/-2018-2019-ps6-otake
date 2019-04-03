@@ -13,7 +13,7 @@ class ExchangeUniversity extends Model {
 
       properties: {
         id: { type: 'integer' },
-        name: { type: 'string', minLength: 5, maxLength: 50 },
+        name: { type: 'string', minLength: 5, maxLength: 255 },
         city_id: { type: 'integer' },
         cost_of_living: { type: 'integer' },
         nb_of_place: { type: 'integer' },

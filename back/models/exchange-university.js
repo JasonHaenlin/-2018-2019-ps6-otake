@@ -3,7 +3,7 @@ const BaseModel = require('./base-model');
 
 module.exports = new BaseModel('exchange_university', t => {
   t.increments('id').primary();
-  t.string('name', 50).unique();
+  t.string('name', 255).unique();
   t.integer('city_id').references('id').inTable('city');
   t.integer('cost_of_living');
   t.integer('nb_of_place');

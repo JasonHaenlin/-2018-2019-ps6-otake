@@ -7,9 +7,15 @@ const tables = require('../models');
  */
 
 exports.up = (knex, Promise) => {
-  return Promise.all(tables.map(t => t.up(knex)));
+  return tables.reduce(async (previousPromise, nextTables) => {
+    await previousPromise;
+    return nextTables.up(knex);
+  }, Promise.resolve());
 };
 
 exports.down = (knex, Promise) => {
-  return Promise.all(tables.reverse().map(t => t.down(knex)));
+  return tables.reverse().reduce(async (previousPromise, nextTables) => {
+    await previousPromise;
+    return nextTables.down(knex);
+  }, Promise.resolve());
 };
