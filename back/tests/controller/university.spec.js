@@ -98,4 +98,27 @@ describe('ExchangeUniversity controller to database', () => {
     const res = await university.getUniversitiesShortInfo();
     assert.ok(res.length > 0);
   });
+  it('should get the list of ExchangeUniversity card from the database eager filter', async () => {
+    const res = await ExchangeUniversity.query()
+      .alias('u')
+      .distinct('u.name',
+        'u.admission_rate',
+        'u.type_of_file',
+        'u.cost_of_living',
+        'u.small_picture',
+        'city.city_name as city',
+        'city:country.country_name as country',
+        'city:country:geographical_area.area_name as area')
+      .select()
+      .joinRelation('[city.country.geographical_area, major, language]')
+      .where('language.language', '=', 'Chinois')
+      .where('major.shorthand', '=', 'ALL')
+      .eager('[major, language]');
+
+    assert.ok(res.length > 0);
+  });
+  it('should get the list of ExchangeUniversity card from the database using a filter', async () => {
+    const res = await university.getUniversitiesShortInfo(null, 'Italien', null);
+    assert.ok(res.length > 0);
+  });
 });

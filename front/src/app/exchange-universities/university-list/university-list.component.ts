@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UniversityCard } from '../../../models/UniversityCard';
 import { UniversityService } from '../../../services/university/university.service';
 import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-university-list',
@@ -12,9 +13,12 @@ export class UniversityListComponent implements OnInit {
 
   public universityList$: Observable<UniversityCard[]>;
 
-  constructor(public universityService: UniversityService) { }
+  constructor(private route: ActivatedRoute,
+    public universityService: UniversityService) { }
 
   ngOnInit() {
+    console.log(this.route.snapshot.queryParamMap.get('destination'));
+
     this.universityList$ = this.universityService.getUniversities();
   }
 

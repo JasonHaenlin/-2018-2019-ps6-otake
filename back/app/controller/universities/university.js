@@ -2,10 +2,10 @@
 const { ExchangeUniversity } = require('../../middlewares/orm');
 
 module.exports = {
-  getUniversitiesShortInfo() {
+  getUniversitiesShortInfo(area, language, major) {
     return ExchangeUniversity.query()
       .alias('u')
-      .select('u.name',
+      .distinct('u.name',
         'u.admission_rate',
         'u.type_of_file',
         'u.cost_of_living',
@@ -17,7 +17,19 @@ module.exports = {
         'city:country:geographical_area.area_name as area',
         'city:country:geographical_area.shorthand',
         'city:country:geographical_area.icon')
-      .joinRelation('city.country.geographical_area')
+      .select()
+      .joinRelation('[city.country.geographical_area, major, language]')
+      .modify((queryBuilder) => {
+        if (area) {
+          queryBuilder.where('city:country:geographical_area.area_name', area);
+        }
+        if (language) {
+          queryBuilder.where('language.language', language);
+        }
+        if (major) {
+          queryBuilder.where('major.shorthand', major);
+        }
+      })
       .eager('[major, language]')
       .then(res => {
         res.forEach(r => {

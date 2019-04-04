@@ -13,7 +13,7 @@ export const STEP_LIST: Step[] = [
     id: 2,
     label: 'Estimer le coût de la vie',
     description: [
-      { id: 0, text: 'Vérifier le coût de la vie d\'une université Dans les détails de celle-ci' },
+      { id: 0, text: 'Vérifier le coût de la vie d\'une université dans les détails de celle-ci' },
       { id: 1, text: 'Aller dans la section "Aides Financière"' },
     ]
   },
