@@ -1,14 +1,15 @@
 <div class="container">
-  <div class="container-details" *ngIf="university">
+  <header>
+    <img src="{{university.big_picture}}" alt="<(^^)>">
+  </header>
+  <main *ngIf="university">
     <section *ngFor="let section of universitySections" id="{{ section.id }}">
       <h2 class="content-title">{{ section.name }}</h2>
       <hr>
       <div class="content-paragraph">{{ getSectionText(section.id) }}</div>
     </section>
-  </div>
-  <div class="container-selector">
-    <div class="selector">
-      <app-section-selector [sectionList]="universitySections"></app-section-selector>
-    </div>
-  </div>
+  </main>
+  <aside>
+    <app-section-selector [sectionList]="universitySections"></app-section-selector>
+  </aside>
 </div>

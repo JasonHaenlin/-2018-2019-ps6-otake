@@ -1,35 +1,5 @@
 @import '../styles/variables.scss';
 
-.container {
-  // display: inline;
-}
-
-.container-details {
-  position: relative;
-  width: 30em;
-
-}
-
-.container-selector {
-  position: sticky;
-  top: 5em;
-}
-
-.selector {}
-
-.content-title {
-  font-size: 24px;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.content-paragraph {
-  text-align: justify;
-  line-height: 1.6;
-  font-size: 18px;
-  color: $paragraphsText;
-}
-
 hr {
   display: block;
   height: 1px;
@@ -38,4 +8,48 @@ hr {
   margin: 1em 0;
   margin-top: 0px;
   padding: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 20ch;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "header header"
+    "main  aside";
+  grid-gap: 1rem;
+  min-height: 100vh;
+}
+
+header {
+  grid-area: header;
+}
+
+aside {
+  grid-area: aside;
+  position: sticky;
+  top: 5em;
+  height: 16em;
+
+}
+
+main {
+  grid-area: main;
+  margin-bottom: 10em;
+  margin-left: 15vw;
+  margin-right: 5vw;
+}
+
+.content-title {
+  font-size: 24px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  color: $blue2;
+}
+
+.content-paragraph {
+  text-align: justify;
+  line-height: 1.6;
+  font-size: 18px;
+  color: $paragraphsText;
 }
