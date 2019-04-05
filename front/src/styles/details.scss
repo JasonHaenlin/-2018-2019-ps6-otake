@@ -25,12 +25,18 @@ header {
   grid-area: header;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 aside {
   grid-area: aside;
   position: sticky;
   top: 5em;
   height: 16em;
-
 }
 
 main {

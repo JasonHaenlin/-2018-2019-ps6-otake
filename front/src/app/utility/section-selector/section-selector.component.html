@@ -1,6 +1,10 @@
-<div class="sectionList" *ngFor="let s of sectionList">
-  <a class = "link" [routerLink]="['./']" fragment="{{s.id}}">
-    <div><span [ngClass]="s.icon"></span><a class = "text">&nbsp;{{ s.name }}</a></div>
-  </a>
-  <br>
+<div class="sectionList">
+  <div class="section" *ngFor="let s of sectionList">
+    <a class="link" [routerLink]="['./']" fragment="{{s.id}}">
+      <div>
+        <span [ngClass]="s.icon"></span>
+        <a class="text">&nbsp;{{ s.name }}</a>
+      </div>
+    </a>
+  </div>
 </div>
