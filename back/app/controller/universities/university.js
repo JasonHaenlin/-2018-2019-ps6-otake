@@ -34,11 +34,8 @@ module.exports = {
       .then(res => {
         res.forEach(r => {
           const major = [];
-          const language = [];
           r.major.forEach(m => major.push(m.shorthand));
-          r.language.forEach(l => language.push(l.language));
           r.major = major;
-          r.language = language;
           r.area = Object.assign({}, { id: r.area_id, name: r.area, shorthand: r.shorthand, icon: r.icon });
           delete r.area_id;
           delete r.shorthand;
