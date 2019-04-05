@@ -1,0 +1,23 @@
+@import '../../../styles/variables.scss';
+
+.accordion {
+    background-color: $blue3;
+    color: $white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.accordion:hover {
+    background-color: $blue2;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    overflow: hidden;
+}

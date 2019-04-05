@@ -1,0 +1,4 @@
+<button class = "accordion" (click)="displayContent()">{{ title }}</button>
+  <div class = "panel" [ngStyle]="{'display': display ? 'content' : 'none'}">
+    <p>OK</p>
+  </div>
