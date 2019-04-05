@@ -31,10 +31,13 @@
     <div class="cost tooltip">
       <span class="tooltiptext"> très cher !</span>
       <h4>Coût: </h4>
-      <!-- {{university.cost_of_living}} -->
       <span class="fas fa-euro-sign"></span>
-      <span class="fas fa-euro-sign"></span>
-      <span class="fas fa-euro-sign"></span>
+      <span *ngIf="university.cost_of_living > 1000">
+        <span class="fas fa-euro-sign"></span>
+      </span>
+      <span *ngIf="university.cost_of_living > 1500">
+        <span class="fas fa-euro-sign"></span>
+      </span>
     </div>
 
     <div class="language">
@@ -46,12 +49,22 @@
     </div>
 
     <div class="rate tooltip">
-      <span class="tooltiptext">Pour tout niveau</span>
       <h4>Taux d'admission: </h4>
-      <!-- {{university.admission_rate}} -->
-      <span class="fas fa-smile fa-2x"></span>
-      <!-- <span class="fas fa-meh fa-2x"></span>
-      <span class="fas fa-frown fa-2x"></span> -->
+      <span [ngSwitch]="true">
+        <span *ngSwitchCase="university.admission_rate < 50">
+          <span class="fas fa-frown fa-2x"></span>
+          <span class="tooltiptext">Difficile d'être accepté</span>
+        </span>
+        <span *ngSwitchCase="university.admission_rate > 50">
+          <span class="fas fa-smile fa-2x"></span>
+          <span class="tooltiptext">Bonne chance d'être accepté</span>
+        </span>
+        <span *ngSwitchDefault>
+          <span class="fas fa-meh fa-2x"></span>
+          <span class="tooltiptext">Chance moyenne d'être accepté</span>
+        </span>
+      </span>
+
     </div>
   </div>
 
