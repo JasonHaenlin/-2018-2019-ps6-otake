@@ -4,8 +4,11 @@ const Country = require('./models/country');
 const City = require('./models/city');
 const ExchangeUniversity = require('./models/exchange-university');
 const Language = require('./models/language');
-const studyDepartement = require('./models/study-departement');
-const universityLanguage = require('./models/university_language');
+const UniversityLanguage = require('./models/university_language');
+const StudyDepartement = require('./models/study-departement');
+const Speciality = require('./models/speciality');
+const MajorSpeciality = require('./models/major-speciality');
+const Course = require('./models/course');
 
 // add all the tables here
 module.exports = {
@@ -15,6 +18,9 @@ module.exports = {
   City,
   ExchangeUniversity,
   Language,
-  universityLanguage,
-  studyDepartement
+  UniversityLanguage,
+  StudyDepartement,
+  MajorSpeciality,
+  Speciality,
+  Course
 };

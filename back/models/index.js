@@ -6,6 +6,9 @@ const exchangeUniversity = require('./exchange-university');
 const language = require('./language.js');
 const university_language = require('./university_language');
 const studyDepartement = require('./study-departement');
+const speciality = require('./speciality');
+const majorSpeciality = require('./major-speciality');
+const course = require('./course');
 
 /**
  * All the table are sort here
@@ -21,5 +24,8 @@ module.exports = [
   language,
   university_language,
   major,
+  speciality,
+  majorSpeciality,
+  course,
   studyDepartement
 ];
