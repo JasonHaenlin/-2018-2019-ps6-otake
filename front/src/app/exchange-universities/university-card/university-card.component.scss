@@ -76,9 +76,14 @@ h4 {
   grid-area: stats;
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
   margin-bottom: $margin;
   margin-inline-end: $margin;
+
+  .language img {
+    height: 1.5em;
+    width: 1.5em;
+  }
 
   .rate {
     .fa-smile {

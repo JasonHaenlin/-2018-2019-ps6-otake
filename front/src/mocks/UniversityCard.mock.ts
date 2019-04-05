@@ -12,7 +12,6 @@ export const UNIVERCITY_CARD_MOCKED: UniversityCard[] = [
     cost_of_living: '€€€€',
     small_picture: 'https://template.cityu.edu.hk/template/img/logos/cityu.png',
     nb_of_place: 4,
-    language: ['Cantonese', 'English'],
     area: GEOGRAPHICAL_AREA_MOCKED[1],
   },
   {
@@ -24,7 +23,6 @@ export const UNIVERCITY_CARD_MOCKED: UniversityCard[] = [
     cost_of_living: '€€€',
     small_picture: 'https://www.caltech.edu/static/core/img/caltech-new-logo.png',
     nb_of_place: 6,
-    language: ['English'],
     area: GEOGRAPHICAL_AREA_MOCKED[2],
 
   }

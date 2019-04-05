@@ -37,12 +37,12 @@
       <span class="fas fa-euro-sign"></span>
     </div>
 
-    <div class="language tooltip">
-      <span class="tooltiptext">Français, Anglais</span>
+    <div class="language">
       <h4>Langues: </h4>
-      <!-- {{university.language}} -->
-      <span class="fas fa-flag"></span>
-      <span class="fas fa-flag"></span>
+      <div class="tooltip" *ngFor="let l of university.language">
+        <span class="tooltiptext">{{l.language}}</span>
+        <img src="{{l.icon_url}}" alt="[ ]">
+      </div>
     </div>
 
     <div class="rate tooltip">

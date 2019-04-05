@@ -1,3 +1,4 @@
+import { Language } from './Language';
 import { GeographicalArea } from './GeographicalArea';
 
 export interface UniversityCard {
@@ -11,5 +12,5 @@ export interface UniversityCard {
   country?: string;
   area?: GeographicalArea;
   major?: string[];
-  language?: string[];
+  language?: Language[];
 }
