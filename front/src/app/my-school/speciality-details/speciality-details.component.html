@@ -1,29 +1,22 @@
-<table>
-  <tr>
-    <td>
-      <div class="container" *ngIf="speciality">
-        <section *ngFor="let section of specialitySections" id="{{ section.id }}">
-            <h2 class="content-title">{{ section.name }}</h2>
-            <hr>
-            <ng-container *ngIf="section.id === 'thematic'; else elseTemplate">
-              <div *ngFor="let course of speciality.topics">
-                {{ course }}
-                <br>
-              </div>
-            </ng-container>
-            <ng-template #elseTemplate>
-              <div class="content-paragraph">{{ getSectionText(section.id) }}</div>
-            </ng-template>
-            
-        </section>
-      </div>
-    </td>
-    <td>
-      <div class="selector-container">
-        <div class="selector">
-          <app-section-selector [sectionList]="specialitySections"></app-section-selector>
+<div class="container">
+  <header>
+
+  </header>
+  <main *ngIf="speciality">
+    <section *ngFor="let section of specialitySections" id="{{ section.id }}">
+      <h2 class="content-title">{{ section.name }}</h2>
+      <hr>
+      <ng-container *ngIf="section.id === 'thematic'; else elseTemplate">
+        <div *ngFor="let course of speciality.topics">
+          {{ course }}
         </div>
-      </div>
-    </td>
-  </tr>
-</table>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <div class="content-paragraph">{{ getSectionText(section.id) }}</div>
+      </ng-template>
+    </section>
+  </main>
+  <aside>
+    <app-section-selector [sectionList]="specialitySections"></app-section-selector>
+  </aside>
+</div>
