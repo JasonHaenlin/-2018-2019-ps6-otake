@@ -5,6 +5,7 @@ const City = require('./models/city');
 const ExchangeUniversity = require('./models/exchange-university');
 const Language = require('./models/language');
 const studyDepartement = require('./models/study-departement');
+const universityLanguage = require('./models/university_language');
 
 // add all the tables here
 module.exports = {
@@ -14,5 +15,6 @@ module.exports = {
   City,
   ExchangeUniversity,
   Language,
+  universityLanguage,
   studyDepartement
 };

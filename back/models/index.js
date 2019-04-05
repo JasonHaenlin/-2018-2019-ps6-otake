@@ -3,7 +3,8 @@ const geographicalArea = require('./geographical-area');
 const country = require('./country');
 const city = require('./city');
 const exchangeUniversity = require('./exchange-university');
-const language = require('./language');
+const language = require('./language.js');
+const university_language = require('./university_language');
 const studyDepartement = require('./study-departement');
 
 /**
@@ -18,6 +19,7 @@ module.exports = [
   city,
   exchangeUniversity,
   language,
+  university_language,
   major,
   studyDepartement
 ];

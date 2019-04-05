@@ -10,6 +10,7 @@
     "dev": "nodemon -e js -w ./ ./server.js",
     "start": "node --trace-warnings ./server.js",
     "knex": "knex",
+    "km": "knex migrate:rollback && knex migrate:latest && knex seed:run",
     "sonar": "gulp sonar",
     "coverage": "nyc mocha tests/ -R spec --recursive --exit",
     "deploy": "pm2 start server.js --log-date-format \"YYYY-MM-DD HH:mm Z\" --name nodejs-ps6",

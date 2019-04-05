@@ -45,11 +45,15 @@ class ExchangeUniversity extends Model {
         }
       },
       language: {
-        relation: Model.HasManyRelation,
+        relation: Model.ManyToManyRelation,
         modelClass: Language,
         join: {
           from: 'exchange_university.id',
-          to: 'language.university_id'
+          through: {
+            from: 'university_language.university_id',
+            to: 'university_language.language_id'
+          },
+          to: 'language.id'
         }
       },
       major: {

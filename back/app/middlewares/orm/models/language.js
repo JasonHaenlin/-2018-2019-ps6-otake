@@ -7,31 +7,38 @@ class Language extends Model {
   static get jsonSchema() {
     return {
       type: 'object',
-      required: ['university_id', 'language', 'level'],
+      required: ['language', 'icon_url'],
       properties: {
-        university_id: { type: 'integer' },
-        language: { type: 'string', minLength: 2, maxLength: 20 },
-        level: { type: 'string', enum: ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'] }
+        id: { type: 'integer' },
+        language: { type: 'string', minLength: 2, maxLength: 30 },
+        icon_url: { type: 'string', minLength: 2, maxLength: 50 }
       }
-    };
-  }
-
-  static get modifiers() {
-    return {
-      languageOnly: builder => builder.select('language')
     };
   }
 
   static get relationMappings() {
     // we need this to avoid circular dependency
-    const University = require('./exchangeUniversity');
+    const UniversityLanguage = require('./university_language');
+    const ExchangeUniversity = require('./exchange-university');
 
     return {
-      university: {
-        relation: Model.BelongsToOneRelation,
-        modelClass: University,
+      language: {
+        relation: Model.HasManyRelation,
+        modelClass: UniversityLanguage,
         join: {
-          from: 'language.university_id',
+          from: 'language.id',
+          to: 'university_language.language_id'
+        }
+      },
+      university: {
+        relation: Model.ManyToManyRelation,
+        modelClass: ExchangeUniversity,
+        join: {
+          from: 'language.id',
+          through: {
+            from: 'university_language.language_id',
+            to: 'university_language.university_id'
+          },
           to: 'exchange_university.id'
         }
       }

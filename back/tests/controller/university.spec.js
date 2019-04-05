@@ -34,7 +34,7 @@ describe('ExchangeUniversity controller to database', () => {
     assert.ok(res[0].name);
     assert.ok(res[0].language);
   });
-  it('should get the list of ExchangeUniversity join with language from the database', async () => {
+  it('should get the list of ExchangeUniversity join with major from the database', async () => {
     const res = await ExchangeUniversity.query()
       .alias('u')
       .select('u.name')
@@ -67,7 +67,7 @@ describe('ExchangeUniversity controller to database', () => {
         'city:country.country_name as country',
         'city:country:geographical_area.area_name as area')
       .joinRelation('city.country.geographical_area')
-      .eager('[major(titleOnly), language(languageOnly)]');
+      .eager('[major, language]');
     assert.ok(res.length > 0);
   });
   it('should get the list of ExchangeUniversity card model from the database', async () => {
