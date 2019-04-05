@@ -1,41 +1,100 @@
 @import '../../../styles/card.scss';
+@import '../../../styles/variables.scss';
+@import '../../../styles/tooltip.scss';
 
-.card {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 9em;
-  width: 35em;
-  padding-left: 0;
-  overflow: hidden;
-  cursor: pointer;
-  margin: 1% auto;
-}
-
-:host>div>div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-evenly;
-  font-size: 12px;
-  width: 95%;
-  line-height: 1.5em;
-  text-align: left;
-}
-
-div>div.name {
-  font-size: 15px;
-  font-weight: 900;
-}
-
-
-img {
-  height: auto;
-  max-height: 15em;
-  width: 13em;
-}
+$margin: 0.5em;
 
 h4 {
   margin: 0;
   display: inline;
+}
+
+.card {
+  cursor: pointer;
+  padding: 0;
+  color: $paragraphsText;
+}
+
+.grid-card {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 20ch 20ch 15ch 10ch;
+  grid-template-rows: 10ch 5ch;
+  grid-template-areas:
+    "logo title spec slots"
+    "logo stats stats stats";
+  grid-gap: 1ch;
+}
+
+.grid-title,
+.grid-spec,
+.grid-slots {
+  margin-top: $margin;
+}
+
+.grid-logo {
+  grid-area: logo;
+  overflow: hidden;
+
+  .contain {
+    object-fit: contain;
+  }
+
+  img {
+    width: 20ch;
+    height: 16ch;
+  }
+}
+
+.grid-title {
+  grid-area: title;
+
+  .name {
+    font-size: 25px;
+    line-height: 1em;
+    color: $blue2;
+  }
+
+  .city {
+    font-size: 16px;
+  }
+}
+
+.grid-spec {
+  grid-area: spec;
+  align-self: center;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+.grid-slots {
+  grid-area: slots;
+  align-self: center;
+}
+
+.grid-stats {
+  grid-area: stats;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: $margin;
+  margin-inline-end: $margin;
+
+  .rate {
+    .fa-smile {
+      color: $green;
+    }
+
+    .fa-meh {
+      color: $yellow;
+    }
+
+    .fa-frown {
+      color: $danger;
+    }
+  }
+
+  h4 {
+    font-size: 16px;
+  }
 }
