@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Section } from 'src/models/Section';
 import { UNIVERSITY_SECTIONS, UNIVERSITY_SECTION_ICONS } from './UniversitySections.enum';
 import { enumSelector } from 'src/app/utility/utilitary-functions';
-import { log } from 'util';
+import { Testimonial } from 'src/models/Testimonial';
 
 @Component({
   selector: 'app-university-details',
@@ -16,6 +16,7 @@ export class UniversityDetailsComponent implements OnInit {
 
   public university: University;
   public universitySections: Section[] = [];
+  public adviceList: Testimonial[] = [];
 
   constructor(
     private universityService: UniversityService,
@@ -25,6 +26,7 @@ export class UniversityDetailsComponent implements OnInit {
   ngOnInit() {
     console.log('ng init details !');
     this.universityService.getUniversity(this.route.snapshot.paramMap.get('name')).subscribe(uni => this.university = uni);
+    this.universityService.getAdvice().subscribe(advices => this.adviceList = advices);
     this.fillSectionContent();
   }
 

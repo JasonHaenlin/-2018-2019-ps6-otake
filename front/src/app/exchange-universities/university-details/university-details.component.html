@@ -6,7 +6,14 @@
     <section *ngFor="let section of universitySections" id="{{ section.id }}">
       <h2 class="content-title">{{ section.name }}</h2>
       <hr>
-      <div class="content-paragraph">{{ getSectionText(section.id) }}</div>
+      <ng-container *ngIf="section.name === 'Avis'; else elseTemplate">
+          <div *ngFor="let advice of adviceList">
+            <app-testimonial [testimonial] = advice></app-testimonial>
+          </div>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <div class="content-paragraph">{{ getSectionText(section.id) }}</div>
+      </ng-template>
     </section>
   </main>
   <aside>

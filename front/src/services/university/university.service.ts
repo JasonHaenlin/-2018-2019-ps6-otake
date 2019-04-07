@@ -10,6 +10,7 @@ import { UNIVERCITY_CARD_MOCKED } from '../../mocks/UniversityCard.mock';
 import { GeographicalArea } from '../../models/GeographicalArea';
 import { Major } from '../../models/Major';
 import { UniversityCard } from '../../models/UniversityCard';
+import { TESTIMONIAL_CALTECH_MOCKED } from 'src/mocks/Testimonial.mock';
 
 @Injectable({
   providedIn: 'root'
@@ -54,6 +55,10 @@ export class UniversityService {
 
   getGeographicalAreas(): Observable<GeographicalArea[]> {
     return of(GEOGRAPHICAL_AREA_MOCKED);
+  }
+
+  getAdvice() {
+    return of(TESTIMONIAL_CALTECH_MOCKED);
   }
 
   handleError(error: HttpErrorResponse) {
