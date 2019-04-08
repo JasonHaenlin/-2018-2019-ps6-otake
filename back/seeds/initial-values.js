@@ -1,7 +1,7 @@
 const tables = require('../models');
 
 /**
- * All the values are insert here
+ * All the values are inserted here
  * be sure to create them in the right order
  * when constraints are present
  */

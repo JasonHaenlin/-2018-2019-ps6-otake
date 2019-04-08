@@ -1,7 +1,5 @@
 require('dotenv').config();
 const gulp = require('gulp');
-// const istanbul = require('gulp-istanbul');
-// const mocha = require('gulp-mocha');
 const sonarqubeScanner = require('sonarqube-scanner');
 
 gulp.task('sonar', (callback) => {
