@@ -9,6 +9,7 @@ const studyDepartement = require('./study-departement');
 const speciality = require('./speciality');
 const majorSpeciality = require('./major-speciality');
 const course = require('./course');
+const testimonial = require('./testimonial');
 
 /**
  * All the table are sort here
@@ -24,6 +25,7 @@ module.exports = [
   language,
   university_language,
   major,
+  testimonial,
   speciality,
   majorSpeciality,
   course,

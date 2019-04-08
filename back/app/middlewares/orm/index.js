@@ -9,6 +9,7 @@ const StudyDepartement = require('./models/study-departement');
 const Speciality = require('./models/speciality');
 const MajorSpeciality = require('./models/major-speciality');
 const Course = require('./models/course');
+const Testimonial = require('./models/testimonial');
 
 // add all the tables here
 module.exports = {
@@ -17,6 +18,7 @@ module.exports = {
   Country,
   City,
   ExchangeUniversity,
+  Testimonial,
   Language,
   UniversityLanguage,
   StudyDepartement,
