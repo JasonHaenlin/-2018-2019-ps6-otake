@@ -30,6 +30,13 @@ export const UNIVERSITIES_MOCKED: University[] = [
         last_name: 'Durant',
         email: 'melanie.durant@etu.univ-cotedazur.fr',
         text: 'Excellente université, 300 jours de Soleil par an, à proximité de la plage, que du bonheur !!!'
+    },
+
+    {
+        first_name: 'Mathilde',
+        last_name: 'Lebrun',
+        email: 'mathilde.lebrun@etu.univ-cotedazur.fr',
+        text: 'Faible niveau accadémique, coût de la vie excessivement cher'
     }
     ]
   },

@@ -1,9 +1,18 @@
 @import '../../../styles/card.scss';
 
-.testimonial {
-    background-color: white;
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .identity {
-    display: flex;
+    height: 5em;
+}
+
+.card {
+    width: 23em;
+    height: 18em;
+    // background: blueviolet;
+    margin-bottom: 1.5em;
 }

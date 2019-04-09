@@ -6,13 +6,15 @@
 
     <!-- Sections and their html contents -->
     <section *ngFor="let section of universitySections" id="{{ section.id }}">
-      <h2 class="content-title">{{ section.name }}</h2><hr>
+      <h2 class="content-title">{{ section.name }}</h2>
+      <hr>
       <div class="content-paragraph" [innerHTML]="getSectionText( section.id )"></div>
     </section>
     <!-- Testimonials for the university -->
-    <div *ngFor="let advice of university.testimonials">
-      <app-testimonial [testimonial] = advice></app-testimonial>
-      <br>
+    <div class="testimonial">
+      <div *ngFor="let advice of university.testimonials">
+        <app-testimonial [testimonial]=advice></app-testimonial>
+      </div>
     </div>
 
   </main>

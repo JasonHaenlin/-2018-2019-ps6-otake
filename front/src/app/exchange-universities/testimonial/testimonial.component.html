@@ -3,12 +3,17 @@
 </p> -->
 
 <div class="card">
-  <div class="identity">
-    <div class="firstName">{{ testimonial.first_name}}</div>
-    <div class="lastName">&nbsp;{{ testimonial.last_name}}</div>
-  </div>
-  <div class="email">
-    {{ testimonial.email }}
+  <div class="header">
+    <div class = "picture">
+      <i class="far fa-user fa-3x"></i>
+    </div>
+    &nbsp;
+    <div class="identity">
+      <div class="firstName">{{ testimonial.first_name}}</div>
+      <div class="lastName">{{ testimonial.last_name}}</div>
+      <div class="email">{{ testimonial.email }}</div>
+    </div>
+    
   </div>
   <div class="text">
     {{ testimonial.text }}
