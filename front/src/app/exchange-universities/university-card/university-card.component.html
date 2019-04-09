@@ -23,7 +23,12 @@
   </div>
 
   <div class="grid-slots tooltip">
-    <span class="fas fa-users fa-3x"></span>
+    <ng-container *ngIf="university.nb_of_place < 3; else elseTemplate">
+      <span class="fas fa-user-friends fa-3x"></span>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <span class="fas fa-users fa-3x"></span>
+    </ng-template>
     {{university.nb_of_place}}
   </div>
 
