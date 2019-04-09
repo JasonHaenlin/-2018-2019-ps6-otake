@@ -5,6 +5,8 @@ import { SPECIALITY_SECTIONS, SPECIALITY_SECTION_ICONS } from './SpecialitySecti
 import { enumSelector } from 'src/app/utility/utilitary-functions';
 import { Speciality } from 'src/models/Speciality';
 import { SpecialityService } from 'src/services/speciality/speciality.service';
+import { GeographicalArea } from 'src/models/GeographicalArea';
+import { UniversityService } from 'src/services/university/university.service';
 
 @Component({
   selector: 'app-speciality-details',
@@ -16,16 +18,19 @@ export class SpecialityDetailsComponent implements OnInit {
   name: string;
   public speciality: Speciality;
   public specialitySections: Section[] = [];
+  public geographicalArea: GeographicalArea[] = [];
 
   constructor(
     private route: ActivatedRoute,
-    private specialityService: SpecialityService) { }
+    private specialityService: SpecialityService,
+    private universityService: UniversityService) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.name = params['name'];
     });
     this.specialityService.getSpeciality(this.name).subscribe(s => this.speciality = s);
+    this.universityService.getGeographicalAreas().subscribe(geo => this.geographicalArea = geo)
     this.fillSectionContent();
   }
 

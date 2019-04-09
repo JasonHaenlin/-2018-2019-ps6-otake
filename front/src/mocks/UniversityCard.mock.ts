@@ -1,4 +1,4 @@
-import { UniversityCard } from '../models/UniversityCard';
+import { UniversityCard } from '../models/University';
 import { GeographicalArea } from '../models/GeographicalArea';
 import { GEOGRAPHICAL_AREA_MOCKED } from './GeographicalArea.mock';
 

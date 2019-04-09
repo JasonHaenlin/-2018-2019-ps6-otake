@@ -22,11 +22,4 @@ export class AccordionComponent implements OnInit {
     this.display = !this.display;
     console.log(this.display);
   }
-
-  showContent() {
-    if (this.display) {
-      return 'content';
-    }
-    return 'none';
-  }
 }

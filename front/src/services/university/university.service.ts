@@ -3,14 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { ApplicationHttpClient } from 'src/core/http-client';
 import { UNIVERSITIES_MOCKED } from 'src/mocks/Universities.mock';
-import { University } from 'src/models/University';
+import { University } from 'src/models/UniversityDetails';
 import { GEOGRAPHICAL_AREA_MOCKED } from '../../mocks/GeographicalArea.mock';
 import { MAJOR_MOCKED } from '../../mocks/Major.mock';
 import { UNIVERCITY_CARD_MOCKED } from '../../mocks/UniversityCard.mock';
 import { GeographicalArea } from '../../models/GeographicalArea';
 import { Major } from '../../models/Major';
-import { UniversityCard } from '../../models/UniversityCard';
-import { TESTIMONIAL_CALTECH_MOCKED } from 'src/mocks/Testimonial.mock';
+import { UniversityCard } from '../../models/University';
 
 @Injectable({
   providedIn: 'root'
@@ -55,10 +54,6 @@ export class UniversityService {
 
   getGeographicalAreas(): Observable<GeographicalArea[]> {
     return of(GEOGRAPHICAL_AREA_MOCKED);
-  }
-
-  getAdvice() {
-    return of(TESTIMONIAL_CALTECH_MOCKED);
   }
 
   handleError(error: HttpErrorResponse) {

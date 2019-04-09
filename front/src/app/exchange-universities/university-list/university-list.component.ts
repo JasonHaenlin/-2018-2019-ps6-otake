@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UniversityCard } from '../../../models/UniversityCard';
+import { UniversityCard } from '../../../models/University';
 import { UniversityService } from '../../../services/university/university.service';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';

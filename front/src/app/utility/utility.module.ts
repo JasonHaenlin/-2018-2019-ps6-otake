@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { SectionSelectorComponent } from './section-selector/section-selector.component';
 import { RouterModule } from '@angular/router';
 import { LoaderService } from './loader/loader.service';
+import { AccordionComponent } from './accordion/accordion.component';
 
 @NgModule({
   declarations: [
     SectionSelectorComponent,
     LoaderComponent,
+    AccordionComponent,
   ],
   imports: [
     CommonModule,
@@ -17,6 +19,7 @@ import { LoaderService } from './loader/loader.service';
   exports: [
     SectionSelectorComponent,
     LoaderComponent,
+    AccordionComponent
   ],
   providers: [
     LoaderService,
