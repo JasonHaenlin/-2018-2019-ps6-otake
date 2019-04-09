@@ -21,7 +21,7 @@ module.exports = {
       .joinRelation('[city.country.geographical_area, major, language]')
       .modify((queryBuilder) => {
         if (area) {
-          queryBuilder.where('city:country:geographical_area.area_name', area);
+          queryBuilder.where('city:country:geographical_area.shorthand', area);
         }
         if (language) {
           queryBuilder.where('language.language', language);

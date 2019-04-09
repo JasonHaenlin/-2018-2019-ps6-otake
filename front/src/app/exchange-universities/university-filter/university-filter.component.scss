@@ -17,15 +17,22 @@ img {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content:flex-start;
-  align-items:center;
+  align-items:flex-start;
 }
 
 .element {
+  border-radius: $borderRadius;
   line-height: 1em;
   font-size: 14px;
-  height: 5em;
   width: 5em;
   text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.element:hover {
+  cursor: pointer;
+  background-color: rgba(14, 99, 155, 0.25);
 }
 
 .major,

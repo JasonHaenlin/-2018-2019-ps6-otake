@@ -24,12 +24,7 @@ export class UniversityListComponent implements OnInit {
       this.department = params.department;
       this.language = params.language;
     });
-    const dest = this.route.snapshot.queryParamMap.get('destination');
-    if (dest) {
-      this.universityList$ = this.universityService.getUniversitiesByArea(dest);
-    } else {
-      this.universityList$ = this.universityService.getUniversities();
-    }
+    this.universityList$ = this.universityService.getUniversities();
   }
 
 }
