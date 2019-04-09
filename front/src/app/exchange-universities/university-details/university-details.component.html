@@ -10,7 +10,7 @@
       <div class="content-paragraph" [innerHTML]="getSectionText( section.id )"></div>
     </section>
     <!-- Testimonials for the university -->
-    <div *ngFor="let advice of adviceList">
+    <div *ngFor="let advice of university.testimonials">
       <app-testimonial [testimonial] = advice></app-testimonial>
       <br>
     </div>
