@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UniversityService } from 'src/services/university/university.service';
-import { University } from 'src/models/University';
+import { University } from 'src/models/UniversityDetails';
 import { ActivatedRoute } from '@angular/router';
 import { Section } from 'src/models/Section';
 import { UNIVERSITY_SECTIONS, UNIVERSITY_SECTION_ICONS } from './UniversitySections.enum';
@@ -20,13 +20,12 @@ export class UniversityDetailsComponent implements OnInit {
 
   constructor(
     private universityService: UniversityService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
     console.log('ng init details !');
     this.universityService.getUniversity(this.route.snapshot.paramMap.get('name')).subscribe(uni => this.university = uni);
-    this.universityService.getAdvice().subscribe(advices => this.adviceList = advices);
     this.fillSectionContent();
   }
 

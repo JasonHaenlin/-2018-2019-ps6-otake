@@ -1,9 +1,16 @@
 @import '../../../styles/details.scss';
 
 .line {
-  display: inline-block;
-  background-color: $blue4;
-  height: 10em;
-  width: 0.3em;
-  margin-left: 15px;
+    display: inline-block;
+    background-color: $blue4;
+    height: 10em;
+    width: 0.3em;
+    margin-left: 15px;
+}
+
+.testimonial {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
 }

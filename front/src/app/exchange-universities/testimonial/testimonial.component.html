@@ -2,11 +2,20 @@
   {{ testimonial.first_name }}
 </p> -->
 
-<div class="identity">
-  {{ testimonial.first_name}}
-  <br>
-  {{ testimonial.last_name}}
-</div>
-<div class="text">
-  {{ testimonial.text }}
+<div class="card">
+  <div class="header">
+    <div class = "picture">
+      <i class="far fa-user fa-3x"></i>
+    </div>
+    &nbsp;
+    <div class="identity">
+      <div class="firstName">{{ testimonial.first_name}}</div>
+      <div class="lastName">{{ testimonial.last_name}}</div>
+      <div class="email">{{ testimonial.email }}</div>
+    </div>
+    
+  </div>
+  <div class="text">
+    {{ testimonial.text }}
+  </div>
 </div>

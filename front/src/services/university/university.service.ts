@@ -3,13 +3,12 @@ import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { ApplicationHttpClient } from 'src/core/http-client';
 import { UNIVERSITIES_MOCKED } from 'src/mocks/Universities.mock';
-import { University } from 'src/models/University';
-import { UNIVERCITY_CARD_MOCKED } from '../../mocks/UniversityCard.mock';
 import { GeographicalArea } from '../../models/GeographicalArea';
 import { Major } from '../../models/Major';
-import { UniversityCard } from '../../models/UniversityCard';
-import { TESTIMONIAL_CALTECH_MOCKED } from 'src/mocks/Testimonial.mock';
+import { UniversityCard } from '../../models/University';
+import {University} from "../../models/UniversityDetails";
 import {Language} from "../../models/Language";
+import {TESTIMONIAL_CALTECH_MOCKED} from "../../mocks/Testimonial.mock";
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +16,6 @@ import {Language} from "../../models/Language";
 export class UniversityService {
 
   private universities = UNIVERSITIES_MOCKED;
-  private universityCards = UNIVERCITY_CARD_MOCKED;
 
   constructor(private http: ApplicationHttpClient) { }
 
@@ -27,10 +25,6 @@ export class UniversityService {
 
   getUniversities(): Observable<UniversityCard[]> {
     return this.http.get<UniversityCard[]>('universities/', 'get Universities list', []);
-  }
-
-  getUniversityCard(name: string): Observable<UniversityCard> {
-    return of(this.universityCards.find(u => u.name === name));
   }
 
   getUniversitiesByArea(area: string): Observable<UniversityCard[]> {
@@ -43,10 +37,6 @@ export class UniversityService {
 
   getUniversitiesByMajor(major: string): Observable<UniversityCard[]> {
     return this.http.get<UniversityCard[]>(`universities/${major}`, 'get Universities by major', []);
-  }
-
-  getUniversityCards(): Observable<UniversityCard[]> {
-    return of(this.universityCards);
   }
 
   getLanguages(): Observable<Language[]> {

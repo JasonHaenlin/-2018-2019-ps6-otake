@@ -1,5 +1,18 @@
 @import '../../../styles/card.scss';
 
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
 .identity {
-    
+    height: 5em;
+}
+
+.card {
+    width: 23em;
+    height: 18em;
+    // background: blueviolet;
+    margin-bottom: 1.5em;
 }

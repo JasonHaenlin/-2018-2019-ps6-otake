@@ -1,4 +1,4 @@
-import { University } from 'src/models/University';
+import { University } from 'src/models/UniversityDetails';
 
 export const UNIVERSITIES_MOCKED: University[] = [
   {
@@ -16,7 +16,29 @@ export const UNIVERSITIES_MOCKED: University[] = [
     admission_text: 'About 230 new freshmen and 10 to 15 new transfer students join Caltech each fall. Each new student is welcomed into a close-knit, collaborative community of nearly 1,000 undergraduate scholars who have demonstrated the highest level of academic excellence and share a strong interest in science, engineering, and technology.',
     // tslint:disable-next-line: max-line-length
     student_life_text: 'Caltech is a small, collaborative community, where faculty, postdoctoral scholars, students, and staff from diverse backgrounds, cultures, and experiences live, work, and engage with one another. Together, they remain committed to setting the example of what its intertwined missions of research and education can accomplish. Caltech is an integral part of Pasadena. Together with JPL, we are the city’s largest employer and a source of programs that benefit our neighbors: teachers, businesses, families, cultural centers, and government. To stay up-to-date on upcoming events and the latest community news, visit Caltech Today or subscribe to Caltech Matters.',
-    cost_of_living_text: '1,400 – 2,400 USD/month'
+    cost_of_living_text: '1,400 – 2,400 USD/month',
+    testimonials: [
+      {
+        first_name: 'Pierre',
+        last_name: 'Martin',
+        email: 'pierre.martin@etu.univ-cotedazur.fr',
+        text: 'Très bonne expérience, à conseiller'
+    },
+
+    {
+        first_name: 'Mélanie',
+        last_name: 'Durant',
+        email: 'melanie.durant@etu.univ-cotedazur.fr',
+        text: 'Excellente université, 300 jours de Soleil par an, à proximité de la plage, que du bonheur !!!'
+    },
+
+    {
+        first_name: 'Mathilde',
+        last_name: 'Lebrun',
+        email: 'mathilde.lebrun@etu.univ-cotedazur.fr',
+        text: 'Faible niveau accadémique, coût de la vie excessivement cher'
+    }
+    ]
   },
   {
     id: 1,

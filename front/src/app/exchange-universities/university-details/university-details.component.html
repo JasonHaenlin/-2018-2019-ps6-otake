@@ -3,18 +3,20 @@
     <img src="{{university.big_picture}}" alt="<(^^)>">
   </header>
   <main *ngIf="university">
+
+    <!-- Sections and their html contents -->
     <section *ngFor="let section of universitySections" id="{{ section.id }}">
       <h2 class="content-title">{{ section.name }}</h2>
       <hr>
-      <ng-container *ngIf="section.name === 'Avis'; else elseTemplate">
-          <div *ngFor="let advice of adviceList">
-            <app-testimonial [testimonial] = advice></app-testimonial>
-          </div>
-      </ng-container>
-      <ng-template #elseTemplate>
-        <div class="content-paragraph">{{ getSectionText(section.id) }}</div>
-      </ng-template>
+      <div class="content-paragraph" [innerHTML]="getSectionText( section.id )"></div>
     </section>
+    <!-- Testimonials for the university -->
+    <div class="testimonial">
+      <div *ngFor="let advice of university.testimonials">
+        <app-testimonial [testimonial]=advice></app-testimonial>
+      </div>
+    </div>
+
   </main>
   <aside>
     <div class="line"></div>

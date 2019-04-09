@@ -12,7 +12,15 @@
         </div>
       </ng-container>
       <ng-template #elseTemplate>
-        <div class="content-paragraph">{{ getSectionText(section.id) }}</div>
+        <ng-container *ngIf="section.id === 'advice'; else elseTemplate2">
+          <div *ngFor="let geo of geographicalArea">
+            <app-accordion [title]="geo.name"></app-accordion>
+          </div>
+        </ng-container>
+        <ng-template #elseTemplate2>
+            <div class="content-paragraph">{{ getSectionText(section.id) }}</div>
+        </ng-template>
+        
       </ng-template>
     </section>
   </main>

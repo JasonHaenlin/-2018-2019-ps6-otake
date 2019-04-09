@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Content } from '@angular/compiler/src/render3/r3_ast';
 
 @Component({
   selector: 'app-accordion',
@@ -21,12 +20,5 @@ export class AccordionComponent implements OnInit {
   displayContent() {
     this.display = !this.display;
     console.log(this.display);
-  }
-
-  showContent() {
-    if (this.display) {
-      return 'content';
-    }
-    return 'none';
   }
 }
