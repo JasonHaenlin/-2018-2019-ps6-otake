@@ -7,6 +7,7 @@ import { UniversityRoutingModule } from './university-routing.module';
 import { UniversityComponent } from './university/university.component';
 import { UtilityModule } from '../utility/utility.module';
 import { TestimonialComponent } from './testimonial/testimonial.component';
+import { UniversityFilterComponent } from './university-filter/university-filter.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { TestimonialComponent } from './testimonial/testimonial.component';
     UniversityDetailsComponent,
     UniversityListComponent,
     TestimonialComponent,
+    UniversityFilterComponent,
   ],
   imports: [
     UniversityRoutingModule,
