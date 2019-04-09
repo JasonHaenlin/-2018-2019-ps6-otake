@@ -3,7 +3,7 @@ export enum UNIVERSITY_SECTIONS {
   admission = 'Admission/contrat',
   student = 'Vie étudiante',
   cost = 'Coût de la vie',
-  advice = 'Avis'
+  testimonial = 'Avis'
 }
 
 export enum UNIVERSITY_SECTION_ICONS {
@@ -11,5 +11,5 @@ export enum UNIVERSITY_SECTION_ICONS {
   admission = 'fas fa-file-contract',
   student = 'fas fa-graduation-cap',
   cost = 'fas fa-money-bill-alt',
-  advice = 'fas fa-users'
+  testimonial = 'fas fa-users'
 }

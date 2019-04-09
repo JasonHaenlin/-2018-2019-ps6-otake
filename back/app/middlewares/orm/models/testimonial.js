@@ -22,12 +22,6 @@ class Testimonial extends Model {
     };
   }
 
-  static get modifiers() {
-    return {
-      titleOnly: builder => builder.select('title')
-    };
-  }
-
   static get relationMappings() {
     // we need this to avoid circular dependency
     const ExchangeUniversity = require('./exchange-university');
