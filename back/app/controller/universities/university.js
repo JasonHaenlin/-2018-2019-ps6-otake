@@ -1,5 +1,10 @@
 // simple example using objection and knex
-const { ExchangeUniversity, Language, Major, GeographicalArea } = require('../../middlewares/orm');
+const {
+  ExchangeUniversity,
+  Language,
+  Major,
+  GeographicalArea
+} = require('../../middlewares/orm');
 
 module.exports = {
   getUniversitiesShortInfo(area, language, major) {
@@ -45,12 +50,13 @@ module.exports = {
       });
   },
 
-  getLanguages(){
+  getLanguages() {
     return Language.query();
   },
 
-  getMajors(){
-    return Major.query();
+  getMajors() {
+    return Major.query()
+      .whereNot({ 'major.shorthand': 'ALL' });
   },
 
   getAreas() {

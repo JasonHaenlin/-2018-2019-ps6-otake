@@ -1,7 +1,7 @@
 import { Language } from './Language';
 import { GeographicalArea } from './GeographicalArea';
 
-export interface UniversityCard {
+export interface University {
   name?: string;
   admission_rate?: string;
   type_of_file?: string;

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UniversityCard } from '../../../models/University';
+import { University } from '../../../models/University';
 import { UniversityService } from '../../../services/university/university.service';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UniversityListComponent implements OnInit {
 
-  public universityList$: Observable<UniversityCard[]>;
+  public universityList$: Observable<University[]>;
   public destination: string;
   public department: string;
   public language: string;
@@ -24,7 +24,7 @@ export class UniversityListComponent implements OnInit {
       this.department = params.department;
       this.language = params.language;
     });
-    this.universityList$ = this.universityService.getUniversities();
+    this.universityList$ = this.universityService.getUniversities(this.route.snapshot.queryParamMap.get('destination'), null, null);
   }
 
 }

@@ -1,14 +1,8 @@
-import { University } from 'src/models/UniversityDetails';
+import { UniversityDetails } from 'src/models/UniversityDetails';
 
-export const UNIVERSITIES_MOCKED: University[] = [
+export const UNIVERSITIES_MOCKED: UniversityDetails[] = [
   {
-    id: 0,
     name: 'California Institute Of Technology',
-    city_id: 0,
-    cost_of_living: 5,
-    nb_of_place: 10,
-    admission_rate: 20,
-    small_picture: 'https://www.caltech.edu/static/core/img/caltech-new-logo.png',
     big_picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Caltech_Entrance.jpg/1920px-Caltech_Entrance.jpg',
     // tslint:disable-next-line: max-line-length
     presentation_text: 'Caltech is a world-renowned science and engineering institute that marshals some of the world\'s brightest minds and most innovative tools to address fundamental scientific questions and pressing societal challenges. The Institute manages JPL for NASA, sending probes to explore the planets of our solar system and quantify changes on our home planet. Caltech also owns and operates large-scale research facilities such as the Seismological Laboratory and a global network of astronomical observatories, including the Palomar and W. M. Keck Observatories; and cofounded and comanages LIGO. Caltech is an independent, privately supported institution with a 124-acre campus located in Pasadena, California.',
@@ -23,30 +17,25 @@ export const UNIVERSITIES_MOCKED: University[] = [
         last_name: 'Martin',
         email: 'pierre.martin@etu.univ-cotedazur.fr',
         text: 'Très bonne expérience, à conseiller'
-    },
+      },
 
-    {
+      {
         first_name: 'Mélanie',
         last_name: 'Durant',
         email: 'melanie.durant@etu.univ-cotedazur.fr',
         text: 'Excellente université, 300 jours de Soleil par an, à proximité de la plage, que du bonheur !!!'
-    },
+      },
 
-    {
+      {
         first_name: 'Mathilde',
         last_name: 'Lebrun',
         email: 'mathilde.lebrun@etu.univ-cotedazur.fr',
         text: 'Faible niveau accadémique, coût de la vie excessivement cher'
-    }
+      }
     ]
   },
   {
-    id: 1,
     name: 'cityU',
-    city_id: 34,
-    cost_of_living: 4,
-    nb_of_place: 20,
-    small_picture: 'https://template.cityu.edu.hk/template/img/logos/cityu.png',
     big_picture: 'http://www.ejinsight.com/wp-content/uploads/2017/11/1700422_b146b95c23878cdc1e4b26e5c5903db6-692x360.jpg',
     // tslint:disable-next-line: max-line-length
     presentation_text: 'With an emphasis on professional education and research, CityU produces graduates with the ability to anticipate and precipitate change in a rapidly-evolving, globalised world. In recent years, CityU has performed strongly in university rankings and is currently among the top 10 in Asia and the top 100 in the world. It is a fast-growing institution with undergraduate and postgraduate students and academic staff in business, creative media, data science, energy and environment, engineering, humanities and social sciences, law, science, and veterinary medicine and life sciences. Our curriculum emphasises innovation and creativity, and this principle underlies all aspects of the University\'s professional education and problem-driven research. Supported by novel learning spaces and facilities in new buildings, the curriculum embodies CityU\'s Strategic Plan for a new era of growth. CityU has established itself as one of the most innovative universities in Asia, pioneering research in diverse fields that are of high relevance on pressing issues. The success of its research programmes is reflected in both the amount of funding received and the number of projects funded as well as the quality of its research output. CityU\'s proximity to, and close ties with, mainland China, as well as its international partnerships and outlook, make the University ideally positioned to provide a dynamic learning and research environment for students and faculty from all over the world. Both the stature and sheer volume of CityU\'s relationships with global institutions continue to grow. Like the incredible city in which it plays such an integral role, CityU continues to move, innovate, learn, teach and prosper.',

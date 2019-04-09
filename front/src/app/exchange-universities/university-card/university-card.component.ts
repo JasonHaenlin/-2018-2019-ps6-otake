@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { UniversityCard } from '../../../models/University';
+import { University } from '../../../models/University';
 
 @Component({
   selector: 'app-university-card',
@@ -9,7 +9,7 @@ import { UniversityCard } from '../../../models/University';
 export class UniversityCardComponent implements OnInit {
 
   @Input()
-  university: UniversityCard;
+  university: University;
 
   constructor() {
   }

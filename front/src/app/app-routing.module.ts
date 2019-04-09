@@ -27,7 +27,6 @@ const routes: Routes = [
       anchorScrolling: 'enabled',
       scrollPositionRestoration: 'enabled',
       scrollOffset: [0, 75], // [x, y]
-      // preloadingStrategy: PreloadAllModules
     }),
     CommonModule
   ],

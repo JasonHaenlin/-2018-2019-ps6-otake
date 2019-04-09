@@ -1,7 +1,7 @@
-import { UniversityCard } from '../models/University';
+import { University } from '../models/University';
 import { GEOGRAPHICAL_AREA_MOCKED } from './GeographicalArea.mock';
 
-export const UNIVERCITY_CARD_MOCKED: UniversityCard[] = [
+export const UNIVERCITY_CARD_MOCKED: University[] = [
   {
     name: 'cityU',
     city: 'HongKong',

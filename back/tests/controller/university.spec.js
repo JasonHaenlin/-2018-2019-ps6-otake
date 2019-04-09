@@ -118,9 +118,7 @@ describe('ExchangeUniversity controller to database', () => {
     assert.ok(res.length > 0);
   });
   it('should get the list of ExchangeUniversity card from the database using a filter', async () => {
-    const res = await university.getUniversitiesShortInfo('Asie', 'Chinois', null);
-    console.log(res);
-
+    const res = await university.getUniversitiesShortInfo('AS', 'Chinois', null);
     assert.ok(res.length > 0);
   });
 });

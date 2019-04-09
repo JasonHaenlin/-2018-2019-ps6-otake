@@ -8,16 +8,16 @@ class Testimonial extends Model {
   static get jsonSchema() {
     return {
       type: 'object',
-      required: ['university_id','major_id','first_name', 'last_name'],
+      required: ['university_id', 'major_id', 'first_name', 'last_name'],
       properties: {
         id: { type: 'integer' },
-        university_id: { type: 'integer'},
-        first_name: { type: 'string', minLength: 2, maxLength: 50},
-        last_name: { type: 'string', minLength: 2, maxLength: 50},
-        email: { type: 'string', minLength: 7, maxLength: 50},
-        major_id: { type: 'integer'},
-        nationality: { type: 'string', minLength: 2, maxLength: 3},
-        text: { type: 'string', minLength: 5, maxLength: 255}
+        university_id: { type: 'integer' },
+        first_name: { type: 'string', minLength: 2, maxLength: 50 },
+        last_name: { type: 'string', minLength: 2, maxLength: 50 },
+        email: { type: 'string', minLength: 7, maxLength: 50 },
+        major_id: { type: 'integer' },
+        nationality: { type: 'string', minLength: 2, maxLength: 3 },
+        text: { type: 'string', minLength: 5, maxLength: 255 }
       }
     };
   }

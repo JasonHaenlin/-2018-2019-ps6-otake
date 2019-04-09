@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UniversityService } from 'src/services/university/university.service';
-import { University } from 'src/models/UniversityDetails';
+import { UniversityDetails } from 'src/models/UniversityDetails';
 import { ActivatedRoute } from '@angular/router';
 import { Section } from 'src/models/Section';
 import { UNIVERSITY_SECTIONS, UNIVERSITY_SECTION_ICONS } from './UniversitySections.enum';
@@ -14,7 +14,7 @@ import { Testimonial } from 'src/models/Testimonial';
 })
 export class UniversityDetailsComponent implements OnInit {
 
-  public university: University;
+  public university: UniversityDetails;
   public universitySections: Section[] = [];
   public adviceList: Testimonial[] = [];
 

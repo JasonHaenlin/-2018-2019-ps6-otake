@@ -30,7 +30,7 @@ export class SpecialityDetailsComponent implements OnInit {
       this.name = params['name'];
     });
     this.specialityService.getSpeciality(this.name).subscribe(s => this.speciality = s);
-    this.universityService.getAreas().subscribe(geo => this.geographicalArea = geo)
+    this.universityService.getAreas().subscribe(geo => this.geographicalArea = geo);
     this.fillSectionContent();
   }
 
