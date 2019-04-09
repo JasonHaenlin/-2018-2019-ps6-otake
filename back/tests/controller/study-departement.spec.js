@@ -1,14 +1,14 @@
 require('../../server');
 const assert = require('assert');
 
-const { studyDepartement } = require('../../app/middlewares/orm');
+const { StudyDepartement } = require('../../app/middlewares/orm');
 
 const getstudyDepartementsRaw = () => {
-  return studyDepartement.query();
+  return StudyDepartement.query();
 };
 
 const getstudyDepartements = () => {
-  return studyDepartement.query()
+  return StudyDepartement.query()
     .alias('s')
     .select('s.university_id', 'major.title', 'major.shorthand')
     .joinRelation('major');
