@@ -1,5 +1,5 @@
 // simple example using objection and knex
-const { ExchangeUniversity } = require('../../middlewares/orm');
+const { ExchangeUniversity, Language, Major, GeographicalArea } = require('../../middlewares/orm');
 
 module.exports = {
   getUniversitiesShortInfo(area, language, major) {
@@ -43,5 +43,17 @@ module.exports = {
         });
         return res;
       });
+  },
+
+  getLanguages(){
+    return Language.query();
+  },
+
+  getMajors(){
+    return Major.query();
+  },
+
+  getAreas() {
+    return GeographicalArea.query();
   }
 };

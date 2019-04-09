@@ -20,7 +20,7 @@
       <span [ngClass]="arrow_icon"></span>
       <div class="dropdown-content">
         <a *ngFor="let area of (areaList$ | async)"
-          (click)="goToUniversityList(area.shorthand)">{{area.name}}</a>
+          (click)="goToUniversityList(area.shorthand)">{{area.area_name}}</a>
       </div>
     </div>
 

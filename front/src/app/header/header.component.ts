@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { serverUrl } from 'src/config/server.config';
 import { GeographicalArea } from '../../models/GeographicalArea';
 import { Major } from '../../models/Major';
 import { UniversityService } from './../../services/university/university.service';
@@ -22,7 +21,7 @@ export class HeaderComponent implements OnInit {
   constructor(private universityService: UniversityService, private router: Router) { }
 
   ngOnInit() {
-    this.areaList$ = this.universityService.getGeographicalAreas();
+    this.areaList$ = this.universityService.getAreas();
     this.majorList$ = this.universityService.getMajors();
   }
 

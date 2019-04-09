@@ -3,32 +3,32 @@ import { GeographicalArea } from 'src/models/GeographicalArea';
 export const GEOGRAPHICAL_AREA_MOCKED: GeographicalArea[] = [
   {
     id: 0,
-    name: 'Europe',
+    area_name: 'Europe',
     shorthand: 'EU'
   },
   {
     id: 1,
-    name: 'Asie',
+    area_name: 'Asie',
     shorthand: 'AS'
   },
   {
     id: 2,
-    name: 'Amérique du Nord',
+    area_name: 'Amérique du Nord',
     shorthand: 'NA'
   },
   {
     id: 3,
-    name: 'Amérique du Sud',
+    area_name: 'Amérique du Sud',
     shorthand: 'SA'
   },
   {
     id: 4,
-    name: 'Afrique',
+    area_name: 'Afrique',
     shorthand: 'AF'
   },
   {
     id: 5,
-    name: 'Oceanie',
+    area_name: 'Oceanie',
     shorthand: 'OC'
   }
 ];

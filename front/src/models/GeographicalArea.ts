@@ -1,6 +1,6 @@
 export interface GeographicalArea {
   id?: number;
-  name?: string;
+  area_name?: string;
   shorthand?: string;
   icon?: string;
 }

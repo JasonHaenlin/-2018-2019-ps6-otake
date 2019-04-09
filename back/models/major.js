@@ -7,12 +7,12 @@ module.exports = new BaseModel('major', t => {
   t.string('icon', 100);
 },
 [
-  { id: 0, title: 'Tous', shorthand: 'ALL' },
-  { id: 1, title: 'Informatique', shorthand: 'SI' },
-  { id: 2, title: 'Génie de l\'eau', shorthand: 'GE' },
-  { id: 3, title: 'Bâtiments', shorthand: 'BAT' },
-  { id: 4, title: 'Electronique', shorthand: 'ELEC' },
-  { id: 5, title: 'Génie biologique', shorthand: 'GB' },
-  { id: 6, title: 'Math.App. & Modélisation', shorthand: 'MAM' },
-  { id: 7, title: 'Elec. & info.industrielle', shorthand: 'EII' }
+  { id: 0, title: 'Tous', shorthand: 'ALL', icon: 'fas fa-infinity' },
+  { id: 1, title: 'Informatique', shorthand: 'SI', icon: 'fas fa-laptop' },
+  { id: 2, title: 'Génie de l\'eau', shorthand: 'GE', icon: 'fas fa-tint' },
+  { id: 3, title: 'Bâtiments', shorthand: 'BAT', icon: 'fas fa-pencil-ruler' },
+  { id: 4, title: 'Electronique', shorthand: 'ELEC', icon: 'fas fa-bolt' },
+  { id: 5, title: 'Génie biologique', shorthand: 'GB', icon: 'fas fa-leaf' },
+  { id: 6, title: 'Math.App. & Modélisation', shorthand: 'MAM', icon: 'fas fa-calculator' },
+  { id: 7, title: 'Elec. & info.industrielle', shorthand: 'EII', icon: 'fas fa-microchip' }
 ]);

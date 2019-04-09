@@ -1,3 +1,11 @@
-<p>
-  university-filter works!
-</p>
+<div class="filter">
+  <div class="area" *ngFor="let area of (areaList$ | async)">
+    <img src="{{area.icon}}">{{area.area_name}}
+  </div>
+  <div class="major" *ngFor="let major of (majorList$ | async)">
+    <span [ngClass]="major.icon"></span>{{major.shorthand}}
+  </div>
+  <div class="language" *ngFor="let language of (languageList$ | async)">
+    <img src="{{language.icon_url}}">{{language.language}}
+  </div>
+</div>
