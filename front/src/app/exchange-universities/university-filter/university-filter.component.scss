@@ -1,0 +1,50 @@
+@import '../../../styles/variables.scss';
+
+img {
+  height: 32px;
+  width: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.filter {
+  width: 30%;
+}
+
+:host>div>div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  align-items:center;
+}
+
+.element {
+  line-height: 1em;
+  font-size: 14px;
+  height: 5em;
+  width: 5em;
+  text-align: center;
+}
+
+.major,
+.language,
+.area {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  margin-left: 0.5em;
+}
+
+.major>.element {
+  height: 3em;
+}
+
+.language>.element {
+  height: 4em;
+}
+
+.title {
+  color: $blue2;
+  margin-left: 0.5em;
+}

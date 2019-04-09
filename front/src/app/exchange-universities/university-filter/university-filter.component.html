@@ -1,11 +1,29 @@
 <div class="filter">
-  <div class="area" *ngFor="let area of (areaList$ | async)">
-    <img src="{{area.icon}}">{{area.area_name}}
+  <span class="title">Destination:</span>
+  <div class="area">
+    <div class="element" *ngFor="let area of (areaList$ | async)">
+      <img src="{{area.icon}}">
+      <div>
+        {{area.area_name}}
+      </div>
+    </div>
   </div>
-  <div class="major" *ngFor="let major of (majorList$ | async)">
-    <span [ngClass]="major.icon"></span>{{major.shorthand}}
+  <span class="title">Département:</span>
+  <div class="major">
+    <div class="element" *ngFor="let major of (majorList$ | async)">
+      <span [ngClass]="major.icon"></span>
+      <div>
+        {{major.shorthand}}
+      </div>
+    </div>
   </div>
-  <div class="language" *ngFor="let language of (languageList$ | async)">
-    <img src="{{language.icon_url}}">{{language.language}}
+  <span class="title">Language Utilisé:</span>
+  <div class="language">
+    <div class="element" *ngFor="let language of (languageList$ | async)">
+      <img src="{{language.icon_url}}">
+      <div>
+        {{language.language}}
+      </div>
+    </div>
   </div>
 </div>
