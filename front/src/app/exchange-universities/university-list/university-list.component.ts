@@ -12,17 +12,12 @@ import { ActivatedRoute } from '@angular/router';
 export class UniversityListComponent implements OnInit {
 
   public universityList$: Observable<University[]>;
-  public destination: string;
-  public department: string;
-  public language: string;
 
   constructor(public universityService: UniversityService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      this.destination = params.destination;
-      this.department = params.department;
-      this.language = params.language;
+      this.universityList$ = this.universityService.getUniversities(params.destination, params.department, params.language);
     });
     this.universityList$ = this.universityService.getUniversities(this.route.snapshot.queryParamMap.get('destination'), null, null);
   }

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, UnaryFunction, pipe } from 'rxjs';
 import { httpOptionsBase, serverUrl } from 'src/config/server.config';
-import { catchError, finalize, timeout, delay } from 'rxjs/internal/operators';
+import { catchError, finalize, timeout, delay, shareReplay } from 'rxjs/internal/operators';
 import { handleError } from './http-utils';
 import { LoaderService } from 'src/app/utility/loader/loader.service';
 
@@ -94,6 +94,7 @@ export class ApplicationHttpClient {
   private processPipe = <T>(operation: string, backupValue?: T): UnaryFunction<Observable<{}>, Observable<any>> =>
     pipe(
       timeout(requestTimeout),
+      shareReplay(1),
       catchError(handleError<T>(operation, backupValue))
     )
 }
