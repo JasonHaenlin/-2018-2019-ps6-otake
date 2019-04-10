@@ -16,8 +16,8 @@ img {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content:flex-start;
-  align-items:flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .element {
@@ -54,4 +54,8 @@ img {
 .title {
   color: $blue2;
   margin-left: 0.5em;
+}
+
+.selected {
+  background-color: $blue3;
 }
