@@ -61,5 +61,11 @@ module.exports = {
 
   getAreas() {
     return GeographicalArea.query();
+  },
+
+  getUniversityDetails(name) {
+    return ExchangeUniversity.query()
+      .select('name', 'big_picture', 'presentation_text', 'admission_text', 'student_life_text', 'cost_of_living_text')
+      .where({ 'exchange_university.name': name });
   }
 };

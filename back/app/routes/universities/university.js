@@ -21,3 +21,8 @@ exports.getMajors = async (req, res) => {
   const majors = await university.getMajors();
   resHandler.yahResponse(res, majors);
 };
+
+exports.getUniversityDetails = async (req, res) => {
+  const univDetails = await university.getUniversityDetails(req.params.name);
+  resHandler.yahResponse(res, univDetails);
+};

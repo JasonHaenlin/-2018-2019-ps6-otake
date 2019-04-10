@@ -312,24 +312,44 @@ module.exports = new BaseModel('exchange_university', t => {
     type_of_file: 'Dossier Asie',
     small_picture: 'https://otakedev.com/share/universities/small/20.jpg',
     big_picture: 'https://www.cb.cityu.edu.hk/mkt/images/ban_main3.jpg',
-    presentation_text: 'With an emphasis on professional education and research, CityU produces graduates with the ability ' +
-        'to anticipate and precipitate change in a rapidly-evolving, globalised world. In recent years, CityU has performed ' +
-        'strongly in university rankings and is currently among the top 10 in Asia and the top 100 in the world. It is a ' +
-        'fast-growing institution with undergraduate and postgraduate students and academic staff in business, creative media, ' +
-        'data science, energy and environment, engineering, humanities and social sciences, law, science, and veterinary ' +
-        'medicine and life sciences. Our curriculum emphasises innovation and creativity, and this principle underlies all ' +
-        'aspects of the University\'s professional education and problem-driven research. Supported by novel learning spaces ' +
-        'and facilities in new buildings, the curriculum embodies CityU\'s Strategic Plan for a new era of growth. CityU has ' +
-        'established itself as one of the most innovative universities in Asia, pioneering research in diverse fields that are ' +
-        'of high relevance on pressing issues. The success of its research programmes is reflected in both the amount of ' +
-        'funding received and the number of projects funded as well as the quality of its research output. CityU\'s proximity ' +
-        'to, and close ties with, mainland China, as well as its international partnerships and outlook, make the University ' +
-        'ideally positioned to provide a dynamic learning and research environment for students and faculty from all over the ' +
-        'world. Both the stature and sheer volume of CityU\'s relationships with global institutions continue to grow. Like the ' +
-        'incredible city in which it plays such an integral role, CityU continues to move, innovate, learn, teach and prosper.',
-    admission_text: 'https://www.admo.cityu.edu.hk/exchange_visiting/exchange/info/',
-    student_life_text: 'http://www.cityu.edu.hk/geo/ies_abouthk.htm',
-    cost_of_living_text: 'https://www.cityu.edu.hk/geo/ies_costlivenfin.htm'
+    presentation_text: '<p> En mettant l\'accent sur la formation professionnelle et la recherche, la Ville du Canada fait sortir '+
+                       'des diplômés avec la capacité d\'anticiper et d\'accélérer les changements dans un monde globalisé en évol'+
+                       'ution rapide. Au cours des dernières années, CityU a été hautement classé dans le monde et figure actuelle'+
+                       'ment dans le top 10 en Asie et dans le top 100 dans le monde. C’est un établissement en pleine croissance '+
+                       'qui compte des étudiants de premier cycle et des cycles supérieurs et du personnel universitaire dans les '+
+                       'domaines des affaires, des médias créatifs, des sciences de l’information, de l’énergie et de l’environnem'+
+                       'ent, de l’ingénierie, des sciences humaines et sociales, du droit, des sciences, de la médecine vétérinair'+
+                       'e et des sciences de la vie.\nNotre programme met l\'accent sur l\'innovation et la créativité, et ce prin'+
+                       'cipe sous-tend tous les aspects de la formation professionnelle et de la recherche axée sur les problèmes '+
+                       'de l\'Université. Soutenu par de nouveaux espaces et installations d\'apprentissage dans de nouveaux bâtim'+
+                       'ents, le programme d\'études incarne le plan stratégique de CityU pour une nouvelle ère de croissance.\nCi'+
+                       'tyU s’est imposé comme l’une des universités les plus innovantes d’Asie, pionnière dans la recherche dans '+
+                       'divers domaines particulièrement pertinents pour des problèmes urgents. Le succès de ses programmes de rec'+
+                       'herche se reflète à la fois dans le montant du financement reçu, le nombre de projets financés et la quali'+
+                       'té des résultats de la recherche.\nLa proximité de CityU avec la Chine continentale et ses liens étroits, '+
+                       'ainsi que ses partenariats et ses perspectives internationales, font de l\'Université un lieu idéal pour f'+
+                       'ournir un environnement d\'apprentissage et de recherche dynamique aux étudiants et aux professeurs du mon'+
+                       'de entier. La stature et les relations internationales de CityU continuent de croître.</p><br>'+
+                       '<a href="https://banweb.cityu.edu.hk/pls/PROD/hwscrshp_cityu.P_SelTerm" target="_blank">Sélectionnez vos c'+
+                       'ours !</a><br>'+
+                       '<a href="https://banweb.cityu.edu.hk/pls/PROD/hwiecrselis_cityu.P_Main" target="_blank">Liste des cours di'+
+                       'sponibles</a><br>'+
+                       '<a href="https://ices.fr/media/ri_grille_conversion_ects__003726500_1650_09092015.pdf" target="_blank">Equ'+
+                       'ivalences des Crédits</a>'+
+                       '<p>1 credits chinois = 2 ECTS</p>',
+    admission_text: '<p>Les futurs étudiants en échange sont d\'abord sélectionnés par leur établissement d\'origine avant l\'appr'+
+                    'obation de leur étude d\'échange par les départements universitaires compétents de CityU. Les candidats reten'+
+                    'us devront:</p><br><ul><li><p>satisfaire aux exigences académiques minimales de CityU et être en règle avec l'+
+                    'eur établissement d\'origine</p></li><li><p>obtenir un score TOEFL ≥ 79 (sur le test basé sur Internet), un s'+
+                    'core global IELTS ≥ 6,5, la bande de test d\'anglais du Collège 6 du Chinese Mainland (score total ≥ 450) ou '+
+                    'détenir une qualification équivalente en anglais si l\'anglais n\'est pas la langue d\'enseignement leurs ins'+
+                    'titutions d\'origine(Les étudiants qui souhaitent s\'inscrire à des cours de droit doivent satisfaire à l\'ex'+
+                    'igence minimale de 3,0 de la CGPA et à l\'exigence d\'anglais de TOEFL 100 (test sur Internet) ou IELTS 7. Le'+
+                    's scores TOEFL et IELTS doivent être obtenus dans les 3 ans précédant l\'admission. )</p></li></ul><a href="h'+
+                    'ttps://www.admo.cityu.edu.hk/exchange_visiting/exchange/info/" target="_blank">plus d\'informations</a>',
+    student_life_text: '<a href="http://www.cityu.edu.hk/geo/ies_abouthk.htm" target="_blank">S\'informer sur la vie étudiante</a>',
+    cost_of_living_text: '<a href="https://www.cityu.edu.hk/geo/ies_costlivenfin.htm" taget="_blank">S\'informer sur le côut de la'+
+                         ' vie</a>'
   },
   {
     id: 20,

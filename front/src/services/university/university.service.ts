@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { ApplicationHttpClient } from 'src/core/http-client';
 import { UNIVERSITIES_MOCKED } from 'src/mocks/Universities.mock';
+import { UniversityDetails } from 'src/models/UniversityDetails';
 import { GeographicalArea } from '../../models/GeographicalArea';
 import { Language } from '../../models/Language';
 import { Major } from '../../models/Major';
 import { University } from '../../models/University';
-import { UniversityDetails } from '../../models/UniversityDetails';
 
 const baseEndPoint = 'universities/';
 
@@ -15,12 +15,10 @@ const baseEndPoint = 'universities/';
 })
 export class UniversityService {
 
-  private universities = UNIVERSITIES_MOCKED;
-
   constructor(private http: ApplicationHttpClient) { }
 
-  getUniversity(name: string): Observable<UniversityDetails> {
-    return of(this.universities.find(u => u.name === name));
+  getUniversityDetails(name: string): Observable<UniversityDetails> {
+    return this.http.get<UniversityDetails>('universities/' + name, 'get university details');
   }
 
   getUniversities(destination: string, language: string, major: string): Observable<University[]> {
