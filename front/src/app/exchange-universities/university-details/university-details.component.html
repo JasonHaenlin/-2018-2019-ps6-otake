@@ -31,8 +31,8 @@
     <section id="testimonial">
       <h2 class="content-title">Avis</h2>
       <hr>
-      <div class="testimonial" *ngFor="let advice of university.testimonials">
-        <app-testimonial [testimonial]=advice></app-testimonial>
+      <div class="testimonial" *ngFor="let t of testimonialList">
+        <app-testimonial [testimonial]=t></app-testimonial>
       </div>
     </section>
 

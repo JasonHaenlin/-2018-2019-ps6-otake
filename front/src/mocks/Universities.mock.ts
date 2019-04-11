@@ -11,7 +11,7 @@ export const UNIVERSITIES_MOCKED: UniversityDetails[] = [
     // tslint:disable-next-line: max-line-length
     student_life_text: 'Caltech is a small, collaborative community, where faculty, postdoctoral scholars, students, and staff from diverse backgrounds, cultures, and experiences live, work, and engage with one another. Together, they remain committed to setting the example of what its intertwined missions of research and education can accomplish. Caltech is an integral part of Pasadena. Together with JPL, we are the city’s largest employer and a source of programs that benefit our neighbors: teachers, businesses, families, cultural centers, and government. To stay up-to-date on upcoming events and the latest community news, visit Caltech Today or subscribe to Caltech Matters.',
     cost_of_living_text: '1,400 – 2,400 USD/month',
-    testimonials: [
+    testimonial: [
       {
         first_name: 'Pierre',
         last_name: 'Martin',

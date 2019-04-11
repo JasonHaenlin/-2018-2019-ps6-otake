@@ -7,5 +7,5 @@ export interface UniversityDetails {
     admission_text?: string;
     student_life_text?: string;
     cost_of_living_text?: string;
-    testimonials?: Testimonial[];
+    testimonial?: Testimonial[];
 }
