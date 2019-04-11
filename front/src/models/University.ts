@@ -3,7 +3,7 @@ import { GeographicalArea } from './GeographicalArea';
 
 export interface University {
   name?: string;
-  admission_rate?: string;
+  admission_rate?: number;
   type_of_file?: string;
   cost_of_living?: string;
   nb_of_place?: number;
