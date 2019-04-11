@@ -4,7 +4,7 @@
     <div class="element" *ngFor="let area of (areaList$ | async)"
       (click)="updateUrlByArea(area.shorthand)"
       [ngClass]="{'selected': area.shorthand === selectedArea}">
-      <img src="{{area.icon}}">
+      <img src="{{area.icon}}" alt="">
       <div>
         {{area.area_name}}
       </div>
@@ -26,7 +26,7 @@
     <div class="element" *ngFor="let language of (languageList$ | async)"
       (click)="updateUrlByLanguage(language.language)"
       [ngClass]="{'selected': language.language === selectedLanguage}">
-      <img src="{{language.icon_url}}">
+      <img src="{{language.icon_url}}" alt="">
       <div>
         {{language.language}}
       </div>

@@ -1,27 +1,28 @@
-<div class="container">
+<div class="container" *ngIf="speciality$ | async as speciality">
   <header>
 
   </header>
-  <main *ngIf="speciality">
-    <section *ngFor="let section of specialitySections" id="{{ section.id }}">
-      <h2 class="content-title">{{ section.name }}</h2>
+  <main>
+    <section>
+      <h2 class="content-title">Présentation</h2>
       <hr>
-      <ng-container *ngIf="section.id === 'thematic'; else elseTemplate">
-        <div *ngFor="let course of speciality.topics">
-          {{ course }}
-        </div>
-      </ng-container>
-      <ng-template #elseTemplate>
-        <ng-container *ngIf="section.id === 'advice'; else elseTemplate2">
-          <div *ngFor="let geo of geographicalArea">
-            <app-accordion [title]="geo.name"></app-accordion>
-          </div>
-        </ng-container>
-        <ng-template #elseTemplate2>
-            <div class="content-paragraph">{{ getSectionText(section.id) }}</div>
-        </ng-template>
-        
-      </ng-template>
+      <div class="content-paragraph">{{ speciality.description }}</div>
+    </section>
+
+    <section>
+      <h2 class="content-title">Thématiques des cours</h2>
+      <hr>
+      <div *ngFor="let course of speciality.topics">
+        {{ course }}
+      </div>
+    </section>
+
+    <section>
+      <h2 class="content-title">Anciens contrats</h2>
+      <hr>
+      <div *ngFor="let geo of (geographicalArea$ | async)">
+        <app-accordion [title]="geo.name"></app-accordion>
+      </div>
     </section>
   </main>
   <aside>

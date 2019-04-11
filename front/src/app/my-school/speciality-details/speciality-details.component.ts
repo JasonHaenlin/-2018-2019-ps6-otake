@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Section } from 'src/models/Section';
-import { SPECIALITY_SECTIONS, SPECIALITY_SECTION_ICONS } from './SpecialitySections.enum';
+import { Observable } from 'rxjs';
 import { enumSelector } from 'src/app/utility/utilitary-functions';
-import { Speciality } from 'src/models/Speciality';
-import { SpecialityService } from 'src/services/speciality/speciality.service';
 import { GeographicalArea } from 'src/models/GeographicalArea';
+import { Section } from 'src/models/Section';
+import { SpecialityService } from 'src/services/speciality/speciality.service';
 import { UniversityService } from 'src/services/university/university.service';
+import { Speciality } from './../../../models/Speciality';
+import { SPECIALITY_SECTIONS, SPECIALITY_SECTION_ICONS } from './SpecialitySections.enum';
 
 @Component({
   selector: 'app-speciality-details',
@@ -14,11 +15,11 @@ import { UniversityService } from 'src/services/university/university.service';
   styleUrls: ['./speciality-details.component.scss']
 })
 export class SpecialityDetailsComponent implements OnInit {
-  sub: any;
-  name: string;
-  public speciality: Speciality;
+
   public specialitySections: Section[] = [];
-  public geographicalArea: GeographicalArea[] = [];
+
+  public speciality$: Observable<Speciality>;
+  public geographicalArea$: Observable<GeographicalArea[]>;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,18 +27,9 @@ export class SpecialityDetailsComponent implements OnInit {
     private universityService: UniversityService) { }
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
-      this.name = params['name'];
-    });
-    this.specialityService.getSpeciality(this.name).subscribe(s => this.speciality = s);
-    this.universityService.getAreas().subscribe(geo => this.geographicalArea = geo);
+    this.speciality$ = this.specialityService.getSpeciality(this.route.snapshot.paramMap.get('name'));
+    this.geographicalArea$ = this.universityService.getAreas();
     this.fillSectionContent();
-  }
-
-  getSectionText(sectionName: string): string {
-    switch (sectionName) {
-      case 'presentation': return this.speciality.description;
-    }
   }
 
   fillSectionContent() {

@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
   }
 
   goToUniversityList(area: string) {
-    this.router.navigate(['/exchange-universities'], { queryParams: { destination: area }, queryParamsHandling: 'merge' });
+    this.router.navigate(['/exchange-universities'], { queryParams: { destination: area } });
   }
 
 }

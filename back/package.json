@@ -4,7 +4,7 @@
   "description": "Web project using Nodejs for backend",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/ -R spec --recursive --exit",
+    "test": "snyk test && mocha tests/ -R spec --recursive --exit",
     "lint": "./node_modules/.bin/eslint -c .eslintrc.js app/",
     "lint:fix": "./node_modules/.bin/eslint -c .eslintrc.js app/ --fix",
     "dev": "nodemon -e js -w ./ ./server.js",
@@ -60,7 +60,8 @@
     "nyc": "^13.3.0",
     "sonarqube-scanner": "^2.4.0",
     "sqlite3": "^4.0.6",
-    "supertest": "^3.4.2"
+    "supertest": "^3.4.2",
+    "snyk": "^1.149.0"
   },
   "dependencies": {
     "babel-preset-es2015": "^6.24.1",
