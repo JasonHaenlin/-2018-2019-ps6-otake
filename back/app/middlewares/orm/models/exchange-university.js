@@ -21,7 +21,7 @@ class ExchangeUniversity extends Model {
         type_of_file: { type: 'string', minLength: 5, maxLength: 20 },
         small_picture: { type: 'string', minLength: 5, maxLength: 255 },
         big_picture: { type: 'string', minLength: 5, maxLength: 255 },
-        presentation_text: { type: 'string', minLength: 5, maxLength: 2000 },
+        presentation_text: { type: 'string', minLength: 5, maxLength: 5000 },
         admission_text: { type: 'string', minLength: 5, maxLength: 2000 },
         student_life_text: { type: 'string', minLength: 5, maxLength: 2000 },
         cost_of_living_text: { type: 'string', minLength: 5, maxLength: 2000 }
