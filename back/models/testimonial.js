@@ -21,7 +21,7 @@ module.exports = new BaseModel('testimonial', t => {
         ' mardi et mercredi afin d’avoir le reste de la semaine libre. Ce que l’on a réussi à faire !'
   },
   {
-    id: 1, university_id: 1, major_id: 6,
+    id: 1, university_id: 19, major_id: 6,
     first_name: 'Anass', last_name: 'Hu',
     email: 'anass.hu@etu.univ-cotedazur.fr', nationality: 'MA',
     text: 'Il y a deux mondes, celui des étudiants qui vivent « On-campus » et celui des étudiants qui vivent « Off-campus ».' +
@@ -30,7 +30,7 @@ module.exports = new BaseModel('testimonial', t => {
         'passent la plupart de leur temps entre eux.'
   },
   {
-    id: 2, university_id: 1, major_id: 6,
+    id: 2, university_id: 19, major_id: 6,
     first_name: 'Hwoarang', last_name: 'Kazama',
     email: 'hwoarang.kazama@etu.univ-cotedazur.fr', nationality: 'JP',
     text: 'Au niveau de mon emploi du temps, j’ai environ une douzaine d’heures de cours par semaine. A côté de ça, ' +
