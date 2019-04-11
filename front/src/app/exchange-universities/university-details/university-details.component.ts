@@ -6,6 +6,8 @@ import { Section } from 'src/models/Section';
 import { UNIVERSITY_SECTIONS, UNIVERSITY_SECTION_ICONS } from './UniversitySections.enum';
 import { enumSelector } from 'src/app/utility/utilitary-functions';
 import { Testimonial } from 'src/models/Testimonial';
+import { Observable } from 'rxjs';
+import { filter } from 'rxjs/internal/operators';
 
 @Component({
   selector: 'app-university-details',
@@ -14,7 +16,7 @@ import { Testimonial } from 'src/models/Testimonial';
 })
 export class UniversityDetailsComponent implements OnInit {
 
-  public university: UniversityDetails;
+  public university$: Observable<UniversityDetails>;
   public universitySections: Section[] = [];
   public adviceList: Testimonial[] = [];
 
@@ -25,18 +27,8 @@ export class UniversityDetailsComponent implements OnInit {
 
   ngOnInit() {
     console.log('ng init details !');
-    this.universityService.getUniversityDetails(this.route.snapshot.paramMap.get('name'))
-    .subscribe(uni => {this.university = uni; console.log(this.university)});
+    this.university$ = this.universityService.getUniversityDetails(this.route.snapshot.paramMap.get('name'));
     this.fillSectionContent();
-  }
-
-  getSectionText(sectionName: string): string {
-    switch (sectionName) {
-      case 'presentation': return this.university.presentation_text;
-      case 'admission': return this.university.admission_text;
-      case 'student': return this.university.student_life_text;
-      case 'cost': return this.university.cost_of_living_text;
-    }
   }
 
   fillSectionContent() {

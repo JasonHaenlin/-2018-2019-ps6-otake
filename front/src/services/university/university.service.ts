@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { ApplicationHttpClient } from 'src/core/http-client';
-import { UNIVERSITIES_MOCKED } from 'src/mocks/Universities.mock';
 import { UniversityDetails } from 'src/models/UniversityDetails';
 import { GeographicalArea } from '../../models/GeographicalArea';
 import { Language } from '../../models/Language';
@@ -13,12 +12,13 @@ const baseEndPoint = 'universities/';
 @Injectable({
   providedIn: 'root'
 })
+
 export class UniversityService {
 
   constructor(private http: ApplicationHttpClient) { }
 
   getUniversityDetails(name: string): Observable<UniversityDetails> {
-    return this.http.get<UniversityDetails>('universities/' + name, 'get university details');
+    return this.http.get<UniversityDetails>(`${baseEndPoint}details/${name}`, 'get university details');
   }
 
   getUniversities(destination: string, language: string, major: string): Observable<University[]> {

@@ -1,21 +1,40 @@
-<div class="container">
+<div class="container" *ngIf="university$ | async as university">
   <header>
-    <img src="{{university.big_picture}}" alt="<(^^)>">
+    <img src="{{ university.big_picture }}" alt="<(^^)>">
   </header>
   <main>
 
-    <!-- Sections and their html contents -->
-    <section *ngFor="let section of universitySections" id="{{ section.id }}">
-      <h2 class="content-title">{{ section.name }}</h2>
+    <section id="presentation">
+      <h2 class="content-title">Présentation</h2>
       <hr>
-      <div class="content-paragraph" [innerHTML]="getSectionText( section.id )"></div>
+      <div class="content-paragraph" [innerHTML]="university.presentation_text"></div>
     </section>
-    <!-- Testimonials for the university -->
-    <div class="testimonial">
-      <div *ngFor="let advice of university.testimonials">
+
+    <section id="admission">
+      <h2 class="content-title">Admission/contrat</h2>
+      <hr>
+      <div class="content-paragraph" [innerHTML]="university.admission_text"></div>
+    </section>
+
+    <section id="student">
+      <h2 class="content-title">Vie étudiante</h2>
+      <hr>
+      <div class="content-paragraph" [innerHTML]="university.student_life_text"></div>
+    </section>
+
+    <section id="cost">
+      <h2 class="content-title">Coût de la vie</h2>
+      <hr>
+      <div class="content-paragraph" [innerHTML]="university.cost_of_living_text"></div>
+    </section>
+
+    <section id="testimonial">
+      <h2 class="content-title">Avis</h2>
+      <hr>
+      <div class="testimonial" *ngFor="let advice of university.testimonials">
         <app-testimonial [testimonial]=advice></app-testimonial>
       </div>
-    </div>
+    </section>
 
   </main>
   <aside>
