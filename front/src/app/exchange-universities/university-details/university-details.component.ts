@@ -28,7 +28,7 @@ export class UniversityDetailsComponent implements OnInit {
   ngOnInit() {
     this.university$ = this.universityService.getUniversityDetails(this.route.snapshot.paramMap.get('name'));
     this.fillSectionContent();
-    this.university$.subscribe(u => { this.testimonialList = u.testimonial; console.log(this.testimonialList) });
+    this.university$.subscribe(u => { this.testimonialList = u.testimonial; console.log(this.testimonialList); });
   }
 
   fillSectionContent() {
