@@ -2,6 +2,9 @@
 
 pipeline {
   agent any
+  environment {
+    SNYK_TOKEN = credentials('snyk-token-id')
+  }
   options {
     disableConcurrentBuilds()
     timeout(time: 1, unit: 'HOURS')
@@ -36,6 +39,14 @@ pipeline {
             // just to try, but not primary in this project
             sh 'npm run coverage || exit 0'
           }
+        }
+      }
+    }
+    stage('snyk') {
+      steps {
+        dir('./front/'){
+          sh 'snyk test --severity-medium'
+          sh 'snyk monitor'
         }
       }
     }
