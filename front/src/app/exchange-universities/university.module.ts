@@ -8,6 +8,7 @@ import { UniversityComponent } from './university/university.component';
 import { UtilityModule } from '../utility/utility.module';
 import { TestimonialComponent } from './testimonial/testimonial.component';
 import { UniversityFilterComponent } from './university-filter/university-filter.component';
+import { UniversityPageComponent } from './university-page/university-page.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { UniversityFilterComponent } from './university-filter/university-filter
     UniversityListComponent,
     TestimonialComponent,
     UniversityFilterComponent,
+    UniversityPageComponent,
   ],
   imports: [
     UniversityRoutingModule,

@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UniversityListComponent } from './university-list/university-list.component';
 import { UniversityDetailsComponent } from './university-details/university-details.component';
-import { UniversityFilterComponent } from './university-filter/university-filter.component';
+import {UniversityPageComponent} from "./university-page/university-page.component";
 
 const routes: Routes = [
-  { path: '', component: UniversityListComponent },
+  { path: '', component: UniversityPageComponent },
   { path: 'details/:name', component: UniversityDetailsComponent },
-  { path: 'area', component: UniversityFilterComponent },
+  { path: '**', component: UniversityPageComponent },
 ];
 
 @NgModule({
