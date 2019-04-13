@@ -5,12 +5,14 @@ import { SectionSelectorComponent } from './section-selector/section-selector.co
 import { RouterModule } from '@angular/router';
 import { LoaderService } from './loader/loader.service';
 import { AccordionComponent } from './accordion/accordion.component';
+import { DeadlineComponent } from './deadline/deadline.component';
 
 @NgModule({
   declarations: [
     SectionSelectorComponent,
     LoaderComponent,
     AccordionComponent,
+    DeadlineComponent,
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { AccordionComponent } from './accordion/accordion.component';
   exports: [
     SectionSelectorComponent,
     LoaderComponent,
-    AccordionComponent
+    AccordionComponent,
+    DeadlineComponent
   ],
   providers: [
     LoaderService,

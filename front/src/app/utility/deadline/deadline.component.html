@@ -1,0 +1,17 @@
+<div class="deadline">
+  <div>
+    <div class="deadline-timer">
+      J-{{timeBeforeEnd}}
+    </div>
+    <div class="deadline-details">
+      <span class="fas fa-stopwatch" [ngStyle]="{'color': watchColor}">
+      </span>
+      <strong class="deadline-details-title">
+        {{deadline.title}}
+      </strong>
+      <div class="deadline-details-summary">
+        {{deadline.details}}
+      </div>
+    </div>
+  </div>
+</div>

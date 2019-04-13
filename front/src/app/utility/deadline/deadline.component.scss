@@ -1,0 +1,34 @@
+@import '../../../styles/variables.scss';
+
+.deadline {
+  display: flex;
+
+  strong {
+    display: block;
+  }
+
+  .deadline-timer {
+    font-size: 7rem;
+    color: rgba(60, 75, 100, 0.2);
+  }
+
+  .deadline-details {
+    position: relative;
+    left: 20%;
+    top: -35px;
+    max-width: 8rem;
+
+    .deadline-details-title {
+      color: $blue2;
+      font-size: 1.4rem;
+      padding-bottom: 0.3em;
+    }
+
+    .deadline-details-summary {
+      color: rgba(60, 75, 100, 0.6);
+      font-size: 0.8rem;
+      overflow-wrap: break-word;
+      line-height: 1rem;
+    }
+  }
+}

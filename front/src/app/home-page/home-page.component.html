@@ -1,26 +1,7 @@
 <div class="title">Polytech Nice Sophia et l'International</div>
 <div class="background"></div>
 <div class="deadline">
-  <div>
-    <div class="deadline-timer">J-8</div>
-    <div class="deadline-details">
-      <span class="fas fa-stopwatch"></span>
-      <strong class="deadline-details-title">1ère Session</strong>
-      <div class="deadline-details-summary">
-        Deadline de rendu de dossier PNS et UNS
-        pour le 1er et 2ème semestre
-      </div>
-    </div>
-  </div>
-  <div>
-    <div class="deadline-timer">J-45</div>
-    <div class="deadline-details">
-      <span class="fas fa-stopwatch"></span>
-      <strong class="deadline-details-title">2ème Session</strong>
-      <div class="deadline-details-summary">
-        Deadline de rendu de dossier PNS et UNS
-        uniquement pour le 2ème semestre
-      </div>
-    </div>
+  <div *ngFor="let deadline of deadlineList">
+    <app-deadline [deadline]="deadline"></app-deadline>
   </div>
 </div>
