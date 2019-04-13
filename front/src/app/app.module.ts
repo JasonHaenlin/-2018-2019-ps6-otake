@@ -14,6 +14,7 @@ import { MySchoolModule } from './my-school/my-school.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UtilityModule } from './utility/utility.module';
 import { HomePageComponent } from './home-page/home-page.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     HeaderComponent,
     PageNotFoundComponent,
     HomePageComponent,
+    FooterComponent,
   ],
   imports: [
     ReactiveFormsModule,
