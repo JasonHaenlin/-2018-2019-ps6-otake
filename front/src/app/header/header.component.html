@@ -16,8 +16,8 @@
 
     <div class="dropdown route" routerLinkActive="active">
       <a [routerLink]="[ '/exchange-universities' ]">
-        Universités d'échanges </a>
-      <span [ngClass]="arrow_icon"></span>
+        Universités d'échanges <span [ngClass]="arrow_icon"></span>
+      </a>
       <div class="dropdown-content">
         <a *ngFor="let area of (areaList$ | async)"
           (click)="goToUniversityList(area.shorthand)">{{area.area_name}}</a>
@@ -30,10 +30,6 @@
 
     <a class="route" [routerLink]="[ '/financial-aids' ]" routerLinkActive="active">
       Aides Financières
-    </a>
-
-    <a class="route" [routerLink]="[ '/calendar' ]" routerLinkActive="active">
-      Calendrier
     </a>
 
     <a class="route" [routerLink]="[ '/contacts' ]" routerLinkActive="active">
