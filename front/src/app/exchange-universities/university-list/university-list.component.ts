@@ -19,7 +19,7 @@ export class UniversityListComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.universityList$ = this.universityService.getUniversities(params.destination, params.department, params.language);
     });
-    this.universityList$ = this.universityService.getUniversities(this.route.snapshot.queryParamMap.get('destination'), null, null);
+    this.universityList$ = this.universityService.getUniversities(this.route.snapshot.queryParamMap.get('destination'));
   }
 
 }

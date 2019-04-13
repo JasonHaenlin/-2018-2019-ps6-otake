@@ -42,8 +42,9 @@ pipeline {
         }
       }
     }
-    stage('snyk') {
+    stage('Snyk') {
       steps {
+        echo 'Snyk Diagnosis'
         dir('./front/'){
           sh 'snyk test --severity-medium'
           sh 'snyk monitor'
