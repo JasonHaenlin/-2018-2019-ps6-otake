@@ -1,4 +1,4 @@
-<div class="task" [ngClass]="{'closed': !windowState}">
+<div class="task">
   <div class="window-container scroller" id="scroller-alt">
     <div class="window" *ngFor="let step of stepList">
       <app-flow-step [stage]="step"></app-flow-step>

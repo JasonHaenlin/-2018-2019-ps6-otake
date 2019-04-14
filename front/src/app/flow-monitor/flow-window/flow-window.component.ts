@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, HostListener, ElementRef } from '@angular/core';
 import { Step } from '../flow-step/step';
 import { STEP_LIST } from './step.data';
 
@@ -9,24 +9,33 @@ import { STEP_LIST } from './step.data';
 })
 export class FlowWindowComponent implements OnInit {
 
-  public windowState = true;
+  @Output() windowStateEvent = new EventEmitter<boolean>();
+
   public stepList: Step[] = STEP_LIST;
+  public windowState = true;
 
   @HostListener('document:click', ['$event'])
   clickout(event) {
     if (this.eRef.nativeElement.contains(event.target)) {
-      this.windowState = true;
+      this.updateWindowState(true);
     } else {
-      this.windowState = false;
+      this.updateWindowState(false);
     }
   }
+
   constructor(private eRef: ElementRef) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
-  updateWindowState() {
-    this.windowState = !this.windowState;
+  updateWindowState(state?: boolean) {
+    const lastState = this.windowState;
+    if (state !== undefined) {
+      this.windowState = state;
+    } else {
+      this.windowState = !this.windowState;
+    }
+    if (this.windowState !== lastState) {
+      this.windowStateEvent.emit(this.windowState);
+    }
   }
-
 }

@@ -8,7 +8,6 @@ span {
   display: flex;
   flex-direction: row;
   height: 100%;
-  transition: transform 1s;
 }
 
 .window-container {
@@ -48,10 +47,6 @@ span {
   transform: scale(1.1);
   font-size: 1.5em;
   cursor: pointer;
-}
-
-.closed {
-  transform: translate(-32em, 0);
 }
 
 // experimental function, work for Firefox
