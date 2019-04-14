@@ -1,11 +1,11 @@
-.content{
+.content {
   display: flex;
   flex-direction: row;
-  justify-content:flex-start;
-  align-items:flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 app-university-filter {
   width: 25%;
-  margin-right: 3em;
+  margin: 1rem 3rem;
 }

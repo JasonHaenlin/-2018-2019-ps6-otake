@@ -4,9 +4,9 @@ import { Observable } from 'rxjs';
 import { GeographicalArea } from '../../../models/GeographicalArea';
 import { Language } from '../../../models/Language';
 import { Major } from '../../../models/Major';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
-const mainRouteUrl = '/exchange-universities/area';
+const mainRouteUrl = '/exchange-universities';
 @Component({
   selector: 'app-university-filter',
   templateUrl: './university-filter.component.html',
@@ -22,13 +22,22 @@ export class UniversityFilterComponent implements OnInit {
   public selectedMajor = '';
   public selectedLanguage = '';
 
-  constructor(private university: UniversityService, private router: Router) {
+  constructor(private university: UniversityService,
+    private router: Router,
+    private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+    this.route.queryParams.subscribe(params => this.updateArea());
     this.areaList$ = this.university.getAreas();
     this.languageList$ = this.university.getLanguages();
     this.majorList$ = this.university.getMajors();
+    this.updateArea();
+  }
+
+  private updateArea() {
+    const area = this.route.snapshot.queryParamMap.get('destination');
+    if (area) { this.selectedArea = area; }
   }
 
   updateUrlByArea(selected: string) {
