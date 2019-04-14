@@ -10,6 +10,7 @@ const Speciality = require('./models/speciality');
 const MajorSpeciality = require('./models/major-speciality');
 const Course = require('./models/course');
 const Testimonial = require('./models/testimonial');
+const Deadline = require('./models/deadline');
 
 // add all the tables here
 module.exports = {
@@ -24,5 +25,6 @@ module.exports = {
   StudyDepartement,
   MajorSpeciality,
   Speciality,
-  Course
+  Course,
+  Deadline
 };

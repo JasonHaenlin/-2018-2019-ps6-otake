@@ -2,9 +2,11 @@
 const major = require('./major');
 const speciality = require('./speciality');
 const course = require('./course');
+const info = require('./info');
 
 module.exports = {
   major,
   speciality,
-  course
+  course,
+  info
 };

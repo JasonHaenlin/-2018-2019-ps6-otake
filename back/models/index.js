@@ -10,6 +10,7 @@ const speciality = require('./speciality');
 const majorSpeciality = require('./major-speciality');
 const course = require('./course');
 const testimonial = require('./testimonial');
+const deadline = require('./deadline');
 
 /**
  * All the table are sort here
@@ -29,5 +30,6 @@ module.exports = [
   speciality,
   majorSpeciality,
   course,
-  studyDepartement
+  studyDepartement,
+  deadline
 ];

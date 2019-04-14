@@ -10,10 +10,19 @@ import { Component, OnInit } from '@angular/core';
 export class HomePageComponent implements OnInit {
 
   public deadlineList: Deadline[] = DEADLINE_MOCK;
+  public schoolYear = '';
 
   constructor() { }
 
   ngOnInit() {
+    this.defineSchoolYears();
+  }
+
+  private defineSchoolYears() {
+    const currentDate = new Date();
+    let admissionYear = currentDate.getFullYear();
+    if (currentDate.getMonth() > 8) { admissionYear++; }
+    this.schoolYear = `${admissionYear}-${++admissionYear}`;
   }
 
 }
