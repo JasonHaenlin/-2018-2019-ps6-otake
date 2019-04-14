@@ -1,12 +1,15 @@
 @import '../../styles/variables.scss';
 
 footer {
-  // height: 100%;
   width: 100%;
-  padding: 2rem 1rem 4rem 1rem;
+  padding: 2rem 1rem 5rem 1rem;
   display: flex;
   justify-content: space-evenly;
   background-color: $blue2;
+  color: $white;
+}
+
+a {
   color: $white;
 }
 
@@ -28,6 +31,7 @@ span {
     border-right: 1px solid $white;
   }
 
+  a:hover,
   .list-container:hover {
     cursor: pointer;
     color: $blue4;

@@ -23,6 +23,11 @@ body {
   background-color: $background-color;
 }
 
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 @import url('https://fonts.googleapis.com/css?family=Shojumaru');
 
 .otake-font {
