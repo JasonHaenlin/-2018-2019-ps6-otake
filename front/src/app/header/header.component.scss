@@ -1,5 +1,4 @@
 @import '../../styles/variables.scss';
-$padding: calc(20% - 200px);
 
 header {
   display: flex;
@@ -25,17 +24,24 @@ a,
   padding: 16px 16px;
 }
 
-
-
 .home {
   padding: 0;
-  padding-left: $padding;
+  padding-left: 4vw;
   margin-top: 0.5rem;
+}
+
+.home-icon {
+  background-image: url('../../assets/polytech-nice-logo-white.png');
+  height: 6vh;
+  width: 15vw;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .nav-bar {
   width: 100%;
-  padding-right: $padding;
+  padding-right: calc(20% - 200px);
   display: flex;
   justify-content: flex-end;
   align-content: center;
