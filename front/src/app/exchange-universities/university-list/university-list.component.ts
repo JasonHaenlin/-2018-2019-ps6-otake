@@ -17,7 +17,7 @@ export class UniversityListComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      this.universityList$ = this.universityService.getUniversities(params.destination, params.department, params.language);
+      this.universityList$ = this.universityService.getUniversities(params.destination, params.language, params.department);
     });
     this.universityList$ = this.universityService.getUniversities(this.route.snapshot.queryParamMap.get('destination'));
   }
