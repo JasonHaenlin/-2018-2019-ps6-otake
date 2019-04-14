@@ -7,16 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  public schoolYear = '';
+
   constructor() { }
 
   ngOnInit() {
-    this.definefilesYearSession();
+    this.setfilesYearSession();
   }
 
-  private definefilesYearSession() {
+  private setfilesYearSession() {
     const currentDate = new Date();
-    let admissionYear = currentDate.getFullYear();
-    if (currentDate.getMonth() > 8) { admissionYear++; }
-    // `${admissionYear}-${++admissionYear}`;
+    let admissionyear = currentDate.getFullYear();
+    if (currentDate.getMonth() > 8) { admissionyear++; }
+    this.schoolYear = `${admissionyear}-${++admissionyear}`;
   }
 }
