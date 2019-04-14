@@ -1,6 +1,7 @@
-import { Deadline } from './../../models/Deadline';
-import { DEADLINE_MOCK } from './../../mocks/Deadline.mock';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Deadline } from './../../models/Deadline';
+import { SchoolService } from 'src/services/school/school.service';
 
 @Component({
   selector: 'app-home-page',
@@ -9,20 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  public deadlineList: Deadline[] = DEADLINE_MOCK;
-  public schoolYear = '';
+  public deadlineList$: Observable<Deadline[]>;
 
-  constructor() { }
+  constructor(private schoolService: SchoolService) { }
 
   ngOnInit() {
-    this.defineSchoolYears();
+    this.deadlineList$ = this.schoolService.getdeadlines(this.defineSchoolYears());
   }
 
   private defineSchoolYears() {
     const currentDate = new Date();
     let admissionYear = currentDate.getFullYear();
-    if (currentDate.getMonth() > 8) { admissionYear++; }
-    this.schoolYear = `${admissionYear}-${++admissionYear}`;
+    if (currentDate.getMonth() < 8) { admissionYear--; }
+    return admissionYear;
   }
 
 }

@@ -1,7 +1,7 @@
 <div class="title">Polytech Nice Sophia et l'International</div>
 <div class="background"></div>
 <div class="deadline">
-  <div *ngFor="let deadline of deadlineList">
+  <div *ngFor="let deadline of ( deadlineList$ | async )">
     <app-deadline [deadline]="deadline"></app-deadline>
   </div>
 </div>

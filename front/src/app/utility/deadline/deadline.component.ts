@@ -20,7 +20,7 @@ export class DeadlineComponent implements OnInit {
   }
 
   private countdown() {
-    const d = this.deadline.date.getTime() - new Date().getTime();
+    const d = new Date(this.deadline.date).getTime() - new Date().getTime();
     this.timeBeforeEnd = Math.floor(d / (1000 * 60 * 60 * 24));
     if (this.timeBeforeEnd < 0) {
       this.timeBeforeEnd = 0;
