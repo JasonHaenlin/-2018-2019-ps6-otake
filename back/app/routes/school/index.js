@@ -4,6 +4,7 @@ const { handleExceptions } = require('../../middlewares/error-handlers');
 const major = require('./major');
 const speciality = require('./speciality');
 const course = require('./course');
+const info = require('./info');
 
 const school = express.Router();
 
@@ -15,5 +16,8 @@ school.get('/specialities', handleExceptions(speciality.getSpecialities));
 
 /* -- courses -- */
 school.get('/courses', handleExceptions(course.getCourses));
+
+/* -- school info -- */
+school.get('/deadlines/:intervalDate', handleExceptions(info.getDeadlineByYears));
 
 module.exports = school;
