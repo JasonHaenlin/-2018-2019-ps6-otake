@@ -9,5 +9,6 @@ export interface TextDetail {
   done?: boolean;
   text: string;
   redirection?: string;
-  link?: string;
+  innerLink?: string;
+  outerLink?: string;
 }

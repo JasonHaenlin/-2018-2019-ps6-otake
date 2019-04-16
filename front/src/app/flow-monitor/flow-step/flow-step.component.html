@@ -8,8 +8,12 @@
           (change)="onChangeStep(d.id, $event.target.checked)">
         <span class="checkmark"></span>
       </label>
-      <a class="link" target="_blank" rel="noopener noreferrer" href="{{d?.link}}"
-        *ngIf="d?.link"><em class="fas fa-external-link-square-alt"></em></a>
+      <a class="link" target="_blank" rel="noopener noreferrer" href="{{d?.outerLink}}"
+        *ngIf="d?.outerLink"><em class="fas fa-external-link-square-alt"></em>
+      </a>
+      <a class="link" href="{{d?.innerLink}}" *ngIf="d?.innerLink"><em
+          class="fas fas fa-share-square"></em>
+      </a>
     </div>
   </div>
   <div class="trace-arrow">

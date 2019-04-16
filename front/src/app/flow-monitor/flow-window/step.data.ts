@@ -1,4 +1,7 @@
-import { Step, TextDetail } from './../flow-step/step';
+import { Step } from './../flow-step/step';
+import { environment } from 'src/environments/environment';
+
+const baseUrl = environment.baseUrl;
 
 export const STEP_LIST: Step[] = [
   {
@@ -33,7 +36,7 @@ export const STEP_LIST: Step[] = [
     description: [
       {
         id: 0, text: 'Télécharger le dossier de mobilité sur le site de "Polytech Nice"',
-        link: 'http://unice.fr/polytechnice/fr/international/etudes-a-letranger/partir-a-letranger'
+        innerLink: '#footer'
       },
       {
         id: 1, text: 'Vérifier vos cours et les équivalences aux ECTS qui varies selon la destination',
@@ -54,7 +57,7 @@ export const STEP_LIST: Step[] = [
     description: [
       {
         id: 0, text: 'Faire son cv en ligne"',
-        link: 'https://europass.cedefop.europa.eu/editors/fr/cv/compose'
+        outerLink: 'https://europass.cedefop.europa.eu/editors/fr/cv/compose'
       },
     ],
   }
