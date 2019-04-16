@@ -1,5 +1,5 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit, ElementRef, HostListener } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-flow-page',
@@ -20,6 +20,8 @@ import { Component, OnInit, ElementRef, HostListener } from '@angular/core';
 })
 export class FlowPageComponent implements OnInit {
 
+  @Output() flowActived = new EventEmitter<boolean>();
+
   public flowInAction = false;
   public windowState = true;
 
@@ -34,5 +36,6 @@ export class FlowPageComponent implements OnInit {
 
   updateFlow(state: boolean) {
     this.flowInAction = state;
+    this.flowActived.emit(state);
   }
 }

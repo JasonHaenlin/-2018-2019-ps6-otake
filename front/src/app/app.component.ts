@@ -8,5 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  public flowActived = false;
 
+  constructor() { }
+
+  flowActivedEvent(state: boolean) {
+    this.flowActived = state;
+  }
 }
