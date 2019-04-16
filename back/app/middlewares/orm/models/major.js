@@ -29,6 +29,7 @@ class Major extends Model {
     // we need this to avoid circular dependency
     const StudyDepartement = require('./study-departement');
     const ExchangeUniversity = require('./exchange-university');
+    const Speciality = require('./speciality');
 
     return {
       studyDepartement: {
@@ -49,6 +50,18 @@ class Major extends Model {
             to: 'study_departement.university_id'
           },
           to: 'exchange_university.id'
+        }
+      },
+      speciality: {
+        relation: Model.ManyToManyRelation,
+        modelClass: Speciality,
+        join: {
+          from: 'major.id',
+          through: {
+            from: 'major_speciality.major_id',
+            to: 'major_speciality.speciality_id'
+          },
+          to: 'speciality.id'
         }
       }
     };

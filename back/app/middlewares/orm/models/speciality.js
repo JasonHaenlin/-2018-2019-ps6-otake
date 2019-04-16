@@ -18,15 +18,19 @@ class Speciality extends Model {
   }
   static get relationMappings() {
     // we need this to avoid circular dependency
-    const MajorSpeciality = require('./major-speciality');
+    const Major = require('./major');
 
     return {
-      MajorSpeciality: {
-        relation: Model.HasManyRelation,
-        modelClass: MajorSpeciality,
+      major: {
+        relation: Model.ManyToManyRelation,
+        modelClass: Major,
         join: {
-          from: 'major.id',
-          to: 'major_speciality.speciality_id'
+          from: 'speciality.id',
+          through: {
+            from: 'major_speciality.speciality_id',
+            to: 'major_speciality.major_id'
+          },
+          to: 'major.id'
         }
       }
     };

@@ -13,6 +13,7 @@ school.get('/majors', handleExceptions(major.getMajors));
 
 /* -- speciality -- */
 school.get('/specialities', handleExceptions(speciality.getSpecialities));
+school.get('/specialities/:major', handleExceptions(speciality.getSpecialitiesOf));
 
 /* -- courses -- */
 school.get('/courses', handleExceptions(course.getCourses));
