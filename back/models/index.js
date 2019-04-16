@@ -11,6 +11,7 @@ const majorSpeciality = require('./major-speciality');
 const course = require('./course');
 const testimonial = require('./testimonial');
 const deadline = require('./deadline');
+const past_contract = require('./past-contract');
 
 /**
  * All the table are sort here
@@ -31,5 +32,6 @@ module.exports = [
   majorSpeciality,
   course,
   studyDepartement,
-  deadline
+  deadline,
+  past_contract
 ];
