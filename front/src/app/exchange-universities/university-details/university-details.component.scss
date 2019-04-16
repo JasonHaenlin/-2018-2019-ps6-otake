@@ -1,16 +1,20 @@
 @import '../../../styles/details.scss';
 
 .line {
-    display: inline-block;
-    background-color: $blue4;
-    height: 10em;
-    width: 0.3em;
-    margin-left: 15px;
+  display: inline-block;
+  background-color: $blue4;
+  height: 10em;
+  width: 0.3em;
+  margin-left: 15px;
 }
 
-.testimonial {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
+.testimonial-row {
+  column-count: 2;
+  column-width: 50%;
+}
+
+@media (max-width: 1180px) {
+  .testimonial-row {
+    column-count: initial;
+  }
 }

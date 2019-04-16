@@ -31,11 +31,12 @@
     <section id="testimonial">
       <h2 class="content-title">Avis</h2>
       <hr>
-      <div class="testimonial" *ngFor="let t of testimonialList">
-        <app-testimonial [testimonial]=t></app-testimonial>
+      <div class="testimonial-row">
+        <div *ngFor="let t of university.testimonial">
+          <app-testimonial [testimonial]=t></app-testimonial>
+        </div>
       </div>
     </section>
-
   </main>
   <aside>
     <div class="line"></div>

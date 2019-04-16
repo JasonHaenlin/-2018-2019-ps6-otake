@@ -1,18 +1,31 @@
-@import '../../../styles/card.scss';
-
-.header {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-
-.identity {
-    height: 5em;
-}
+@import '../../../styles/variables.scss';
 
 .card {
-    width: 23em;
-    height: 18em;
-    // background: blueviolet;
-    margin-bottom: 1.5em;
+  padding: 1em;
+  margin-bottom: 1em;
+  background-color: whitesmoke;
+}
+
+img {
+  width: 100px;
+  height: auto;
+}
+
+.title {
+  padding-top: 1em;
+  font-size: 25px;
+  line-height: 1em;
+  color: $blue2;
+}
+
+.email {
+  font-size: 16px;
+  color: $blue3;
+}
+
+.text {
+  font-size: 17px;
+  line-height: 1.2em;
+  text-align: justify;
+  color: $paragraphsText;
 }

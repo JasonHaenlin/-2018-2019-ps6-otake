@@ -1,17 +1,15 @@
 <div class="card">
-  <div class="header">
-    <div class="picture">
-      <span class="far fa-user fa-3x"></span>
-    </div>
-    &nbsp;
-    <div class="identity">
-      <div class="firstName">{{ testimonial.first_name}}</div>
-      <div class="lastName">{{ testimonial.last_name}}</div>
-      <div class="email">{{ testimonial.email }}</div>
-    </div>
 
+  <div class="picture">
+    <img src="../../../assets/bubbles.png" alt="<(^-^)>">
   </div>
-  <div class="text">
-    {{ testimonial.text }}
+
+  <div class="content">
+    <div class="text">
+      {{ testimonial.text }}
+    </div>
+    <div class="title">{{ testimonial.first_name}} {{ testimonial.last_name}}</div>
+    <div class="email">{{ testimonial.email }}</div>
   </div>
+
 </div>
