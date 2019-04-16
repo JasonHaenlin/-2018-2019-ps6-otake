@@ -5,7 +5,51 @@
   align-items: flex-start;
 }
 
+.content::before {
+  position: absolute;
+  left: 30%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #e2e2e2;
+  content: "";
+}
+
 .filter {
+  position: sticky;
   width: 25%;
-  margin: 1rem 3rem;
+  top: 5rem;
+  padding-left: 3em;
+  padding-right: 1em;
+}
+
+.list {
+  padding-top: 2rem;
+  margin: 0 auto;
+}
+
+
+@media (max-width: 1200px) {
+  .content::before {
+    left: 25%;
+  }
+}
+
+@media (max-width: 1037px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .content::before {
+    left: 0;
+  }
+
+  .filter {
+    width: 100%;
+    position: initial;
+  }
+
+  .list {
+    margin-left: 3rem;
+  }
 }

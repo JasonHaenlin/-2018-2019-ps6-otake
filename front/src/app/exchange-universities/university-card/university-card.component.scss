@@ -13,12 +13,21 @@ h4 {
   cursor: pointer;
   padding: 0;
   color: $paragraphsText;
+  transition: all 0.3s ease;
+  box-shadow: none;
+  border: 1px solid #E5E5E5;
 }
+
+.card:hover {
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, .35);
+  transform: scale(1.04);
+}
+
 
 .grid-card {
   overflow: hidden;
   display: grid;
-  grid-template-columns: 20ch 20ch 15ch 10ch;
+  grid-template-columns: 20vw 20ch 15ch 10ch;
   grid-template-rows: 10ch 5ch;
   grid-template-areas:
     "logo title spec slots"
@@ -41,7 +50,7 @@ h4 {
   }
 
   img {
-    width: 20ch;
+    width: 20vw;
     height: 16ch;
   }
 }
