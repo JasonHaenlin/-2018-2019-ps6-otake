@@ -18,6 +18,7 @@ export class MajorDetailsComponent implements OnInit {
 
   constructor(private schoolService: SchoolService) {
     this.specialities$ = schoolService.getSpecialitiesOf('SI');
+    this.major$ = schoolService.getMajorByShorthand('SI');
   }
 
   ngOnInit() { }

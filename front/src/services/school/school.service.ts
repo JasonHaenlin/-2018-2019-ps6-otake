@@ -3,6 +3,7 @@ import { SpecialityCard } from './../../models/SpecialityCard';
 import { Injectable } from '@angular/core';
 import { ApplicationHttpClient } from 'src/core/http-client';
 import { Observable } from 'rxjs';
+import { Major } from 'src/models/Major';
 
 const baseEndPoint = 'school/';
 @Injectable({
@@ -21,5 +22,9 @@ export class SchoolService {
     return this.http.get<Deadline[]>
       (`${baseEndPoint}/deadlines/${openingYear}-${++openingYear}`,
         'get deadlines for a specific year', []);
+  }
+
+  getMajorByShorthand(majorShorthand: string): Observable<Major> {
+    return this.http.get<Major>(`${baseEndPoint}/majors/${majorShorthand}`, 'getting a specific major within majors');
   }
 }
