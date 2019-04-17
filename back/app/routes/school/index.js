@@ -10,6 +10,7 @@ const school = express.Router();
 
 /* -- major -- */
 school.get('/majors', handleExceptions(major.getMajors));
+school.get('/majors/:shorthand', handleExceptions(major.getMajor));
 
 /* -- speciality -- */
 school.get('/specialities', handleExceptions(speciality.getSpecialities));
