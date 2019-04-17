@@ -1,5 +1,18 @@
-<p>
+<div>
+  <header>
+    <img class="header" src="https://i.pinimg.com/originals/80/71/87/8071873252ab2f773d9cc72bcd2d0264.jpg">
+  </header>
+  <main *ngIf="specialities$ | async as spec" >
+    <div class="content" *ngFor="let s of spec">
+      <app-speciality-card [speciality]="s"></app-speciality-card>
+    </div>
+  </main>
+</div>
+
+<!-- <p>
   <a [routerLink]="[ 'IMAFA']">click here => IMAFA</a>
   <br>
   major-details works!
-</p>
+</p> -->
+
+  

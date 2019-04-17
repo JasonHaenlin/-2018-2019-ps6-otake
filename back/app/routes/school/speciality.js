@@ -7,7 +7,7 @@ exports.getSpecialities = async (req, res) => {
   resHandler.yahResponse(res, specialities);
 };
 
-exports.getSpecialitiesOfMajor = async (req, res) => {
+exports.getSpecialitiesOf = async (req, res) => {
   const specialities = await speciality.getSpecialitiesOf(req.params.major);
   resHandler.yahResponse(res, specialities);
 };

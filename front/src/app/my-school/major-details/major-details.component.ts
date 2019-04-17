@@ -1,6 +1,10 @@
 import { SpecialityService } from './../../../services/speciality/speciality.service';
 import { Component, OnInit } from '@angular/core';
 import { SPECIALITY_MOCKED_IMAFA } from 'src/mocks/Speciality.mock';
+import { SchoolService } from 'src/services/school/school.service';
+import { Observable } from 'rxjs';
+import { SpecialityCard } from 'src/models/SpecialityCard';
+import { Major } from 'src/models/Major';
 
 @Component({
   selector: 'app-major-details',
@@ -9,9 +13,13 @@ import { SPECIALITY_MOCKED_IMAFA } from 'src/mocks/Speciality.mock';
 })
 export class MajorDetailsComponent implements OnInit {
 
-  constructor() { }
+  specialities$: Observable<SpecialityCard[]>;
+  major$: Observable<Major>;
 
-  ngOnInit() {
+  constructor(private schoolService: SchoolService) {
+    this.specialities$ = schoolService.getSpecialitiesOf('SI');
   }
+
+  ngOnInit() { }
 
 }
