@@ -1,11 +1,13 @@
-<div>
-  {{ speciality.shorthand }}
-  <img src="{{ speciality.small_picture }}">
-</div>
+<div class="speciality-card">
 
-<div>
-  {{ speciality.name }}
-  <p>
-    {{ speciality.topics }}
-  </p>
+  <div id="top-content">
+    <img class="speciality-image" src="{{ speciality.small_picture }}">
+    <div class="speciality-shorthand">{{ speciality.shorthand }}</div>
+    <div class="speciality-title">{{ speciality.name }}</div>
+  </div>
+
+  <div id="bottom-content">
+    <p>{{ speciality.topics }}</p>
+  </div>
+
 </div>
