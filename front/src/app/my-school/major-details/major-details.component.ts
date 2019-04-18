@@ -1,10 +1,9 @@
-import { SpecialityService } from './../../../services/speciality/speciality.service';
 import { Component, OnInit } from '@angular/core';
-import { SPECIALITY_MOCKED_IMAFA } from 'src/mocks/Speciality.mock';
 import { SchoolService } from 'src/services/school/school.service';
 import { Observable } from 'rxjs';
 import { SpecialityCard } from 'src/models/SpecialityCard';
 import { Major } from 'src/models/Major';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-major-details',
@@ -16,11 +15,13 @@ export class MajorDetailsComponent implements OnInit {
   specialities$: Observable<SpecialityCard[]>;
   major$: Observable<Major>;
 
-  constructor(private schoolService: SchoolService) {
-    this.specialities$ = schoolService.getSpecialitiesOf('SI');
-    this.major$ = schoolService.getMajorByShorthand('SI');
-  }
+  constructor(private schoolService: SchoolService, private router: Router, private route: ActivatedRoute) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.route.params.subscribe(v => {
+      this.specialities$ = this.schoolService.getSpecialitiesOf(v.major);
+      this.major$ = this.schoolService.getMajorByShorthand(v.major);
+    });
+   }
 
 }
