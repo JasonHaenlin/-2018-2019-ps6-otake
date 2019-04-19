@@ -21,8 +21,8 @@ export class UniversityService {
     return this.http.get<UniversityDetails>(`${baseEndPoint}details/${name}`, 'get university details');
   }
 
-  getUniversities(destination: string, language?: string, major?: string): Observable<University[]> {
-    const optionList = this.buildOption(0, { destination: destination, language: language, major: major });
+  getUniversities(page: number, destination: string, language?: string, major?: string): Observable<University[]> {
+    const optionList = this.buildOption(page, { destination: destination, language: language, major: major });
     return this.http.get<University[]>(`${baseEndPoint}${optionList}`, 'get Universities list', []);
   }
 
