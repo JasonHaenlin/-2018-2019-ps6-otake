@@ -7,15 +7,13 @@ import { LoaderService } from 'src/app/utility/loader/loader.service';
 import { ApplicationHttpClient, applicationHttpClientCreator } from 'src/core/http-client';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UniversityModule } from './exchange-universities/university.module';
 import { FlowMonitorModule } from './flow-monitor/flow.module';
+import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { MySchoolModule } from './my-school/my-school.module';
+import { HomePageComponent } from './home-page/home-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UtilityModule } from './utility/utility.module';
-import { HomePageComponent } from './home-page/home-page.component';
-import { FooterComponent } from './footer/footer.component';
-
+import { ScrollingModule } from '@angular/cdk/scrolling';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +25,7 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     ReactiveFormsModule,
     HttpClientModule,
+    ScrollingModule,
 
     BrowserAnimationsModule,
     BrowserModule,

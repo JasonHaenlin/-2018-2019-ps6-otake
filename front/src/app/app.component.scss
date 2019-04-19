@@ -1,5 +1,11 @@
 @import '../styles/variables.scss';
 
+#host {
+  overflow: auto;
+  height: 100vh;
+  width: 100vw;
+}
+
 #header {
   z-index: 10;
   position: fixed;

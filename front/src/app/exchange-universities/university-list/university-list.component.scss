@@ -1,3 +1,12 @@
+@import '../../../styles/variables.scss';
+
 .university-card {
   margin-bottom: 2em;
+}
+
+.center {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 25px;
+  color: $blue3;
 }

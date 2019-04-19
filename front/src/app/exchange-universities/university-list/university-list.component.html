@@ -1,6 +1,7 @@
 <div>
-  <div class="university-card" *ngFor="let university of ( universityList$ | async )">
+  <div class="university-card" *ngFor="let university of universityList">
     <app-university-card [university]="university">
     </app-university-card>
   </div>
+  <div class="center">Chargement...</div>
 </div>
