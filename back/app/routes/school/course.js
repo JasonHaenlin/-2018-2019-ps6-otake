@@ -6,3 +6,8 @@ exports.getCourses = async (req, res) => {
   const courses = await course.getCourses();
   resHandler.yahResponse(res, courses);
 };
+
+exports.getCoursesOf = async (req, res) => {
+  const courses = await course.getCoursesOf(req.params.major);
+  resHandler.yahResponse(res, courses);
+};

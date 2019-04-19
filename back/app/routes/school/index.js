@@ -18,6 +18,8 @@ school.get('/specialities/:major', handleExceptions(speciality.getSpecialitiesOf
 
 /* -- courses -- */
 school.get('/courses', handleExceptions(course.getCourses));
+school.get('/courses/:major', handleExceptions(course.getCoursesOf));
+
 
 /* -- school info -- */
 school.get('/deadlines/:intervalDate', handleExceptions(info.getDeadlineByYears));
