@@ -37,6 +37,6 @@ module.exports = {
   /* centralizing all the errors */
   handleExceptions: fn =>
     (req, res, next) => {
-      fn(req, res).catch((err) => next(err));
+      fn(req, res, next).catch((err) => next(err));
     }
 };

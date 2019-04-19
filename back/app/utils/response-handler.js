@@ -10,8 +10,8 @@ module.exports = {
     }
   },
   /* when something goes wrong */
-  nahResponse: async (res, error, code) => {
-    res.status(500).json({ status: false, code });
+  nahResponse: async (res, error) => {
+    res.status(500).json({ status: false, error: error });
   },
   /* when we want send manual error messages */
   errorMessage: async (res, message) => {

@@ -7,7 +7,7 @@ const {
 } = require('../../middlewares/orm');
 
 module.exports = {
-  getUniversitiesShortInfo(area, language, major) {
+  getUniversitiesShortInfo(page, area, language, major) {
     return ExchangeUniversity.query()
       .alias('u')
       .distinct('u.name',
@@ -36,8 +36,9 @@ module.exports = {
         }
       })
       .eager('[major, language]')
+      .page(page, 15)
       .then(res => {
-        res.forEach(r => {
+        res.results.forEach(r => {
           const major = [];
           r.major.forEach(m => major.push(m.shorthand));
           r.major = major;
@@ -46,7 +47,7 @@ module.exports = {
           delete r.shorthand;
           delete r.icon;
         });
-        return res;
+        return res.results;
       });
   },
 

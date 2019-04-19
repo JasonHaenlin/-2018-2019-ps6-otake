@@ -6,12 +6,14 @@ const testimonial = require('./testimonial');
 
 const universities = express.Router();
 
-/* -- geographicalArea -- */
-universities.get('/areas', handleExceptions(university.getAreas));
 /* -- universities cards -- */
-universities.get('/', handleExceptions(university.getUniversities));
+universities.get('/page=:page', handleExceptions(university.getUniversities));
+
+/* -- info -- */
+universities.get('/areas', handleExceptions(university.getAreas));
 universities.get('/languages', handleExceptions(university.getLanguages));
 universities.get('/majors', handleExceptions(university.getMajors));
+
 /* -- university details -- */
 universities.get('/details/:name', handleExceptions(university.getUniversityDetails));
 /* -- testimonial -- */

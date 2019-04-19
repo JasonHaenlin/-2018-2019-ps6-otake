@@ -60,6 +60,23 @@ describe('ExchangeUniversity controller to database', () => {
     assert.ok(res[0].area);
     assert.ok(res[0].major);
   });
+  it('should get the first page of ExchangeUniversity join with all from the database ', async () => {
+    const res = await ExchangeUniversity.query()
+      .alias('u')
+      .select('u.name',
+        'u.admission_rate',
+        'u.type_of_file',
+        'u.cost_of_living',
+        'u.small_picture',
+        'city.city_name as city',
+        'city:country.country_name as country',
+        'city:country:geographical_area.area_name as area')
+      .joinRelation('city.country.geographical_area')
+      .eager('[major, language]')
+      .page(0, 15);
+
+    assert.ok(res.results.length === 15);
+  });
   it('should get the list of ExchangeUniversity card model from the database', async () => {
     const res = await ExchangeUniversity.query()
       .alias('u')
@@ -95,8 +112,8 @@ describe('ExchangeUniversity controller to database', () => {
     assert.ok(res.length > 0);
   });
   it('should get the list of ExchangeUniversity card from the database', async () => {
-    const res = await university.getUniversitiesShortInfo();
-    assert.ok(res.length > 0);
+    const res = await university.getUniversitiesShortInfo(0);
+    assert.ok(res.length === 15);
   });
   it('should get the list of ExchangeUniversity card from the database eager filter', async () => {
     const res = await ExchangeUniversity.query()
@@ -118,7 +135,8 @@ describe('ExchangeUniversity controller to database', () => {
     assert.ok(res.length > 0);
   });
   it('should get the list of ExchangeUniversity card from the database using a filter', async () => {
-    const res = await university.getUniversitiesShortInfo('AS', 'Chinois', null);
+    const res = await university.getUniversitiesShortInfo(0, 'AS', 'Chinois', null);
     assert.ok(res.length > 0);
+    assert.ok(res.length <= 15);
   });
 });

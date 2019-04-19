@@ -94,6 +94,7 @@ module.exports = new BaseModel('university_language', t => {
   { university_id: 66, language_id: 0, level: 'B2' },
   { university_id: 67, language_id: 0, level: 'B2' },
   { university_id: 68, language_id: 0, level: 'B2' },
-  { university_id: 69, language_id: 0, level: 'B2' }
+  { university_id: 69, language_id: 0, level: 'B2' },
+  { university_id: 70, language_id: 0, level: 'B2' }
 ]
 );
