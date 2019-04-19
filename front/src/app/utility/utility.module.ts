@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { LoaderService } from './loader/loader.service';
 import { AccordionComponent } from './accordion/accordion.component';
 import { DeadlineComponent } from './deadline/deadline.component';
+import { CoursesHolderComponent } from './courses-holder/courses-holder.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { DeadlineComponent } from './deadline/deadline.component';
     LoaderComponent,
     AccordionComponent,
     DeadlineComponent,
+    CoursesHolderComponent,
   ],
   imports: [
     CommonModule,
