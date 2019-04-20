@@ -13,6 +13,10 @@ a {
   text-decoration: none;
 }
 
+#major-select {
+  cursor: default;
+}
+
 a,
 .route {
   color: $white;

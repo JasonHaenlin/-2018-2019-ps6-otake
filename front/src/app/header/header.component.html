@@ -8,7 +8,7 @@
 
   <div class="nav-bar navigation-font">
 
-    <div class="dropdown route" routerLinkActive="active">
+    <div id="major-select" class="dropdown route" routerLinkActive="active">
       Notre Ecole <span [ngClass]="arrow_icon"></span>
       <div class="dropdown-content">
         <a *ngFor="let major of (majorList$ | async)"

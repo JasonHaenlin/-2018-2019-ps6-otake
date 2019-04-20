@@ -1,11 +1,5 @@
 @import '../styles/variables.scss';
 
-#host {
-  overflow: auto;
-  height: 100vh;
-  width: 100vw;
-}
-
 #header {
   z-index: 10;
   position: fixed;
@@ -16,19 +10,16 @@
 
 #footer {
   z-index: 0;
-  position: absolute;
-  bottom: 0;
   width: 100%;
-  height: 9rem;
 }
 
 #content {
   z-index: 0;
   position: relative;
-  min-height: calc(100% - 102px);
+  min-height: 100vh;
   margin: 0 auto;
   padding-top: $baseTop;
-  padding-bottom: 10rem;
+  padding-bottom: 17rem;
 }
 
 #loader {

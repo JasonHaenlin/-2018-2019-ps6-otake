@@ -1,11 +1,9 @@
-<div id="host" cdkScrollable>
-  <app-loader id="loader"></app-loader>
-  <app-header id="header"></app-header>
-  <div id="content">
-    <div [ngClass]="{'active-flow': flowActived}">
-      <router-outlet></router-outlet>
-    </div>
-    <app-footer id="footer"></app-footer>
+<app-loader id="loader"></app-loader>
+<app-header id="header"></app-header>
+<div id="content">
+  <div [ngClass]="{'active-flow': flowActived}">
+    <router-outlet></router-outlet>
   </div>
-  <app-flow-page (flowActived)="flowActivedEvent($event)"></app-flow-page>
+  <app-footer id="footer"></app-footer>
 </div>
+<app-flow-page (flowActived)="flowActivedEvent($event)"></app-flow-page>

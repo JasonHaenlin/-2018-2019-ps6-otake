@@ -11,7 +11,7 @@ const MajorSpeciality = require('./models/major-speciality');
 const Course = require('./models/course');
 const Testimonial = require('./models/testimonial');
 const Deadline = require('./models/deadline');
-const PastContract = require('./models/past-contract')
+const PastContract = require('./models/past-contract');
 
 // add all the tables here
 module.exports = {
