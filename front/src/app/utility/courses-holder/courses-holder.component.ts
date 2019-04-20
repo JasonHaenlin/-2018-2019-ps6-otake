@@ -11,9 +11,11 @@ export class CoursesHolderComponent implements OnInit {
   @Input()
   courses: Course[];
 
+  @Input()
+  semester: string;
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

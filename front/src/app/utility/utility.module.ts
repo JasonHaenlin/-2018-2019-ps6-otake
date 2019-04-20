@@ -24,7 +24,8 @@ import { CoursesHolderComponent } from './courses-holder/courses-holder.componen
     SectionSelectorComponent,
     LoaderComponent,
     AccordionComponent,
-    DeadlineComponent
+    DeadlineComponent,
+    CoursesHolderComponent
   ],
   providers: [
     LoaderService,

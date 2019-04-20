@@ -1,0 +1,30 @@
+@import '../../../styles/variables.scss';
+
+
+.semester {
+    font-weight: bolder;
+    color: rgb(182, 182, 182);
+    font-size: 90px;
+}
+
+.title, .description {
+    color: $paragraphsText;
+    font-size: 16px;
+}
+
+.title {
+}
+
+.description {
+    font-weight: bold;
+}
+
+.courses-list {
+    border-left: 2px solid rgb(182, 182, 182);
+    list-style: none;
+    line-height: 1.3em;
+}
+
+.left-content {
+    width: 8em;
+}

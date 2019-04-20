@@ -5,12 +5,23 @@
     </span>
     <img class="header" src="https://i.pinimg.com/originals/80/71/87/8071873252ab2f773d9cc72bcd2d0264.jpg">
   </header>
-  <main *ngIf="specialities$ | async as spec" >
-    <h2 class="content-title">Les spécialités</h2><br>
-    <div class="content" *ngFor="let s of spec">
-      <app-speciality-card [speciality]="s"></app-speciality-card>
+  <main>
+    <div *ngIf="specialities$ | async as spec" >
+      <h2 class="content-title">Les spécialités</h2><br>
+      <div class="content" *ngFor="let s of spec">
+        <app-speciality-card [speciality]="s"></app-speciality-card>
+      </div>
     </div>
 
     <h2 class="content-title">Les cours généraux</h2><br>
+
+    <div *ngIf="s7$ | async as cs7">
+        <app-courses-holder [semester]="'S7'" [courses]="cs7"></app-courses-holder>       
+    </div>
+
+    <div *ngIf="s8$ | async as cs8">
+        <app-courses-holder [semester]="'S8'" [courses]="cs8"></app-courses-holder>       
+    </div>
+
   </main>
 </div>

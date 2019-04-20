@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { ApplicationHttpClient } from 'src/core/http-client';
 import { Observable } from 'rxjs';
 import { Major } from 'src/models/Major';
+import { Course } from 'src/models/Course';
 
 const baseEndPoint = 'school/';
 @Injectable({
@@ -15,7 +16,17 @@ export class SchoolService {
 
   getSpecialitiesOf(majorShorthand: string): Observable<SpecialityCard[]> {
     return this.http.get<SpecialityCard[]>(`${baseEndPoint}/specialities/${majorShorthand}`,
-      'getting all speccialities of a chosen major', []);
+      'getting all specialities of a chosen major', []);
+  }
+
+  getCoursesOf(majorShorthand: string): Observable<Course[]> {
+    return this.http.get<Course[]>(`${baseEndPoint}/courses/${majorShorthand}`,
+      'getting all courses of a chosen major', []);
+  }
+
+  getCoursesOfMajorForThisSemester(majorShorthand , semester: string): Observable<Course[]> {
+    return this.http.get<Course[]>(`${baseEndPoint}/courses/${majorShorthand}/${semester}`,
+      'getting all courses of a chosen major of a chosen semester', []);
   }
 
   getdeadlines(openingYear: number): Observable<Deadline[]> {
@@ -27,4 +38,5 @@ export class SchoolService {
   getMajorByShorthand(majorShorthand: string): Observable<Major> {
     return this.http.get<Major>(`${baseEndPoint}/majors/${majorShorthand}`, 'getting a specific major within majors');
   }
+
 }

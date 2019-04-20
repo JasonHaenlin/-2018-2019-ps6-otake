@@ -1,3 +1,17 @@
-<p>
-  courses-holder works!
-</p>
+<div class="container">
+  <table>
+    <tr>
+      <td class="left-content">
+          <span class="semester">{{ semester }}</span>
+      </td>
+      <td>
+        <ul class="courses-list">
+            <li *ngFor="let c of courses">
+                <span class="title">{{ c.title }}</span>
+                <span class="description" *ngIf="c.description"> - {{ c.description }} </span>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</div>
