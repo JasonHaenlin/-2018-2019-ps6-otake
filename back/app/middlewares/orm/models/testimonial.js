@@ -17,7 +17,7 @@ class Testimonial extends Model {
         last_name: { type: 'string', minLength: 2, maxLength: 50 },
         email: { type: 'string', minLength: 7, maxLength: 50 },
         nationality: { type: 'string', minLength: 2, maxLength: 3 },
-        text: { type: 'string', minLength: 5, maxLength: 1024 }
+        text: { type: 'string', minLength: 5, maxLength: 1000 }
       }
     };
   }

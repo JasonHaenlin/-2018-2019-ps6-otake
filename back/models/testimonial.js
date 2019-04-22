@@ -8,7 +8,7 @@ module.exports = new BaseModel('testimonial', t => {
   t.string('last_name');
   t.string('email');
   t.string('nationality');
-  t.string('text');
+  t.string('text', 1000);
 },
 [
   {

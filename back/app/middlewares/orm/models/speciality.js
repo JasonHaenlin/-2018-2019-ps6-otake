@@ -12,7 +12,10 @@ class Speciality extends Model {
       properties: {
         name: { type: 'string' },
         shorthand: { type: 'string' },
-        description: { typ: 'string' }
+        small_picture: { type: 'string', minLength: 2, maxLength: 255 },
+        big_picture: { type: 'string', minLength: 2, maxLength: 255 },
+        description: { typ: 'string', minLength: 40, maxLength: 1000 },
+        topics: { type: 'string', minLength: 2, maxLength: 50 }
       }
     };
   }
