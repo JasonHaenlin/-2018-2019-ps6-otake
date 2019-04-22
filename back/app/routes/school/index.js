@@ -25,4 +25,7 @@ school.get('/courses/:major/:semester', handleExceptions(course.getCoursesOfMajo
 /* -- school info -- */
 school.get('/deadlines/:intervalDate', handleExceptions(info.getDeadlineByYears));
 
+/* -- supervisor -- */
+school.get('/supervisors', handleExceptions(supervisor.getSupervisors()));
+
 module.exports = school;
