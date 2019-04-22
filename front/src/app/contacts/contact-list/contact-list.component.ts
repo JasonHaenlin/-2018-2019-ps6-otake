@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SchoolService} from '../../../services/school/school.service';
 import {Supervisor} from '../../../models/Supervisor';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-contact-list',
@@ -9,12 +10,12 @@ import {Supervisor} from '../../../models/Supervisor';
 })
 export class ContactListComponent implements OnInit {
 
-  public supervisorList: Supervisor[] = [];
+  public supervisorList$: Observable<Supervisor[]>;
 
   constructor(public schoolService: SchoolService) { }
 
   ngOnInit() {
-    this.supervisorList = this.schoolService.getSupervisors();
+    this.supervisorList$ = this.schoolService.getSupervisors();
   }
 
 }

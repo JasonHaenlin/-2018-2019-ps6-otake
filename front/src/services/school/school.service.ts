@@ -5,7 +5,6 @@ import { Course } from 'src/models/Course';
 import { Major } from 'src/models/Major';
 import { Deadline } from './../../models/Deadline';
 import { SpecialityCard } from './../../models/SpecialityCard';
-import {SUPERVISOR_MOCKED} from '../../mocks/Supervisor.mock';
 import {Supervisor} from '../../models/Supervisor';
 
 const baseEndPoint = 'school/';
@@ -13,8 +12,6 @@ const baseEndPoint = 'school/';
   providedIn: 'root'
 })
 export class SchoolService {
-
-  private supervisorList = SUPERVISOR_MOCKED;
 
   constructor(private http: ApplicationHttpClient) { }
 
@@ -43,7 +40,7 @@ export class SchoolService {
     return this.http.get<Major>(`${baseEndPoint}/majors/${majorShorthand}`, 'getting a specific major within majors');
   }
 
-  getSupervisors(): Supervisor[] {
-    return this.supervisorList;
+  getSupervisors(): Observable<Supervisor[]> {
+    return this.http.get<Supervisor[]>(`${baseEndPoint}supervisors`, 'get supervisor list', []);
   }
 }

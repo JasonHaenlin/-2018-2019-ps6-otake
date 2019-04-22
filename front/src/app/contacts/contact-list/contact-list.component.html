@@ -2,7 +2,7 @@
   <div class="title">
     <h4>Besion d'aide? Contacter nous !</h4>
   </div>
-  <div class="supervisor" *ngFor="let supervisor of supervisorList">
+  <div class="supervisor" *ngFor="let supervisor of supervisorList$| async">
     <app-contact [supervisor]="supervisor"></app-contact>
   </div>
 </div>
