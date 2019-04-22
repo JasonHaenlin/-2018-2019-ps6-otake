@@ -15,6 +15,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { UtilityModule } from './utility/utility.module';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { FinancialAidPageComponent } from './financial-aid-page/financial-aid-page.component';
+import { ContactComponent } from './contacts/contact/contact.component';
+import { ContactListComponent } from './contacts/contact-list/contact-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +25,8 @@ import { FinancialAidPageComponent } from './financial-aid-page/financial-aid-pa
     HomePageComponent,
     FooterComponent,
     FinancialAidPageComponent,
+    ContactComponent,
+    ContactListComponent,
   ],
   imports: [
     ReactiveFormsModule,

@@ -1,0 +1,8 @@
+<div class="supervisor-list">
+  <div class="title">
+    <h4>Besion d'aide? Contacter nous !</h4>
+  </div>
+  <div class="supervisor" *ngFor="let supervisor of supervisorList">
+    <app-contact [supervisor]="supervisor"></app-contact>
+  </div>
+</div>
