@@ -6,6 +6,8 @@ import { GeographicalArea } from '../../models/GeographicalArea';
 import { Language } from '../../models/Language';
 import { Major } from '../../models/Major';
 import { University } from '../../models/University';
+import { FinancialAid } from 'src/models/FinancialAid';
+import { FINANCIAL_AID_MOCK } from 'src/mocks/FinancialAid.mock';
 
 const baseEndPoint = 'universities/';
 
@@ -53,5 +55,9 @@ export class UniversityService {
       options += separator + 'major=' + option.major;
     }
     return `page=${page}${options}`;
+  }
+
+  getFinancialAids(): Observable<FinancialAid[]> {
+    return of(FINANCIAL_AID_MOCK);
   }
 }

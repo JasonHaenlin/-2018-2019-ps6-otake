@@ -1,7 +1,7 @@
-import { FinancialAid } from 'src/models/FinancialAid';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { SchoolService } from 'src/services/school/school.service';
 import { Observable } from 'rxjs';
+import { FinancialAid } from 'src/models/FinancialAid';
+import { UniversityService } from './../../services/university/university.service';
 
 @Component({
   selector: 'app-financial-aid-page',
@@ -13,10 +13,10 @@ export class FinancialAidPageComponent implements OnInit {
 
   public financialAidList$: Observable<FinancialAid[]>;
 
-  constructor(private schoolService: SchoolService) { }
+  constructor(private universityService: UniversityService) { }
 
   ngOnInit() {
-    this.financialAidList$ = this.schoolService.getFinancialAids();
+    this.financialAidList$ = this.universityService.getFinancialAids();
   }
 
 }
