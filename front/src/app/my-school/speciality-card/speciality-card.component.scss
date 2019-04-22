@@ -1,55 +1,56 @@
 @import '../../../styles/variables.scss';
 
 .speciality-card {
-    border-radius: $borderRadius;
-    border: 1px solid #BBBB;
-    margin: 8px;
-    width: 14em;
-    background-color: white;
-    height: 18em;
-    cursor: pointer;
+  border-radius: $borderRadius;
+  border: 1px solid #BBBB;
+  margin: 8px;
+  width: 14em;
+  background-color: white;
+  height: 18em;
+  cursor: pointer;
 }
 
 .speciality-image {
-    height: 9em;
-    width: 100%;
-    overflow: hidden;
-    border-top-left-radius: $borderRadius;
-    border-top-right-radius: $borderRadius;
+  height: 9em;
+  width: 100%;
+  overflow: hidden;
+  border-top-left-radius: $borderRadius;
+  border-top-right-radius: $borderRadius;
 }
 
 .speciality-title,
 .speciality-shorthand {
-    position: relative;
+  position: relative;
 }
 
 .speciality-shorthand {
-    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-    top: -187px;
-    left: -12px;
-    text-align: right;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  top: -187px;
+  left: -12px;
+  text-align: right;
 }
+
 .speciality-title {
-    top: -45px;
-    font-size: 0.7em;
-    line-height: 1.2em;
-    color: white;
-    font-weight: bold;
-    padding: 7px;
-    background-color: rgb(71, 71, 71);
+  top: -45px;
+  font-size: 0.7em;
+  line-height: 1.2em;
+  color: white;
+  font-weight: bold;
+  padding: 7px;
+  background-color: rgb(71, 71, 71);
 }
 
 #top-content {
-    height: 9em;
+  height: 9em;
 }
 
 #bottom-content {
-    height: 9em;
-    margin-top: 1.4em;
-    color: $paragraphsText;
-    text-align: left;
-    font-size: 0.8em;
-    padding: 9px;
-    line-height: 1.1em;
-    vertical-align: middle;
+  height: 9em;
+  margin-top: 1.4em;
+  color: $paragraphsText;
+  text-align: left;
+  font-size: 0.8em;
+  padding: 9px;
+  line-height: 1.1em;
+  vertical-align: middle;
 }

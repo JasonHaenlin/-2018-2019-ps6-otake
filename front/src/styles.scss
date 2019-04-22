@@ -30,7 +30,9 @@ a {
   cursor: pointer;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Shojumaru');
+a:focus {
+  outline: none;
+}
 
 .otake-font {
   font-family: 'Shojumaru', cursive, 'Courier New', Courier, monospace;
