@@ -1,3 +1,4 @@
+import { FinancialAidPageComponent } from './financial-aid-page/financial-aid-page.component';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -11,7 +12,7 @@ const routes: Routes = [
   { path: 'school', loadChildren: './my-school/my-school.module#MySchoolModule' },
   { path: 'exchange-universities', loadChildren: './exchange-universities/university.module#UniversityModule' },
   { path: 'testimonials', component: PageNotFoundComponent },
-  { path: 'financial-aids', component: PageNotFoundComponent },
+  { path: 'financial-aids', component: FinancialAidPageComponent },
   { path: 'calendar', component: PageNotFoundComponent },
   { path: 'contacts', component: PageNotFoundComponent },
 
