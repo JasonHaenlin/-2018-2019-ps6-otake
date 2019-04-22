@@ -1,5 +1,5 @@
 const resHandler = require('../../utils/response-handler');
-const { supervisor } = require('../../controller/contact');
+const { supervisor } = require('../../controller/school');
 
 // using the database
 exports.getSupervisors = async (req, res) => {

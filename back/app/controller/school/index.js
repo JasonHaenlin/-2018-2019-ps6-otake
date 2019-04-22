@@ -3,7 +3,7 @@ const major = require('./major');
 const speciality = require('./speciality');
 const course = require('./course');
 const info = require('./info');
-const supervisor = require('../school/supervisor');
+const supervisor = require('./supervisor');
 
 module.exports = {
   major,

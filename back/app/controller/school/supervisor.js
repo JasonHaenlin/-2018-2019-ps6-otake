@@ -1,4 +1,4 @@
-const Supervisor = require('../../middlewares/orm').Supervisor;
+const { Supervisor } = require('../../middlewares/orm');
 
 module.exports = {
   getSupervisors() {

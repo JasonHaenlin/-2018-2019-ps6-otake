@@ -5,6 +5,7 @@ const major = require('./major');
 const speciality = require('./speciality');
 const course = require('./course');
 const info = require('./info');
+const supervisor = require('./supervisor');
 
 const school = express.Router();
 
@@ -26,6 +27,6 @@ school.get('/courses/:major/:semester', handleExceptions(course.getCoursesOfMajo
 school.get('/deadlines/:intervalDate', handleExceptions(info.getDeadlineByYears));
 
 /* -- supervisor -- */
-school.get('/supervisors', handleExceptions(supervisor.getSupervisors()));
+school.get('/supervisors', handleExceptions(supervisor.getSupervisors));
 
 module.exports = school;
