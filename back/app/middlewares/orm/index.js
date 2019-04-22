@@ -13,6 +13,7 @@ const Testimonial = require('./models/testimonial');
 const Deadline = require('./models/deadline');
 const PastContract = require('./models/past-contract');
 const Supervisor = require('./models/supervisor');
+const FinancialAid = require('./models/financial-aid');
 
 // add all the tables here
 module.exports = {
@@ -30,5 +31,6 @@ module.exports = {
   Course,
   Deadline,
   PastContract,
-  Supervisor
+  Supervisor,
+  FinancialAid
 };
