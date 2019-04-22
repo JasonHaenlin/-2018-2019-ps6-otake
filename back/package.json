@@ -57,7 +57,7 @@
     "migrate": "^1.6.2",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.10",
-    "nyc": "^13.3.0",
+    "nyc": "^14.0.0",
     "sonarqube-scanner": "^2.4.0",
     "sqlite3": "^4.0.6",
     "supertest": "^3.4.2"
