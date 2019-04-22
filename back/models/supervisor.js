@@ -4,7 +4,7 @@ module.exports = new BaseModel('supervisor', t => {
     t.increments('id').primary();
     t.string('name', 50);
     t.string('title', 30);
-    t.string.email('email',50);
+    t.string('email',50);
   },
   [
     { id: 0, name: 'Contact 1', title: 'Responsable', email: 'contact-1@mail.com' },

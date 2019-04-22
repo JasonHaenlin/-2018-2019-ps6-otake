@@ -12,6 +12,7 @@ const course = require('./course');
 const testimonial = require('./testimonial');
 const deadline = require('./deadline');
 const past_contract = require('./past-contract');
+const supervisor = require('./supervisor');
 
 /**
  * All the table are sort here
@@ -33,5 +34,6 @@ module.exports = [
   course,
   studyDepartement,
   deadline,
-  past_contract
+  past_contract,
+  supervisor
 ];
