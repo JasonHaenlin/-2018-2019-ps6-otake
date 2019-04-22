@@ -1,0 +1,65 @@
+@import '../../styles/variables.scss';
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #CCC;
+  margin: 1em 0;
+  margin-top: 0px;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li::before {
+  content: "\f111";
+  font-family: FontAwesome;
+  color: $blue3;
+  font-size: 0.5em;
+  position: relative;
+  top: -3px;
+  left: -10px;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container {
+  width: 65vw;
+  margin: 0 auto;
+}
+
+.content-title {
+  font-size: 22px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  color: $blue2;
+}
+
+.content-paragraph {
+  text-align: justify;
+  line-height: 1.6;
+  font-size: 17px;
+  color: $paragraphsText;
+}
+
+.big-title {
+  font-size: 30px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  color: $blue1;
+}
+
+.header {
+  padding: 2em 10vw 2em 10vw;
+  background-color: $blue2;
+  color: $white;
+  font-size: 0.8em;
+  line-height: 1.5em;
+  margin: 0 auto;
+}

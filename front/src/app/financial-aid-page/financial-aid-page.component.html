@@ -1,3 +1,37 @@
-<p>
-  financial-aid-page works!
-</p>
+<div class="header">
+  Vous pouvez prétendre à plusieurs types d'aides financières selon votre destination, le
+  programme auquel vous participez et la nature de votre mobilité.
+  La plupart des aides financières s'adressent à l'ensemble des étudiants. Toutefois, il convient
+  de
+  bien faire attention aux critères d'attribution et/ou de sélection.
+</div>
+<div class="container">
+  <div *ngFor="let f of (financialAidList$ | async)">
+    <h1 class="big-title">{{f.name}}</h1>
+    <section id="description">
+      <h2 class="content-title"></h2>
+      <hr>
+      <div class="content-paragraph" [innerHTML]="f.description"></div>
+    </section>
+    <section id="conditionsToApply">
+      <h2 class="content-title">Les Conditions</h2>
+      <hr>
+      <div class="content-paragraph" [innerHTML]="f.conditionsToApply"></div>
+    </section>
+    <section id="termsOfPayment">
+      <h2 class="content-title">Aides Possibles</h2>
+      <hr>
+      <div class="content-paragraph" [innerHTML]="f.termsOfPayment"></div>
+    </section>
+    <section id="procedure">
+      <h2 class="content-title">Procédure à suivre</h2>
+      <hr>
+      <div class="content-paragraph" [innerHTML]="f.procedure"></div>
+    </section>
+    <section id="cumul">
+      <h2 class="content-title">Cumulation</h2>
+      <hr>
+      <div class="content-paragraph" [innerHTML]="f.cumul"></div>
+    </section>
+  </div>
+</div>

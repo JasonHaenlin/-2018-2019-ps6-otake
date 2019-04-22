@@ -1,10 +1,12 @@
+import { FINANCIAL_AID_MOCK } from './../../mocks/FinancialAid.mock';
 import { Deadline } from './../../models/Deadline';
 import { SpecialityCard } from './../../models/SpecialityCard';
 import { Injectable } from '@angular/core';
 import { ApplicationHttpClient } from 'src/core/http-client';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Major } from 'src/models/Major';
 import { Course } from 'src/models/Course';
+import { FinancialAid } from 'src/models/FinancialAid';
 
 const baseEndPoint = 'school/';
 @Injectable({
@@ -24,7 +26,7 @@ export class SchoolService {
       'getting all courses of a chosen major', []);
   }
 
-  getCoursesOfMajorForThisSemester(majorShorthand , semester: string): Observable<Course[]> {
+  getCoursesOfMajorForThisSemester(majorShorthand, semester: string): Observable<Course[]> {
     return this.http.get<Course[]>(`${baseEndPoint}/courses/${majorShorthand}/${semester}`,
       'getting all courses of a chosen major of a chosen semester', []);
   }
@@ -37,6 +39,10 @@ export class SchoolService {
 
   getMajorByShorthand(majorShorthand: string): Observable<Major> {
     return this.http.get<Major>(`${baseEndPoint}/majors/${majorShorthand}`, 'getting a specific major within majors');
+  }
+
+  getFinancialAids(): Observable<FinancialAid[]> {
+    return of(FINANCIAL_AID_MOCK);
   }
 
 }

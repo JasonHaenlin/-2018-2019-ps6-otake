@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { UniversityService } from 'src/services/university/university.service';
-import { UniversityDetails } from 'src/models/UniversityDetails';
 import { ActivatedRoute } from '@angular/router';
-import { Section } from 'src/models/Section';
-import { UNIVERSITY_SECTIONS, UNIVERSITY_SECTION_ICONS } from './UniversitySections.enum';
-import { enumSelector } from 'src/app/utility/utilitary-functions';
-import { Testimonial } from 'src/models/Testimonial';
 import { Observable } from 'rxjs';
-import { filter } from 'rxjs/internal/operators';
+import { enumSelector } from 'src/app/utility/utilitary-functions';
+import { Section } from 'src/models/Section';
+import { UniversityDetails } from 'src/models/UniversityDetails';
+import { UniversityService } from 'src/services/university/university.service';
+import { UNIVERSITY_SECTIONS, UNIVERSITY_SECTION_ICONS } from './UniversitySections.enum';
 
 @Component({
   selector: 'app-university-details',
