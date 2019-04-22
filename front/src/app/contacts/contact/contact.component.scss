@@ -1,13 +1,34 @@
-.name-title {
-  display: flex;
-  flex-direction: row;
+@import '../../../styles/variables.scss';
+
+.grid-contact {
+  padding: 0.5em;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2ch 3ch 3ch;
+  grid-template-areas:
+    "title"
+    "name"
+    "email";
 }
 
-.name {
-  margin-right: 2em;
+.grid-name {
+  grid-area: name;
+  color: $blue1;
 }
 
-.contact {
-  display: flex;
-  flex-direction: row;
+.grid-title {
+  grid-area: title;
+  color: $paragraphsText;
+  font-size: 15px;
+}
+
+.grid-email {
+  grid-area: email;
+  font-size: 17px;
+
+  .fa-envelope,
+  a {
+    color: $blue3;
+  }
+
 }

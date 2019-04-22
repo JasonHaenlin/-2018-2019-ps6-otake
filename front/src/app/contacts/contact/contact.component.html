@@ -1,16 +1,14 @@
-<div class="contact">
-  <div class="fas fa-user fa-3x"></div>
-  <div class="text">
-    <div class="name-title">
-      <div class="name">
-        {{supervisor.name}}
-      </div>
-      <div class="title">
-        {{supervisor.title}}
-      </div>
-    </div>
-    <div class="email">
+<div class="grid-contact">
+  <div class="grid-name">
+    {{supervisor.name}}
+  </div>
+  <div class="grid-title">
+    {{supervisor.title}}
+  </div>
+  <div class="grid-email">
+    <a href="mailto:{{supervisor.email}}">
+      <span class="fas fa-envelope"></span>
       {{supervisor.email}}
-    </div>
+    </a>
   </div>
 </div>
