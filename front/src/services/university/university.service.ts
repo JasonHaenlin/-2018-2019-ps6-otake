@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ApplicationHttpClient } from 'src/core/http-client';
+import { FinancialAid } from 'src/models/FinancialAid';
 import { UniversityDetails } from 'src/models/UniversityDetails';
 import { GeographicalArea } from '../../models/GeographicalArea';
 import { Language } from '../../models/Language';
 import { Major } from '../../models/Major';
 import { University } from '../../models/University';
-import { FinancialAid } from 'src/models/FinancialAid';
-import { FINANCIAL_AID_MOCK } from 'src/mocks/FinancialAid.mock';
 
 const baseEndPoint = 'universities/';
 
@@ -58,6 +57,6 @@ export class UniversityService {
   }
 
   getFinancialAids(): Observable<FinancialAid[]> {
-    return of(FINANCIAL_AID_MOCK);
+    return this.http.get<FinancialAid[]>(`${baseEndPoint}financialAids`, 'get the financial aids', []);
   }
 }
