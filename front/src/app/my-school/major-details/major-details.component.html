@@ -1,27 +1,31 @@
-<div *ngIf="major$ | async as maj">
-  <header>
+<div>
+
+  <header *ngIf="major$ | async as maj">
     <span class="image-header-title">
       {{ maj.title }}
     </span>
-    <img class="header" src="https://i.pinimg.com/originals/80/71/87/8071873252ab2f773d9cc72bcd2d0264.jpg" alt="(╯°□°）╯︵ ┻━┻">
+    <img class="header"
+      src="https://i.pinimg.com/originals/80/71/87/8071873252ab2f773d9cc72bcd2d0264.jpg"
+      alt="(╯°□°）╯︵ ┻━┻">
   </header>
+
   <main>
-    <div *ngIf="specialities$ | async as spec" >
+    <div *ngIf="specialities$ | async as spec">
       <h2 class="content-title">Les spécialités</h2><br>
-      <div class="content" *ngFor="let s of spec">
-        <app-speciality-card [speciality]="s"></app-speciality-card>
+      <div class="content-card">
+        <app-speciality-card *ngFor="let s of spec" [speciality]="s"></app-speciality-card>
       </div>
     </div>
 
     <h2 class="content-title">Les cours généraux</h2><br>
 
     <div *ngIf="s7$ | async as cs7">
-        <app-courses-holder [semester]="'S7'" [courses]="cs7"></app-courses-holder>       
+      <app-courses-holder [semester]="'S7'" [courses]="cs7"></app-courses-holder>
     </div>
 
     <div *ngIf="s8$ | async as cs8">
-        <app-courses-holder [semester]="'S8'" [courses]="cs8"></app-courses-holder>       
+      <app-courses-holder [semester]="'S8'" [courses]="cs8"></app-courses-holder>
     </div>
-
   </main>
+
 </div>

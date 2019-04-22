@@ -1,13 +1,10 @@
 @import '../../../styles/variables.scss';
+@import '../../../styles/card.scss';
 
-.speciality-card {
-  border-radius: $borderRadius;
-  border: 1px solid #BBBB;
+.card {
   margin: 8px;
   width: 14em;
-  background-color: white;
   height: 18em;
-  cursor: pointer;
 }
 
 .speciality-image {

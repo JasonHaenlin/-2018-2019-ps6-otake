@@ -10,7 +10,7 @@ hr {
   padding: 0;
 }
 
-.container {
+.grid-container {
   display: grid;
   grid-template-columns: 1fr 20ch;
   grid-template-rows: auto 1fr;
@@ -19,32 +19,34 @@ hr {
     "main  aside";
   grid-gap: 1rem;
   min-height: 100vh;
+
+  header {
+    grid-area: header;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  aside {
+    grid-area: aside;
+    position: sticky;
+    top: 5em;
+    height: 16em;
+  }
+
+  main {
+    grid-area: main;
+    margin-bottom: 10em;
+    margin-left: 15vw;
+    margin-right: 5vw;
+  }
 }
 
-header {
-  grid-area: header;
-}
 
-img {
-  max-width: 100%;
-  height: auto;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-aside {
-  grid-area: aside;
-  position: sticky;
-  top: 5em;
-  height: 16em;
-}
-
-main {
-  grid-area: main;
-  margin-bottom: 10em;
-  margin-left: 15vw;
-  margin-right: 5vw;
-}
 
 .content-title {
   font-size: 24px;
@@ -61,16 +63,16 @@ main {
 }
 
 @media (max-width: 900px) {
-  aside {
-    display: none;
-  }
-
-  .container {
+  .grid-container {
     display: block;
-  }
 
-  main {
-    margin-left: 10vw;
-    margin-right: 10vw;
+    aside {
+      display: none;
+    }
+
+    main {
+      margin-left: 10vw;
+      margin-right: 10vw;
+    }
   }
 }

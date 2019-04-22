@@ -19,10 +19,11 @@ export class MajorDetailsComponent implements OnInit {
   s7$: Observable<Course[]>;
   s8$: Observable<Course[]>;
 
-  constructor(private schoolService: SchoolService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private schoolService: SchoolService,
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
-    console.log('test');
     this.route.params.subscribe(v => {
       this.specialities$ = this.schoolService.getSpecialitiesOf(v.major);
       this.major$ = this.schoolService.getMajorByShorthand(v.major);
