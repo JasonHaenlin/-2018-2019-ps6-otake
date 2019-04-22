@@ -1,10 +1,10 @@
-import { FinancialAidPageComponent } from './financial-aid-page/financial-aid-page.component';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ContactPageComponent } from './contacts/contact-page/contact-page.component';
+import { FinancialAidPageComponent } from './financial-aid-page/financial-aid-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import {ContactListComponent} from './contacts/contact-list/contact-list.component';
 
 
 const routes: Routes = [
@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'testimonials', component: PageNotFoundComponent },
   { path: 'financial-aids', component: FinancialAidPageComponent },
   { path: 'calendar', component: PageNotFoundComponent },
-  { path: 'contacts', component: ContactListComponent },
+  { path: 'contacts', component: ContactPageComponent },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   // catch all the other routes
