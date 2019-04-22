@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {SchoolService} from "../../../services/school/school.service";
-import {Supervisor} from "../../../models/Supervisor";
+import {SchoolService} from '../../../services/school/school.service';
+import {Supervisor} from '../../../models/Supervisor';
 
 @Component({
   selector: 'app-contact-list',

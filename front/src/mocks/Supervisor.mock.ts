@@ -1,4 +1,4 @@
-import { Supervisor } from "../models/Supervisor";
+import { Supervisor } from '../models/Supervisor';
 
 export const SUPERVISOR_MOCKED: Supervisor[] = [
   {

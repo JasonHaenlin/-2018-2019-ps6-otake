@@ -5,8 +5,8 @@ import { Course } from 'src/models/Course';
 import { Major } from 'src/models/Major';
 import { Deadline } from './../../models/Deadline';
 import { SpecialityCard } from './../../models/SpecialityCard';
-import {SUPERVISOR_MOCKED} from "../../mocks/Supervisor.mock";
-import {Supervisor} from "../../models/Supervisor";
+import {SUPERVISOR_MOCKED} from '../../mocks/Supervisor.mock';
+import {Supervisor} from '../../models/Supervisor';
 
 const baseEndPoint = 'school/';
 @Injectable({
