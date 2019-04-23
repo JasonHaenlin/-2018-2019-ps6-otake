@@ -10,4 +10,4 @@ exports.getTestimonials = async (req, res) => {
 exports.getTestimonialByUniversity = async (req, res) => {
   const testimonials = await testimonial.getTestimonialByUniversity();
   resHandler.yahResponse(res, testimonials);
-}
+};
