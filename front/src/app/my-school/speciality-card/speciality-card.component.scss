@@ -15,7 +15,7 @@
   border-top-right-radius: $borderRadius;
 }
 
-.speciality-title,
+.speciality-name,
 .speciality-shorthand {
   position: relative;
 }
@@ -27,14 +27,30 @@
   text-align: right;
 }
 
-.speciality-title {
-  top: -45px;
+.speciality-name-wrapper, .speciality-name-background {
+  position: relative;
+}
+
+.speciality-name {
+  margin: 7px;
   font-size: 0.7em;
   line-height: 1.2em;
   color: white;
   font-weight: bold;
-  padding: 7px;
+}
+
+.speciality-name-background {
+  position: relative;
+  top: -56px;
+  padding: 1.2em;
   background-color: rgb(71, 71, 71);
+}
+
+.speciality-name-wrapper {
+  // border: 1px solid red;
+  vertical-align: middle;
+  top: -104px;
+  height: 2.4em;
 }
 
 #top-content {
