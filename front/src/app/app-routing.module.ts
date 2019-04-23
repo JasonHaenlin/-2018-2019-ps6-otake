@@ -5,6 +5,7 @@ import { ContactPageComponent } from './contacts/contact-page/contact-page.compo
 import { FinancialAidPageComponent } from './financial-aid-page/financial-aid-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { TestimonialListComponent } from './testimonial/testimonial-list/testimonial-list.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,7 @@ const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'school', loadChildren: './my-school/my-school.module#MySchoolModule' },
   { path: 'exchange-universities', loadChildren: './exchange-universities/university.module#UniversityModule' },
-  { path: 'testimonials', component: PageNotFoundComponent },
+  { path: 'testimonials', component: TestimonialListComponent },
   { path: 'financial-aids', component: FinancialAidPageComponent },
   { path: 'calendar', component: PageNotFoundComponent },
   { path: 'contacts', component: ContactPageComponent },

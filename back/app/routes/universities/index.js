@@ -19,6 +19,7 @@ universities.get('/majors', handleExceptions(university.getMajors));
 universities.get('/details/:name', handleExceptions(university.getUniversityDetails));
 /* -- testimonial -- */
 universities.get('/testimonials', handleExceptions(testimonial.getTestimonials));
+universities.get('/:name/testimonials', handleExceptions(testimonial.getTestimonialByUniversity));
 /* -- financialAid -- */
 universities.get('/financialAids', handleExceptions(financialAid.getFinancialAids));
 module.exports = universities;

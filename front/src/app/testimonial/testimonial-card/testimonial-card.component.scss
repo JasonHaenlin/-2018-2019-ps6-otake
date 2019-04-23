@@ -1,0 +1,19 @@
+@import '../../../styles/variables.scss';
+
+.card {
+    padding: 1em;
+    margin-bottom: 1em;
+    background-color: whitesmoke;
+    display: flex;
+  }
+
+.picture {
+    float: left;
+    width: 30%;
+    text-align: center;
+    margin: 3em;
+}
+
+.content {
+    float: right;
+}
