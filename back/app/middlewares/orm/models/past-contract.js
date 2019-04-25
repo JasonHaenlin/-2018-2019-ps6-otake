@@ -10,11 +10,11 @@ class PastContract extends Model {
       type: 'object',
       required: ['university_id', 'link'],
       properties: {
-        major_id: { type: 'integer' },
+        id: { type: 'integer' },
         year: { type: 'integer' },
-        semester: { type: 'string', minLength: 2, maxLength: 2 },
+        semester: { type: 'string', minLength: 2, maxLength: 5 },
         university_id: { type: 'integer' },
-        shorthand: { type: 'string', minLength: 1, maxLength: 10 },
+        major_id: { type: 'integer' },
         link: { type: 'string', minLength: 1, maxLength: 255 }
       }
     };

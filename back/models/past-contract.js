@@ -5,7 +5,7 @@ module.exports = new BaseModel('past_contract', t => {
   t.integer('year');
   t.string('semester', 4);
   t.integer('university_id').references('id').inTable('exchange_university');
-  t.string('shorthand', 10);
+  t.integer('major_id');
   t.string('link', 255);
 },
 [
@@ -14,24 +14,24 @@ module.exports = new BaseModel('past_contract', t => {
     year: 2019,
     semester: 's1',
     university_id: 5,
-    shorthand: 'SI',
-    link: 'http://www.polytech.unice.fr/'
+    major_id: 4,
+    link: 'https://otakedev.com/share/contrats/contrat-etude-sample.pdf '
   },
   {
     id: 2,
     year: 2017,
     semester: 's1',
     university_id: 7,
-    shorthand: 'SI',
-    link: 'http://www.polytech.unice.fr/'
+    major_id: 4,
+    link: 'https://otakedev.com/share/contrats/contrat-etude-sample.pdf '
   },
   {
     id: 3,
     year: 2017,
     semester: 's1',
     university_id: 1,
-    shorthand: 'SI',
-    link: 'http://www.polytech.unice.fr/'
+    major_id: 1,
+    link: 'https://otakedev.com/share/contrats/contrat-etude-sample.pdf '
 
   },
   {
@@ -39,32 +39,32 @@ module.exports = new BaseModel('past_contract', t => {
     year: 2016,
     semester: 's1',
     university_id: 19,
-    shorthand: 'SI',
-    link: 'http://www.polytech.unice.fr/'
+    major_id: 0,
+    link: 'https://otakedev.com/share/contrats/contrat-etude-sample.pdf '
   },
   {
     id: 5,
     year: 2016,
     semester: 'full',
     university_id: 0,
-    shorthand: 'SI',
-    link: 'http://www.polytech.unice.fr/'
+    major_id: 3,
+    link: 'https://otakedev.com/share/contrats/contrat-etude-sample.pdf '
   },
   {
     id: 6,
     year: 2016,
     semester: 'full',
     university_id: 31,
-    shorthand: 'SI',
-    link: 'http://www.polytech.unice.fr/'
+    major_id: 2,
+    link: 'https://otakedev.com/share/contrats/contrat-etude-sample.pdf '
   },
   {
     id: 7,
     year: 2015,
     semester: 's2',
     university_id: 42,
-    shorthand: 'SI',
-    link: 'http://www.polytech.unice.fr/'
+    major_id: 5,
+    link: 'https://otakedev.com/share/contrats/contrat-etude-sample.pdf '
   }
 
 ]);

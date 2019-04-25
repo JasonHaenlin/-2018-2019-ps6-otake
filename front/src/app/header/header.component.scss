@@ -75,6 +75,7 @@ a,
 
   a {
     padding: 16px 16px;
+    padding-bottom: 8px;
   }
 }
 
@@ -90,9 +91,9 @@ a,
   background: $blue1;
 }
 
-.dropdown-content a {
-  padding-bottom: 8px;
-}
+// .dropdown-content a {
+//   padding-bottom: 8px;
+// }
 
 .dropdown-content a:hover {
   background-color: $blue2;

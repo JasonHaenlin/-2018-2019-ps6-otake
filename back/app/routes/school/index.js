@@ -6,6 +6,7 @@ const speciality = require('./speciality');
 const course = require('./course');
 const info = require('./info');
 const supervisor = require('./supervisor');
+const contract = require('./past-contract');
 
 const school = express.Router();
 
@@ -16,6 +17,9 @@ school.get('/majors/:shorthand', handleExceptions(major.getMajor));
 /* -- speciality -- */
 school.get('/specialities', handleExceptions(speciality.getSpecialities));
 school.get('/specialities/:major', handleExceptions(speciality.getSpecialitiesOf));
+
+/* -- contract -- */
+school.get('/contracts', handleExceptions(contract.getPastContracts));
 
 /* -- courses -- */
 school.get('/courses', handleExceptions(course.getCourses));

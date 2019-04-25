@@ -7,7 +7,7 @@ const getContracts = () => {
   return PastContract.query();
 };
 
-describe('past contracts to database', () => {
+describe('past contracts controller to database', () => {
   it('should get the list of contracts from the database', async () => {
     const res = await getContracts();
     assert.ok(res.length > 0);
