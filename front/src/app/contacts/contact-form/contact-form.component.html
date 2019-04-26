@@ -1,0 +1,74 @@
+<h3>Une question, un problème? Contactez nous</h3>
+<form class="grid-contact-form" [formGroup]="contactForm" (ngSubmit)="sendMail()">
+
+  <label class="grid-firstname" for="firstName">
+    Prénom <br>
+    <input class="input-custom" type="text" id="firstName" [formControlName]="'firstName'">
+  </label>
+
+  <label class="grid-lastname" for="lastName">
+    Nom <br>
+    <input class="input-custom" type="text" id="lastName" [formControlName]="'lastName'">
+  </label>
+
+  <label class="grid-email" for="email">
+    Email <br>
+    <input class="input-custom" type="text" id="email" [formControlName]="'email'">
+  </label>
+
+  <label class="grid-email-verify" for="confirmationEmail">
+    Confirmation Email <br>
+    <input class="input-custom" type="text" id="confirmationEmail" [formControlName]="'confirmationEmail'">
+  </label>
+  <div class="grid-category">
+    <label for="category">
+      Catégorie </label>
+    <select id="category" (change)="switchCat()" [formControlName]="'category'">
+      <option *ngFor="let cat of categoryList" [ngValue]="cat">
+        {{cat}}
+      </option>
+    </select>
+  </div>
+  <div class="grid-major">
+    <label for="major">
+      Major </label>
+    <select id="major" [formControlName]="'major'">
+      <option *ngFor="let maj of majorList" [ngValue]="maj.shorthand">
+        {{maj.shorthand}}
+      </option>
+    </select>
+  </div>
+
+  <label class="grid-object">
+    <span [ngSwitch]="categorySwitch">
+      <span *ngSwitchCase="'Technique'">
+        Object
+        <select [formControlName]="'object'">
+          <option *ngFor="let obj of techniqueList" [ngValue]="obj">
+            {{obj}}
+          </option>
+        </select>
+      </span>
+      <span *ngSwitchCase="'Echange'">
+        Object
+        <select [formControlName]="'object'">
+          <option *ngFor="let obj of echangeList" [ngValue]="obj">
+            {{obj}}
+          </option>
+        </select>
+      </span>
+      <span *ngSwitchCase="'autres'">
+        Object
+        <input class="input-custom" type="text" [formControlName]="'object'">
+      </span>
+    </span>
+  </label>
+
+  <label class="grid-message" for="message">
+    Message <br>
+    <textarea type="text" id="message" [formControlName]="'message'"
+              cols="60" rows="5"></textarea>
+  </label>
+
+  <button type="submit" class="grid-submit">envoyer</button>
+</form>

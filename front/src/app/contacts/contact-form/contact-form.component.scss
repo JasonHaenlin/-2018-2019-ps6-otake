@@ -1,0 +1,59 @@
+.grid-contact-form {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 17ch 17ch;
+  grid-template-rows: 7ch 7ch 3ch 1fr 12ch 3ch;
+  grid-template-areas:
+    "firstname lastname"
+    "email email-verify"
+    "category major"
+    "object object"
+    "message message"
+    "submit none";
+  grid-gap: 1ch;
+  margin-left: 2em;
+}
+
+.grid-firstname {
+  grid-area: firstname;
+}
+
+.grid-lastname {
+  grid-area: lastname;
+}
+
+.grid-email {
+  grid-area: email;
+}
+
+.grid-email-verify {
+  grid-area: email-verify;
+}
+
+.grid-category {
+  grid-area: category;
+}
+
+.grid-major {
+  grid-area: major;
+}
+
+.grid-object {
+  grid-area: object;
+}
+
+.grid-message {
+  grid-area: message;
+}
+
+.grid-submit {
+  grid-area: submit;
+}
+
+textarea {
+  resize: none;
+}
+
+h3 {
+  margin-left: 1em;
+}
