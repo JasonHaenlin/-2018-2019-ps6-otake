@@ -5,11 +5,16 @@ module.exports = {
   getSpecialities() {
     return Speciality.query();
   },
-  getSpecialitiesOf(major) {
+  getCardSpecialities(major) {
     return Speciality.query()
       .alias('s')
       .joinRelation('major')
       .where({ 'major.shorthand': major })
       .select('s.name', 's.shorthand', 's.small_picture', 's.topics');
+  },
+  getSpeciality(speciality) {
+    return Speciality.query()
+      .where({ 'speciality.shorthand': speciality })
+      .first();
   }
 };

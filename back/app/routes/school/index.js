@@ -16,7 +16,8 @@ school.get('/majors/:shorthand', handleExceptions(major.getMajor));
 
 /* -- speciality -- */
 school.get('/specialities', handleExceptions(speciality.getSpecialities));
-school.get('/specialities/:major', handleExceptions(speciality.getSpecialitiesOf));
+school.get('/specialities/:shorthand', handleExceptions(speciality.getSpeciality));
+school.get('/specialities-cards/:major', handleExceptions(speciality.getCardSpecialities));
 
 /* -- contract -- */
 school.get('/contracts', handleExceptions(contract.getPastContracts));
