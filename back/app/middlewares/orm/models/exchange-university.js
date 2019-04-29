@@ -35,6 +35,7 @@ class ExchangeUniversity extends Model {
     const Language = require('./language');
     const Major = require('./major');
     const Testimonial = require('./testimonial');
+    const PastContract = require('./past-contract');
 
     return {
       city: {
@@ -74,6 +75,14 @@ class ExchangeUniversity extends Model {
         modelClass: Testimonial,
         join: {
           from: 'testimonial.university_id',
+          to: 'exchange_university.id'
+        }
+      },
+      past_contract: {
+        relation: Model.HasManyRelation,
+        modelClass: PastContract,
+        join: {
+          from: 'past_contract.university_id',
           to: 'exchange_university.id'
         }
       }

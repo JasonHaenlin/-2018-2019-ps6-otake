@@ -22,6 +22,7 @@ class Speciality extends Model {
   static get relationMappings() {
     // we need this to avoid circular dependency
     const Major = require('./major');
+    const PastContract = require('./past-contract');
 
     return {
       major: {
@@ -34,6 +35,14 @@ class Speciality extends Model {
             to: 'major_speciality.major_id'
           },
           to: 'major.id'
+        }
+      },
+      past_contract: {
+        relation: Model.HasManyRelation,
+        modelClass: PastContract,
+        join: {
+          from: 'past_contract.speciality_id',
+          to: 'speciality.id'
         }
       }
     };
