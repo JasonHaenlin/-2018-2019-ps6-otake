@@ -6,6 +6,7 @@ import { Major } from 'src/models/Major';
 import { Deadline } from './../../models/Deadline';
 import { SpecialityCard } from './../../models/SpecialityCard';
 import {Supervisor} from '../../models/Supervisor';
+import { Speciality } from 'src/models/Speciality';
 
 const baseEndPoint = 'school/';
 @Injectable({
@@ -15,9 +16,13 @@ export class SchoolService {
 
   constructor(private http: ApplicationHttpClient) { }
 
-  getSpecialitiesOf(majorShorthand: string): Observable<SpecialityCard[]> {
-    return this.http.get<SpecialityCard[]>(`${baseEndPoint}/specialities/${majorShorthand}`,
+  getCardSpecialities(majorShorthand: string): Observable<SpecialityCard[]> {
+    return this.http.get<SpecialityCard[]>(`${baseEndPoint}/specialities-cards/${majorShorthand}`,
       'getting all specialities of a chosen major', []);
+  }
+
+  getSpeciality(majorShorthand: string): Observable<Speciality> {
+    return this.http.get<Speciality>(`${baseEndPoint}specialities/${majorShorthand}`, 'getting a speciality for a chosen major');
   }
 
   getCoursesOf(majorShorthand: string): Observable<Course[]> {

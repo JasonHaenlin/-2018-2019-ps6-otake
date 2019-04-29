@@ -12,7 +12,7 @@
     <section>
       <h2 class="content-title">Thématiques des cours</h2>
       <hr>
-      <div *ngFor="let course of speciality.topics">
+      <div *ngFor="let course of toArray(speciality.topics)">
         {{ course }}
       </div>
     </section>

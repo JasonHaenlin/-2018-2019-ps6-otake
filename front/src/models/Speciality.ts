@@ -5,5 +5,5 @@ export interface Speciality {
     small_picture?: string;
     big_picture?: string;
     description?: string;
-    topics?: string[];
+    topics?: string;
 }

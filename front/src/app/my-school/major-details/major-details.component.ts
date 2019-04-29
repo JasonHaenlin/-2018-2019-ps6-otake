@@ -25,7 +25,7 @@ export class MajorDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(v => {
-      this.specialities$ = this.schoolService.getSpecialitiesOf(v.major);
+      this.specialities$ = this.schoolService.getCardSpecialities(v.major);
       this.major$ = this.schoolService.getMajorByShorthand(v.major);
       this.s7$ = this.schoolService.getCoursesOfMajorForThisSemester(v.major, 'S7');
       this.s8$ = this.schoolService.getCoursesOfMajorForThisSemester(v.major, 'S8');
