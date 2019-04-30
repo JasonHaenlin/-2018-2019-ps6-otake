@@ -20,8 +20,8 @@
     <section>
       <h2 class="content-title">Anciens contrats</h2>
       <hr>
-      <div *ngFor="let geo of (geographicalArea$ | async)">
-        <app-accordion [title]="geo.name"></app-accordion>
+      <div *ngFor="let contracts_area of (acordionOfContracts$ | async)">
+        <app-accordion [formatedPastContracts]="contracts_area"></app-accordion>
       </div>
     </section>
   </main>

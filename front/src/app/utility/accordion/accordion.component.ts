@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ContractArea } from 'src/models/ContractArea';
 
 @Component({
   selector: 'app-accordion',
@@ -8,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class AccordionComponent implements OnInit {
 
   @Input()
-  title: string;
+  formatedPastContracts: ContractArea;
 
   public display = true;
 

@@ -41,9 +41,9 @@ export class SchoolService {
   }
 
   // CONTRACTS
-  
-  getLinksBySpecialityAndGeographicalArea(specialityShorthand: string, geographicalArea: string) {
-    console.log('Request this from back', specialityShorthand, geographicalArea);
+
+  getContractsForAccordion(specialityShort: string) {
+    console.log('Request accordion from back', specialityShort);
     return of(CONTRACTS_AREA_MOCKED);
   }
 

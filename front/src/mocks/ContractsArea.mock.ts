@@ -2,7 +2,7 @@ import { ContractArea } from '../models/ContractArea';
 
 export const CONTRACTS_AREA_MOCKED: ContractArea[] = [
     {
-        area: 'EU',
+        area: 'Europe',
         country: [
             {
                 name: 'Allemagne',
@@ -58,7 +58,7 @@ export const CONTRACTS_AREA_MOCKED: ContractArea[] = [
         ]
     },
     {
-        area: 'AS',
+        area: 'Asie',
         country: [
             {
                 name: 'Hong Kong',
@@ -79,7 +79,7 @@ export const CONTRACTS_AREA_MOCKED: ContractArea[] = [
         ]
     },
     {
-        area: 'NA',
+        area: 'Amérique du Nord',
         country: [
             {
                 name: 'Canada',
@@ -105,7 +105,7 @@ export const CONTRACTS_AREA_MOCKED: ContractArea[] = [
         ]
     },
     {
-        area: 'SA',
+        area: 'Amérique du Sud',
         country: [
             {
                 name: 'Argentine',
@@ -123,7 +123,7 @@ export const CONTRACTS_AREA_MOCKED: ContractArea[] = [
         ]
     },
     {
-        area: 'AF',
+        area: 'Afrique',
         country: [
             {
                 name: 'Cameroun',

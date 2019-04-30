@@ -2,12 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { enumSelector } from 'src/app/utility/utilitary-functions';
-import { GeographicalArea } from 'src/models/GeographicalArea';
 import { Section } from 'src/models/Section';
-import { UniversityService } from 'src/services/university/university.service';
 import { Speciality } from './../../../models/Speciality';
 import { SPECIALITY_SECTIONS, SPECIALITY_SECTION_ICONS } from './SpecialitySections.enum';
 import { SchoolService } from 'src/services/school/school.service';
+import { ContractArea } from 'src/models/ContractArea';
 
 @Component({
   selector: 'app-speciality-details',
@@ -18,17 +17,17 @@ export class SpecialityDetailsComponent implements OnInit {
 
   public specialitySections: Section[] = [];
   public speciality$: Observable<Speciality>;
-  public geographicalArea$: Observable<GeographicalArea[]>;
+  public acordionOfContracts$: Observable<ContractArea[]>;
+  public specialityShort: string;
 
   constructor(
     private route: ActivatedRoute,
-    // private specialityService: SpecialityService,
-    private schoolService: SchoolService,
-    private universityService: UniversityService) { }
+    private schoolService: SchoolService) { }
 
   ngOnInit() {
-    this.speciality$ = this.schoolService.getSpeciality(this.route.snapshot.paramMap.get('name'));
-    this.geographicalArea$ = this.universityService.getAreas();
+    this.specialityShort = this.route.snapshot.paramMap.get('name');
+    this.speciality$ = this.schoolService.getSpeciality(this.specialityShort);
+    this.acordionOfContracts$ = this.schoolService.getContractsForAccordion(this.specialityShort);
     this.fillSectionContent();
   }
 
