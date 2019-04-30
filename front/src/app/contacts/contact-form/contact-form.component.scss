@@ -1,3 +1,5 @@
+@import '../../../styles/details.scss';
+
 .grid-contact-form {
   overflow: hidden;
   display: grid;
@@ -11,7 +13,10 @@
     "message message"
     "submit none";
   grid-gap: 1ch;
-  margin-left: 2em;
+}
+
+.content-title {
+  margin-bottom: 1em;
 }
 
 .grid-firstname {
@@ -52,8 +57,4 @@
 
 textarea {
   resize: none;
-}
-
-h3 {
-  margin-left: 1em;
 }

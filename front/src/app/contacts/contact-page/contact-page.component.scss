@@ -1,15 +1,46 @@
+.page {
+  width: 80%;
+  padding: 2% 0;
+  margin: auto;
+}
+
+.page:after {
+  display: block;
+  visibility: hidden;
+  clear: both;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  content: ".";
+}
+
+.contact {
+  float: left;
+  position: relative;
+  z-index: 9;
+}
+
 .contact-list {
-  width: 40vw;
-  display: flex;
-  flex-direction: row;
+  width: calc(47.75% - 100px);
 }
 
 .contact-form {
-  float: left;
-  width: 60vw;
+  width: 47.75%;
+  margin-left: 2em;
 }
 
-.page {
-  //display: flex;
-  //flex-direction: row;
+@media (max-width: 1355px) {
+  .contact {
+    display: block;
+    float: none;
+  }
+
+  .contact-list {
+    margin-left: 2em;
+    width: 100%;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
 }

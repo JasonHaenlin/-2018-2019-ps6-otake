@@ -7,7 +7,7 @@
     "test": "mocha tests/ -R spec --recursive --exit",
     "lint": "./node_modules/.bin/eslint -c .eslintrc.js app/",
     "lint:fix": "./node_modules/.bin/eslint -c .eslintrc.js app/ --fix",
-    "dev": "nodemon -e js -w ./ ./server.js",
+    "dev": "npm run km nodemon -e js -w ./ ./server.js",
     "start": "node --trace-warnings ./server.js",
     "knex": "knex",
     "km": "knex migrate:rollback && knex migrate:latest && knex seed:run",

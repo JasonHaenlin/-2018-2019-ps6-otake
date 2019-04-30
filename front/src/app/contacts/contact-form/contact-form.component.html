@@ -1,4 +1,4 @@
-<h3>Une question, un problème? Contactez nous</h3>
+<h3 class="content-title">Une question, un problème? Contactez nous !</h3>
 <form class="grid-contact-form" [formGroup]="contactForm" (ngSubmit)="sendMail()">
 
   <label class="grid-firstname" for="firstName">
@@ -18,7 +18,8 @@
 
   <label class="grid-email-verify" for="confirmationEmail">
     Confirmation Email <br>
-    <input class="input-custom" type="text" id="confirmationEmail" [formControlName]="'confirmationEmail'">
+    <input class="input-custom" type="text" id="confirmationEmail"
+      [formControlName]="'confirmationEmail'">
   </label>
   <div class="grid-category">
     <label for="category">
@@ -66,8 +67,7 @@
 
   <label class="grid-message" for="message">
     Message <br>
-    <textarea type="text" id="message" [formControlName]="'message'"
-              cols="60" rows="5"></textarea>
+    <textarea type="text" id="message" [formControlName]="'message'" cols="60" rows="5"></textarea>
   </label>
 
   <button type="submit" class="grid-submit">envoyer</button>
