@@ -7,5 +7,3 @@ export interface Contact {
   object: string;
   message: string;
 }
-
-

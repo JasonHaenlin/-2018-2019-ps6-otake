@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { ApplicationHttpClient } from 'src/core/http-client';
 import { Course } from 'src/models/Course';
 import { Major } from 'src/models/Major';
@@ -7,6 +7,7 @@ import { Deadline } from './../../models/Deadline';
 import { SpecialityCard } from './../../models/SpecialityCard';
 import {Supervisor} from '../../models/Supervisor';
 import { Speciality } from 'src/models/Speciality';
+import { CONTRACTS_AREA_MOCKED } from '../../mocks/ContractsArea.mock';
 
 const baseEndPoint = 'school/';
 @Injectable({
@@ -15,6 +16,8 @@ const baseEndPoint = 'school/';
 export class SchoolService {
 
   constructor(private http: ApplicationHttpClient) { }
+
+  // SPECIALITIES
 
   getCardSpecialities(majorShorthand: string): Observable<SpecialityCard[]> {
     return this.http.get<SpecialityCard[]>(`${baseEndPoint}/specialities-cards/${majorShorthand}`,
@@ -25,6 +28,8 @@ export class SchoolService {
     return this.http.get<Speciality>(`${baseEndPoint}specialities/${majorShorthand}`, 'getting a speciality for a chosen major');
   }
 
+  // COURSES
+
   getCoursesOf(majorShorthand: string): Observable<Course[]> {
     return this.http.get<Course[]>(`${baseEndPoint}/courses/${majorShorthand}`,
       'getting all courses of a chosen major', []);
@@ -34,6 +39,15 @@ export class SchoolService {
     return this.http.get<Course[]>(`${baseEndPoint}/courses/${majorShorthand}/${semester}`,
       'getting all courses of a chosen major of a chosen semester', []);
   }
+
+  // CONTRACTS
+  
+  getLinksBySpecialityAndGeographicalArea(specialityShorthand: string, geographicalArea: string) {
+    console.log('Request this from back', specialityShorthand, geographicalArea);
+    return of(CONTRACTS_AREA_MOCKED);
+  }
+
+  // OTHERS
 
   getdeadlines(openingYear: number): Observable<Deadline[]> {
     return this.http.get<Deadline[]>
