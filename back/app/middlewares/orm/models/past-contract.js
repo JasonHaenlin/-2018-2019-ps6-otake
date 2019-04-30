@@ -26,7 +26,7 @@ class PastContract extends Model {
 
     return {
       university: {
-        relation: Model.HasManyRelation,
+        relation: Model.BelongsToOneRelation,
         modelClass: ExchangeUniversity,
         join: {
           from: 'exchange_university.id',
@@ -38,7 +38,7 @@ class PastContract extends Model {
         modelClass: Speciality,
         join: {
           from: 'speciality.id',
-          to: 'past_contract.secialty_id'
+          to: 'past_contract.speciality_id'
         }
       }
     };

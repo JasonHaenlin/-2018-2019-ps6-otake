@@ -1,21 +1,20 @@
-const { PastContract,
-        Speciality,
-        ExchangeUniversity,
-        City,
-        Country,
-        GeographicalArea
-         } = require('../../middlewares/orm');
+const { PastContract } = require('../../middlewares/orm');
 
 module.exports = {
   getPastContracts() {
     return PastContract.query();
   },
   getLinksBySpecialityAndGeographicalArea(specialityShorthand, geographicalArea) {
-    return  PastContract.query()
+    return PastContract.query()
       .alias('pc')
-      .select('pc.link')
-      .joinRelation('[exchange_university.city.country.geographical_area, speciality')
-      .where({ 'geographical_area.name': geographicalArea }, { 'speciality.shorthand': specialityShorthand})
+      .select('pc.link',
+        'university:city:country:geographical_area.area_name',
+        'university:city:country.country_name',
+        'university.name',
+      )
+      .joinRelation('[university.city.country.geographical_area, speciality]')
+      .where({ 'university:city:country:geographical_area.shorthand': geographicalArea },
+        { 'speciality.shorthand': specialityShorthand });
   }
 
 };
