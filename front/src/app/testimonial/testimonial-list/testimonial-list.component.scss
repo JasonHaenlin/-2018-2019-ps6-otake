@@ -1,1 +1,13 @@
 @import '../../../styles/variables.scss';
+
+.content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.card {
+    margin-left: 2em;
+    margin-top: 2em;
+}
