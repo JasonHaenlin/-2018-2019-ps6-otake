@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ApplicationHttpClient } from 'src/core/http-client';
 import { FinancialAid } from 'src/models/FinancialAid';
+import { Testimonial } from 'src/models/Testimonial';
 import { UniversityDetails } from 'src/models/UniversityDetails';
+import { TESTIMONIAL_MOCKED } from '../../mocks/Testimonial.mock';
 import { GeographicalArea } from '../../models/GeographicalArea';
 import { Language } from '../../models/Language';
 import { Major } from '../../models/Major';
 import { University } from '../../models/University';
-import { TESTIMONIAL_MOCKED } from '../../mocks/Testimonial.mock';
-import { Testimonial } from 'src/models/Testimonial';
 
 const baseEndPoint = 'universities/';
 

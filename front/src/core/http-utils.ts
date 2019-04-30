@@ -1,7 +1,6 @@
-import { Observable, of, pipe, UnaryFunction } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { catchError, finalize, timeout } from 'rxjs/internal/operators';
 
 /**
  * handle the failure of http requests.

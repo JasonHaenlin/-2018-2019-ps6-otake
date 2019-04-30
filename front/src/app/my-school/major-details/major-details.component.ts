@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { SchoolService } from 'src/services/school/school.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { SpecialityCard } from 'src/models/SpecialityCard';
-import { Major } from 'src/models/Major';
-import { Router, ActivatedRoute } from '@angular/router';
 import { Course } from 'src/models/Course';
-import { forEach } from '@angular/router/src/utils/collection';
+import { Major } from 'src/models/Major';
+import { SpecialityCard } from 'src/models/SpecialityCard';
+import { SchoolService } from 'src/services/school/school.service';
 
 @Component({
   selector: 'app-major-details',

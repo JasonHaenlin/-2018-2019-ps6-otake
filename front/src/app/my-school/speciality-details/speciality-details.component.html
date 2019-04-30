@@ -1,7 +1,4 @@
 <div class="grid-container" *ngIf="speciality$ | async as speciality">
-  <header>
-
-  </header>
   <main>
     <section>
       <h2 class="content-title">Présentation</h2>
@@ -25,7 +22,9 @@
       </div>
     </section>
   </main>
+
   <aside>
     <app-section-selector [sectionList]="specialitySections"></app-section-selector>
   </aside>
+
 </div>
