@@ -10,11 +10,9 @@ import { Observable } from 'rxjs';
 })
 export class TestimonialListComponent implements OnInit {
 
-  private testimonial$: Observable<Testimonial[]>;
+  public testimonial$: Observable<Testimonial[]>;
 
-  constructor(
-    private universityService: UniversityService
-  ) { }
+  constructor(private universityService: UniversityService) { }
 
   ngOnInit() {
     this.testimonial$ = this.universityService.getTestimonials();
