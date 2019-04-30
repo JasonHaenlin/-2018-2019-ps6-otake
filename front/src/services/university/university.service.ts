@@ -4,7 +4,6 @@ import { ApplicationHttpClient } from 'src/core/http-client';
 import { FinancialAid } from 'src/models/FinancialAid';
 import { Testimonial } from 'src/models/Testimonial';
 import { UniversityDetails } from 'src/models/UniversityDetails';
-import { TESTIMONIAL_MOCKED } from '../../mocks/Testimonial.mock';
 import { GeographicalArea } from '../../models/GeographicalArea';
 import { Language } from '../../models/Language';
 import { Major } from '../../models/Major';
@@ -17,7 +16,6 @@ const baseEndPoint = 'universities/';
 })
 
 export class UniversityService {
-  private testimonial = TESTIMONIAL_MOCKED;
 
   constructor(private http: ApplicationHttpClient) { }
 
