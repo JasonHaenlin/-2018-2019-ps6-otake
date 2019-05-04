@@ -24,11 +24,11 @@ export const STEP_LIST: Step[] = [
     description: [
       {
         id: 0, text: 'Vérifier le coût de la vie d\'une université dans les détails de celle-ci',
-        innerLink: '#footer'
+        innerLink: 'exchange-universities'
       },
       {
         id: 1, text: 'Aller dans la section "Aides Financière"',
-        innerLink: '#footer'
+        innerLink: 'financial-aids'
       },
     ]
   },
@@ -38,19 +38,16 @@ export const STEP_LIST: Step[] = [
     description: [
       {
         id: 0, text: 'Aller dans "Notre école" par rapport à votre cursus',
-        innerLink: '#footer'
+        innerLink: 'home'
       },
       {
-        id: 1, text: 'Chercher une "Spécialité" qui vous plait',
-        innerLink: '#footer'
+        id: 1, text: 'Chercher une "Spécialité" qui vous plait'
       },
       {
-        id: 2, text: 'Prener connaissance des "Thématiques des cours"',
-        innerLink: '#footer'
+        id: 2, text: 'Prener connaissance des "Thématiques des cours"'
       },
       {
-        id: 3, text: 'Penser à feuilleter les anciens contrats',
-        innerLink: '#footer'
+        id: 3, text: 'Penser à feuilleter les anciens contrats'
       },
     ]
   },
@@ -60,11 +57,11 @@ export const STEP_LIST: Step[] = [
     description: [
       {
         id: 0, text: 'Télécharger le dossier de mobilité sur le site de "Polytech Nice"',
-        innerLink: '#footer'
+        innerLink: '',
+        fragment: 'footer'
       },
       {
-        id: 1, text: 'Vérifier vos cours et les équivalences aux ECTS qui varies selon la destination',
-        innerLink: '#footer'
+        id: 1, text: 'Vérifier vos cours et les équivalences aux ECTS qui varies selon la destination'
       },
     ],
   },
@@ -74,11 +71,10 @@ export const STEP_LIST: Step[] = [
     description: [
       {
         id: 0, text: 'Penser à vérifier les "Aides Financières" si besoin',
-        innerLink: '#footer'
+        innerLink: 'financial-aids'
       },
       {
-        id: 1, text: 'Remplir soignesement le budget pour éviter les mauvaises surprises',
-        innerLink: '#footer'
+        id: 1, text: 'Remplir soignesement le budget pour éviter les mauvaises surprises'
       },
     ]
   },

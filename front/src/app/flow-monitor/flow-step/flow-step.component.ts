@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, ChangeDetectorRef, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { FlowService } from './../flow.service';
 import { Step, TextDetail } from './step';
 
@@ -17,7 +18,9 @@ export class FlowStepComponent implements OnInit {
   private nbOfChecked: number;
   public isDone = false;
 
-  constructor(private flowService: FlowService, private cd: ChangeDetectorRef) { }
+  constructor(private flowService: FlowService,
+    private cd: ChangeDetectorRef,
+    private router: Router) { }
 
   ngOnInit() {
     this.initCheckbox();
@@ -53,6 +56,10 @@ export class FlowStepComponent implements OnInit {
     } else {
       this.isDone = false;
     }
+  }
+
+  redirectRoute(link: string, fragment?: string) {
+    setTimeout(() => this.router.navigate([link], { fragment: fragment }), 1000);
   }
 
   private refresh() { this.cd.detectChanges(); }

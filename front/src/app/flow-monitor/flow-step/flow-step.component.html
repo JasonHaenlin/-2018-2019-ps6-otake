@@ -7,10 +7,20 @@
           (change)="onChangeStep(d.id, $event.target.checked)">
         <span class="checkmark"></span>
       </label>
-      <div class="text" (click)="updateCheckbox(d)">
-        <a class="link" target="_blank" rel="noopener noreferrer" [href]="[d?.outerLink]"
-          *ngIf="d?.outerLink">{{d.text}}</a>
-        <a class="link" [routerLink]="[d?.innerLink]" *ngIf="d?.innerLink">{{d.text}}</a>
+      <div class="text">
+
+        <ng-container *ngIf="d?.outerLink || d?.innerLink; else noLink">
+          <div (click)="updateCheckbox(d)">
+            <a class="link" target="_blank" rel="noopener noreferrer" [href]="[d?.outerLink]"
+              *ngIf="d?.outerLink">{{d.text}}</a>
+            <a class="link" (click)="redirectRoute(d.innerLink, d?.fragement)"
+              *ngIf="d?.innerLink">{{d.text}}</a>
+          </div>
+        </ng-container>
+        <ng-template #noLink>
+          {{d.text}}
+        </ng-template>
+
       </div>
     </div>
   </div>

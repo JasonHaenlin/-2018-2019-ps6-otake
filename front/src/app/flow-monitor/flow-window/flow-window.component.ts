@@ -27,7 +27,6 @@ export class FlowWindowComponent implements OnInit {
 
   updateWindowState(state?: boolean) {
     const lastState = this.windowState;
-    console.log(lastState);
     if (state !== undefined) {
       this.windowState = state;
     } else {
