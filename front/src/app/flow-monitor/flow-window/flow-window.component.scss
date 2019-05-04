@@ -4,6 +4,12 @@ span {
   color: $white;
 }
 
+.help {
+  font-size: 14px;
+  color: $paragraphsText;
+  margin-left: 1em;
+}
+
 .task {
   display: flex;
   flex-direction: row;

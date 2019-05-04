@@ -3,17 +3,15 @@
     {{stage.label}}
     <div *ngFor="let d of stage.description">
       <label class="container">
-        {{d.text}}
         <input type="checkbox" [checked]="d.done"
           (change)="onChangeStep(d.id, $event.target.checked)">
         <span class="checkmark"></span>
       </label>
-      <a class="link" target="_blank" rel="noopener noreferrer" href="{{d?.outerLink}}"
-        *ngIf="d?.outerLink"><em class="fas fa-external-link-square-alt"></em>
-      </a>
-      <a class="link" href="{{d?.innerLink}}" *ngIf="d?.innerLink"><em
-          class="fas fas fa-share-square"></em>
-      </a>
+      <div class="text" (click)="updateCheckbox(d)">
+        <a class="link" target="_blank" rel="noopener noreferrer" href="{{d?.outerLink}}"
+          *ngIf="d?.outerLink">{{d.text}}</a>
+        <a class="link" [routerLink]="[ d.innerLink ]" *ngIf="d?.innerLink">{{d.text}}</a>
+      </div>
     </div>
   </div>
   <div class="trace-arrow">

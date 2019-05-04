@@ -1,5 +1,6 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/checkbox.scss';
+@import '../../../styles/tooltip.scss';
 
 .step-box {
   display: flex;
@@ -8,11 +9,21 @@
   min-height: 4em;
 }
 
+.text {
+  position: relative;
+  display: inline-block;
+}
+
 .trace-step {
   flex-grow: 2;
   margin-right: 0.65em;
   padding: 0.2em;
   background-color: $white;
+}
+
+.trace-step,
+.container {
+  font-size: 16px;
 }
 
 .step {
@@ -42,6 +53,10 @@
 
 .link {
   text-decoration: none;
-  color: $yellow;
+  color: black;
   cursor: pointer;
+}
+
+.link:active {
+  color: $blue4;
 }

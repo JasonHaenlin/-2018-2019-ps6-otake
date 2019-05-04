@@ -1,5 +1,8 @@
 <div class="task">
   <div class="window-container scroller" id="scroller-alt">
+    <div class="help">
+      Cliquer sur une description permet d'effectuer une redirection rapide
+    </div>
     <div class="window" *ngFor="let step of stepList">
       <app-flow-step [stage]="step"></app-flow-step>
     </div>
