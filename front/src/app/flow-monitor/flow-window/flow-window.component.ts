@@ -1,5 +1,5 @@
 import { FlowService } from './../flow.service';
-import { Component, OnInit, Output, EventEmitter, HostListener, ElementRef } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, HostListener, ElementRef, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { Step } from '../flow-step/step';
 import { STEP_LIST } from './step.data';
 
@@ -9,7 +9,6 @@ import { STEP_LIST } from './step.data';
   styleUrls: ['./flow-window.component.scss']
 })
 export class FlowWindowComponent implements OnInit {
-
   @Output() windowStateEvent = new EventEmitter<boolean>();
   @Output() windowCloseEvent = new EventEmitter<any>();
 
@@ -23,9 +22,12 @@ export class FlowWindowComponent implements OnInit {
     }
   }
 
-  constructor(private eRef: ElementRef, private flowService: FlowService) { }
+  constructor(private eRef: ElementRef,
+    private flowService: FlowService,
+    private cdRef: ChangeDetectorRef) { }
 
   ngOnInit() { }
+
 
   updateWindowState(state?: boolean) {
     const lastState = this.windowState;

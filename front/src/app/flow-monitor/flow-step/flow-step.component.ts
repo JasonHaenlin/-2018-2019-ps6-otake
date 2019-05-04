@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { FlowService } from './../flow.service';
 import { Step, TextDetail } from './step';
@@ -9,7 +10,7 @@ import { Step, TextDetail } from './step';
   styleUrls: ['./flow-step.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FlowStepComponent implements OnInit {
+export class FlowStepComponent implements OnInit, OnDestroy {
 
   @Input() public stage: Step;
 
@@ -17,14 +18,19 @@ export class FlowStepComponent implements OnInit {
 
   private nbOfChecked: number;
   public isDone = false;
+  public sub: Subscription;
 
   constructor(private flowService: FlowService,
-    private cd: ChangeDetectorRef,
+    private cdRef: ChangeDetectorRef,
     private router: Router) { }
 
   ngOnInit() {
     this.initCheckbox();
-    this.flowService.updates.subscribe(() => this.initCheckbox());
+    this.sub = this.flowService.updates.subscribe(() => this.initCheckbox());
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 
   private initCheckbox() {
@@ -50,6 +56,10 @@ export class FlowStepComponent implements OnInit {
     if (toClose) { this.linkClickedEvent.emit(); }
   }
 
+  redirectRoute(link: string, fragment?: string) {
+    setTimeout(() => this.router.navigate([link], { fragment: fragment }), 1000);
+  }
+
   private checkStepValidation() {
     if (this.nbOfChecked === this.stage.description.length) {
       this.isDone = true;
@@ -58,9 +68,5 @@ export class FlowStepComponent implements OnInit {
     }
   }
 
-  redirectRoute(link: string, fragment?: string) {
-    setTimeout(() => this.router.navigate([link], { fragment: fragment }), 1000);
-  }
-
-  private refresh() { this.cd.detectChanges(); }
+  private refresh() { this.cdRef.detectChanges(); }
 }
