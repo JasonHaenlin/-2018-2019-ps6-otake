@@ -14,7 +14,7 @@ import { UNIVERSITY_SECTIONS, UNIVERSITY_SECTION_ICONS } from './UniversitySecti
 })
 export class UniversityDetailsComponent implements OnInit {
 
-  public university$: Observable<UniversityDetails>;
+  public university: UniversityDetails;
   public universitySections: Section[] = [];
 
   constructor(
@@ -23,7 +23,7 @@ export class UniversityDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.university$ = this.universityService.getUniversityDetails(this.route.snapshot.paramMap.get('id'));
+    this.university = this.route.snapshot.data.university;
     this.fillSectionContent();
   }
 
