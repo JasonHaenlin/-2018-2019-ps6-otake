@@ -1,6 +1,7 @@
 <div (click)="$event.stopPropagation()">
   <app-flow-window [ngClass]="{'closed': !windowState}" [@openClose] *ngIf="flowInAction === true"
-    (windowStateEvent)="updateWindowState($event)" class="flow-window">
+    (windowStateEvent)="updateWindowState($event)" (windowCloseEvent)="windowCloseEvent($event)"
+    class="flow-window">
   </app-flow-window>
   <app-flow-starter [@openClose] *ngIf="flowInAction === false" class="flow-starter"
     (updateFlow)="updateFlow($event)">

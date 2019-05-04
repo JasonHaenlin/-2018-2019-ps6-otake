@@ -34,6 +34,11 @@ export class FlowPageComponent implements OnInit {
     this.windowState = event;
   }
 
+  windowCloseEvent() {
+    this.flowInAction = false;
+    this.flowActived.emit(false);
+  }
+
   updateFlow(state: boolean) {
     this.flowInAction = state;
     this.flowActived.emit(state);

@@ -10,6 +10,7 @@ import { STEP_LIST } from './step.data';
 export class FlowWindowComponent implements OnInit {
 
   @Output() windowStateEvent = new EventEmitter<boolean>();
+  @Output() windowCloseEvent = new EventEmitter<any>();
 
   public stepList: Step[] = STEP_LIST;
   public windowState = true;
@@ -36,4 +37,13 @@ export class FlowWindowComponent implements OnInit {
       this.windowStateEvent.emit(this.windowState);
     }
   }
+
+  windowCloseEventEmiter() {
+    this.windowCloseEvent.emit();
+  }
+
+  clearSteps() {
+
+  }
+
 }
