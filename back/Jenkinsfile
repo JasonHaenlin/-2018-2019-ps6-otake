@@ -54,15 +54,6 @@ pipeline {
         }
       }
     }
-    stage('Snyk') {
-      steps {
-        echo 'Snyk Diagnosis'
-        dir('./back/'){
-          sh 'snyk test --severity-medium'
-          sh 'snyk monitor'
-        }
-      }
-    }
     stage('Sonar') {
       steps {
         echo 'Sonar Analysis'
@@ -89,6 +80,15 @@ pipeline {
         expression { env.GIT_BRANCH == 'master' }
       }
       stages {
+        stage('Snyk') {
+          steps {
+            echo 'Snyk Diagnosis'
+            dir('./back/'){
+              sh 'snyk test --severity-medium'
+              sh 'snyk monitor'
+            }
+          }
+        }
         stage('Database Deployment') {
           environment {
             PSQL_USER_LOGIN = "${PSQL_USER_LOGIN_PROD}"

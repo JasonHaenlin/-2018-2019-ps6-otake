@@ -42,15 +42,6 @@ pipeline {
         }
       }
     }
-    stage('Snyk') {
-      steps {
-        echo 'Snyk Diagnosis'
-        dir('./front/'){
-          sh 'snyk test --severity-medium'
-          sh 'snyk monitor'
-        }
-      }
-    }
     stage('Sonar') {
       steps {
         echo 'Sonar Analysis'
@@ -73,14 +64,27 @@ pipeline {
       when {
         expression { env.GIT_BRANCH == 'master' }
       }
-      steps {
-        dir('./front/') {
-          echo 'Deployement'
-          sh '''
-          sg otake -c 'npm run deploy'
-          sg otake -c 'rm -rf /var/www/html/ps6/*'
-          sg otake -c 'mv dist/starter-project/* /var/www/html/ps6/'
-          '''
+      stages {
+        stage('Snyk') {
+          steps {
+            echo 'Snyk Diagnosis'
+            dir('./front/'){
+              sh 'snyk test --severity-medium'
+              sh 'snyk monitor'
+            }
+          }
+        }
+        stage {
+          steps {
+            dir('./front/') {
+              echo 'Deployement'
+              sh '''
+              sg otake -c 'npm run deploy'
+              sg otake -c 'rm -rf /var/www/html/ps6/*'
+              sg otake -c 'mv dist/starter-project/* /var/www/html/ps6/'
+              '''
+            }
+          }
         }
       }
     }
