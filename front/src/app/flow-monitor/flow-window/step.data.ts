@@ -10,11 +10,11 @@ export const STEP_LIST: Step[] = [
     description: [
       {
         id: 0, text: 'Aller dans "Universités d\'échanges" et sélectionner une destination',
-        innerLink: '#footer'
+        innerLink: 'exchange-universities'
       },
       {
         id: 1, text: 'Filtrer par formation pour voir les Universités vous concernants',
-        innerLink: '#footer'
+        innerLink: 'exchange-universities'
       },
     ]
   },

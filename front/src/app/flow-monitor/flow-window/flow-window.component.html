@@ -4,7 +4,7 @@
       Cliquer sur une description permet d'effectuer une redirection rapide
     </div>
     <div class="window" *ngFor="let step of stepList">
-      <app-flow-step [stage]="step"></app-flow-step>
+      <app-flow-step [stage]="step" (linkClickedEvent)="updateWindowState()"></app-flow-step>
     </div>
   </div>
   <div class="arrow-container">

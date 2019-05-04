@@ -31,6 +31,8 @@ export class FlowPageComponent implements OnInit {
   }
 
   updateWindowState(event: boolean) {
+    console.log(event);
+
     this.windowState = event;
   }
 

@@ -16,9 +16,7 @@ export class FlowWindowComponent implements OnInit {
 
   @HostListener('document:click', ['$event'])
   clickout(event) {
-    if (this.eRef.nativeElement.contains(event.target)) {
-      this.updateWindowState(true);
-    } else {
+    if (!this.eRef.nativeElement.contains(event.target)) {
       this.updateWindowState(false);
     }
   }
@@ -29,6 +27,7 @@ export class FlowWindowComponent implements OnInit {
 
   updateWindowState(state?: boolean) {
     const lastState = this.windowState;
+    console.log(lastState);
     if (state !== undefined) {
       this.windowState = state;
     } else {

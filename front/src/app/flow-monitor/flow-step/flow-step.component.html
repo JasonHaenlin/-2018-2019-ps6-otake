@@ -8,9 +8,9 @@
         <span class="checkmark"></span>
       </label>
       <div class="text" (click)="updateCheckbox(d)">
-        <a class="link" target="_blank" rel="noopener noreferrer" href="{{d?.outerLink}}"
+        <a class="link" target="_blank" rel="noopener noreferrer" [href]="[d?.outerLink]"
           *ngIf="d?.outerLink">{{d.text}}</a>
-        <a class="link" [routerLink]="[ d.innerLink ]" *ngIf="d?.innerLink">{{d.text}}</a>
+        <a class="link" [routerLink]="[d?.innerLink]" *ngIf="d?.innerLink">{{d.text}}</a>
       </div>
     </div>
   </div>

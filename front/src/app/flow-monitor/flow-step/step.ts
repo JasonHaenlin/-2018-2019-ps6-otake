@@ -11,4 +11,5 @@ export interface TextDetail {
   redirection?: string;
   innerLink?: string;
   outerLink?: string;
+  fragment?: string;
 }

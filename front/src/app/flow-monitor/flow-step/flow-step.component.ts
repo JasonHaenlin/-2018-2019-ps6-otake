@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectorRef, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { FlowService } from './../flow.service';
 import { Step, TextDetail } from './step';
 
@@ -11,6 +11,8 @@ import { Step, TextDetail } from './step';
 export class FlowStepComponent implements OnInit {
 
   @Input() public stage: Step;
+
+  @Output() public linkClickedEvent = new EventEmitter<any>();
 
   private nbOfChecked: number;
   public isDone = false;
@@ -42,6 +44,7 @@ export class FlowStepComponent implements OnInit {
 
   updateCheckbox(step: TextDetail) {
     this.flowService.writeStepInCascade(this.stage.id, step.id, true);
+    this.linkClickedEvent.emit();
   }
 
   private checkStepValidation() {
