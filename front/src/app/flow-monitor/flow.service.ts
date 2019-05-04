@@ -33,12 +33,13 @@ export class FlowService {
     localStorage.setItem(LOCAL_STORAGE + stepId, JSON.stringify(step));
   }
 
-  public writeStepInCascade(lastStep: number, id: number, state: boolean): void {
+  public writeStepInCascade(lastStep: number, id: number, stateToSet?: boolean): void {
+    const state = stateToSet || false;
     let step: boolean[];
     for (let i = 1; i <= lastStep; i++) {
       step = this.readStep(i);
       for (let j = 0; j < step.length; j++) {
-        step[j] = true;
+        step[j] = state;
         if (i === lastStep && j === id) { break; }
       }
       this.write(i, step);
@@ -49,5 +50,9 @@ export class FlowService {
   public readStep(key: number | string): boolean[] {
     const bigStep = JSON.parse(localStorage.getItem(LOCAL_STORAGE + key));
     return bigStep ? bigStep : [];
+  }
+
+  public clearState(len: number) {
+    this.writeStepInCascade(len, -1);
   }
 }

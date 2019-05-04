@@ -10,7 +10,7 @@
       <div class="text">
 
         <ng-container *ngIf="d?.outerLink || d?.innerLink; else noLink">
-          <div (click)="updateCheckbox(d)">
+          <div (click)="updateCheckbox(d, true)">
             <a class="link" target="_blank" rel="noopener noreferrer" [href]="[d?.outerLink]"
               *ngIf="d?.outerLink">{{d.text}}</a>
             <a class="link" (click)="redirectRoute(d.innerLink, d?.fragement)"
@@ -18,7 +18,9 @@
           </div>
         </ng-container>
         <ng-template #noLink>
-          {{d.text}}
+          <div (click)="updateCheckbox(d, false)">
+            {{d.text}}
+          </div>
         </ng-template>
 
       </div>

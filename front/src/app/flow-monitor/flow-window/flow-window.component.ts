@@ -1,3 +1,4 @@
+import { FlowService } from './../flow.service';
 import { Component, OnInit, Output, EventEmitter, HostListener, ElementRef } from '@angular/core';
 import { Step } from '../flow-step/step';
 import { STEP_LIST } from './step.data';
@@ -22,7 +23,7 @@ export class FlowWindowComponent implements OnInit {
     }
   }
 
-  constructor(private eRef: ElementRef) { }
+  constructor(private eRef: ElementRef, private flowService: FlowService) { }
 
   ngOnInit() { }
 
@@ -43,7 +44,7 @@ export class FlowWindowComponent implements OnInit {
   }
 
   clearSteps() {
-
+    this.flowService.clearState(this.stepList.length);
   }
 
 }

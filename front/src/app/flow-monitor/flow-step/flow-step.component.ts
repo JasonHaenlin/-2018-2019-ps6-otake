@@ -45,9 +45,9 @@ export class FlowStepComponent implements OnInit {
     this.checkStepValidation();
   }
 
-  updateCheckbox(step: TextDetail) {
+  updateCheckbox(step: TextDetail, toClose: boolean) {
     this.flowService.writeStepInCascade(this.stage.id, step.id, true);
-    this.linkClickedEvent.emit();
+    if (toClose) { this.linkClickedEvent.emit(); }
   }
 
   private checkStepValidation() {
