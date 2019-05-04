@@ -15,19 +15,17 @@ import { ContractArea } from 'src/models/ContractArea';
 })
 export class SpecialityDetailsComponent implements OnInit {
 
+  public speciality: Speciality;
   public specialitySections: Section[] = [];
-  public speciality$: Observable<Speciality>;
   public acordionOfContracts$: Observable<ContractArea[]>;
-  public specialityShort: string;
 
   constructor(
     private route: ActivatedRoute,
     private schoolService: SchoolService) { }
 
   ngOnInit() {
-    this.specialityShort = this.route.snapshot.paramMap.get('name');
-    this.speciality$ = this.schoolService.getSpeciality(this.specialityShort);
-    this.acordionOfContracts$ = this.schoolService.getContractsForAccordion(this.specialityShort);
+    this.speciality = this.route.snapshot.data.speciality;
+    this.acordionOfContracts$ = this.schoolService.getContractsForAccordion(this.route.snapshot.paramMap.get('name'));
     this.fillSectionContent();
   }
 
