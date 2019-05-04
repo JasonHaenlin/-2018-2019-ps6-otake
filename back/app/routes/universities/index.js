@@ -16,7 +16,7 @@ universities.get('/languages', handleExceptions(university.getLanguages));
 universities.get('/majors', handleExceptions(university.getMajors));
 
 /* -- university details -- */
-universities.get('/details/:name', handleExceptions(university.getUniversityDetails));
+universities.get('/details/:id', handleExceptions(university.getUniversityDetails));
 /* -- testimonial -- */
 universities.get('/testimonials', handleExceptions(testimonial.getTestimonials));
 universities.get('/:name/testimonials', handleExceptions(testimonial.getTestimonialByUniversity));

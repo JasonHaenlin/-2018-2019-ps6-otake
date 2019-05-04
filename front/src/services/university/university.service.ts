@@ -19,8 +19,8 @@ export class UniversityService {
 
   constructor(private http: ApplicationHttpClient) { }
 
-  getUniversityDetails(name: string): Observable<UniversityDetails> {
-    return this.http.get<UniversityDetails>(`${baseEndPoint}details/${name}`, 'get university details');
+  getUniversityDetails(id: string | number): Observable<UniversityDetails> {
+    return this.http.get<UniversityDetails>(`${baseEndPoint}details/${id}`, 'get university details');
   }
 
   getUniversities(page: number, destination: string, language?: string, major?: string): Observable<University[]> {

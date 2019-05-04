@@ -2,6 +2,7 @@ import { UniversityDetails } from 'src/models/UniversityDetails';
 
 export const UNIVERSITIES_MOCKED: UniversityDetails[] = [
   {
+    id: 1,
     name: 'California Institute Of Technology',
     big_picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Caltech_Entrance.jpg/1920px-Caltech_Entrance.jpg',
     // tslint:disable-next-line: max-line-length
@@ -35,6 +36,7 @@ export const UNIVERSITIES_MOCKED: UniversityDetails[] = [
     ]
   },
   {
+    id: 2,
     name: 'cityU',
     big_picture: 'http://www.ejinsight.com/wp-content/uploads/2017/11/1700422_b146b95c23878cdc1e4b26e5c5903db6-692x360.jpg',
     // tslint:disable-next-line: max-line-length

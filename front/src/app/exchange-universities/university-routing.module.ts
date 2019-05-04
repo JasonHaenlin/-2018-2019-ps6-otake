@@ -5,7 +5,7 @@ import { UniversityPageComponent } from './university-page/university-page.compo
 
 const routes: Routes = [
   { path: '', component: UniversityPageComponent },
-  { path: 'details/:name', component: UniversityDetailsComponent }
+  { path: 'details/:id', component: UniversityDetailsComponent }
 ];
 
 @NgModule({

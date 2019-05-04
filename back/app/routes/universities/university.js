@@ -26,6 +26,6 @@ exports.getMajors = async (req, res) => {
 };
 
 exports.getUniversityDetails = async (req, res) => {
-  const univDetails = await university.getUniversityDetails(req.params.name);
+  const univDetails = await university.getUniversityDetails(req.params.id);
   resHandler.yahResponse(res, univDetails);
 };

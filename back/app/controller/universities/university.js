@@ -10,7 +10,8 @@ module.exports = {
   getUniversitiesShortInfo(page, area, language, major) {
     return ExchangeUniversity.query()
       .alias('u')
-      .distinct('u.name',
+      .distinct('u.id',
+        'u.name',
         'u.admission_rate',
         'u.type_of_file',
         'u.cost_of_living',
@@ -64,10 +65,10 @@ module.exports = {
     return GeographicalArea.query();
   },
 
-  getUniversityDetails(name) {
+  getUniversityDetails(id) {
     return ExchangeUniversity.query()
       .select('name', 'big_picture', 'presentation_text', 'admission_text', 'student_life_text', 'cost_of_living_text')
-      .where({ 'exchange_university.name': name })
+      .where({ 'exchange_university.id': id })
       .joinEager('testimonial')
       .first();
   }

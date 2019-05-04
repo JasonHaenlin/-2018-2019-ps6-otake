@@ -23,7 +23,7 @@ export class UniversityDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.university$ = this.universityService.getUniversityDetails(this.route.snapshot.paramMap.get('name'));
+    this.university$ = this.universityService.getUniversityDetails(this.route.snapshot.paramMap.get('id'));
     this.fillSectionContent();
   }
 
