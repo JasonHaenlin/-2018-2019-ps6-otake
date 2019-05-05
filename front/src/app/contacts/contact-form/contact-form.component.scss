@@ -1,18 +1,65 @@
 @import '../../../styles/details.scss';
+@import '../../../styles/button.scss';
+
+input,
+textarea,
+select {
+  font-size: 16px;
+  padding-left: 8px;
+}
+
+input,
+select {
+  border-radius: 5px;
+}
+
+input,
+textarea {
+  border: 1px solid #bbb;
+  color: #4e4e4e;
+  width: 100%;
+  height: 100%;
+}
+
+textarea,
+input {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+textarea {
+  resize: none;
+}
+
+select {
+  background-image: url(https://otakedev.com/share/images/css/caret-select.png);
+  background-position: 97% center;
+  background-size: 20px auto;
+  background-repeat: no-repeat;
+  border: 1px solid #bbb;
+  color: #4e4e4e;
+  width: 100%;
+  height: 4ch;
+  appearance: none;
+}
+
+button {
+  width: 50%;
+}
 
 .grid-contact-form {
   overflow: hidden;
   display: grid;
-  grid-template-columns: 17ch 17ch;
-  grid-template-rows: 7ch 7ch 3ch 1fr 12ch 3ch;
+  grid-template-columns: 22ch 22ch;
+  grid-template-rows: 3ch 3ch 6ch 1fr 12ch 3ch;
   grid-template-areas:
     "firstname lastname"
     "email email-verify"
     "category major"
-    "object object"
+    "object ..."
     "message message"
     "submit none";
-  grid-gap: 1ch;
+  grid-gap: 2ch;
 }
 
 .content-title {
@@ -45,6 +92,10 @@
 
 .grid-object {
   grid-area: object;
+
+  .grid-object-form {
+    height: 4ch;
+  }
 }
 
 .grid-message {
@@ -53,8 +104,4 @@
 
 .grid-submit {
   grid-area: submit;
-}
-
-textarea {
-  resize: none;
 }

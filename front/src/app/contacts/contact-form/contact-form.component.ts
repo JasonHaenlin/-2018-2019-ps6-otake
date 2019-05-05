@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import {SchoolService} from '../../../services/school/school.service';
-import {UniversityService} from '../../../services/university/university.service';
-import {Mail} from "../../../models/Mail";
+import { SchoolService } from '../../../services/school/school.service';
+import { UniversityService } from '../../../services/university/university.service';
+import { Mail } from '../../../models/Mail';
 
 @Component({
   selector: 'app-contact-form',
@@ -18,8 +18,9 @@ export class ContactFormComponent implements OnInit {
   public techniqueList = ['Lien brisé', 'Affichage', 'autres'];
   public echangeList = ['Université', 'Bourse', 'Santé', 'Mobilité', 'autres'];
 
-  constructor(public formBuilder: FormBuilder, public schoolService: SchoolService, public universityService: UniversityService) {
-
+  constructor(public formBuilder: FormBuilder,
+    public schoolService: SchoolService,
+    public universityService: UniversityService) {
     this.contactForm = this.formBuilder.group({
       firstName: [''],
       lastName: [''],
@@ -30,7 +31,6 @@ export class ContactFormComponent implements OnInit {
       object: [''],
       message: ['']
     });
-
   }
 
   ngOnInit() {
@@ -41,12 +41,13 @@ export class ContactFormComponent implements OnInit {
 
   switchCat() {
     this.categorySwitch = this.category.value;
+    this.object.setValue('');
   }
 
-  sendMail () {
+  sendMail() {
     let category = this.category.value;
-    if(category === 'Echange'){
-      category = category + "-" + this.major.value;
+    if (category === 'Echange') {
+      category = category + '-' + this.major.value;
     }
     const mailToSend = <Mail>{
       firstName: this.firstName.value,
@@ -61,18 +62,16 @@ export class ContactFormComponent implements OnInit {
       .subscribe(ss => {
         mailToSend.emailReceiver = ss;
         mailToSend.emailSender = this.email.value;
-        this.schoolService.sendEmail(mailToSend).subscribe( () => console.log('mail send'));
+        this.schoolService.sendEmail(mailToSend).subscribe();
       });
   }
 
-  get category() {return this.contactForm.get('category');}
-  get major() {return this.contactForm.get('major');}
-  get email() {return this.contactForm.get('email');}
-  get firstName() {return this.contactForm.get('firstName');}
-  get lastName() {return this.contactForm.get('lastName');}
-  get object() {return this.contactForm.get('object');}
-  get message() {return this.contactForm.get('message');}
+  get category() { return this.contactForm.get('category'); }
+  get major() { return this.contactForm.get('major'); }
+  get email() { return this.contactForm.get('email'); }
+  get firstName() { return this.contactForm.get('firstName'); }
+  get lastName() { return this.contactForm.get('lastName'); }
+  get object() { return this.contactForm.get('object'); }
+  get message() { return this.contactForm.get('message'); }
 
 }
-
-

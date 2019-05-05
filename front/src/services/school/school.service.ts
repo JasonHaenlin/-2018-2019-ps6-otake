@@ -66,13 +66,12 @@ export class SchoolService {
   }
 
 
-  getSupervisorEmailByCategory(category: string): Observable<string[]>{
-    return this.http.get<Supervisor[]>(`${baseEndPoint}supervisors/${category}`,'get supervisor list by category',[])
-      .pipe(map(ss => ss.map(s => s.email))
-      );
+  getSupervisorEmailByCategory(category: string): Observable<string[]> {
+    return this.http.get<Supervisor[]>(`${baseEndPoint}supervisors/${category}`, 'get supervisor list by category', [])
+      .pipe(map(ss => ss.map(s => s.email)));
   }
 
-  sendEmail(mail: Mail){
+  sendEmail(mail: Mail) {
     return this.http.post<Mail>(`${baseEndPoint}email`, mail, 'post an email');
   }
 }

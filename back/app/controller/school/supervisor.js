@@ -18,11 +18,13 @@ module.exports = {
     return Supervisor.query();
   },
   getSupervisorByCategory(category) {
-    return Supervisor.query().where({'supervisor.category': category});
+    return Supervisor.query().where({ 'supervisor.category': category });
   },
   sendMail(email) {
-    const { error } = Joi.validate(email,Mail);
-    if( error ) throw new Error(`Create Error : Object ${JSON.stringify(email)} does not match schema \n`+ error);
+    const { error } = Joi.validate(email, Mail);
+    if (error) {
+      throw new Error(`Create Error : Object ${JSON.stringify(email)} does not match schema \n` + error);
+    }
     return transporter.sendMail({
       from: '"polytech RI" <contact@otakedev.com>',
       to: 'jh.notif@gmail.com',
