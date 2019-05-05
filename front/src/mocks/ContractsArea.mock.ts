@@ -21,6 +21,15 @@ export const CONTRACTS_AREA_MOCKED: ContractArea[] = [
                             },
                             {
                                 link: 'https://otakedev.com/share/contrats/contrat-etude-sample.pdf'
+                            },
+                            {
+                                link: 'https://otakedev.com/share/contrats/contrat-etude-sample.pdf'
+                            },
+                            {
+                                link: 'https://otakedev.com/share/contrats/contrat-etude-sample.pdf'
+                            },
+                            {
+                                link: 'https://otakedev.com/share/contrats/contrat-etude-sample.pdf'
                             }
                         ]
                     },

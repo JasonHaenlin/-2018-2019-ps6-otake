@@ -1,23 +1,60 @@
 @import '../../../styles/variables.scss';
 
 .accordion {
-    background-color: $blue3;
+    background-color: $blue2;
     color: $white;
     cursor: pointer;
-    padding: 18px;
+    padding: 10px;
     width: 100%;
-    text-align: left;
     border: none;
     outline: none;
     transition: 0.4s;
+    font-size: 20px;
+    margin: 1px;
+    border-radius: 5px;
 }
 
 .accordion:hover {
-    background-color: $blue2;
+    background-color: $blue3;
 }
 
-.panel {
-    padding: 0 18px;
-    background-color: white;
-    overflow: hidden;
+.country {
+    transition: all 0.25s ease-out;
+    padding-top: 8px;
+    color: $paragraphsTextLight;
+    font-weight: bolder;
+    font-size: 22px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.university {
+    font-weight: normal;
+    margin-left: 30px;
+}
+
+.contract {
+    color: $yellow;
+    // font-weight: normal;
+}
+
+.container {
+    font-size: 21px;
+    color: $paragraphsText;
+    display: grid;
+    grid-template-columns: auto 300px;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #CCC;
+    margin: 1em 0;
+    margin-top: 0px;
+    padding: 0;
+  }
+
+.chevron {
+    float: right;
 }

@@ -1,4 +1,18 @@
-<button class="accordion" (click)="displayContent()">{{ formatedPastContracts.area }}</button>
-<div class="panel" *ngIf="display">
-  <p>OK</p>
+<div class="accordion" (click)="displayContent()">
+    {{ formatedPastContracts.area }}
+    <span class="chevron">
+      <i class="{{ chevron[display ? 0 : 1]}}"></i>
+    </span>
+</div>
+<div class="expandable" *ngIf="display" >
+  <div class="country" *ngFor="let c of formatedPastContracts.country">
+    {{ c.name }}<hr>
+    <div class="container university" *ngFor="let univ of c.contract_by_university">
+      <div class="item">{{ univ.university }}</div>
+      <div class="item " style="text-align: right;">
+        <a class="contract" href="{{ u.link }}" target="_blank" *ngFor="let u of univ.contract"> contrat </a>
+      </div>
+      <br>
+    </div>
+  </div>
 </div>

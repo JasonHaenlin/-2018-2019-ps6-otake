@@ -11,7 +11,8 @@ export class AccordionComponent implements OnInit {
   @Input()
   formatedPastContracts: ContractArea;
 
-  public display = true;
+  chevron: string[] = ['fa fa-fw fa-chevron-down', 'fa fa-fw fa-chevron-right'];
+  public display = false;
 
   constructor() { }
 
@@ -20,6 +21,6 @@ export class AccordionComponent implements OnInit {
 
   displayContent() {
     this.display = !this.display;
-    console.log(this.display);
+    console.log(this.display, this.chevron[this.display ? 0 : 1]);
   }
 }
