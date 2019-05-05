@@ -73,6 +73,6 @@ export class SchoolService {
   }
 
   sendEmail(mail: Mail){
-    console.log(mail);
+    return this.http.post<Mail>(`${baseEndPoint}email`, mail, 'post an email');
   }
 }

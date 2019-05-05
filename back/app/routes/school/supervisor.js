@@ -12,3 +12,8 @@ exports.getSupervisorByCategory = async (req, res) => {
   resHandler.yahResponse(res, supervisors);
 };
 
+exports.sendEmail = async (req, res) => {
+  // supervisor.sendMail();
+  console.log(req.body);
+  resHandler.yahResponse(res,'ok');
+};

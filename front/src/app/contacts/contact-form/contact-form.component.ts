@@ -61,8 +61,7 @@ export class ContactFormComponent implements OnInit {
       .subscribe(ss => {
         mailToSend.emailReceiver = ss;
         mailToSend.emailSender = this.email.value;
-        this.schoolService.sendEmail(mailToSend);
-        console.log(mailToSend);
+        this.schoolService.sendEmail(mailToSend).subscribe( () => console.log('mail send'));
       });
   }
 
