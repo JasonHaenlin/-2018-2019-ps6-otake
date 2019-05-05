@@ -1,13 +1,14 @@
 @import '../../../styles/variables.scss';
 
-.content {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+.testimonial-row {
+  column-count: 2;
+  column-width: 50%;
+  width: 90%;
+  margin: 1em auto;
 }
 
-.card {
-  margin-left: 2em;
-  margin-top: 2em;
+@media (max-width: 1180px) {
+  .testimonial-row {
+    column-count: initial;
+  }
 }

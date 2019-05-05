@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
 import { enumSelector } from 'src/app/utility/utilitary-functions';
 import { Section } from 'src/models/Section';
 import { UniversityDetails } from 'src/models/UniversityDetails';
@@ -17,10 +16,7 @@ export class UniversityDetailsComponent implements OnInit {
   public university: UniversityDetails;
   public universitySections: Section[] = [];
 
-  constructor(
-    private universityService: UniversityService,
-    private route: ActivatedRoute,
-  ) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.university = this.route.snapshot.data.university;

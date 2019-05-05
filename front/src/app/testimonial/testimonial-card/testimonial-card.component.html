@@ -1,17 +1,16 @@
 <div class="card">
+
   <div class="picture">
-    <em class="fas fa-user-alt fa-4x"></em>
+    <img src="../../../assets/bubbles.png" alt="<(^-^)>">
   </div>
+
   <div class="content">
     <div class="text">
       {{ testimonial.text }}
     </div>
-    <br>
-    <div class="name">
-      <strong>{{ testimonial.first_name }}</strong>
-    </div>
-    <div class="university name">
-      {{ testimonial.university }}
-    </div>
+    <div class="title">{{ testimonial.first_name}} {{ testimonial.last_name}}</div>
+    <div class="university">{{ testimonial.university }}</div>
+    <div class="email">{{ testimonial.email }}</div>
   </div>
+
 </div>

@@ -1,5 +1,5 @@
-<div class="content">
-  <div class="card" *ngFor="let t of testimonial$ | async">
+<div class="testimonial-row">
+  <div *ngFor="let t of testimonial$ | async">
     <app-testimonial-card [testimonial]=t></app-testimonial-card>
   </div>
 </div>

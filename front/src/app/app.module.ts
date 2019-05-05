@@ -17,6 +17,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { FinancialAidPageComponent } from './financial-aid-page/financial-aid-page.component';
 import { TestimonialCardComponent } from './testimonial/testimonial-card/testimonial-card.component';
 import { TestimonialListComponent } from './testimonial/testimonial-list/testimonial-list.component';
+import { TestimonialPageComponent } from './testimonial/testimonial-page/testimonial-page.component';
+import { TestimonialModule } from './testimonial/testimonial.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +27,6 @@ import { TestimonialListComponent } from './testimonial/testimonial-list/testimo
     HomePageComponent,
     FooterComponent,
     FinancialAidPageComponent,
-    TestimonialCardComponent,
-    TestimonialListComponent,
   ],
   imports: [
     HttpClientModule,
@@ -37,8 +37,12 @@ import { TestimonialListComponent } from './testimonial/testimonial-list/testimo
     UtilityModule,
     FlowMonitorModule,
     ContactModule,
+    TestimonialModule,
 
     AppRoutingModule,
+  ],
+  exports: [
+    TestimonialCardComponent,
   ],
   providers: [
     {
