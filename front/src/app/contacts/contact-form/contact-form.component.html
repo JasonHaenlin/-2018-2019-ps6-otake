@@ -2,77 +2,130 @@
 <form class="grid-contact-form" [formGroup]="contactForm" (ngSubmit)="sendMail()">
 
   <label class="grid-firstname" for="firstName">
-    <input class="input-custom" placeholder="Prénom" type="text" id="firstName"
+    <input placeholder="Prénom" type="text" id="firstName"
+      [class.is-invalid]="firstName.invalid  && (firstName.dirty || firstName.touched)"
+      [class.is-valid]="firstName.valid && (firstName.dirty || firstName.touched)"
       [formControlName]="'firstName'">
+    <div class="alert"
+      *ngIf="firstName.invalid && (firstName.dirty || firstName.touched) && firstName.errors.required">
+      Champ requis
+    </div>
   </label>
 
   <label class="grid-lastname" for="lastName">
-    <input class="input-custom" placeholder="Nom" type="text" id="lastName"
+    <input placeholder="Nom" type="text" id="lastName"
+      [class.is-invalid]="lastName.invalid && (lastName.dirty || lastName.touched)"
+      [class.is-valid]="lastName.valid && (lastName.dirty || lastName.touched)"
       [formControlName]="'lastName'">
+    <div class="alert"
+      *ngIf="lastName.invalid && (lastName.dirty || lastName.touched) && lastName.errors.required">
+      Champ requis
+    </div>
   </label>
 
   <label class="grid-email" for="email">
-    <input class="input-custom" placeholder="Email" type="text" id="email"
+    <input placeholder="Email" type="text" id="email"
+      [class.is-invalid]="(email.invalid || contactForm.errors?.misMatch) && (email.dirty || email.touched)"
+      [class.is-valid]="email.valid && (email.dirty || email.touched) && !contactForm.errors?.misMatch"
       [formControlName]="'email'">
+    <div class="alert" *ngIf="email.dirty || email.touched">
+      <div *ngIf="email.invalid && email.errors.required">Champ requis ou incorrect</div>
+      <div *ngIf="email.errors?.misMatch">Emails différents</div>
+    </div>
   </label>
 
-  <label class="grid-email-verify" for="confirmationEmail">
-    <input class="input-custom" placeholder="Confirmer l'e-mail" type="text" id="confirmationEmail"
-      [formControlName]="'confirmationEmail'">
+  <label class="grid-email-verify" for="emailConfirmation">
+    <input placeholder="Confirmer l'e-mail" type="text" id="emailConfirmation"
+      [class.is-invalid]="(emailConfirmation.invalid || contactForm.errors?.misMatch)  && (emailConfirmation.dirty || emailConfirmation.touched)"
+      [class.is-valid]="emailConfirmation.valid && (emailConfirmation.dirty || emailConfirmation.touched) && !contactForm.errors?.misMatch"
+      [formControlName]="'emailConfirmation'">
+    <div class="alert" *ngIf="emailConfirmation.dirty || emailConfirmation.touched">
+      <div *ngIf="emailConfirmation.invalid && emailConfirmation.errors.required">
+        Champ requis ou incorrect</div>
+      <div *ngIf="contactForm.errors?.misMatch">Emails différents</div>
+    </div>
   </label>
 
   <div class="grid-category">
     <label for="category">
       <div>Catégorie</div>
-      <select id="category" (change)="switchCat()" [formControlName]="'category'">
+      <select id="category" (change)="switchCat()"
+        [class.is-invalid]="category.invalid && (category.dirty || category.touched)"
+        [class.is-valid]="category.valid && (category.dirty || category.touched)"
+        [formControlName]="'category'">
         <option *ngFor="let cat of categoryList" [ngValue]="cat">
           {{cat}}
         </option>
       </select>
+      <div class="alert"
+        *ngIf="category.invalid && (category.dirty || category.touched) && category.errors.required">
+        Champ requis
+      </div>
     </label>
   </div>
 
   <div class="grid-major">
     <label for="major">
       <div>Votre Cursus</div>
-      <select id="major" [formControlName]="'major'">
-        <option *ngFor="let maj of majorList" [ngValue]="maj.shorthand">
+      <select id="major" [class.is-invalid]="major.invalid && (major.dirty || major.touched)"
+        [class.is-valid]="major.valid && (major.dirty || major.touched)"
+        [formControlName]="'major'">
+        <option *ngFor="let maj of (majors$ | async)" [ngValue]="maj.shorthand">
           {{maj.shorthand}}
         </option>
       </select>
+      <div class="alert"
+        *ngIf="major.invalid && (major.dirty || major.touched) && major.errors.required">
+        Champ requis
+      </div>
     </label>
   </div>
 
   <label class="grid-object">
     <span [ngSwitch]="categorySwitch">
-      <span *ngSwitchCase="'Technique'">
-        <div>Object de votre message</div>
-        <select class="grid-object-form" [formControlName]="'object'">
-          <option *ngFor="let obj of techniqueList" [ngValue]="obj">
-            {{obj}}
-          </option>
-        </select>
-      </span>
-      <span *ngSwitchCase="'Echange'">
-        <div>Object de votre message</div>
-        <select class="grid-object-form" placeholder="Object" [formControlName]="'object'">
-          <option *ngFor="let obj of echangeList" [ngValue]="obj">
-            {{obj}}
-          </option>
-        </select>
-      </span>
-      <span *ngSwitchCase="'autres'">
-        <div>Object de votre message</div>
-        <input class="grid-object-form" placeholder="Object" type="text"
-          [formControlName]="'object'">
-      </span>
+      <div *ngIf="categorySwitch !== '- - -'">Object de votre message</div>
+
+      <select *ngSwitchCase="'Technique'" class="grid-object-form"
+        [class.is-invalid]="object.invalid && (object.dirty || object.touched)"
+        [class.is-valid]="object.valid && (object.dirty || object.touched)"
+        [formControlName]="'object'">
+        <option *ngFor="let obj of techniqueList" [ngValue]="obj">
+          {{obj}}
+        </option>
+      </select>
+
+      <select *ngSwitchCase="'Echange'" class="grid-object-form" placeholder="Object"
+        [class.is-invalid]="object.invalid && (object.dirty || object.touched)"
+        [class.is-valid]="object.valid && (object.dirty || object.touched)"
+        [formControlName]="'object'">
+        <option *ngFor="let obj of echangeList" [ngValue]="obj">
+          {{obj}}
+        </option>
+      </select>
+
+      <input *ngSwitchCase="'autres'" class="grid-object-form" placeholder="Object" type="text"
+        [class.is-invalid]="object.invalid && (object.dirty || object.touched)"
+        [class.is-valid]="object.valid && (object.dirty || object.touched)"
+        [formControlName]="'object'">
+
     </span>
+    <div class="alert"
+      *ngIf="object.invalid && (object.dirty || object.touched) && object.errors.required">
+      Champ requis
+    </div>
   </label>
 
-  <label class="grid-message" for="message">
-    <textarea type="text" id="message" placeholder="Votre message"
+  <label class="grid-message" for="message"><span>{{messageLen}}/500</span>
+    <textarea type="text" id="message" maxlength="500" placeholder="Votre message"
+      [class.is-invalid]="message.invalid && (message.dirty || message.touched)"
+      [class.is-valid]="message.valid && (message.dirty || message.touched)"
       [formControlName]="'message'"></textarea>
+    <div class="alert"
+      *ngIf="message.invalid && (message.dirty || message.touched) && message.errors.required">
+      Champ requis
+    </div>
   </label>
 
-  <button type="submit" class="grid-submit btn-cst">Envoyer</button>
+  <button type="submit" [disabled]="contactForm.invalid"
+    class="grid-submit btn-cst">Envoyer</button>
 </form>

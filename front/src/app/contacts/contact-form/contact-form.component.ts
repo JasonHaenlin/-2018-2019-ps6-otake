@@ -1,8 +1,13 @@
+import { Major } from 'src/models/Major';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SchoolService } from '../../../services/school/school.service';
 import { UniversityService } from '../../../services/university/university.service';
 import { Mail } from '../../../models/Mail';
+import { Observable } from 'rxjs';
+import { FormValidators } from './email.validators';
+
+const MAX_LEN = 500;
 
 @Component({
   selector: 'app-contact-form',
@@ -12,7 +17,8 @@ import { Mail } from '../../../models/Mail';
 export class ContactFormComponent implements OnInit {
 
   public contactForm: FormGroup;
-  public majorList = [];
+  public majors$: Observable<Major[]>;
+  public messageLen = 0;
   public categoryList = ['- - -', 'Technique', 'Echange', 'autres'];
   public categorySwitch: string;
   public techniqueList = ['Lien brisé', 'Affichage', 'autres'];
@@ -22,21 +28,21 @@ export class ContactFormComponent implements OnInit {
     public schoolService: SchoolService,
     public universityService: UniversityService) {
     this.contactForm = this.formBuilder.group({
-      firstName: [''],
-      lastName: [''],
-      email: [''],
-      confirmationEmail: [''],
-      category: [''],
-      major: [''],
-      object: [''],
-      message: ['']
-    });
+      firstName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      emailConfirmation: ['', [Validators.required, Validators.email]],
+      category: ['', [Validators.required]],
+      major: ['', [Validators.required]],
+      object: ['', [Validators.required]],
+      message: ['', [Validators.required, Validators.maxLength(MAX_LEN)]]
+    }, { validators: FormValidators.emailVerification });
+    this.categorySwitch = this.categoryList[0];
   }
 
   ngOnInit() {
-    this.universityService.getMajors().subscribe(majors => {
-      this.majorList = majors;
-    });
+    this.majors$ = this.universityService.getMajors();
+    this.message.valueChanges.subscribe(v => this.messageLen = v.length);
   }
 
   switchCat() {
@@ -69,6 +75,7 @@ export class ContactFormComponent implements OnInit {
   get category() { return this.contactForm.get('category'); }
   get major() { return this.contactForm.get('major'); }
   get email() { return this.contactForm.get('email'); }
+  get emailConfirmation() { return this.contactForm.get('emailConfirmation'); }
   get firstName() { return this.contactForm.get('firstName'); }
   get lastName() { return this.contactForm.get('lastName'); }
   get object() { return this.contactForm.get('object'); }
