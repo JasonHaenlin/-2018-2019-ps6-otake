@@ -16,6 +16,7 @@
 
 .accordion:hover {
     background-color: $blue3;
+    padding-left: 25px;
 }
 
 .country {
@@ -34,8 +35,8 @@
 }
 
 .contract {
-    color: $yellow;
-    // font-weight: normal;
+    color: $blue3;
+    font-style: italic;
 }
 
 .container {
@@ -57,4 +58,13 @@ hr {
 
 .chevron {
     float: right;
+}
+
+:host {
+    display: block;
+  }
+  
+.expandable {
+border: 1px solid #dddddd;
+border-radius: $borderRadius;
 }

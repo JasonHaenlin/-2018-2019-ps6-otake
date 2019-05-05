@@ -31,7 +31,6 @@ import { TestimonialModule } from './testimonial/testimonial.module';
   imports: [
     HttpClientModule,
     ScrollingModule,
-
     BrowserAnimationsModule,
     BrowserModule,
     UtilityModule,

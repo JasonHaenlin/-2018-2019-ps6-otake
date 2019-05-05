@@ -4,7 +4,8 @@
       <i class="{{ chevron[display ? 0 : 1]}}"></i>
     </span>
 </div>
-<div class="expandable" *ngIf="display" >
+
+<div [@openClosed]="display ? 'open' : 'closed'" class="expandable">
   <div class="country" *ngFor="let c of formatedPastContracts.country">
     {{ c.name }}<hr>
     <div class="container university" *ngFor="let univ of c.contract_by_university">
