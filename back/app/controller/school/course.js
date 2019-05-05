@@ -1,4 +1,4 @@
-const { Course } = require('../../middlewares/orm');
+const { Course } = require('../../middlewares/orm/models');
 
 module.exports = {
   getCourses() {

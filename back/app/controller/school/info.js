@@ -1,4 +1,4 @@
-const { Deadline } = require('../../middlewares/orm');
+const { Deadline } = require('../../middlewares/orm/models');
 
 module.exports = {
   getDeadlineByYears(opening_date, closing_date) {

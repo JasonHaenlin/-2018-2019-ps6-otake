@@ -1,5 +1,5 @@
 // simple example using objection and knex
-const { Testimonial } = require('../../middlewares/orm');
+const { Testimonial } = require('../../middlewares/orm/models');
 
 
 module.exports = {

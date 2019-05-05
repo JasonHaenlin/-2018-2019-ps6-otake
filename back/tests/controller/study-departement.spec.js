@@ -1,7 +1,7 @@
 require('../../server');
 const assert = require('assert');
 
-const { StudyDepartement } = require('../../app/middlewares/orm');
+const { StudyDepartement } = require('../../app/middlewares/orm/models');
 
 const getstudyDepartementsRaw = () => {
   return StudyDepartement.query();

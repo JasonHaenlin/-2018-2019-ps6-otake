@@ -1,7 +1,7 @@
 require('../../server');
 const assert = require('assert');
 
-const { MajorSpeciality } = require('../../app/middlewares/orm');
+const { MajorSpeciality } = require('../../app/middlewares/orm/models');
 
 const getMajorSpecJunction = () => {
   return MajorSpeciality.query();

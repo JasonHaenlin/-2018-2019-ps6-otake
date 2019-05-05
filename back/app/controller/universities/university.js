@@ -4,7 +4,7 @@ const {
   Language,
   Major,
   GeographicalArea
-} = require('../../middlewares/orm');
+} = require('../../middlewares/orm/models');
 
 module.exports = {
   getUniversitiesShortInfo(page, area, language, major) {

@@ -1,5 +1,5 @@
 // simple example using objection and knex
-const Major = require('../../middlewares/orm').Major;
+const Major = require('../../middlewares/orm/models').Major;
 
 module.exports = {
   getMajors() {
