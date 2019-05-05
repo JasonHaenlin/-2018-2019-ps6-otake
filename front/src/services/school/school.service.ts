@@ -5,9 +5,11 @@ import { Course } from 'src/models/Course';
 import { Major } from 'src/models/Major';
 import { Deadline } from './../../models/Deadline';
 import { SpecialityCard } from './../../models/SpecialityCard';
-import {Supervisor} from '../../models/Supervisor';
 import { Speciality } from 'src/models/Speciality';
 import { CONTRACTS_AREA_MOCKED } from '../../mocks/ContractsArea.mock';
+import { Supervisor } from '../../models/Supervisor';
+import { map } from 'rxjs/operators';
+import { Mail } from '../../models/Mail';
 
 const baseEndPoint = 'school/';
 @Injectable({
@@ -61,5 +63,16 @@ export class SchoolService {
 
   getSupervisors(): Observable<Supervisor[]> {
     return this.http.get<Supervisor[]>(`${baseEndPoint}supervisors`, 'get supervisor list', []);
+  }
+
+
+  getSupervisorEmailByCategory(category: string): Observable<string[]>{
+    return this.http.get<Supervisor[]>(`${baseEndPoint}supervisors/${category}`,'get supervisor list by category',[])
+      .pipe(map(ss => ss.map(s => s.email))
+      );
+  }
+
+  sendEmail(mail: Mail){
+    console.log(mail);
   }
 }

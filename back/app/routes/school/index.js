@@ -34,5 +34,6 @@ school.get('/deadlines/:intervalDate', handleExceptions(info.getDeadlineByYears)
 
 /* -- supervisor -- */
 school.get('/supervisors', handleExceptions(supervisor.getSupervisors));
+school.get('/supervisors/:category', handleExceptions(supervisor.getSupervisorByCategory));
 
 module.exports = school;

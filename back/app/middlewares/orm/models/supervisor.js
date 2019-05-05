@@ -12,7 +12,8 @@ class Supervisor extends Model {
         id: {type: 'integer'},
         name: {type: 'string', minLength: 2, maxLength: 50},
         title: {type: 'string', minLength: 2, maxLength: 30},
-        email: {type: 'string', minLength: 5, maxLength: 50}
+        email: {type: 'string', minLength: 5, maxLength: 50},
+        category: {type: 'string', minLength: 5,maxLength: 50}
       }
     };
   }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {SchoolService} from '../../../services/school/school.service';
 import {UniversityService} from '../../../services/university/university.service';
+import {Mail} from "../../../models/Mail";
 
 @Component({
   selector: 'app-contact-form',
@@ -42,12 +43,37 @@ export class ContactFormComponent implements OnInit {
     this.categorySwitch = this.category.value;
   }
 
-  sendMail() {
-    console.log('submit');
+  sendMail () {
+    let category = this.category.value;
+    if(category === 'Echange'){
+      category = category + "-" + this.major.value;
+    }
+    const mailToSend = <Mail>{
+      firstName: this.firstName.value,
+      lastName: this.lastName.value,
+      emailSender: '',
+      emailReceiver: [],
+      object: this.object.value,
+      message: this.message.value
+    };
+    console.log(category);
+    this.schoolService.getSupervisorEmailByCategory(category)
+      .subscribe(ss => {
+        mailToSend.emailReceiver = ss;
+        mailToSend.emailSender = this.email.value;
+        this.schoolService.sendEmail(mailToSend);
+        console.log(mailToSend);
+      });
   }
 
-  get category() {
-    return this.contactForm.get('category');
-  }
+  get category() {return this.contactForm.get('category');}
+  get major() {return this.contactForm.get('major');}
+  get email() {return this.contactForm.get('email');}
+  get firstName() {return this.contactForm.get('firstName');}
+  get lastName() {return this.contactForm.get('lastName');}
+  get object() {return this.contactForm.get('object');}
+  get message() {return this.contactForm.get('message');}
+
 }
+
 

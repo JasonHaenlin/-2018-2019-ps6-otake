@@ -3,4 +3,5 @@ export interface Supervisor {
   name?: string;
   title?: string;
   email?: string;
+  category?: string;
 }
