@@ -1,7 +1,12 @@
 <div class="card">
 
   <div class="picture">
-    <img src="../../../assets/bubbles.png" alt="<(^-^)>">
+    <ng-container *ngIf="testimonial.picture; else defaultPic">
+      <img [src]="testimonial.picture" alt="<(^-^)>">
+    </ng-container>
+    <ng-template #defaultPic>
+      <img src="../../../assets/bubbles.png" alt="<(^-^)>">
+    </ng-template>
   </div>
 
   <div class="content">
