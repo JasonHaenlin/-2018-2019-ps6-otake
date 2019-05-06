@@ -24,13 +24,13 @@
   </label>
 
   <label class="grid-email" for="email">
-    <input placeholder="Email" type="text" id="email"
+    <input placeholder="E-mail" type="text" id="email"
       [class.is-invalid]="(email.invalid || contactForm.errors?.misMatch) && (email.dirty || email.touched)"
       [class.is-valid]="email.valid && (email.dirty || email.touched) && !contactForm.errors?.misMatch"
       [formControlName]="'email'">
     <div class="alert" *ngIf="email.dirty || email.touched">
-      <div *ngIf="email.invalid && email.errors.required">Champ requis ou incorrect</div>
-      <div *ngIf="email.errors?.misMatch">Emails différents</div>
+      <div *ngIf="email.invalid">Champ requis ou incorrect</div>
+      <div *ngIf="email.errors?.misMatch">E-mails différents</div>
     </div>
   </label>
 
@@ -40,9 +40,8 @@
       [class.is-valid]="emailConfirmation.valid && (emailConfirmation.dirty || emailConfirmation.touched) && !contactForm.errors?.misMatch"
       [formControlName]="'emailConfirmation'">
     <div class="alert" *ngIf="emailConfirmation.dirty || emailConfirmation.touched">
-      <div *ngIf="emailConfirmation.invalid && emailConfirmation.errors.required">
-        Champ requis ou incorrect</div>
-      <div *ngIf="contactForm.errors?.misMatch">Emails différents</div>
+      <div *ngIf="emailConfirmation.invalid">Champ requis ou incorrect</div>
+      <div *ngIf="contactForm.errors?.misMatch">E-mails différents</div>
     </div>
   </label>
 

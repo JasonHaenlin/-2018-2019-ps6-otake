@@ -1,5 +1,5 @@
 const { Supervisor } = require('../../middlewares/orm/models');
-const { Mail } = require('../../middlewares/orm/schema');
+const { Mail } = require('../../middlewares/schema');
 const Joi = require('@hapi/joi');
 const nodemailer = require('nodemailer');
 

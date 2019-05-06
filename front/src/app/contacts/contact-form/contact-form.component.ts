@@ -5,9 +5,7 @@ import { SchoolService } from '../../../services/school/school.service';
 import { UniversityService } from '../../../services/university/university.service';
 import { Mail } from '../../../models/Mail';
 import { Observable } from 'rxjs';
-import { FormValidators } from './email.validators';
-
-const MAX_LEN = 500;
+import { FormValidators } from './form.validators';
 
 @Component({
   selector: 'app-contact-form',
@@ -30,12 +28,12 @@ export class ContactFormComponent implements OnInit {
     this.contactForm = this.formBuilder.group({
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
-      emailConfirmation: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.pattern(FormValidators.emailRx)]],
+      emailConfirmation: ['', [Validators.required, Validators.pattern(FormValidators.emailRx)]],
       category: ['', [Validators.required]],
       major: ['', [Validators.required]],
       object: ['', [Validators.required]],
-      message: ['', [Validators.required, Validators.maxLength(MAX_LEN)]]
+      message: ['', [Validators.required, Validators.maxLength(500)]]
     }, { validators: FormValidators.emailVerification });
     this.categorySwitch = this.categoryList[0];
   }
