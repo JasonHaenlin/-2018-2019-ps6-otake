@@ -1,16 +1,16 @@
-<div class="card" [routerLink]="[ speciality.shorthand ]">
+<a class="speciality-card" [routerLink]="[ speciality.shorthand ]">
+  <div class="card">
+    <div id="top-content">
+      <img class="speciality-image" src="{{ speciality.small_picture }}" alt="spec picture">
+      <div class="speciality-shorthand">{{ speciality.shorthand }}</div>
+      <div class="speciality-name-background"></div>
+      <div class="speciality-name-wrapper">
+        <div class="speciality-name">{{ speciality.name }}</div>
+      </div>
+    </div>
 
-  <div id="top-content">
-    <img class="speciality-image" src="{{ speciality.small_picture }}" alt="spec picture">
-    <div class="speciality-shorthand">{{ speciality.shorthand }}</div>
-    <div class="speciality-name-background"></div>
-    <div class="speciality-name-wrapper">
-      <div class="speciality-name">{{ speciality.name }}</div>
+    <div id="bottom-content">
+      <p>{{ speciality.topics }}</p>
     </div>
   </div>
-
-  <div id="bottom-content">
-    <p>{{ speciality.topics }}</p>
-  </div>
-
-</div>
+</a>
