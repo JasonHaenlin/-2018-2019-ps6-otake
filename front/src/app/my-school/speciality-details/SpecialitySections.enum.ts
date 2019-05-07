@@ -1,6 +1,6 @@
 export enum SPECIALITY_SECTIONS {
   presentation = 'Présentation',
-  thematic = 'Thématiques des cours',
+  thematic = 'Thématiques',
   advice = 'Anciens contrats',
 }
 
