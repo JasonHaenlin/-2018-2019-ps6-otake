@@ -18,9 +18,14 @@ export class SearchBoxComponent implements OnInit {
   }
 
   updateUrlByLanguage(writtenTerm: string) {
-    if (writtenTerm.length > 0) {
+    if (writtenTerm.length > 0)  {
       this.router.navigate(['/exchange-universities'], {
         queryParams: { search: writtenTerm },
+        queryParamsHandling: 'merge'
+      });
+    } else {
+      this.router.navigate(['/exchange-universities'], {
+        queryParams: { search: null },
         queryParamsHandling: 'merge'
       });
     }
