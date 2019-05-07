@@ -16,8 +16,6 @@ module.exports = {
       .where({ 'speciality.shorthand': specialityShorthand })
       .then(res => convertResult(res));
   }
-
-
 };
 
 const convertResult = (resultat) => {

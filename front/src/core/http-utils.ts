@@ -16,6 +16,6 @@ export const handleError = <T>(operation: string, result?: T)
       console.log(`operation: ${operation}`);
       console.log(error);
     }
-    return of(result as T);
+    return of(result);
   };
 };
