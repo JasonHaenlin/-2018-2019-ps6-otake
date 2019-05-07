@@ -61,7 +61,7 @@ export class UniversityListComponent implements OnInit, OnDestroy {
 
   private onBottomOfpage() {
     this.unsubScrollEvent();
-    this.universityService.getUniversities(this.pageNumber++, this.destination, this.department, this.language)
+    this.universityService.getUniversities(this.pageNumber++, this.destination, this.language, this.department)
       .subscribe((l) => {
         this.universityList = [...this.universityList, ...l];
         this.isNoMoreElements(l);
