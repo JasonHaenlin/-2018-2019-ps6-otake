@@ -7,24 +7,14 @@ module.exports = {
   getLinksBySpecialityAndGeographicalArea(specialityShorthand) {
     return PastContract.query()
       .alias('pc')
-      .select('pc.link',
-        'university:city:country:geographical_area.area_name',
-        'university:city:country.country_name',
-        'university.name',
+      .select('pc.link as url',
+        'university:city:country:geographical_area.area_name as geographical_area',
+        'university:city:country.country_name as country',
+        'university.name as university',
       )
       .joinRelation('[university.city.country.geographical_area, speciality]')
       .where({ 'speciality.shorthand': specialityShorthand })
-      .then(res => {
-        const resultat = [];
-        res.forEach(r => {
-          const url = r.link;
-          const university = r.name;
-          const country = r.country_name;
-          const geographical_area = r.area_name;
-          resultat.push({ url, university, country, geographical_area });
-        });
-        return convertResult(resultat);
-      });
+      .then(res => convertResult(res));
   }
 
 
@@ -67,4 +57,3 @@ const convertResult = (resultat) => {
   }
   return res;
 };
-

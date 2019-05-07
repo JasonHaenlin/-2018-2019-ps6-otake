@@ -46,10 +46,8 @@ export class SchoolService {
   // CONTRACTS
 
   getContractsForAccordion(specialityShort: string) {
-    // console.log('Request accordion from back', specialityShort);
-    // return of(CONTRACTS_AREA_MOCKED);
     return this.http.get<ContractArea[]>(`${baseEndPoint}/contracts/${specialityShort}`,
-    'getting all contracts of a chosen speciality', []);
+      'getting all contracts of a chosen speciality', []);
   }
 
   // OTHERS
