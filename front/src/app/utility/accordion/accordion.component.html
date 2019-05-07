@@ -12,8 +12,9 @@
     <div class="container university" *ngFor="let univ of c.contract_by_university">
       <div class="item">{{ univ.university }}</div>
       <div class="item " style="text-align: right;">
-        <a class="contract" href="{{ u.link }}" target="_blank" *ngFor="let u of univ.contract">
-          contrat </a>
+        <span *ngFor="let u of univ.contract; let i = index">
+          <a class="contract" href="{{u}}" target="_blank">{{i}}</a> |
+        </span>
       </div>
       <br>
     </div>

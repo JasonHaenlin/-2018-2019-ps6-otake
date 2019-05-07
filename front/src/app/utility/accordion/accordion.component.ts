@@ -6,38 +6,38 @@ import { trigger, state, style, transition, animate, group } from '@angular/anim
   selector: 'app-accordion',
   animations: [
     trigger('openClosed', [
-        state('open', style({
-            'height': '*', 'opacity': '1', 'visibility': 'visible'
+      state('open', style({
+        'height': '*', 'opacity': '1', 'visibility': 'visible'
+      })),
+      state('closed', style({
+        'height': '0', 'opacity': '0', 'visibility': 'hidden'
+      })),
+      transition('open => closed', [group([
+        animate('400ms ease-in-out', style({
+          'opacity': '0'
         })),
-        state('closed', style({
-            'height': '0', 'opacity': '0', 'visibility': 'hidden'
+        animate('600ms ease-in-out', style({
+          'height': '0'
         })),
-        transition('open => closed', [group([
-            animate('400ms ease-in-out', style({
-                'opacity': '0'
-            })),
-            animate('600ms ease-in-out', style({
-                'height': '0'
-            })),
-            animate('700ms ease-in-out', style({
-                'visibility': 'hidden'
-            }))
-        ]
-        )]),
-        transition('closed => open', [group([
-            animate('1ms ease-in-out', style({
-                'visibility': 'visible'
-            })),
-            animate('600ms ease-in-out', style({
-                'height': '*'
-            })),
-            animate('800ms ease-in-out', style({
-                'opacity': '1'
-            }))
-        ]
-        )])
+        animate('700ms ease-in-out', style({
+          'visibility': 'hidden'
+        }))
+      ]
+      )]),
+      transition('closed => open', [group([
+        animate('1ms ease-in-out', style({
+          'visibility': 'visible'
+        })),
+        animate('600ms ease-in-out', style({
+          'height': '*'
+        })),
+        animate('800ms ease-in-out', style({
+          'opacity': '1'
+        }))
+      ]
+      )])
     ]),
-],
+  ],
   templateUrl: './accordion.component.html',
   styleUrls: ['./accordion.component.scss']
 })
@@ -52,6 +52,8 @@ export class AccordionComponent implements OnInit {
   public display = false;
 
   ngOnInit() {
+    console.log(this.formatedPastContracts);
+
   }
 
   displayContent() {
