@@ -6,11 +6,23 @@ import { UniversityService } from '../../../services/university/university.servi
 import { Mail } from '../../../models/Mail';
 import { Observable } from 'rxjs';
 import { FormValidators } from './form.validators';
+import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-contact-form',
   templateUrl: './contact-form.component.html',
-  styleUrls: ['./contact-form.component.scss']
+  styleUrls: ['./contact-form.component.scss'],
+  animations: [
+    trigger('openClose', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('0.4s', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [
+        animate('0.2s', style({ opacity: 0 }))
+      ])
+    ]),
+  ],
 })
 export class ContactFormComponent implements OnInit {
 
@@ -21,6 +33,7 @@ export class ContactFormComponent implements OnInit {
   public categorySwitch: string;
   public techniqueList = ['Lien brisé', 'Affichage', 'autres'];
   public echangeList = ['Université', 'Bourse', 'Santé', 'Mobilité', 'autres'];
+  public active = false;
 
   constructor(public formBuilder: FormBuilder,
     public schoolService: SchoolService,
@@ -66,7 +79,12 @@ export class ContactFormComponent implements OnInit {
       .subscribe(ss => {
         mailToSend.emailReceiver = ss;
         mailToSend.emailSender = this.email.value;
-        this.schoolService.sendEmail(mailToSend).subscribe();
+        this.schoolService.sendEmail(mailToSend).subscribe( () => {
+          this.active = true;
+          setTimeout(() => {
+            this.active = false;
+          },600);
+          });
       });
   }
 

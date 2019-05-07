@@ -38,9 +38,11 @@
   .contact-list {
     margin-left: 2em;
     width: 100%;
+    z-index: 9;
   }
 
   .contact-form {
     width: 100%;
+    z-index: 10;
   }
 }
