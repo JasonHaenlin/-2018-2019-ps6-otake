@@ -1,7 +1,7 @@
 <div class="grid-card card" [routerLink]="[ 'details', university.id]">
 
   <div class="grid-logo">
-    <img src="{{university.small_picture}}" alt="[x] : university logo" class="contain" />
+    <img src="{{university.small_picture}}" alt="[x] : university logo" class="contain"/>
   </div>
 
   <div class="grid-title">
@@ -29,7 +29,12 @@
     <ng-template #elseTemplate>
       <span class="fas fa-users fa-3x"></span>
     </ng-template>
-    {{university.nb_of_place}}
+    <ng-container *ngIf="university.nb_of_place != 99;else elseTemplate1">
+      {{university.nb_of_place}}
+    </ng-container>
+    <ng-template #elseTemplate1>
+      ∞
+    </ng-template>
   </div>
 
   <div class="grid-stats">
