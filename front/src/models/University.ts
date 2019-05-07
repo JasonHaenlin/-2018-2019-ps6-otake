@@ -2,6 +2,7 @@ import { Language } from './Language';
 import { GeographicalArea } from './GeographicalArea';
 
 export interface University {
+  id: number;
   name?: string;
   admission_rate?: number;
   type_of_file?: string;

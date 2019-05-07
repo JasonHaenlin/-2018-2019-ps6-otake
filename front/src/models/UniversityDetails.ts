@@ -2,7 +2,6 @@ import { Testimonial } from './Testimonial';
 import { Identifiers } from '@angular/compiler';
 
 export interface UniversityDetails {
-  id: number;
   name?: string;
   big_picture?: string;
   presentation_text?: string;
