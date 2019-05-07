@@ -6,7 +6,8 @@ exports.getUniversities = async (req, res) => {
     req.params.page,
     req.query.area,
     req.query.language,
-    req.query.major);
+    req.query.major,
+    req.query.search);
   resHandler.yahResponse(res, universities);
 };
 

@@ -7,7 +7,7 @@ const {
 } = require('../../middlewares/orm/models');
 
 module.exports = {
-  getUniversitiesShortInfo(page, area, language, major) {
+  getUniversitiesShortInfo(page, area, language, major, search) {
     return ExchangeUniversity.query()
       .alias('u')
       .distinct('u.id',
@@ -34,6 +34,9 @@ module.exports = {
         }
         if (major) {
           queryBuilder.whereIn('major.shorthand', [major, 'ALL']);
+        }
+        if (search) {
+          queryBuilder.where('u.name', 'LIKE', search);
         }
       })
       .eager('[major, language]')
