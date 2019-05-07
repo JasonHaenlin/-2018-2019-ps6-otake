@@ -48,6 +48,7 @@ export class ContactFormComponent implements OnInit {
       object: ['', [Validators.required]],
       message: ['', [Validators.required, Validators.maxLength(500)]]
     }, { validators: FormValidators.emailVerification });
+    this.category.setValue(this.categoryList[0]);
     this.categorySwitch = this.categoryList[0];
   }
 
@@ -84,6 +85,9 @@ export class ContactFormComponent implements OnInit {
           setTimeout(() => {
             this.active = false;
           }, 600);
+          this.contactForm.reset();
+          this.categorySwitch = this.categoryList[0];
+          this.category.setValue(this.categoryList[0]);
           });
       });
   }
