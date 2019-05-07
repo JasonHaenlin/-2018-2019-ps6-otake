@@ -50,7 +50,7 @@ export class UniversityListComponent implements OnInit, OnDestroy {
         .subscribe((list: University[]) => {
           this.universityList = list;
           this.display = true;
-          this.subToScrollEvent();
+          this.isNoMoreElements(this.universityList);
         });
     });
   }
@@ -63,7 +63,7 @@ export class UniversityListComponent implements OnInit, OnDestroy {
 
   private onBottomOfpage() {
     this.unsubScrollEvent();
-    this.universityService.getUniversities(this.pageNumber++, this.destination, this.department, this.language, this.search)
+    this.universityService.getUniversities(this.pageNumber++, this.destination, this.language, this.department, this.search)
       .subscribe((l) => {
         this.universityList = [...this.universityList, ...l];
         this.isNoMoreElements(l);
@@ -71,7 +71,7 @@ export class UniversityListComponent implements OnInit, OnDestroy {
   }
 
   private isNoMoreElements(l: University[]) {
-    if (l.length === 0) {
+    if (l.length < 15) {
       this.display = false;
     } else {
       this.subToScrollEvent();
