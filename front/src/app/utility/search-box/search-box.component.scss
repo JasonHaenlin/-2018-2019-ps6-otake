@@ -1,0 +1,28 @@
+.container {
+    border: 1px solid #dddd;
+    border-radius: 25px;
+    width: 22em;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 20em 35px;
+    float: right;
+    margin-bottom: 20px;
+    margin-left: 50%;
+}
+
+.icon {
+    height: 100%;
+    width: auto;
+    vertical-align: middle;
+    top: 5px;
+}
+
+input {
+    border: none;
+    padding: 5px;
+    font-size: 18px;
+}
+
+input:focus {
+    outline: none;
+}

@@ -1,1 +1,6 @@
-<input placeholder="test ..." (keyup)="searchTerm$.next($event.target.value)"><i class="fas fa-search"></i>
+<div class="container">
+    <input placeholder="Rechercher une université par son nom" (keyup)="searchTerm$.next($event.target.value)">
+    <div class="icon">
+        <div class="fas fa-search"></div>        
+    </div>
+</div>
