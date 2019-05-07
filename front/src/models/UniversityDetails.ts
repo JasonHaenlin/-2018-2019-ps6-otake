@@ -1,5 +1,4 @@
 import { Testimonial } from './Testimonial';
-import { Identifiers } from '@angular/compiler';
 
 export interface UniversityDetails {
   id: number;

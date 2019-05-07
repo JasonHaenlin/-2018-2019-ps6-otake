@@ -3,6 +3,7 @@ import { GEOGRAPHICAL_AREA_MOCKED } from './GeographicalArea.mock';
 
 export const UNIVERCITY_CARD_MOCKED: University[] = [
   {
+    id: 1,
     name: 'cityU',
     city: 'HongKong',
     major: ['Tous'],
@@ -14,6 +15,7 @@ export const UNIVERCITY_CARD_MOCKED: University[] = [
     area: GEOGRAPHICAL_AREA_MOCKED[1],
   },
   {
+    id: 2,
     name: 'California Institute Of Technology',
     city: 'Pasadena',
     major: ['Tous'],
