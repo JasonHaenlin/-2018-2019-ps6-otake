@@ -36,7 +36,7 @@ module.exports = {
           queryBuilder.whereIn('major.shorthand', [major, 'ALL']);
         }
         if (search) {
-          queryBuilder.where('u.name', 'LIKE', search);
+          queryBuilder.where('u.name', 'LIKE', '%'+search+'%');
         }
       })
       .eager('[major, language]')

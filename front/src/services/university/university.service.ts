@@ -23,8 +23,8 @@ export class UniversityService {
     return this.http.get<UniversityDetails>(`${baseEndPoint}details/${id}`, 'get university details');
   }
 
-  getUniversities(page: number, destination: string, language?: string, major?: string): Observable<University[]> {
-    const optionList = this.buildOption(page, { destination: destination, language: language, major: major });
+  getUniversities(page: number, destination: string, language?: string, major?: string, search?: string): Observable<University[]> {
+    const optionList = this.buildOption(page, { destination: destination, language: language, major: major , search: search});
     return this.http.get<University[]>(`${baseEndPoint}${optionList}`, 'get Universities list', []);
   }
 
@@ -40,7 +40,7 @@ export class UniversityService {
     return this.http.get<Major[]>(`${baseEndPoint}majors`, 'get Majors list', []);
   }
 
-  private buildOption(page: number, option: { destination: string; language: string; major: string; }) {
+  private buildOption(page: number, option: { destination: string; language: string; major: string; search: string }) {
     let separator = '?';
     let options = '';
     if (option.destination) {
@@ -53,6 +53,10 @@ export class UniversityService {
     }
     if (option.major) {
       options += separator + 'major=' + option.major;
+      separator = '&';
+    }
+    if (option.search) {
+      options += separator + 'search=' + option.search;
     }
     return `page=${page}${options}`;
   }

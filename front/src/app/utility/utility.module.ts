@@ -7,6 +7,7 @@ import { LoaderService } from './loader/loader.service';
 import { AccordionComponent } from './accordion/accordion.component';
 import { DeadlineComponent } from './deadline/deadline.component';
 import { CoursesHolderComponent } from './courses-holder/courses-holder.component';
+import { SearchBoxComponent } from './search-box/search-box.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { CoursesHolderComponent } from './courses-holder/courses-holder.componen
     AccordionComponent,
     DeadlineComponent,
     CoursesHolderComponent,
+    SearchBoxComponent,
   ],
   imports: [
     CommonModule,
@@ -25,7 +27,8 @@ import { CoursesHolderComponent } from './courses-holder/courses-holder.componen
     LoaderComponent,
     AccordionComponent,
     DeadlineComponent,
-    CoursesHolderComponent
+    CoursesHolderComponent,
+    SearchBoxComponent,
   ],
   providers: [
     LoaderService,

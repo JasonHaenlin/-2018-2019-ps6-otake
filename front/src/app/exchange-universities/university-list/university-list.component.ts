@@ -19,6 +19,7 @@ export class UniversityListComponent implements OnInit, OnDestroy {
   public display: boolean;
 
   private scrollSub: Subscription = new Subscription();
+  private search: string;
   private destination = null;
   private language = null;
   private department = null;
@@ -43,8 +44,9 @@ export class UniversityListComponent implements OnInit, OnDestroy {
       this.destination = params.destination;
       this.language = params.language;
       this.department = params.department;
+      this.search = params.search;
       this.scrollToTop();
-      this.universityService.getUniversities(this.pageNumber++, this.destination, this.language, this.department)
+      this.universityService.getUniversities(this.pageNumber++, this.destination, this.language, this.department, this.search )
         .subscribe((list: University[]) => {
           this.universityList = list;
           this.display = true;
@@ -61,7 +63,7 @@ export class UniversityListComponent implements OnInit, OnDestroy {
 
   private onBottomOfpage() {
     this.unsubScrollEvent();
-    this.universityService.getUniversities(this.pageNumber++, this.destination, this.language, this.department)
+    this.universityService.getUniversities(this.pageNumber++, this.destination, this.department, this.language, this.search)
       .subscribe((l) => {
         this.universityList = [...this.universityList, ...l];
         this.isNoMoreElements(l);
