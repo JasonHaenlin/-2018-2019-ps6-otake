@@ -44,24 +44,24 @@ const convertResult = (resultat) => {
         countrySet.add(r.country);
       }
     });
-    for (let count of countrySet) {
+    for (let name of countrySet) {
       const universitySet = new Set();
       resultat.forEach(r => {
-        if (r.country === count) {
+        if (r.country === name) {
           universitySet.add(r.university);
         }
       });
       const contract_by_university = [];
       const contract = [];
-      for (let univ of universitySet) {
+      for (let university of universitySet) {
         resultat.forEach(r => {
-          if (r.university === univ) {
+          if (r.university === university) {
             contract.push(r.url);
           }
         });
-        contract_by_university.push({ univ, contract });
+        contract_by_university.push({ university, contract });
       }
-      country.push({ count, contract_by_university });
+      country.push({ name, contract_by_university });
     }
     res.push({ area, country });
   }

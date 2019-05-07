@@ -10,6 +10,7 @@ import { CONTRACTS_AREA_MOCKED } from '../../mocks/ContractsArea.mock';
 import { Supervisor } from '../../models/Supervisor';
 import { map } from 'rxjs/operators';
 import { Mail } from '../../models/Mail';
+import { ContractArea } from 'src/models/ContractArea';
 
 const baseEndPoint = 'school/';
 @Injectable({
@@ -45,8 +46,10 @@ export class SchoolService {
   // CONTRACTS
 
   getContractsForAccordion(specialityShort: string) {
-    console.log('Request accordion from back', specialityShort);
-    return of(CONTRACTS_AREA_MOCKED);
+    // console.log('Request accordion from back', specialityShort);
+    // return of(CONTRACTS_AREA_MOCKED);
+    return this.http.get<ContractArea[]>(`${baseEndPoint}/contracts/${specialityShort}`,
+    'getting all contracts of a chosen speciality', []);
   }
 
   // OTHERS
