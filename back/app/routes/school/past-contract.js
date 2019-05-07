@@ -9,6 +9,6 @@ exports.getPastContracts = async (req, res) => {
 
 exports.getPastContractsWithGeographicalAreaAndSpeciality = async (req, res) => {
   const pastContracts = await pastContract
-    .getLinksBySpecialityAndGeographicalArea(req.params.speciality, req.params.geographical_area);
+    .getLinksBySpecialityAndGeographicalArea(req.params.speciality);
   resHandler.yahResponse(res, pastContracts);
 };

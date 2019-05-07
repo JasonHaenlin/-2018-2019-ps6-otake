@@ -21,7 +21,7 @@ school.get('/specialities-cards/:major', handleExceptions(speciality.getCardSpec
 
 /* -- contract -- */
 school.get('/contracts', handleExceptions(contract.getPastContracts));
-school.get('/contracts/:speciality/:geographical_area', handleExceptions(contract.getPastContractsWithGeographicalAreaAndSpeciality));
+school.get('/contracts/:speciality', handleExceptions(contract.getPastContractsWithGeographicalAreaAndSpeciality));
 
 /* -- courses -- */
 school.get('/courses', handleExceptions(course.getCourses));
