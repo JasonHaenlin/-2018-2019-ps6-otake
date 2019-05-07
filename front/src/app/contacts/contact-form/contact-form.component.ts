@@ -83,7 +83,7 @@ export class ContactFormComponent implements OnInit {
           this.active = true;
           setTimeout(() => {
             this.active = false;
-          },600);
+          }, 600);
           });
       });
   }

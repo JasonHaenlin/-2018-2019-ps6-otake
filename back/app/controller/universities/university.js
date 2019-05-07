@@ -33,7 +33,7 @@ module.exports = {
           queryBuilder.where('language.language', language);
         }
         if (major) {
-          queryBuilder.whereIn('major.shorthand', [major,'ALL']);
+          queryBuilder.whereIn('major.shorthand', [major, 'ALL']);
         }
       })
       .eager('[major, language]')
