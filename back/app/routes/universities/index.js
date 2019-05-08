@@ -10,6 +10,8 @@ const universities = express.Router();
 /* -- universities cards -- */
 universities.get('/page=:page', handleExceptions(university.getUniversities));
 
+universities.get('/search=:terms', handleExceptions(university.getUniversitiesByterms));
+
 /* -- info -- */
 universities.get('/areas', handleExceptions(university.getAreas));
 universities.get('/languages', handleExceptions(university.getLanguages));

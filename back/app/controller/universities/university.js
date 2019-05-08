@@ -36,7 +36,7 @@ module.exports = {
           queryBuilder.whereIn('major.shorthand', [major, 'ALL']);
         }
         if (search) {
-          queryBuilder.where('u.name', 'LIKE', '%'+search+'%');
+          queryBuilder.where('u.name', 'LIKE', '%' + search + '%');
         }
       })
       .eager('[major, language]')
@@ -66,6 +66,13 @@ module.exports = {
 
   getAreas() {
     return GeographicalArea.query();
+  },
+
+  getUniversitiesByterms(terms) {
+    return ExchangeUniversity.query()
+      .alias('u')
+      .select('u.name')
+      .where('u.name', 'LIKE', '%' + terms + '%');
   },
 
   getUniversityDetails(id) {

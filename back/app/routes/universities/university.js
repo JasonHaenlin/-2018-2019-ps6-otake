@@ -30,3 +30,8 @@ exports.getUniversityDetails = async (req, res) => {
   const univDetails = await university.getUniversityDetails(req.params.id);
   resHandler.yahResponse(res, univDetails);
 };
+
+exports.getUniversitiesByterms = async (req, res) => {
+  const univList = await university.getUniversitiesByterms(req.params.terms);
+  resHandler.yahResponse(res, univList);
+};
