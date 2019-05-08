@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/internal/operators';
 import { University } from '../../../models/University';
@@ -25,7 +25,8 @@ export class UniversityListComponent implements OnInit, OnDestroy {
   private department = null;
   private pageNumber = 0;
 
-  constructor(public universityService: UniversityService,
+  constructor(private universityService: UniversityService,
+    private router: Router,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -46,13 +47,27 @@ export class UniversityListComponent implements OnInit, OnDestroy {
       this.department = params.department;
       this.search = params.search;
       this.scrollToTop();
-      this.universityService.getUniversities(this.pageNumber++, this.destination, this.language, this.department, this.search )
+      this.universityService.getUniversities(this.pageNumber++, this.destination, this.language, this.department, this.search)
         .subscribe((list: University[]) => {
           this.universityList = list;
           this.display = true;
           this.isNoMoreElements(this.universityList);
         });
     });
+  }
+
+  updateUrlSearchTerms(writtenTerm: string) {
+    if (writtenTerm.length > 0) {
+      this.router.navigate(['/exchange-universities'], {
+        queryParams: { search: writtenTerm },
+        queryParamsHandling: 'merge'
+      });
+    } else {
+      this.router.navigate(['/exchange-universities'], {
+        queryParams: { search: null },
+        queryParamsHandling: 'merge'
+      });
+    }
   }
 
   private updateScrollPosition(): void {
