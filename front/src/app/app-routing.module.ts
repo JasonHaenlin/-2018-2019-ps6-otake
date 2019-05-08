@@ -1,3 +1,4 @@
+import { SearchUniversityComponent } from './addons/search-university/search-university.component';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -6,13 +7,30 @@ import { FinancialAidPageComponent } from './financial-aid-page/financial-aid-pa
 import { HomePageComponent } from './home-page/home-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TestimonialPageComponent } from './testimonial/testimonial-page/testimonial-page.component';
+import { SearchBoxComponent } from './utility/search-box/search-box.component';
+import { SelectMajorComponent } from './addons/select-major/select-major.component';
 
 
 const routes: Routes = [
-
+  {
+    path: 'search-university',
+    component: SearchUniversityComponent,
+    outlet: 'addon'
+  },
+  {
+    path: 'select-major',
+    component: SelectMajorComponent,
+    outlet: 'addon'
+  },
   { path: 'home', component: HomePageComponent },
-  { path: 'school', loadChildren: './my-school/my-school.module#MySchoolModule' },
-  { path: 'exchange-universities', loadChildren: './exchange-universities/university.module#UniversityModule' },
+  {
+    path: 'school',
+    loadChildren: './my-school/my-school.module#MySchoolModule'
+  },
+  {
+    path: 'exchange-universities',
+    loadChildren: './exchange-universities/university.module#UniversityModule'
+  },
   { path: 'testimonials', component: TestimonialPageComponent },
   { path: 'financial-aids', component: FinancialAidPageComponent },
   { path: 'calendar', component: PageNotFoundComponent },

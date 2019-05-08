@@ -19,6 +19,9 @@ import { TestimonialCardComponent } from './testimonial/testimonial-card/testimo
 import { TestimonialListComponent } from './testimonial/testimonial-list/testimonial-list.component';
 import { TestimonialPageComponent } from './testimonial/testimonial-page/testimonial-page.component';
 import { TestimonialModule } from './testimonial/testimonial.module';
+import { SearchUniversityComponent } from './addons/search-university/search-university.component';
+import { ChooseSpecialityComponent } from './addons/choose-speciality/choose-speciality.component';
+import { SelectMajorComponent } from './addons/select-major/select-major.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +30,9 @@ import { TestimonialModule } from './testimonial/testimonial.module';
     HomePageComponent,
     FooterComponent,
     FinancialAidPageComponent,
+    SearchUniversityComponent,
+    ChooseSpecialityComponent,
+    SelectMajorComponent,
   ],
   imports: [
     HttpClientModule,

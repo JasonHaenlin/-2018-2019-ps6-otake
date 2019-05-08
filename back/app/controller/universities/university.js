@@ -71,7 +71,7 @@ module.exports = {
   getUniversitiesByterms(terms) {
     return ExchangeUniversity.query()
       .alias('u')
-      .select('u.name')
+      .select('u.id', 'u.name')
       .where('u.name', 'LIKE', '%' + terms + '%');
   },
 

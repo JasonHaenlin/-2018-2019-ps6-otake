@@ -1,0 +1,24 @@
+<div class="modal modal-open">
+  <div class="modal-box">
+    <div class="addon">
+      <div class="addon-header">
+        <strong>title</strong>
+        <span class="fas fa-times close-btn" (click)="cancel()"></span>
+      </div>
+      <div class="addon-content">
+        <app-search-box (termsEvent)="updateList($event)"></app-search-box>
+        <div class="list-container">
+          <div [ngClass]="{'selected': u.id === selectedUniv.id}"
+            *ngFor="let u of (universities$ | async)" (click)="select(u)">
+            {{u.name}}
+          </div>
+        </div>
+      </div>
+      <div class="addon-footer">
+        <div class="selected-univ">Sélectionné : <strong>{{selectedUniv.name}}</strong></div>
+        <span class="far fa-check-circle fa-2x save-btn" (click)="go()"></span>
+      </div>
+    </div>
+  </div>
+  <div class="modal-background"></div>
+</div>

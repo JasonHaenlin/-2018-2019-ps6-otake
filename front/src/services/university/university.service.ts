@@ -16,7 +16,6 @@ const baseEndPoint = 'universities/';
 })
 
 export class UniversityService {
-
   constructor(private http: ApplicationHttpClient) { }
 
   getUniversityDetails(id: string | number): Observable<UniversityDetails> {
@@ -24,7 +23,7 @@ export class UniversityService {
   }
 
   getUniversities(page: number, destination: string, language?: string, major?: string, search?: string): Observable<University[]> {
-    const optionList = this.buildOption(page, { destination: destination, language: language, major: major , search: search});
+    const optionList = this.buildOption(page, { destination: destination, language: language, major: major, search: search });
     return this.http.get<University[]>(`${baseEndPoint}${optionList}`, 'get Universities list', []);
   }
 
@@ -68,4 +67,9 @@ export class UniversityService {
   getTestimonials(): Observable<Testimonial[]> {
     return this.http.get<Testimonial[]>(`${baseEndPoint}testimonials`, 'get the testimonials', []);
   }
+
+  getUniversitiesByTerms(terms: string): Observable<University[]> {
+    return this.http.get<University[]>(`${baseEndPoint}search=${terms}`, 'get universities list by terms', []);
+  }
+
 }

@@ -1,9 +1,13 @@
 <app-loader id="loader"></app-loader>
 <app-header id="header"></app-header>
+
 <div id="content">
   <div [ngClass]="{'active-flow': flowActived}">
     <router-outlet></router-outlet>
   </div>
   <app-footer id="footer"></app-footer>
 </div>
+
 <app-flow-page (flowActived)="flowActivedEvent($event)"></app-flow-page>
+
+<router-outlet name="addon"></router-outlet>
