@@ -2,7 +2,7 @@ export interface Step {
   id: number;
   label: string;
   link?: Link;
-  addon?: Addons;
+  addon?: string;
   description: TextDetail[];
 }
 
@@ -16,9 +16,4 @@ export interface Link {
   extRef?: string;
   router?: string;
   fragment?: string;
-}
-
-export enum Addons {
-  searchDialog = 'search-university',
-  majorDialog = 'select-major'
 }

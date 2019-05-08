@@ -12,6 +12,7 @@
 .text {
   position: relative;
   display: inline-block;
+  cursor: pointer;
 }
 
 .trace-step {
@@ -53,6 +54,6 @@
 
 .link {
   text-decoration: none;
-  color: black;
+  color: $yellow;
   cursor: pointer;
 }

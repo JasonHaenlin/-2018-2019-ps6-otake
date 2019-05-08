@@ -29,7 +29,6 @@ export class SearchUniversityComponent implements OnInit {
   }
 
   go() {
-    console.log(this.selectedUniv);
     this.closePopup().then(() => this.router.navigate(['/exchange-universities/details', this.selectedUniv.id]));
   }
 

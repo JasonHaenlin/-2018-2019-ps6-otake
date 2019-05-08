@@ -1,5 +1,5 @@
 import { environment } from 'src/environments/environment';
-import { Addons, Step } from './../flow-step/step';
+import { Step } from './../flow-step/step';
 
 const baseUrl = environment.baseUrl;
 
@@ -16,7 +16,7 @@ export const STEP_LIST: Step[] = [
   {
     id: 2,
     label: 'Estimer le coût de la vie',
-    addon: Addons.searchDialog,
+    addon: 'search-university',
     description: [
       { id: 0, text: 'Vérifier le coût de la vie d\'une université dans les détails de celle-ci', },
       { id: 0, text: 'Vous pouvez aussi vérifier les transports en communs et les logements', },
@@ -25,7 +25,7 @@ export const STEP_LIST: Step[] = [
   {
     id: 3,
     label: 'Choisir ses cours',
-    addon: Addons.majorDialog,
+    addon: 'select-major',
     description: [
       { id: 0, text: 'Aller dans "Notre école" par rapport à votre cursus', },
       { id: 1, text: 'Chercher une "Spécialité" qui vous plait' },
@@ -36,7 +36,7 @@ export const STEP_LIST: Step[] = [
   {
     id: 4,
     label: 'Renseignements personnels',
-    link: { router: './', fragment: 'footer' },
+    link: { router: 'home', fragment: 'footer' },
     description: [
       { id: 0, text: 'Télécharger le dossier de mobilité sur le site de "Polytech Nice"', },
       { id: 1, text: 'Vérifier vos cours et les équivalences aux ECTS qui varies selon la destination' },

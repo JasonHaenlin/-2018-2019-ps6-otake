@@ -51,12 +51,12 @@ export class FlowStepComponent implements OnInit, OnDestroy {
     this.checkStepValidation();
   }
 
-  updateCheckbox(step: TextDetail, toClose: boolean) {
+  updateCheckbox(step: TextDetail) {
     this.flowService.writeStepInCascade(this.stage.id, step.id, true);
-    if (toClose) { this.linkClickedEvent.emit(); }
   }
 
   redirectRoute(link: string, fragment?: string) {
+    this.linkClickedEvent.emit();
     setTimeout(() => this.router.navigate([link], { fragment: fragment }), 1000);
   }
 

@@ -6,7 +6,7 @@ import { UniversityService } from '../../../services/university/university.servi
 import { Mail } from '../../../models/Mail';
 import { Observable } from 'rxjs';
 import { FormValidators } from './form.validators';
-import {animate, style, transition, trigger} from '@angular/animations';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-contact-form',
@@ -75,12 +75,11 @@ export class ContactFormComponent implements OnInit {
       object: this.object.value,
       message: this.message.value
     };
-    console.log(category);
     this.schoolService.getSupervisorEmailByCategory(category)
       .subscribe(ss => {
         mailToSend.emailReceiver = ss;
         mailToSend.emailSender = this.email.value;
-        this.schoolService.sendEmail(mailToSend).subscribe( () => {
+        this.schoolService.sendEmail(mailToSend).subscribe(() => {
           this.active = true;
           setTimeout(() => {
             this.active = false;
@@ -88,7 +87,7 @@ export class ContactFormComponent implements OnInit {
           this.contactForm.reset();
           this.categorySwitch = this.categoryList[0];
           this.category.setValue(this.categoryList[0]);
-          });
+        });
       });
   }
 

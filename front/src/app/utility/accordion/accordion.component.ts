@@ -51,10 +51,7 @@ export class AccordionComponent implements OnInit {
   chevron: string[] = ['fa fa-fw fa-chevron-down', 'fa fa-fw fa-chevron-right'];
   public display = false;
 
-  ngOnInit() {
-    console.log(this.formatedPastContracts);
-
-  }
+  ngOnInit() { }
 
   displayContent() {
     this.display = !this.display;
