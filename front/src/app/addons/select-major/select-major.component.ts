@@ -1,4 +1,8 @@
+import { Major } from './../../../models/Major';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { UniversityService } from 'src/services/university/university.service';
 
 @Component({
   selector: 'app-select-major',
@@ -7,9 +11,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectMajorComponent implements OnInit {
 
-  constructor() { }
+  public major$: Observable<Major[]>;
+  public selectedMajor: Major = { id: -1, title: '', };
+
+  constructor(private router: Router,
+    private universityService: UniversityService) { }
 
   ngOnInit() {
+    this.major$ = this.universityService.getMajors();
+  }
+
+  select(m: Major) {
+    this.selectedMajor = m;
+  }
+
+  go() {
+    this.closePopup().then(() => this.router.navigate(['/school', this.selectedMajor.shorthand]));
+  }
+
+  cancel() {
+    this.closePopup();
+  }
+
+  closePopup() {
+    return this.router.navigate([{ outlets: { addon: null } }]);
   }
 
 }

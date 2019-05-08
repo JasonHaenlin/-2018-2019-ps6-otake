@@ -1,27 +1,24 @@
-import { ContactModule } from './contacts/contact.module';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoaderService } from 'src/app/utility/loader/loader.service';
 import { ApplicationHttpClient, applicationHttpClientCreator } from 'src/core/http-client';
+import { SearchUniversityComponent } from './addons/search-university/search-university.component';
+import { SelectMajorComponent } from './addons/select-major/select-major.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ContactModule } from './contacts/contact.module';
+import { FinancialAidPageComponent } from './financial-aid-page/financial-aid-page.component';
 import { FlowMonitorModule } from './flow-monitor/flow.module';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { UtilityModule } from './utility/utility.module';
-import { ScrollingModule } from '@angular/cdk/scrolling';
-import { FinancialAidPageComponent } from './financial-aid-page/financial-aid-page.component';
 import { TestimonialCardComponent } from './testimonial/testimonial-card/testimonial-card.component';
-import { TestimonialListComponent } from './testimonial/testimonial-list/testimonial-list.component';
-import { TestimonialPageComponent } from './testimonial/testimonial-page/testimonial-page.component';
 import { TestimonialModule } from './testimonial/testimonial.module';
-import { SearchUniversityComponent } from './addons/search-university/search-university.component';
-import { ChooseSpecialityComponent } from './addons/choose-speciality/choose-speciality.component';
-import { SelectMajorComponent } from './addons/select-major/select-major.component';
+import { UtilityModule } from './utility/utility.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +28,6 @@ import { SelectMajorComponent } from './addons/select-major/select-major.compone
     FooterComponent,
     FinancialAidPageComponent,
     SearchUniversityComponent,
-    ChooseSpecialityComponent,
     SelectMajorComponent,
   ],
   imports: [

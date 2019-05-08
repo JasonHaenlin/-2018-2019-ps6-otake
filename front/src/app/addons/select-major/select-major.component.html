@@ -1,7 +1,22 @@
 <div class="modal modal-open">
   <div class="modal-box">
     <div class="addon">
-      select-major works!
+      <div class="addon-header">
+        <strong>title</strong>
+        <span class="fas fa-times close-btn" (click)="cancel()"></span>
+      </div>
+      <div class="addon-content">
+        <div class="list-container">
+          <div [ngClass]="{'selected': m.id === selectedMajor.id}"
+            *ngFor="let m of (major$ | async)" (click)="select(m)">
+            <span [ngClass]="m.icon" class="space"></span>{{m.title}}
+          </div>
+        </div>
+      </div>
+      <div class="addon-footer">
+        <div class="selected-obj">Sélectionné : <strong>{{selectedMajor.title}}</strong></div>
+        <span class="far fa-check-circle fa-2x save-btn" (click)="go()"></span>
+      </div>
     </div>
   </div>
   <div class="modal-background"></div>
