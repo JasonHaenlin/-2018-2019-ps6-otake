@@ -11,16 +11,11 @@
     </span>
 
     <div *ngFor="let d of stage.description">
-      <label for="text" class="container">
-        <input type="checkbox" [checked]="d.done"
-          (change)="onChangeStep(d.id, $event.target.checked)">
+      <label class="container text">
+        {{d.text}}
+        <input type="checkbox" [checked]="d.done" (change)="onChangeStep(d, $event.target.checked)">
         <span class="checkmark"></span>
-
-        <div name="text" class="text" (click)="updateCheckbox(d)">
-          {{d.text}}
-        </div>
       </label>
-
     </div>
   </div>
   <div class="trace-arrow">

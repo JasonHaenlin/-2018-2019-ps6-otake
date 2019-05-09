@@ -19,7 +19,7 @@ export const STEP_LIST: Step[] = [
     addon: 'search-university',
     description: [
       { id: 0, text: 'Vérifier le coût de la vie d\'une université dans les détails de celle-ci', },
-      { id: 0, text: 'Vous pouvez aussi vérifier les transports en communs et les logements', },
+      { id: 1, text: 'Vous pouvez aussi vérifier les transports en communs et les logements', },
     ]
   },
   {

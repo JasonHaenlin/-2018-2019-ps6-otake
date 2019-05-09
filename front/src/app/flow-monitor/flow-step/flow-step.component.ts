@@ -44,15 +44,15 @@ export class FlowStepComponent implements OnInit, OnDestroy {
     this.refresh();
   }
 
-  onChangeStep(id: number, isChecked: boolean) {
-    isChecked ? this.nbOfChecked++ : this.nbOfChecked--;
-    this.flowService.writeStep(this.stage.id, id, isChecked);
-    this.stage.description[id].done = isChecked;
-    this.checkStepValidation();
-  }
-
-  updateCheckbox(step: TextDetail) {
-    this.flowService.writeStepInCascade(this.stage.id, step.id, true);
+  onChangeStep(step: TextDetail, isChecked: boolean) {
+    if (!isChecked) {
+      this.nbOfChecked--;
+      this.flowService.writeStep(this.stage.id, step.id, isChecked);
+      this.stage.description[step.id].done = isChecked;
+      this.checkStepValidation();
+    } else {
+      this.flowService.writeStepInCascade(this.stage.id, step.id, isChecked);
+    }
   }
 
   redirectRoute(link: string, fragment?: string) {
