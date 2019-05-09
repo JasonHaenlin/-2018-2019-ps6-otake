@@ -2,7 +2,8 @@
   "name": "projet-semestre-6-otake-back",
   "version": "1.0.0",
   "description": "Web project using Nodejs for backend",
-  "main": "index.js",
+  "main": "server.js",
+  "private": true,
   "scripts": {
     "test": "mocha tests/ -R spec --recursive --exit",
     "lint": "./node_modules/.bin/eslint -c .eslintrc.js app/",
@@ -35,18 +36,9 @@
       "email": "jason.haenlin@etu.univ-cotedazur.fr"
     }
   ],
-  "keywords": [
-    "nodejs",
-    "mocha",
-    "postgresql",
-    "jenkins",
-    "ps6",
-    "polytech",
-    "Exchange Student"
-  ],
   "license": "ISC",
   "pre-commit": [
-    "eslint"
+    "lint"
   ],
   "devDependencies": {
     "babel-eslint": "^10.0.1",
@@ -58,6 +50,7 @@
     "mocha": "^5.2.0",
     "nodemon": "^1.18.10",
     "nyc": "^14.0.0",
+    "pre-commit": "^1.2.2",
     "sonarqube-scanner": "^2.4.0",
     "sqlite3": "^4.0.6",
     "supertest": "^3.4.2"

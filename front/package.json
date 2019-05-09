@@ -1,6 +1,8 @@
 {
   "name": "projet-semestre-6-otake-front",
   "version": "1.0.0",
+  "description": "Web project using Angular for frontend",
+  "private": true,
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
@@ -30,22 +32,11 @@
       "email": "jason.haenlin@etu.univ-cotedazur.fr"
     }
   ],
-  "keywords": [
-    "angular 7",
-    "karma",
-    "jenkins",
-    "gulp",
-    "e2e",
-    "ps6",
-    "polytech",
-    "Exchange Student"
-  ],
   "precommit": {
     "run": [
       "lint"
     ]
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^7.2.13",
     "@angular/cdk": "^7.3.7",
@@ -81,6 +72,7 @@
     "karma-coverage-istanbul-reporter": "^2.0.5",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "pre-commit": "^1.2.2",
     "protractor": "~5.4.0",
     "sonarqube-scanner": "^2.4.0",
     "ts-node": "~7.0.0",
