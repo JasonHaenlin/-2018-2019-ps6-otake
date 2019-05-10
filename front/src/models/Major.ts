@@ -3,4 +3,5 @@ export interface Major {
   title?: string;
   shorthand?: string;
   icon?: string;
+  header_img?: string;
 }

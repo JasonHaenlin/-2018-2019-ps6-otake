@@ -14,7 +14,8 @@ class Major extends Model {
         id: { type: 'integer' },
         title: { type: 'string', minLength: 5, maxLength: 50 },
         shorthand: { type: 'string', minLength: 1, maxLength: 10 },
-        icon: { type: 'string', minLength: 5, maxLength: 100 }
+        icon: { type: 'string', minLength: 5, maxLength: 100 },
+        header_img: { type: 'string', minLength: 5, maxLength: 1024 }
       }
     };
   }
