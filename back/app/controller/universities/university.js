@@ -36,7 +36,7 @@ module.exports = {
           queryBuilder.whereIn('major.shorthand', [major, 'ALL']);
         }
         if (search) {
-          queryBuilder.where('u.name', 'LIKE', '%' + search + '%');
+          queryBuilder.whereRaw('LOWER(u.name) LIKE LOWER(?)', [`%${search}%`]);
         }
       })
       .eager('[major, language]')
@@ -72,7 +72,7 @@ module.exports = {
     return ExchangeUniversity.query()
       .alias('u')
       .select('u.id', 'u.name')
-      .where('u.name', 'LIKE', '%' + terms + '%');
+      .whereRaw('LOWER(u.name) LIKE LOWER(?)', [`%${terms}%`]);
   },
 
   getUniversityDetails(id) {
