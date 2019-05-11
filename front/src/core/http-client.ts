@@ -28,7 +28,9 @@ export class ApplicationHttpClient {
     operation: string = '',
     backupValue: any = null,
     options: Object = httpOptionsBase): Observable<T> {
+
     this.activateLoader();
+
     return this.http.get<T>(this.api + endPoint, options)
       .pipe(
         this.processPipe<T>(operation, backupValue),
@@ -91,7 +93,9 @@ export class ApplicationHttpClient {
   private activateLoader = () => this.loader.show();
   private deactivateLoader = () => this.loader.hide();
 
-  private processPipe = <T>(operation: string, backupValue?: T): UnaryFunction<Observable<{}>, Observable<any>> =>
+  private processPipe = <T>(operation: string, backupValue?: T)
+    : UnaryFunction<Observable<{}>, Observable<any>> =>
+
     pipe(
       timeout(requestTimeout),
       shareReplay(1),

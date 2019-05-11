@@ -2,7 +2,7 @@ export interface Step {
   id: number;
   label: string;
   link?: Link;
-  addon?: string;
+  outlet?: string;
   description: TextDetail[];
 }
 

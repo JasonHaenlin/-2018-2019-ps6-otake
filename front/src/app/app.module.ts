@@ -5,8 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoaderService } from 'src/app/utility/loader/loader.service';
 import { ApplicationHttpClient, applicationHttpClientCreator } from 'src/core/http-client';
-import { SearchUniversityComponent } from './addons/search-university/search-university.component';
-import { SelectMajorComponent } from './addons/select-major/select-major.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactModule } from './contacts/contact.module';
@@ -19,6 +17,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { TestimonialCardComponent } from './testimonial/testimonial-card/testimonial-card.component';
 import { TestimonialModule } from './testimonial/testimonial.module';
 import { UtilityModule } from './utility/utility.module';
+import { SearchUniversityComponent } from './outlets/search-university/search-university.component';
+import { SelectMajorComponent } from './outlets/select-major/select-major.component';
 @NgModule({
   declarations: [
     AppComponent,

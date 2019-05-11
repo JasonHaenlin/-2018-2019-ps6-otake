@@ -1,8 +1,8 @@
-import { Major } from './../../../models/Major';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { UniversityService } from 'src/services/university/university.service';
+import { Major } from '../../../models/Major';
 
 @Component({
   selector: 'app-select-major',
@@ -19,6 +19,7 @@ export class SelectMajorComponent implements OnInit {
 
   ngOnInit() {
     this.major$ = this.universityService.getMajors();
+
   }
 
   select(m: Major) {
@@ -34,7 +35,7 @@ export class SelectMajorComponent implements OnInit {
   }
 
   closePopup() {
-    return this.router.navigate([{ outlets: { addon: null } }]);
+    return this.router.navigate([{ outlets: { popup: null } }]);
   }
 
 }

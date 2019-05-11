@@ -1,26 +1,25 @@
-import { SearchUniversityComponent } from './addons/search-university/search-university.component';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContactPageComponent } from './contacts/contact-page/contact-page.component';
 import { FinancialAidPageComponent } from './financial-aid-page/financial-aid-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { SearchUniversityComponent } from './outlets/search-university/search-university.component';
+import { SelectMajorComponent } from './outlets/select-major/select-major.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TestimonialPageComponent } from './testimonial/testimonial-page/testimonial-page.component';
-import { SearchBoxComponent } from './utility/search-box/search-box.component';
-import { SelectMajorComponent } from './addons/select-major/select-major.component';
 
 
 const routes: Routes = [
   {
     path: 'search-university',
     component: SearchUniversityComponent,
-    outlet: 'addon'
+    outlet: 'popup'
   },
   {
     path: 'select-major',
     component: SelectMajorComponent,
-    outlet: 'addon'
+    outlet: 'popup'
   },
   { path: 'home', component: HomePageComponent },
   {

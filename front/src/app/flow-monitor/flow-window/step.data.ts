@@ -1,7 +1,4 @@
-import { environment } from 'src/environments/environment';
 import { Step } from './../flow-step/step';
-
-const baseUrl = environment.baseUrl;
 
 export const STEP_LIST: Step[] = [
   {
@@ -16,7 +13,7 @@ export const STEP_LIST: Step[] = [
   {
     id: 2,
     label: 'Estimer le coût de la vie',
-    addon: 'search-university',
+    outlet: 'search-university',
     description: [
       { id: 0, text: 'Vérifier le coût de la vie d\'une université dans les détails de celle-ci', },
       { id: 1, text: 'Vous pouvez aussi vérifier les transports en communs et les logements', },
@@ -25,7 +22,7 @@ export const STEP_LIST: Step[] = [
   {
     id: 3,
     label: 'Choisir ses cours',
-    addon: 'select-major',
+    outlet: 'select-major',
     description: [
       { id: 0, text: 'Aller dans "Notre école" par rapport à votre cursus', },
       { id: 1, text: 'Chercher une "Spécialité" qui vous plait' },

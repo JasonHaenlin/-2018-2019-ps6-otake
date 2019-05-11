@@ -37,7 +37,7 @@ export class SearchUniversityComponent implements OnInit {
   }
 
   closePopup() {
-    return this.router.navigate([{ outlets: { addon: null } }]);
+    return this.router.navigate([{ outlets: { popup: null } }]);
   }
 
 }
