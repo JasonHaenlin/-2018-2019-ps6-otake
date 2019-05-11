@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { UniversityService } from '../../../services/university/university.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { GeographicalArea } from '../../../models/GeographicalArea';
 import { Language } from '../../../models/Language';
 import { Major } from '../../../models/Major';
-import { Router, ActivatedRoute } from '@angular/router';
+import { UniversityService } from '../../../services/university/university.service';
 
 const mainRouteUrl = '/exchange-universities';
 @Component({
@@ -37,7 +37,7 @@ export class UniversityFilterComponent implements OnInit {
 
   private updateArea() {
     const area = this.route.snapshot.queryParamMap.get('destination');
-    if (area) { this.selectedArea = area; }
+    this.selectedArea = area;
   }
 
   updateUrlByArea(selected: string) {
