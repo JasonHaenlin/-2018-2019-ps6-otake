@@ -7,7 +7,8 @@
       <a class="link" (click)="redirectRoute(stage?.link?.router, stage?.link.fragment)"
         *ngIf="stage?.link?.router"><em class="fas fas fa-share-square"></em></a>
       <a class="link" [routerLink]="[{ outlets: { popup: [stage?.outlet] } }]"
-        *ngIf="stage?.outlet"><em class="fas fas fa-share-square"></em></a>
+        queryParamsHandling="merge" *ngIf="stage?.outlet"><em
+          class="fas fas fa-share-square"></em></a>
     </span>
 
     <div *ngFor="let d of stage.description">

@@ -37,7 +37,7 @@ export class SearchUniversityComponent implements OnInit {
   }
 
   closePopup() {
-    return this.router.navigate([{ outlets: { popup: null } }]);
+    return this.router.navigate([{ outlets: { popup: null } }], { queryParams: {}, queryParamsHandling: 'merge' });
   }
 
 }
