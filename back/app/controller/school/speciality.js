@@ -11,7 +11,7 @@ module.exports = {
       .alias('s')
       .joinRelation('major')
       .where({ 'major.shorthand': major })
-      .select('s.name', 's.shorthand', 's.small_picture', 's.topics');
+      .select('s.name', 's.shorthand', 's.small_picture', 's.topics_card');
   },
 
   getSpeciality(speciality) {
