@@ -35,8 +35,4 @@ export class SpecialityDetailsComponent implements OnInit {
     });
   }
 
-  toArray(topics: string) {
-    return topics.split(',');
-  }
-
 }

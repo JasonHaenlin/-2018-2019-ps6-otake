@@ -4,9 +4,11 @@ span {
   text-align: center;
   background-color: $blue4;
   border-radius: 50%;
-  width: 1.5em;
-  height: 1.5em;
+  width: 1.6em;
+  height: 1.6em;
 }
+
+.fa-camera-retro { line-height: inherit;}
 
 .sectionList {
   display: inline-block;

@@ -1,20 +1,24 @@
 <div class="grid-container">
   <main>
-    <section>
+    <section id="presentation">
       <h2 class="content-title">Présentation</h2>
       <hr>
       <div class="content-paragraph">{{ speciality.description }}</div>
     </section>
 
-    <section>
+    <section id="thematic">
       <h2 class="content-title">Thématiques des cours</h2>
       <hr>
-      <div *ngFor="let course of toArray(speciality.topics)">
-        {{ course }}
-      </div>
+      <div class="content-paragraph">{{ speciality.topics_details }}</div>
     </section>
 
-    <section>
+    <section id="career">
+      <h2 class="content-title">Carrières</h2>
+      <hr>
+      <div class="content-paragraph">{{ speciality.career }}</div>
+    </section>
+
+    <section id="old_contracts">
       <h2 class="content-title">Anciens contrats</h2>
       <hr>
       <div *ngFor="let contracts_area of (acordionOfContracts$ | async)">

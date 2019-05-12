@@ -2,7 +2,7 @@
   <div class="section" *ngFor="let s of sectionList">
     <a class="link" [routerLink]="['./']" fragment="{{s.id}}">
       <div>
-        <span [ngClass]="s.icon"></span>
+        <span class="fa-camera-retro" [ngClass]="s.icon"></span>
         <a class="text">&nbsp;{{ s.name }}</a>
       </div>
     </a>

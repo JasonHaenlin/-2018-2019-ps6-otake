@@ -20,6 +20,8 @@ export const SPECIALITY_MOCKED_IMAFA: Speciality[] = [
       'a conduit l\'Université de Nice Sophia Antipolis et l\'INRIA à s\'associer pour concevoir' +
       'et développer un programme sans équivalent en Europe.',
 // tslint:disable-next-line: max-line-length
-    topics: 'Unix/langage C, Programmation objets en langage C++, Programmation objets en langage Java, Bases de données relationnelles, Modèles mathématiques discrets pour la finance, Algèbre linéaire, Rappels d\’analyse, Introduction aux équations aux dérivées partielles'
+    topics_details: 'Unix/langage C, Programmation objets en langage C++, Programmation objets en langage Java, Bases de données relationnelles, Modèles mathématiques discrets pour la finance, Algèbre linéaire, Rappels d\’analyse, Introduction aux équations aux dérivées partielles',
+    topics_card: '',
+    career: ''
   }
 ];
