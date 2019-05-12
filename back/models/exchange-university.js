@@ -319,37 +319,54 @@ module.exports = new BaseModel('exchange_university', t => {
         'qui compte des étudiants de premier cycle et des cycles supérieurs et du personnel universitaire dans les ' +
         'domaines des affaires, des médias créatifs, des sciences de l’information, de l’énergie et de l’environnem' +
         'ent, de l’ingénierie, des sciences humaines et sociales, du droit, des sciences, de la médecine vétérinair' +
-        'e et des sciences de la vie.\nNotre programme met l\'accent sur l\'innovation et la créativité, et ce prin' +
+        'e et des sciences de la vie.<br><br>Notre programme met l\'accent sur l\'innovation et la créativité, et ce prin' +
         'cipe sous-tend tous les aspects de la formation professionnelle et de la recherche axée sur les problèmes ' +
         'de l\'Université. Soutenu par de nouveaux espaces et installations d\'apprentissage dans de nouveaux bâtim' +
-        'ents, le programme d\'études incarne le plan stratégique de CityU pour une nouvelle ère de croissance.\nCi' +
+        'ents, le programme d\'études incarne le plan stratégique de CityU pour une nouvelle ère de croissance.<br><br>Ci' +
         'tyU s’est imposé comme l’une des universités les plus innovantes d’Asie, pionnière dans la recherche dans ' +
         'divers domaines particulièrement pertinents pour des problèmes urgents. Le succès de ses programmes de rec' +
         'herche se reflète à la fois dans le montant du financement reçu, le nombre de projets financés et la quali' +
-        'té des résultats de la recherche.\nLa proximité de CityU avec la Chine continentale et ses liens étroits, ' +
+        'té des résultats de la recherche.<br><br>La proximité de CityU avec la Chine continentale et ses liens étroits, ' +
         'ainsi que ses partenariats et ses perspectives internationales, font de l\'Université un lieu idéal pour f' +
         'ournir un environnement d\'apprentissage et de recherche dynamique aux étudiants et aux professeurs du mon' +
         'de entier. La stature et les relations internationales de CityU continuent de croître.</p><br>' +
-        '<a href="https://banweb.cityu.edu.hk/pls/PROD/hwscrshp_cityu.P_SelTerm" target="_blank">Sélectionnez vos c' +
-        'ours !</a><br>' +
-        '<a href="https://banweb.cityu.edu.hk/pls/PROD/hwiecrselis_cityu.P_Main" target="_blank">Liste des cours di' +
-        'sponibles</a><br>' +
-        '<a href="https://ices.fr/media/ri_grille_conversion_ects__003726500_1650_09092015.pdf" target="_blank">Equ' +
-        'ivalences des Crédits</a>' +
-        '<p>1 credits chinois = 2 ECTS</p>',
-    admission_text: '<p>Les futurs étudiants en échange sont d\'abord sélectionnés par leur établissement d\'origine avant l\'appr' +
+        '<div class="presentation-course-separator">À propos des cours</div>'+
+        '<ul>'+
+        '<li><a class="link-exchange-universities" href="https://banweb.cityu.edu.hk/pls/PROD/hwscrshp_cityu.P_SelTerm" '+
+        'target="_blank">Choisir ses cours</a></li>'+
+        '<li><a class="link-exchange-universities" href="https://banweb.cityu.edu.hk/pls/PROD/hwiecrselis_cityu.P_Main" '+
+        'target="_blank">Liste des cours disponibles</a></li>' +
+        '<li><a class="link-exchange-universities" href="https://ices.fr/media/ri_grille_conversion_ects__003726500_1650'+
+        '_09092015.pdf" target="_blank">Equivalences des Crédits</a> (n.b. 1 crédits chinois = 2 ECTS)</li>'+
+        '</ul>',
+    admission_text: '<div>Les futurs étudiants en échange sont d\'abord sélectionnés par leur établissement d\'origine avant l\'appr' +
         'obation de leur étude d\'échange par les départements universitaires compétents de CityU. Les candidats reten' +
-        'us devront:</p><br><ul><li><p>satisfaire aux exigences académiques minimales de CityU et être en règle avec l' +
+        'us devront:</div><ul><li><p>satisfaire aux exigences académiques minimales de CityU et être en règle avec l' +
         'eur établissement d\'origine</p></li><li><p>obtenir un score TOEFL ≥ 79 (sur le test basé sur Internet), un s' +
         'core global IELTS ≥ 6,5, la bande de test d\'anglais du Collège 6 du Chinese Mainland (score total ≥ 450) ou ' +
         'détenir une qualification équivalente en anglais si l\'anglais n\'est pas la langue d\'enseignement leurs ins' +
         'titutions d\'origine(Les étudiants qui souhaitent s\'inscrire à des cours de droit doivent satisfaire à l\'ex' +
         'igence minimale de 3,0 de la CGPA et à l\'exigence d\'anglais de TOEFL 100 (test sur Internet) ou IELTS 7. Le' +
-        's scores TOEFL et IELTS doivent être obtenus dans les 3 ans précédant l\'admission. )</p></li></ul><a href="h' +
-        'ttps://www.admo.cityu.edu.hk/exchange_visiting/exchange/info/" target="_blank">plus d\'informations</a>',
-    student_life_text: '<a href="http://www.cityu.edu.hk/geo/ies_abouthk.htm" target="_blank">S\'informer sur la vie étudiante</a>',
-    cost_of_living_text: '<a href="https://www.cityu.edu.hk/geo/ies_costlivenfin.htm" taget="_blank">S\'informer sur le côut de la' +
-        ' vie</a>'
+        's scores TOEFL et IELTS doivent être obtenus dans les 3 ans précédant l\'admission. )</p></li></ul>'+
+        '<a class="link-exchange-universities" href="https://www.admo.cityu.edu.hk/exchange_visiting/exchange/info/"'+
+        ' target="_blank" >plus d\'informations</a>',
+    student_life_text: 'Située à la pointe sud-est de la Chine continentale et au cœur de l’Asie, Hong Kong jouit d’un' +
+        'e importance économique et stratégique qui dépasse sa taille géographique pour une superficie de seulement 1 ' +
+        '105 kilomètres carrés. Hong Kong, qui compte environ 7,34 millions d’habitants, est une ville densément peupl' +
+        'ée, qui comprend l’île de Hong Kong, la péninsule de Kowloon et les nouveaux territoires. La densité de popul' +
+        'ation moyenne était de 6 780 habitants au kilomètre carré (en 2016). Néanmoins, Hong Kong est également connu' +
+        'e pour ses parcs et ses greens magnifiques et bien gérés, situés principalement dans les nouveaux territoires' +
+        ' et dans 262 îles périphériques. L\'anglais est le moyen d\'enseignement dans la plupart des universités, y c' +
+        'ompris CityU, mais le chinois et l\'anglais sont les langues officielles de Hong Kong. L\'anglais est largeme' +
+        'nt utilisé au gouvernement, ainsi que dans les secteurs juridique, professionnel et commercial. Les professio' +
+        'nnels bilingues, voire trilingues, bien éduqués et compétents, parlent anglais, cantonais et putonghua.'+
+        '<br><br><a class="link-exchange-universities" href="http://www.cityu.edu.hk/geo/ies_abouthk.htm" target='+
+        '"_blank">plus d\'informations</a>',
+    cost_of_living_text: 'Le coût de la vie moyen à Hong Kong (hors frais de scolarité et d’hébergement) est estimé à ' +
+        'environ 36 000 HKD par étudiant pendant 9 mois (2 semestres) d’études pour payer les repas, le transport, les' +
+        ' frais d’études tels que livres et papeterie, autres objets personnels, etc. Ce montant varie en fonction des' +
+        ' choix de vie. <br><br><a class="link-exchange-universities" href="https://www.cityu.edu.hk/geo/ies_costlivenfin.htm" '+
+        'taget="_blank">plus d\'informations</a>'
   },
   {
     id: 20,
