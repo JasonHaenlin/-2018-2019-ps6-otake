@@ -6,6 +6,9 @@
   height: 7em;
   width: 0.3em;
   margin-left: -6px;
+  position: relative;
+  z-index: -1;
+  top: -24px;
 }
 
 .grid-container {
