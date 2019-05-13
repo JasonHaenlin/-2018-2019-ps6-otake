@@ -1,5 +1,5 @@
 <div class="filter">
-  <span class="title">Destination:</span>
+  <span class="title">Destination</span>
   <div class="area">
     <div class="element" *ngFor="let area of (areaList$ | async)"
       (click)="updateUrlByArea(area.shorthand)"
@@ -10,7 +10,7 @@
       </div>
     </div>
   </div>
-  <span class="title">Département:</span>
+  <span class="title">Département</span>
   <div class="major">
     <div class="element" *ngFor="let major of (majorList$ | async)"
       (click)="updateUrlByMajor(major.shorthand)"
@@ -21,7 +21,7 @@
       </div>
     </div>
   </div>
-  <span class="title">Language Utilisé:</span>
+  <span class="title">Language Utilisé</span>
   <div class="language">
     <div class="element" *ngFor="let language of (languageList$ | async)"
       (click)="updateUrlByLanguage(language.language)"
