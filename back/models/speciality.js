@@ -54,7 +54,7 @@ module.exports = new BaseModel('speciality', t => {
         ' de manière disruptive, remet en cause le concept même de système d’information ou d\'ordinateur : d’une ' +
         'activité de traitement exclusivement centrée sur l’utilisateur jusqu\'à la fin du xxe siècle, l\'intelligence ' +
         'ambiante vise à régir les interactions entre objets communicants et humains2.',
-    topics_card: ' elle ouvre à presque tous les objets de la vie courante, la capacité à déclencher un échange spontané' +
+    topics_card: 'Elle ouvre à presque tous les objets de la vie courante, la capacité à déclencher un échange spontané' +
         ' d\'informations, sans interaction avec leur utilisateur3.',
     topics_details: '',
     career: ''
@@ -96,12 +96,12 @@ module.exports = new BaseModel('speciality', t => {
         'Antipolis et l\'INRIA à s\'associer pour concevoir et développer un programme sans équivalent en Europe. ',
     topics_card: 'Mathématiques appliquées à la finance, Valorisation des données, Programmation parallèle',
     topics_details: 'Le programme des enseignements s\'articule naturellement autour de trois axes : ' +
-      'informatique, mathématiques et finance complété par des matières associées destinées à favoriser ' +
-      'l\'insertion professionnelle des étudiants de la filière IMAFA.\nLes cours sont en majorité des cours ' +
-      'communs au programme de la filière IMAFA de la cinquième année des ingénieurs en "Sciences Informatiques"' +
-      ' ou « Mathématiques Appliquées et Modélisation » de Polytech\'Nice-Sophia.\nUn projet "fil rouge" commun ' +
-      'sert de mise en oeuvre pratique aux cours d\'informatique, de mathématique et de finance. Tous les travaux ' +
-      'pratiques font référence à ce projet fédérateur. ',
+        'informatique, mathématiques et finance complété par des matières associées destinées à favoriser ' +
+        'l\'insertion professionnelle des étudiants de la filière IMAFA.\nLes cours sont en majorité des cours ' +
+        'communs au programme de la filière IMAFA de la cinquième année des ingénieurs en "Sciences Informatiques"' +
+        ' ou « Mathématiques Appliquées et Modélisation » de Polytech\'Nice-Sophia.\nUn projet "fil rouge" commun ' +
+        'sert de mise en oeuvre pratique aux cours d\'informatique, de mathématique et de finance. Tous les travaux ' +
+        'pratiques font référence à ce projet fédérateur. ',
     career: 'Le Master IMAFA prépare des ingénieurs informaticiens à l\'exercice de responsabilités ' +
         'très rapidement après leur sortie de l\'école. Les étudiants sont souvent embauchés avant ' +
         'même la fin de leur formation. Les postes occupés par les anciens élèves sont de plusieurs ' +

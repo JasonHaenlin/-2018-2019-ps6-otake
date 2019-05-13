@@ -19,7 +19,7 @@ module.exports = new BaseModel('deadline', t => {
   {
     id: 2,
     opening_year: 2018, closing_year: 2019,
-    date: '2019-05-03',
+    date: '2019-07-03',
     title: '2ème Session',
     details: 'Deadline de rendu de dossier PNS et UNS uniquement pour le 2ème semestre'
   }
