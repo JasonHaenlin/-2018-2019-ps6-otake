@@ -9,7 +9,7 @@ module.exports = new BaseModel('speciality', t => {
   t.string('description', 1000);
   t.string('topics_card', 255);
   t.string('topics_details', 2048);
-  t.string('career', 1024);
+  t.string('career', 2048);
 },
 [
   {

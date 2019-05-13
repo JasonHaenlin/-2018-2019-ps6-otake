@@ -17,7 +17,7 @@ class Speciality extends Model {
         description: { typ: 'string', minLength: 40, maxLength: 1000 },
         topics_card: { type: 'string', minLength: 2, maxLength: 255 },
         topics_details: { type: 'string', minLength: 10, maxLength: 2048 },
-        career: { type: 'string', minLength: 10, maxLength: 1024 }
+        career: { type: 'string', minLength: 10, maxLength: 2048 }
       }
     };
   }
