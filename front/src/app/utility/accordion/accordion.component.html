@@ -1,11 +1,11 @@
 <div class="accordion" (click)="displayContent()">
   {{ formatedPastContracts.area }}
   <span class="chevron">
-    <span class="{{ chevron[display ? 0 : 1]}}"></span>
+    <span [ngClass]="display ? 'fa fa-fw fa-chevron-down' : 'fa fa-fw fa-chevron-right'"></span>
   </span>
 </div>
 
-<div [@openClosed]="display ? 'open' : 'closed'" class="expandable">
+<div [@openClose]="display ? 'open' : 'close'" class="expandable">
   <div class="country" *ngFor="let c of formatedPastContracts.country">
     {{ c.name }}
     <hr>

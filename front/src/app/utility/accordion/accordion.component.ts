@@ -5,14 +5,14 @@ import { trigger, state, style, transition, animate, group } from '@angular/anim
 @Component({
   selector: 'app-accordion',
   animations: [
-    trigger('openClosed', [
+    trigger('openClose', [
       state('open', style({
         'height': '*', 'opacity': '1', 'visibility': 'visible'
       })),
-      state('closed', style({
+      state('close', style({
         'height': '0', 'opacity': '0', 'visibility': 'hidden'
       })),
-      transition('open => closed', [group([
+      transition('open => close', [group([
         animate('400ms ease-in-out', style({
           'opacity': '0'
         })),
@@ -24,7 +24,7 @@ import { trigger, state, style, transition, animate, group } from '@angular/anim
         }))
       ]
       )]),
-      transition('closed => open', [group([
+      transition('close => open', [group([
         animate('1ms ease-in-out', style({
           'visibility': 'visible'
         })),
@@ -47,8 +47,6 @@ export class AccordionComponent implements OnInit {
 
   @Input()
   formatedPastContracts: ContractArea;
-
-  chevron: string[] = ['fa fa-fw fa-chevron-down', 'fa fa-fw fa-chevron-right'];
   public display = false;
 
   ngOnInit() { }
