@@ -312,7 +312,7 @@ module.exports = new BaseModel('exchange_university', t => {
     type_of_file: 'Dossier Asie',
     small_picture: 'https://otakedev.com/share/universities/small/20.jpg',
     big_picture: 'https://www.cb.cityu.edu.hk/mkt/images/ban_main3.jpg',
-    presentation_text: '<p> En mettant l\'accent sur la formation professionnelle et la recherche, la Ville du Canada fait sortir ' +
+    presentation_text: '<p> En mettant l\'accent sur la formation professionnelle et la recherche, la CityU fait sortir ' +
         'des diplômés avec la capacité d\'anticiper et d\'accélérer les changements dans un monde globalisé en évol' +
         'ution rapide. Au cours des dernières années, CityU a été hautement classé dans le monde et figure actuelle' +
         'ment dans le top 10 en Asie et dans le top 100 dans le monde. C’est un établissement en pleine croissance ' +
