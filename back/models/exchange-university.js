@@ -366,7 +366,7 @@ module.exports = new BaseModel('exchange_university', t => {
         'environ 36 000 HKD par étudiant pendant 9 mois (2 semestres) d’études pour payer les repas, le transport, les' +
         ' frais d’études tels que livres et papeterie, autres objets personnels, etc. Ce montant varie en fonction des' +
         ' choix de vie. <br><br><a class="link-exchange-universities" href="https://www.cityu.edu.hk/geo/ies_costlivenfin.htm" '+
-        'taget="_blank">plus d\'informations</a>'
+        'target="_blank">plus d\'informations</a>'
   },
   {
     id: 20,

@@ -1,6 +1,6 @@
 export enum UNIVERSITY_SECTIONS {
   presentation = 'Présentation',
-  admission = 'Admission/contrat',
+  admission = 'Admission',
   student = 'Vie étudiante',
   cost = 'Coût de la vie',
   testimonial = 'Avis'
