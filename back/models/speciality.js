@@ -7,7 +7,7 @@ module.exports = new BaseModel('speciality', t => {
   t.string('small_picture');
   t.string('big_picture');
   t.string('description', 1000);
-  t.string('topics_card', 50);
+  t.string('topics_card', 150);
   t.string('topics_details', 2048);
   t.string('career', 1024);
 },
