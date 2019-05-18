@@ -14,6 +14,7 @@ const deadline = require('./deadline');
 const past_contract = require('./past-contract');
 const supervisor = require('./supervisor');
 const financialAid = require('./financial-aid');
+const user = require('./user');
 
 /**
  * All the table are sort here
@@ -37,5 +38,6 @@ module.exports = [
   deadline,
   past_contract,
   supervisor,
-  financialAid
+  financialAid,
+  user
 ];
