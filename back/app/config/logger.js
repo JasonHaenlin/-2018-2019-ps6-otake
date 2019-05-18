@@ -6,12 +6,11 @@ const logger = createLogger({
       format: 'YYYY-MM-DD HH:mm:ss'
     }),
     format.errors({ stack: true }),
-    format.splat(),
-    format.printf(info => `${info.timestamp} ${info.level}: ${info.message}`)
+    format.json(),
   ),
   transports: [
-    new transports.File({ filename: './log/error.log', level: 'error', maxsize: 2000 }),
-    new transports.File({ filename: './log/combined.log', maxsize: 2000 })
+    new transports.File({ filename: './log/error.log', level: 'error', maxsize: 50000 }),
+    new transports.File({ filename: './log/combined.log', maxsize: 50000 })
   ]
 });
 
