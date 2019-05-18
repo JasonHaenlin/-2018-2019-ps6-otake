@@ -19,4 +19,12 @@ describe('Testing bcrypt for first use', () => {
       assert.fail(error);
     }
   });
+  it('should have return an error from the comparison', async () => {
+    try {
+      await crypt.decipher(hash, 'other');
+      assert.fail();
+    } catch (error) {
+      console.log('\tthrow error');
+    }
+  });
 });

@@ -19,6 +19,8 @@ app.use('/status', route.main);
 app.use('/school', route.school);
 // universities url
 app.use('/universities', route.universities);
+// admin url
+app.use('/admin', route.admin);
 
 // catch 404 and forward to error handler
 // triggered when a non-existent route attempts to be accessed

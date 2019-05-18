@@ -3,18 +3,19 @@ const saltRounds = 10;
 
 module.exports = {
   async cipher(password) {
+    let hash = '';
     try {
-      return await bcrypt.hash(password, saltRounds);
+      hash = await bcrypt.hash(password, saltRounds);
     } catch (err) {
       throw new Error(`Error hashing the password : ${err.message}`);
     }
+    return hash;
   },
 
   async decipher(stored, incoming) {
-    try {
-      return await bcrypt.compare(incoming, stored);
-    } catch (err) {
-      throw new Error(`The passwords doesn't match : ${err.message}`);
+    const match = await bcrypt.compare(incoming, stored);
+    if (!match) {
+      throw new Error('Failed to login');
     }
   }
 };

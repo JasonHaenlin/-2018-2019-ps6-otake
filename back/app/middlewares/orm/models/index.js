@@ -14,6 +14,7 @@ const Deadline = require('./deadline');
 const PastContract = require('./past-contract');
 const Supervisor = require('./supervisor');
 const FinancialAid = require('./financial-aid');
+const User = require('./user');
 
 // add all the tables here
 module.exports = {
@@ -32,5 +33,6 @@ module.exports = {
   Deadline,
   PastContract,
   Supervisor,
-  FinancialAid
+  FinancialAid,
+  User
 };
