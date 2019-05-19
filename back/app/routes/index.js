@@ -1,6 +1,7 @@
 const school = require('./school');
 const universities = require('./universities');
-const admin = require('./admin');
+const auth = require('./auth');
+const account = require('./account');
 const express = require('express');
 
 const main = express.Router();
@@ -11,5 +12,6 @@ module.exports = {
   main,
   school,
   universities,
-  admin
+  auth,
+  account
 };

@@ -1,6 +1,6 @@
 const resHandler = require('../../utils/response-handler');
-const auth = require('../../controller/admin/auth');
-const { user } = require('../../controller/admin');
+const auth = require('../../controller/account/auth');
+const { user } = require('../../controller/account');
 
 exports.loginUser = async (req, res) => {
   const { username, password } = req.body;
@@ -11,12 +11,6 @@ exports.loginUser = async (req, res) => {
   req.login(u, (err) => console.log(err));
   resHandler.yahResponse(res, u);
 };
-
-
-exports.admin = async (req, res) => {
-  resHandler.yahResponse(res, auth.ensureAuthenticated(req));
-};
-
 
 exports.logoutUser = async (req, res) => {
   req.logout();

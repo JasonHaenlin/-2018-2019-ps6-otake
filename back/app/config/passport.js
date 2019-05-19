@@ -1,4 +1,4 @@
-const { user } = require('../controller/admin');
+const { user } = require('../controller/account');
 
 module.exports = (passport) => {
   passport.serializeUser((user, cb) => {

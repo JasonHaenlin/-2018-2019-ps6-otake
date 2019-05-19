@@ -2,8 +2,11 @@ const crypt = require('../../../utils/crypt');
 
 module.exports = {
 
-  ensureAuthenticated(req) {
-    return req.isAuthenticated();
+  ensureAuthenticated(req, res, next) {
+    if (!req.isAuthenticated()) {
+      throw new Error('No privilege to access this resource');
+    }
+    next();
   },
 
   checkPassword(storedUser, password) {
