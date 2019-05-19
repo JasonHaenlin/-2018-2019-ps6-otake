@@ -4,6 +4,7 @@ class ValidationError {
   constructor(message, extra = {}) {
     Error.captureStackTrace(this, this.constructor);
     this.name = this.constructor.name;
+    this.status = 400;
     this.message = message;
     this.extra = extra;
   }

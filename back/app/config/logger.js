@@ -9,8 +9,8 @@ const logger = createLogger({
     format.json(),
   ),
   transports: [
-    new transports.File({ filename: './log/error.log', level: 'error', maxsize: 50000 }),
-    new transports.File({ filename: './log/combined.log', maxsize: 50000 })
+    new transports.File({ filename: './log/error.log', level: 'error', maxsize: 5242880, maxFiles: 5 }),
+    new transports.File({ filename: './log/trace.log', maxsize: 5242880, maxFiles: 5 })
   ]
 });
 
@@ -33,5 +33,8 @@ module.exports = {
   },
   LogTheInfo: (info) => {
     logger.log('info', info);
+  },
+  LogTheTransaction: (id, info) => {
+    logger.log('info', `transactionId = ${id} -- ${info}`);
   }
 };

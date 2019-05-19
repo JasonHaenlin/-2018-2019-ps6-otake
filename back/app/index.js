@@ -1,7 +1,7 @@
 const express = require('express');
 const route = require('./routes');
 const cors = require('cors');
-const logger = require('morgan');
+const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const session = require('express-session');
@@ -13,7 +13,7 @@ const app = express();
 app.disable('x-powered-by');
 
 app.use(cors());
-app.use(logger('dev'));
+app.use(morgan('combined'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
