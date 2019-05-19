@@ -19,6 +19,7 @@ import { TestimonialModule } from './testimonial/testimonial.module';
 import { UtilityModule } from './utility/utility.module';
 import { SearchUniversityComponent } from './outlets/search-university/search-university.component';
 import { SelectMajorComponent } from './outlets/select-major/select-major.component';
+import { BackOfficeModule } from './back-office/back-office.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,7 @@ import { SelectMajorComponent } from './outlets/select-major/select-major.compon
     FlowMonitorModule,
     ContactModule,
     TestimonialModule,
-
+    BackOfficeModule,
     AppRoutingModule,
   ],
   exports: [

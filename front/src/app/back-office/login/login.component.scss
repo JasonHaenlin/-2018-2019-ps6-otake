@@ -1,0 +1,16 @@
+@import '../../../styles/variables.scss';
+
+body {
+    background-color: $background-color;
+}
+
+.container {
+    // position: absolute;
+}
+
+.log-form {
+    width: 25em;
+    height: 17em;
+    margin: auto;
+    background-color: gainsboro;
+}
