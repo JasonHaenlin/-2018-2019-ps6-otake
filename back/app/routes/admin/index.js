@@ -7,5 +7,8 @@ const admin = express.Router();
 
 /* -- user -- */
 admin.post('/login', handleExceptions(user.loginUser));
+admin.get('/logout', handleExceptions(user.logoutUser));
+
+admin.get('/test', handleExceptions(user.admin));
 
 module.exports = admin;

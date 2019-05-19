@@ -3,8 +3,11 @@ const route = require('./routes');
 const cors = require('cors');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
+const passport = require('passport');
+const session = require('express-session');
 const { handle404Error, handleDevErrors, handleClientErrors, logErrors } = require('./middlewares/error-handlers');
 const app = express();
+
 
 app.disable('x-powered-by');
 
@@ -12,6 +15,18 @@ app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(session({
+  secret: 'cute little cookie',
+  resave: false,
+  saveUninitialized: false
+  // cookie: { secure: true }
+}));
+
+// Passport middleware
+require('./config/passport')(passport);
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 // add all the routes
 app.use('/status', route.main);

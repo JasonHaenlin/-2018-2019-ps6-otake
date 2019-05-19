@@ -17,5 +17,6 @@ module.exports = {
     if (!match) {
       throw new Error('Failed to login');
     }
+    return true;
   }
 };
