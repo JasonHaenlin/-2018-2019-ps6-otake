@@ -16,12 +16,20 @@ app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(session({
+
+const sess = {
   secret: 'cute little cookie',
   resave: false,
-  saveUninitialized: false
-  // cookie: { secure: true }
-}));
+  saveUninitialized: false,
+  cookie: {}
+};
+
+if (app.get('env') === 'production') {
+  app.set('trust proxy', 1);
+  sess.cookie.secure = true;
+}
+
+app.use(session(sess));
 
 // Passport middleware
 require('./config/passport')(passport);

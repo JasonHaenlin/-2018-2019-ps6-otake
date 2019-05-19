@@ -9,10 +9,10 @@ exports.loginUser = async (req, res) => {
   await auth.checkPassword(u, password);
   // if no error, login
   req.login(u, (err) => console.log(err));
-  resHandler.yahResponse(res, u);
+  resHandler.yahResponse(res, 'Successfully login');
 };
 
 exports.logoutUser = async (req, res) => {
   req.logout();
-  resHandler.yahResponse(res, 'ok');
+  resHandler.yahResponse(res, 'Successfully logout');
 };
