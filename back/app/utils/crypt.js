@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const { ValidationError } = require('../utils/errors');
 const saltRounds = 10;
 
 module.exports = {
@@ -15,7 +16,7 @@ module.exports = {
   async decipher(stored, incoming) {
     const match = await bcrypt.compare(incoming, stored);
     if (!match) {
-      throw new Error('Failed to login');
+      throw new ValidationError('Failed to login');
     }
     return true;
   }

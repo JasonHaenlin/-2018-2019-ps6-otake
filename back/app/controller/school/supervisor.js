@@ -1,5 +1,6 @@
 const { Supervisor } = require('../../middlewares/orm/models');
 const { Mail } = require('../../middlewares/schema');
+const { ValidationError } = require('../../utils/errors');
 const Joi = require('@hapi/joi');
 const nodemailer = require('nodemailer');
 
@@ -23,7 +24,7 @@ module.exports = {
   sendMail(email) {
     const { error } = Joi.validate(email, Mail);
     if (error) {
-      throw new Error(`Create Error : Object ${JSON.stringify(email)} does not match schema \n` + error);
+      throw new ValidationError(`Create Error : Object ${JSON.stringify(email)} does not match schema \n`, error);
     }
     return transporter.sendMail({
       from: '"polytech RI" <contact@otakedev.com>',

@@ -19,6 +19,8 @@ module.exports = {
     }
     switch (err.name) {
       case 'ValidationError': res.status(400).json({ status: false, message: message }); break;
+      case 'UnauthenticatedUserError': res.status(401).json({ status: false, message: message }); break;
+      case 'AccessDeniedError': res.status(403).json({ status: false, message: message }); break;
       case 'NotFoundError': res.status(404).json({ status: false, message: message }); break;
       // jump to dev error
       default: next(err);
