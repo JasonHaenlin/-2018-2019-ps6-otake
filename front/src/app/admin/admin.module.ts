@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
-import { TestimonialFormComponent } from './testimonial-form/testimonial-form.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
-  declarations: [LoginComponent, TestimonialFormComponent],
+  declarations: [LoginComponent, AdminComponent],
   imports: [
     CommonModule
   ]
 })
-export class BackOfficeModule { }
+export class AdminModule { }

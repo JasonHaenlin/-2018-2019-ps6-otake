@@ -1,7 +1,5 @@
 
 import { Component } from '@angular/core';
-import { ActivatedRoute, Event, Router, NavigationEnd } from '@angular/router';
-import { LoginComponent } from './back-office/login/login.component';
 import { AdminService } from 'src/services/admin/admin.service';
 
 @Component({
@@ -15,8 +13,8 @@ export class AppComponent {
 
   constructor(private adminService: AdminService) {}
 
-  isOnAdmin() {
-    return this.adminService.getAdminState();
+  isNotOnAdmin() {
+    return !this.adminService.getAdminState();
   }
 
   flowActivedEvent(state: boolean) {
