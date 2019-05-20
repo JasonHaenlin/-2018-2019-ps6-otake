@@ -39,6 +39,6 @@ a:focus {
   font-size: 1.5rem;
 }
 
-textarea:focus, input:focus, button:focus{
+*:focus{
   outline: none;
 }
