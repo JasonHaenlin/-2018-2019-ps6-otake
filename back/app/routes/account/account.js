@@ -4,7 +4,7 @@ const { token } = require('../../controller/account');
 const { testimonial } = require('../../controller/universities');
 
 exports.createTokens = async (req, res) => {
-  await token.submitNewTestimonialsForm(req.body.emails);
+  await token.submitNewTestimonialsForm(req.body);
   resHandler.yahResponse(res, { token: true });
 };
 
