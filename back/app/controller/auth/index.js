@@ -11,7 +11,7 @@ module.exports = {
   },
 
   checkPassword(storedUser, password) {
-    if (storedUser === null || !password) {
+    if (!storedUser || !password) {
       throw new ValidationError('Invalid username or password');
     }
     return crypt.decipher(storedUser.hash, password);

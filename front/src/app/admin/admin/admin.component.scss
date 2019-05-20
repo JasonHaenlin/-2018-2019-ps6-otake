@@ -1,0 +1,41 @@
+@import '../../../styles/variables.scss';
+
+header {
+  padding-left: 2rem;
+  padding-right: 1rem;
+  display: flex;
+  justify-content: center;
+  background-color: $blue2;
+  height: 70px;
+  width: 100%;
+  box-shadow: $shadow;
+}
+
+h3 {
+  color: $white;
+}
+
+a {
+  text-decoration: none;
+  padding: 16px 16px;
+  color: $white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+a:hover {
+  background-color: $blue1;
+}
+
+nav {
+  width: 100%;
+  padding-right: calc(20% - 200px);
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+}
+
+.active {
+  background: $blue1;
+}

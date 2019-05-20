@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { ApplicationHttpClient } from 'src/core/http-client';
+import { ContractArea } from 'src/models/ContractArea';
 import { Course } from 'src/models/Course';
 import { Major } from 'src/models/Major';
+import { Speciality } from 'src/models/Speciality';
+import { Mail } from '../../models/Mail';
+import { Supervisor } from '../../models/Supervisor';
 import { Deadline } from './../../models/Deadline';
 import { SpecialityCard } from './../../models/SpecialityCard';
-import { Speciality } from 'src/models/Speciality';
-import { CONTRACTS_AREA_MOCKED } from '../../mocks/ContractsArea.mock';
-import { Supervisor } from '../../models/Supervisor';
-import { map } from 'rxjs/operators';
-import { Mail } from '../../models/Mail';
-import { ContractArea } from 'src/models/ContractArea';
 
 const baseEndPoint = 'school/';
 @Injectable({

@@ -1,11 +1,26 @@
-import { NgModule } from '@angular/core';
-import { LoginComponent } from './login/login.component';
-import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './auth.guard';
+import { ManageTestimonialComponent } from './manage-testimonial/manage-testimonial.component';
 import { AdminComponent } from './admin/admin.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent},
-  { path: 'back-office', component: AdminComponent}
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'board',
+    component: AdminComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'manage',
+        canActivateChild: [AuthGuard],
+        children: [
+          { path: 'testimonial', component: ManageTestimonialComponent }
+        ]
+      }
+    ]
+  }
 ];
 
 @NgModule({

@@ -11,11 +11,8 @@ export class AppComponent {
 
   public flowActived = false;
 
-  constructor(private adminService: AdminService) {}
+  constructor() { }
 
-  isNotOnAdmin() {
-    return !this.adminService.getAdminState();
-  }
 
   flowActivedEvent(state: boolean) {
     this.flowActived = state;

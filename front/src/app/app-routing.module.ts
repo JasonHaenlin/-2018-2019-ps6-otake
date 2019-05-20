@@ -12,10 +12,6 @@ import { TestimonialPageComponent } from './testimonial/testimonial-page/testimo
 
 const routes: Routes = [
   {
-    path: 'admin',
-    loadChildren: './admin/admin.module#AdminModule'
-  },
-  {
     path: 'search-university',
     component: SearchUniversityComponent,
     outlet: 'popup'
@@ -26,6 +22,10 @@ const routes: Routes = [
     outlet: 'popup'
   },
   { path: 'home', component: HomePageComponent },
+  {
+    path: 'admin',
+    loadChildren: './admin/admin.module#AdminModule'
+  },
   {
     path: 'school',
     loadChildren: './my-school/my-school.module#MySchoolModule'

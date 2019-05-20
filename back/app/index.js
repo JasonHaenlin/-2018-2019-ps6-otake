@@ -7,12 +7,24 @@ const passport = require('passport');
 const session = require('express-session');
 const auth = require('./controller/auth');
 const { handle404Error, handleDevErrors, handleClientErrors, logErrors } = require('./middlewares/error-handlers');
+const { AccessDeniedError } = require('./utils/errors');
 const app = express();
 
+const allowedOrigins = ['https://ps.otakedev.com', 'http://localhost:4200'];
 
 app.disable('x-powered-by');
 
-app.use(cors());
+app.use(cors({
+  credentials: true,
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new AccessDeniedError(`Origin: ${origin} is now allowed`));
+    }
+  }
+}));
+
 app.use(morgan('combined'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

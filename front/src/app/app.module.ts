@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoaderService } from 'src/app/utility/loader/loader.service';
 import { ApplicationHttpClient, applicationHttpClientCreator } from 'src/core/http-client';
+import { AdminModule } from './admin/admin.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactModule } from './contacts/contact.module';
@@ -13,13 +14,12 @@ import { FlowMonitorModule } from './flow-monitor/flow.module';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { SearchUniversityComponent } from './outlets/search-university/search-university.component';
+import { SelectMajorComponent } from './outlets/select-major/select-major.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TestimonialCardComponent } from './testimonial/testimonial-card/testimonial-card.component';
 import { TestimonialModule } from './testimonial/testimonial.module';
 import { UtilityModule } from './utility/utility.module';
-import { SearchUniversityComponent } from './outlets/search-university/search-university.component';
-import { SelectMajorComponent } from './outlets/select-major/select-major.component';
-import { AdminModule } from './admin/admin.module';
 @NgModule({
   declarations: [
     AppComponent,

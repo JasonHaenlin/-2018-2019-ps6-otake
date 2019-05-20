@@ -1,24 +1,27 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Router, Event, NavigationEnd } from '@angular/router';
+import { map } from 'rxjs/operators';
+import { ApplicationHttpClient } from 'src/core/http-client';
 
+const baseEndPoint = 'auth/';
 @Injectable({
   providedIn: 'root'
 })
 export class AdminService {
-  admin: boolean;
 
-  constructor(private router: Router) { this.isOnAdmin(); }
+  constructor(private http: ApplicationHttpClient) { }
 
-  isOnAdmin() {
-    this.router.events.subscribe((event: Event) => {
-      if (event instanceof NavigationEnd) {
-        this.admin = event.url.split('/')[1] === 'admin';
-      }
-    });
+  login(username, password) {
+    return this.http.post(`${baseEndPoint}login`, { username: username, password: password }, 'login failed');
   }
 
-  getAdminState(): boolean {
-    return this.admin;
+  logout() {
+    return this.http.get(`${baseEndPoint}logout`, 'logout failed');
   }
+
+  isLoggedIn(): Observable<{}> {
+    return this.http.get<any>(`${baseEndPoint}check`, 'check login')
+      .pipe(map(response => response.auth));
+  }
+
 }

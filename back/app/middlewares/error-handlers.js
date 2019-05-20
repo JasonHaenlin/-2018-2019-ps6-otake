@@ -22,7 +22,7 @@ module.exports = {
     }
 
     if (err.name !== 'Error') {
-      res.status(err.status).json({ message: message });
+      res.status(err.status).json({ code: err.status, message: message });
     } else {
       next(err);
     }
@@ -30,14 +30,14 @@ module.exports = {
 
   handleDevErrors: async (err, req, res, next) => {
     if (process.env.NODE_ENV === 'development') {
-      return res.status(500).json({ status: false, stack: err.stack || err });
+      return res.status(500).json({ code: 500, stack: err.stack || err });
     }
-    res.status(500).json({ status: false, message: 'something went wrong' });
+    res.status(500).json({ code: 500, message: 'something went wrong' });
   },
 
   /* this is for handling 404 err */
   handle404Error: async (req, res) => {
-    res.status(404).json({ status: false, code: 404, message: 'please check URL' });
+    res.status(404).json({ code: 404, message: 'please check URL' });
   },
 
   /* centralizing all the errors */
