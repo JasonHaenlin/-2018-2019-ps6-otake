@@ -4,11 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
-  {
-    path: 'testimonials',
-    component: AdminComponent,
-  }
+  { path: '', component: LoginComponent},
+  { path: 'back-office', component: AdminComponent}
 ];
 
 @NgModule({

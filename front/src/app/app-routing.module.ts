@@ -8,13 +8,12 @@ import { SearchUniversityComponent } from './outlets/search-university/search-un
 import { SelectMajorComponent } from './outlets/select-major/select-major.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TestimonialPageComponent } from './testimonial/testimonial-page/testimonial-page.component';
-import { LoginComponent } from './admin/login/login.component';
 
 
 const routes: Routes = [
   {
     path: 'admin',
-    component: LoginComponent
+    loadChildren: './admin/admin.module#AdminModule'
   },
   {
     path: 'search-university',
