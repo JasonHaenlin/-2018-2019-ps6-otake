@@ -46,8 +46,8 @@ app.use('/universities', route.universities);
 // auth url
 app.use('/auth', route.auth);
 // account url
-app.use('/account', route.account);
-// auth.ensureAuthenticated,
+app.use('/account', auth.ensureAuthenticated, route.account);
+
 // catch 404 and forward to error handler
 // triggered when a non-existent route attempts to be accessed
 app.use(handle404Error);

@@ -17,14 +17,14 @@ module.exports = new BaseModel('token', t => {
   },
   {
     id: 1,
-    token: '2bccf9ddc365b432438163b74705adce',
+    token: '12e47bbc03ff99beddb2ff49f6b90601',
     status: 'completed',
     expires_at: '2019-05-20T12:00:27.741Z',
     created_at: '2019-05-20T12:00:27.741Z'
   },
   {
     id: 2,
-    token: '2bccf9ddc365b432438163b74705abce',
+    token: '3b4aa02f6d52a3197464b767581e959d',
     status: 'completed',
     expires_at: '2019-05-20T12:00:27.741Z',
     created_at: '2019-05-20T12:00:27.741Z'

@@ -1,18 +1,9 @@
 const { Supervisor } = require('../../middlewares/orm');
 const { Mail } = require('../../middlewares/schema');
 const { ValidationError } = require('../../utils/errors');
+const transporter = require('../../config/mailer');
 const Joi = require('@hapi/joi');
-const nodemailer = require('nodemailer');
 
-const transporter = nodemailer.createTransport({
-  host: process.env.PULSE_HOST,
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.PULSE_USER,
-    pass: process.env.PULSE_PSWD
-  }
-});
 
 module.exports = {
   getSupervisors() {
@@ -27,8 +18,9 @@ module.exports = {
       throw new ValidationError(`Create Error : Object ${JSON.stringify(email)} does not match schema \n`, error);
     }
     email.firstName = email.firstName || '';
-    email.firstName = email.firstName || '';
+    email.lastName = email.lastName || '';
     email.emailSender = email.emailSender || 'polytech RI';
+
     return transporter.sendMail({
       from: '"polytech RI" <contact@otakedev.com>',
       // mock to avoid flooding others
