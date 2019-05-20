@@ -1,4 +1,4 @@
-const { Course } = require('../../middlewares/orm/models');
+const { Course } = require('../../middlewares/orm');
 
 module.exports = {
   getCourses() {
@@ -8,14 +8,14 @@ module.exports = {
     return Course.query()
       .alias('c')
       .joinRelation('majorCourses')
-      .where({'majorCourses.shorthand': majorShorthand})
+      .where({ 'majorCourses.shorthand': majorShorthand })
       .select('c.semester', 'c.ue', 'c.title', 'c.description');
   },
   getCoursesOfMajorForThisSemester(majorShorthand, semester) {
     return Course.query()
       .alias('c')
       .joinRelation('majorCourses')
-      .where({'majorCourses.shorthand': majorShorthand, 'c.semester': semester })
+      .where({ 'majorCourses.shorthand': majorShorthand, 'c.semester': semester })
       .select('c.semester', 'c.ue', 'c.title', 'c.description');
   }
 };

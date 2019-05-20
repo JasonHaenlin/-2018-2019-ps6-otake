@@ -1,7 +1,7 @@
 const BaseModel = require('./base-model');
 
 module.exports = new BaseModel('testimonial', t => {
-  t.increments('id').primary();
+  t.integer('id').references('id').inTable('token');
   t.integer('university_id').references('id').inTable('exchange_university');
   t.integer('major_id').references('id').inTable('major');
   t.string('first_name');

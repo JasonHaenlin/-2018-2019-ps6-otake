@@ -1,4 +1,4 @@
-const { PastContract } = require('../../middlewares/orm/models');
+const { PastContract } = require('../../middlewares/orm');
 
 module.exports = {
   getPastContracts() {

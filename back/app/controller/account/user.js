@@ -1,4 +1,5 @@
-const { User } = require('../../middlewares/orm/models');
+const { User } = require('../../middlewares/orm');
+const token = require('../../utils/crypt');
 
 module.exports = {
   getUser(username) {

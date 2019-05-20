@@ -8,4 +8,6 @@ const account = express.Router();
 /* -- user -- */
 account.get('/test', handleExceptions(user.test));
 
+account.post('/form/testimonial', handleExceptions(user.createTokens));
+
 module.exports = account;

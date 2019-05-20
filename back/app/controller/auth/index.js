@@ -1,5 +1,5 @@
-const crypt = require('../../../utils/crypt');
-const { UnauthenticatedUserError, ValidationError } = require('../../../utils/errors');
+const crypt = require('../../utils/crypt');
+const { UnauthenticatedUserError, ValidationError } = require('../../utils/errors');
 
 module.exports = {
 

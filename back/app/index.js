@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const session = require('express-session');
-const auth = require('./controller/account/auth');
+const auth = require('./controller/auth');
 const { handle404Error, handleDevErrors, handleClientErrors, logErrors } = require('./middlewares/error-handlers');
 const app = express();
 
@@ -46,8 +46,8 @@ app.use('/universities', route.universities);
 // auth url
 app.use('/auth', route.auth);
 // account url
-app.use('/account', auth.ensureAuthenticated, route.account);
-
+app.use('/account', route.account);
+// auth.ensureAuthenticated,
 // catch 404 and forward to error handler
 // triggered when a non-existent route attempts to be accessed
 app.use(handle404Error);

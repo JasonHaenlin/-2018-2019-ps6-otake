@@ -15,6 +15,7 @@ const past_contract = require('./past-contract');
 const supervisor = require('./supervisor');
 const financialAid = require('./financial-aid');
 const user = require('./user');
+const token = require('./token');
 
 /**
  * All the table are sort here
@@ -23,6 +24,7 @@ const user = require('./user');
  */
 
 module.exports = [
+  token,
   geographicalArea,
   country,
   city,

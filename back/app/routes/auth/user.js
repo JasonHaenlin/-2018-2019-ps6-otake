@@ -1,5 +1,5 @@
 const resHandler = require('../../utils/response-handler');
-const auth = require('../../controller/account/auth');
+const auth = require('../../controller/auth');
 const { user } = require('../../controller/account');
 const { ValidationError } = require('../../utils/errors');
 

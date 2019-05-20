@@ -34,7 +34,7 @@ module.exports = {
   LogTheInfo: (info) => {
     logger.log('info', info);
   },
-  LogTheTransaction: (id, info) => {
-    logger.log('info', `transactionId = ${id} -- ${info}`);
+  LogTheTransaction: (id, info, statu = 'info',) => {
+    logger.log(statu, `transactionId = ${id} -- ${info}`);
   }
 };
