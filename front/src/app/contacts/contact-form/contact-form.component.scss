@@ -2,6 +2,7 @@
 @import '../../../styles/button.scss';
 @import '../../../styles/variables.scss';
 @import '../../../styles/modal.scss';
+@import '../../../styles/form.scss';
 
 input,
 textarea,
@@ -69,24 +70,6 @@ span {
     "message message"
     "submit none";
   grid-gap: 2ch;
-
-  .is-invalid {
-    color: $warning1;
-    border-color: $warning2;
-  }
-
-  .is-valid {
-    color: $success1;
-    border-color: $success2;
-  }
-
-  .alert {
-    color: $danger;
-    font-size: 13px;
-    position: relative;
-    left: 8px;
-    line-height: 1em;
-  }
 
 }
 

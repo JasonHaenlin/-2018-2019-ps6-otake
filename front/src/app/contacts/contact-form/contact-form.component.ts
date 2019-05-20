@@ -35,9 +35,9 @@ export class ContactFormComponent implements OnInit {
   public echangeList = ['Université', 'Bourse', 'Santé', 'Mobilité', 'autres'];
   public active = false;
 
-  constructor(public formBuilder: FormBuilder,
-    public schoolService: SchoolService,
-    public universityService: UniversityService) {
+  constructor(private formBuilder: FormBuilder,
+    private schoolService: SchoolService,
+    private universityService: UniversityService) {
     this.contactForm = this.formBuilder.group({
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],

@@ -5,6 +5,7 @@ import { AdminComponent } from './admin/admin.component';
 import { ManageTestimonialComponent } from './manage-testimonial/manage-testimonial.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { httpInterceptorProviders } from 'src/core/http-interceptor';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { httpInterceptorProviders } from 'src/core/http-interceptor';
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     httpInterceptorProviders
