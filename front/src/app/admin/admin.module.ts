@@ -6,12 +6,14 @@ import { ManageTestimonialComponent } from './manage-testimonial/manage-testimon
 import { AdminRoutingModule } from './admin-routing.module';
 import { httpInterceptorProviders } from 'src/core/http-interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ManageBoardComponent } from './manage-board/manage-board.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     AdminComponent,
-    ManageTestimonialComponent
+    ManageTestimonialComponent,
+    ManageBoardComponent
   ],
   imports: [
     CommonModule,

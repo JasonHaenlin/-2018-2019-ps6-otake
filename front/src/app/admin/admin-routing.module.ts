@@ -1,3 +1,4 @@
+import { ManageBoardComponent } from './manage-board/manage-board.component';
 import { AuthGuard } from './auth.guard';
 import { ManageTestimonialComponent } from './manage-testimonial/manage-testimonial.component';
 import { AdminComponent } from './admin/admin.component';
@@ -16,7 +17,8 @@ const routes: Routes = [
         path: 'manage',
         canActivateChild: [AuthGuard],
         children: [
-          { path: 'testimonial', component: ManageTestimonialComponent }
+          { path: 'testimonial', component: ManageTestimonialComponent },
+          { path: '', component: ManageBoardComponent }
         ]
       }
     ]
