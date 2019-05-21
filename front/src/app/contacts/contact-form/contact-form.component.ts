@@ -55,12 +55,12 @@ export class ContactFormComponent implements OnInit {
   ngOnInit() {
     this.majors$ = this.universityService.getMajors();
     this.message.valueChanges.subscribe(v => this.messageLen = v.length);
+    this.category.valueChanges.subscribe(v => {
+      this.categorySwitch = this.category.value;
+      this.object.reset();
+    });
   }
 
-  switchCat() {
-    this.categorySwitch = this.category.value;
-    this.object.setValue('');
-  }
 
   sendMail() {
     let category = this.category.value;

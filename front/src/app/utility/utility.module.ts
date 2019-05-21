@@ -8,6 +8,10 @@ import { AccordionComponent } from './accordion/accordion.component';
 import { DeadlineComponent } from './deadline/deadline.component';
 import { CoursesHolderComponent } from './courses-holder/courses-holder.component';
 import { SearchBoxComponent } from './search-box/search-box.component';
+import { FormInputComponent } from './components/form-input/form-input.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormSelectComponent } from './components/form-select/form-select.component';
+import { FormTextareaComponent } from './components/form-textarea/form-textarea.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +21,12 @@ import { SearchBoxComponent } from './search-box/search-box.component';
     DeadlineComponent,
     CoursesHolderComponent,
     SearchBoxComponent,
+    FormInputComponent,
+    FormSelectComponent,
+    FormTextareaComponent,
   ],
   imports: [
+    ReactiveFormsModule,
     CommonModule,
     RouterModule,
   ],
@@ -29,6 +37,9 @@ import { SearchBoxComponent } from './search-box/search-box.component';
     DeadlineComponent,
     CoursesHolderComponent,
     SearchBoxComponent,
+    FormInputComponent,
+    FormSelectComponent,
+    FormTextareaComponent,
   ],
   providers: [
     LoaderService,

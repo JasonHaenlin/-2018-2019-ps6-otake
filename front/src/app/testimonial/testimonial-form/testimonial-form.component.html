@@ -1,31 +1,28 @@
 <h3>
   Ajout d'un témoignage
 </h3>
-<form class="testimonial-form" [formGroup]="testimonialForm">
-  <label for="student-firstName">
-    Prénom<br>
-    <input class="input-custom" type="text" id="student_firstName" [formControlName]="'firstName'">
-  </label>
+<form class="testimonial-form" [formGroup]="testimonialForm" (ngSubmit)="submit()">
+  Prénom<br>
+  <input class="input-custom" type="text" [formControlName]="'firstName'">
   <br>
-  <label for="student-last-name">
-    Nom<br>
-    <input class="input-custom" type="text" id = "student_prenom" [formControlName]="'lastName'">
-  </label>
+  Nom<br>
+  <input class="input-custom" type="text" [formControlName]="'lastName'">
   <br>
-  <label for="student-email">
-    Email<br>
-    <input class="input-custom" type="text" id="student_email" [formControlName]="'email'">
-  </label>
+  Email<br>
+  <input class="input-custom" type="text" [formControlName]="'email'">
   <br>
-  <label for="student-school">
-    Ecole<br>
-    <input class="input-custom" type="text" id="student_school" [formControlName]="'school'">
-  </label>
+  Major<br>
+  <!-- <input class="input-custom" type="text" [formControlName]="'major'"> -->
+  <app-form-input [type]="'text'" [formGroup]="testimonialForm" [formControlName]="'major'"
+    [placeholder]="'major placeholder'" ngDefaultControl>
+  </app-form-input>
   <br>
-  <label for="student-text">
-    Texte<br>
-    <textarea name="testimonial-text" id="testimonial-text" cols="30" rows="10"></textarea>
-  </label>
+  Université d'accueil<br>
+  <input class="input-custom" type="text" [formControlName]="'university'">
   <br>
-  <button type="submit" class="btn-custom" (click)="addTestimonial()">Ajouter</button>
+  Texte<br>
+  <textarea name="testimonial-text" cols="30" rows="10" type="text"
+    [formControlName]="'text'"></textarea>
+  <br>
+  <button type="submit" class="btn-cst">Soumettre</button>
 </form>

@@ -35,8 +35,14 @@ const routes: Routes = [
     path: 'exchange-universities',
     loadChildren: './exchange-universities/university.module#UniversityModule'
   },
-  { path: 'testimonials', component: TestimonialPageComponent },
-  { path: 'testimonial/form/:token', component: TestimonialFormComponent},
+  {
+    path: 'testimonials',
+    children: [
+      { path: '', component: TestimonialPageComponent },
+      { path: 'form/:token', component: TestimonialFormComponent },
+    ]
+  },
+
   { path: 'financial-aids', component: FinancialAidPageComponent },
   { path: 'calendar', component: PageNotFoundComponent },
   { path: 'contacts', component: ContactPageComponent },

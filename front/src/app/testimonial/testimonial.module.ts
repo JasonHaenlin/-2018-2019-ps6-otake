@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { TestimonialPageComponent } from './testimonial-page/testimonial-page.component';
 import { TestimonialFormComponent } from './testimonial-form/testimonial-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UtilityModule } from '../utility/utility.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
+    UtilityModule,
     ReactiveFormsModule
 
   ]

@@ -37,10 +37,11 @@ import { UtilityModule } from './utility/utility.module';
     BrowserAnimationsModule,
     BrowserModule,
     UtilityModule,
+
     FlowMonitorModule,
     ContactModule,
     TestimonialModule,
-    AdminModule,
+
     AppRoutingModule,
   ],
   exports: [

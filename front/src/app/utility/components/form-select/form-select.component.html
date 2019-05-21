@@ -1,0 +1,24 @@
+<div [formGroup]="formGroup">
+  <label [for]="formControlName">
+    <div>{{label}}</div>
+    <select
+      [class.is-invalid]="object.invalid && (object.dirty || object.touched)"
+      [class.is-valid]="object.valid && (object.dirty || object.touched)"
+      [formControlName]="formControlName">
+      <ng-container *ngIf="key; else elseTemplate">
+        <option *ngFor="let opt of options" [ngValue]="opt[key]">
+          {{opt[key]}}
+        </option>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <option *ngFor="let opt of options" [ngValue]="opt">
+          {{opt}}
+        </option>
+      </ng-template>
+    </select>
+    <div class="alert"
+      *ngIf="object.invalid && (object.dirty || object.touched) && object.errors.required">
+      Champ requis
+    </div>
+  </label>
+</div>

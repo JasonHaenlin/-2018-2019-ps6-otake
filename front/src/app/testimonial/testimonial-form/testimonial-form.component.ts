@@ -1,5 +1,6 @@
+import { UniversityService } from './../../../services/university/university.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AdminService } from 'src/services/admin/admin.service';
 import { Testimonial } from 'src/models/Testimonial';
 
@@ -12,12 +13,13 @@ export class TestimonialFormComponent implements OnInit {
 
   public testimonialForm: FormGroup;
 
-  constructor(public formBuilder: FormBuilder, public adminService: AdminService) {
+  constructor(public formBuilder: FormBuilder, public univService: UniversityService) {
     this.testimonialForm = this.formBuilder.group({
       firstName: [''],
       lastName: [''],
       email: [''],
-      school: [''],
+      major: ['', [Validators.required]],
+      university: [''],
       text: [''],
     });
   }
@@ -25,9 +27,9 @@ export class TestimonialFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  addTestimonial() {
+  submit() {
     const testimonial: Testimonial = this.testimonialForm.getRawValue() as Testimonial;
-    this.adminService.insertTestimonial(testimonial);
+    this.univService.insertTestimonial(testimonial);
   }
 
 }

@@ -3,6 +3,7 @@ export interface Testimonial {
   university?: string;
   first_name?: string;
   last_name?: string;
+  major?: string;
   email?: string;
   nationality?: string;
   text?: string;

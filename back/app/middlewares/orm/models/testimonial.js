@@ -8,7 +8,7 @@ class Testimonial extends Model {
   static get jsonSchema() {
     return {
       type: 'object',
-      required: ['id', 'university_id', 'major_id', 'first_name', 'last_name', 'text'],
+      required: ['university_id', 'major_id', 'first_name', 'last_name', 'text'],
       properties: {
         id: { type: 'integer' },
         university_id: { type: 'integer' },

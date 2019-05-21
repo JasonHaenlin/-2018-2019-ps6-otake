@@ -1,0 +1,17 @@
+@import '../../../../styles/form.scss';
+
+select {
+  font: 500 16px/32px 'Roboto', "Helvetica Neue", sans-serif;
+  background-image: url(https://otakedev.com/share/images/css/caret-select.png);
+  padding-left: 8px;
+  appearance: none;
+  line-height: 1.3em;
+  color: #4e4e4e;
+  height: 4ch;
+  width: 100%;
+  background-position: 97% center;
+  background-size: 20px auto;
+  background-repeat: no-repeat;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+}

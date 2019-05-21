@@ -24,8 +24,4 @@ export class AdminService {
     return this.http.get<any>(`${baseEndPoint}check`, 'check login')
       .pipe(map(response => response.auth));
   }
-
-  insertTestimonial(testimonial: Testimonial) {
-    console.log('A testimonial is created');
-  }
 }

@@ -72,4 +72,8 @@ export class UniversityService {
     return this.http.get<University[]>(`${baseEndPoint}search=${terms}`, 'get universities list by terms', []);
   }
 
+  insertTestimonial(testimonial: Testimonial) {
+    console.log(testimonial);
+  }
+
 }

@@ -1,0 +1,14 @@
+<div [formGroup]="formGroup">
+  <label [for]="formControlName">
+    <input
+      [type]="type"
+      [class.is-invalid]="object.invalid && (object.dirty || object.touched)"
+      [class.is-valid]="object.valid && (object.dirty || object.touched)"
+      [formControlName]="formControlName"
+      [placeholder]="placeholder">
+    <div class="alert"
+      *ngIf="object.invalid && (object.dirty || object.touched) && object.errors.required">
+      Champ requis
+    </div>
+  </label>
+</div>
