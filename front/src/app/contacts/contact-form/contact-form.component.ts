@@ -5,7 +5,7 @@ import { SchoolService } from '../../../services/school/school.service';
 import { UniversityService } from '../../../services/university/university.service';
 import { Mail } from '../../../models/Mail';
 import { Observable } from 'rxjs';
-import { FormValidators } from './form.validators';
+import { FormValidators } from '../../../app/utility/form.validator';
 import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({

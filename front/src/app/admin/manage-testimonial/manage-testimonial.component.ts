@@ -1,7 +1,7 @@
 import { ManagerService } from './../../../services/manage/manager.service';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FormValidators } from 'src/app/contacts/contact-form/form.validators';
+import { FormValidators } from '../../utility/form.validator';
 
 @Component({
   selector: 'app-manage-testimonial',
@@ -30,7 +30,7 @@ export class ManageTestimonialComponent implements OnInit {
       if (r.token) {
         this.emailForm.reset();
       }
-    })
+    });
   }
 
   addEmailToForm() {

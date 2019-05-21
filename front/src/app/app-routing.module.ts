@@ -8,6 +8,7 @@ import { SearchUniversityComponent } from './outlets/search-university/search-un
 import { SelectMajorComponent } from './outlets/select-major/select-major.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TestimonialPageComponent } from './testimonial/testimonial-page/testimonial-page.component';
+import { TestimonialFormComponent } from './testimonial/testimonial-form/testimonial-form.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,7 @@ const routes: Routes = [
     loadChildren: './exchange-universities/university.module#UniversityModule'
   },
   { path: 'testimonials', component: TestimonialPageComponent },
+  { path: 'testimonial/form/:token', component: TestimonialFormComponent},
   { path: 'financial-aids', component: FinancialAidPageComponent },
   { path: 'calendar', component: PageNotFoundComponent },
   { path: 'contacts', component: ContactPageComponent },

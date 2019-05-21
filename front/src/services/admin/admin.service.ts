@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ApplicationHttpClient } from 'src/core/http-client';
+import { Testimonial } from 'src/models/Testimonial';
 
 const baseEndPoint = 'auth/';
 @Injectable({
@@ -24,6 +25,7 @@ export class AdminService {
       .pipe(map(response => response.auth));
   }
 
-
-
+  insertTestimonial(testimonial: Testimonial) {
+    console.log('A testimonial is created');
+  }
 }
