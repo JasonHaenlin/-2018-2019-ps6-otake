@@ -1,6 +1,6 @@
 const resHandler = require('../../utils/response-handler');
 const auth = require('../../controller/auth');
-const { user } = require('../../controller/account');
+const { user, token } = require('../../controller/account');
 const { ValidationError } = require('../../utils/errors');
 
 exports.loginUser = async (req, res) => {
@@ -25,4 +25,9 @@ exports.logoutUser = async (req, res) => {
 exports.checkAuthentication = async (req, res, next) => {
   auth.ensureAuthenticated(req, res, next);
   resHandler.yahResponse(res, { auth: true });
+};
+
+exports.checkTokenValidy = async (req, res) => {
+  const status = await token.checkTokenValidy(req.body.token);
+  resHandler.yahResponse(res, { token: status ? true : false });
 };
