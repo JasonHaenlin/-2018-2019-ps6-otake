@@ -7,6 +7,8 @@ export class TokenInterceptor implements HttpInterceptor {
   constructor() { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    console.log('intercepted');
+
     request = request.clone({
       withCredentials: true,
     });

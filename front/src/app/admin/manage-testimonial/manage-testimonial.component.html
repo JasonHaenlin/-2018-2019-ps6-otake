@@ -3,18 +3,22 @@
   <form [formGroup]="emailForm" (ngSubmit)="sendNewtestimonial()">
     <div formArrayName="emails">
 
-      <div *ngFor="let email of emails?.controls; let i = index" [formGroupName]="i">
+      <div class="email-input" *ngFor="let email of emails?.controls; let i = index"
+        [formGroupName]="i">
 
-        <button type="button" class="remove-btn btn-cst" (click)="removeAt(i)">-</button>
-        <label for="email">
-          <input type="text" [class.is-invalid]="email.invalid && (email.dirty || email.touched)"
-            [class.is-valid]="email.valid && (email.dirty || email.touched)"
-            [formControlName]="'email'">
-        </label>
+        <button type="button" class="btn-cst float" (click)="removeAt(i)">-</button>
+        <app-form-input class="float"
+          [formGroup]="emails.at(i)"
+          [formControlName]="'email'"
+          [placeholder]="'Saisir un e-mail'"
+          ngDefaultControl>
+        </app-form-input>
 
       </div>
       <button type="button" class="btn-cst" (click)="addEmailToForm()">+</button>
     </div>
-    <button type="submit" [disabled]="emailForm.invalid" class="btn-cst">Soumettre</button>
+    <button type="submit"
+      [disabled]="emailForm.invalid"
+      class="btn-cst  btn-submit">Soumettre</button>
   </form>
 </div>

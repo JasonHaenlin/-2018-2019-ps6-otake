@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
         if (!r) {
           this.warning();
         } else {
-          this.router.navigate(['/admin/board/manage/']);
+          this.router.navigate(['/admin/board/overview']);
         }
       });
   }

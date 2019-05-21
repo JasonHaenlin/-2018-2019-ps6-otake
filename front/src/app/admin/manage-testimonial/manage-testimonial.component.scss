@@ -1,5 +1,30 @@
 @import '../../../styles/form.scss';
+@import '../../../styles/button.scss';
 
 .content {
   padding: 1rem;
+}
+
+.float {
+  float: left;
+  margin-bottom: 0.5em;
+}
+
+.email-input::after {
+  display: block;
+  visibility: hidden;
+  clear: both;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  content: ".";
+}
+
+.btn-cst {
+  padding: 8px 12px;
+  margin-right: 1rem;
+}
+
+.btn-submit {
+  margin-top: 2em;
 }

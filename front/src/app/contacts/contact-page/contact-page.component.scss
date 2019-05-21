@@ -4,7 +4,7 @@
   margin: auto;
 }
 
-.page:after {
+.page::after {
   display: block;
   visibility: hidden;
   clear: both;

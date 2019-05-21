@@ -20,6 +20,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { TestimonialCardComponent } from './testimonial/testimonial-card/testimonial-card.component';
 import { TestimonialModule } from './testimonial/testimonial.module';
 import { UtilityModule } from './utility/utility.module';
+import { httpInterceptorProviders } from 'src/core/http-interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +54,7 @@ import { UtilityModule } from './utility/utility.module';
       useFactory: applicationHttpClientCreator,
       deps: [HttpClient, LoaderService]
     },
+    httpInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })
