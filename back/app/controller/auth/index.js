@@ -3,7 +3,7 @@ const { UnauthenticatedUserError, ValidationError } = require('../../utils/error
 
 module.exports = {
 
-  ensureAuthenticated(req, res, next) {
+  ensureAuthenticated(req, res, next = () => { }) {
     if (!req.isAuthenticated()) {
       throw new UnauthenticatedUserError('No privilege to access this resource');
     }

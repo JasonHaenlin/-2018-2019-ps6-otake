@@ -22,8 +22,8 @@ exports.logoutUser = async (req, res) => {
   resHandler.yahResponse(res, { auth: true });
 };
 
-exports.checkAuthentication = async (req, res, next) => {
-  auth.ensureAuthenticated(req, res, next);
+exports.checkAuthentication = async (req, res) => {
+  auth.ensureAuthenticated(req, res);
   resHandler.yahResponse(res, { auth: true });
 };
 

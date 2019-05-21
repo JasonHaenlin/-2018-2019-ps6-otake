@@ -76,7 +76,7 @@ server.on('listening', onListening);
 // just in case a issue occur
 // eslint-disable-next-line no-unused-vars
 process.on('unhandledRejection', (reason, promise) => {
-  logTheError('Unhandled Rejection at:', reason.stack || reason);
+  logTheError('Unhandled Rejection at : ' + reason);
 });
 
 module.exports = { server, app };
