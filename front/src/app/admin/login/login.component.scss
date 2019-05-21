@@ -1,22 +1,28 @@
 @import '../../../styles/variables.scss';
-@import '../../../styles/button.scss';
 @import '../../../styles/form.scss';
 @import '../../../styles/modal.scss';
+@import '../../../styles/button.scss';
 
 body {
   background-color: $background-color;
 }
 
+button {
+  float: right;
+  background-color: $blue3;
+  margin-right: 10%;
+  font-weight: bold;
+}
+
 .container {
   position: relative;
-  bottom: -5.1em;
 }
 
 .log-form {
   width: 25em;
-  height: 16em;
+  height: 14em;
   margin: auto;
-  margin-bottom: -15%;
+  margin-top: 2.8em;
   background-color: rgba(241, 241, 241, 0.87);
   border-radius: 15px;
   box-shadow: 0 2px 4px rgba(5, 15, 44, 0.1);
@@ -44,13 +50,6 @@ input {
 
 input:focus {
   left: 10px;
-}
-
-button {
-  float: right;
-  background-color: $blue3;
-  margin-right: 10%;
-  font-weight: bold;
 }
 
 .login-title {
