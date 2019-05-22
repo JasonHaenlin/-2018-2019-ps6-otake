@@ -7,8 +7,9 @@
       [formControlName]="formControlName"
       [placeholder]="placeholder">
     <div class="alert"
-      *ngIf="object.invalid && (object.dirty || object.touched) && object.errors.required">
-      Champ requis
+      *ngIf="object.invalid && (object.dirty || object.touched)">
+      <span *ngIf="object.errors.required">Champ requis</span>
+      <span *ngIf="object.errors && !object.errors.required">Champ Incorrect</span>
     </div>
   </label>
 </div>

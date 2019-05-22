@@ -1,0 +1,17 @@
+@import '../../../styles/button.scss';
+
+.formfield {
+  padding: 1rem;
+}
+
+.testimonial-form {
+  padding: 1rem;
+  width: 25rem;
+  position: relative;
+  left: calc(50% - 12.5rem);
+}
+
+.textarea {
+  height: 10rem;
+  padding-bottom: 1rem;
+}

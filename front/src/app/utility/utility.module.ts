@@ -12,6 +12,7 @@ import { FormInputComponent } from './components/form-input/form-input.component
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormSelectComponent } from './components/form-select/form-select.component';
 import { FormTextareaComponent } from './components/form-textarea/form-textarea.component';
+import { FormButtonComponent } from './components/form-button/form-button.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FormTextareaComponent } from './components/form-textarea/form-textarea.
     FormInputComponent,
     FormSelectComponent,
     FormTextareaComponent,
+    FormButtonComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -40,6 +42,7 @@ import { FormTextareaComponent } from './components/form-textarea/form-textarea.
     FormInputComponent,
     FormSelectComponent,
     FormTextareaComponent,
+    FormButtonComponent,
   ],
   providers: [
     LoaderService,

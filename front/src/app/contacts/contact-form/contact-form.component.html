@@ -1,6 +1,6 @@
 <h3 class="content-title">Une question, un problème? Contactez-nous !</h3>
 
-<form class="grid-contact-form" [formGroup]="contactForm" (ngSubmit)="sendMail()">
+<form class="grid-contact-form" [formGroup]="contactForm">
 
   <div class="grid-firstname">
     <app-form-input
@@ -100,8 +100,11 @@
     ngDefaultControl>
   </app-form-textarea>
 
-  <button type="submit" [disabled]="contactForm.invalid"
-    class="grid-submit btn-cst">Envoyer</button>
+  <app-form-button class="grid-submit"
+    [formGroup]="contactForm"
+    [label]="'Envoyer'"
+    (submit)="sendMail()">
+  </app-form-button>
 
   <div [@openClose] class="modal modal-open" *ngIf="active">
     <div class="modal-box">

@@ -1,0 +1,10 @@
+<button
+  type="submit"
+  (click)="event()"
+  [disabled]="formGroup.invalid"
+  class="btn-cst">{{label}}
+</button>
+
+<span *ngIf="formGroup.invalid">
+  Champs manquants
+</span>

@@ -1,3 +1,4 @@
+import { FormValidators } from './../../utility/form.validator';
 import { UniversityService } from './../../../services/university/university.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -15,12 +16,12 @@ export class TestimonialFormComponent implements OnInit {
 
   constructor(public formBuilder: FormBuilder, public univService: UniversityService) {
     this.testimonialForm = this.formBuilder.group({
-      firstName: [''],
-      lastName: [''],
-      email: [''],
-      major: ['', [Validators.required]],
-      university: [''],
-      text: [''],
+      firstName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
+      email: ['', [Validators.pattern(FormValidators.emailRx)]],
+      major: [''],
+      university: ['', [Validators.required]],
+      text: ['', [Validators.required]],
     });
   }
 

@@ -4,57 +4,8 @@
 @import '../../../styles/modal.scss';
 @import '../../../styles/form.scss';
 
-input,
-textarea,
-select {
-  font: 500 16px/32px 'Roboto', "Helvetica Neue", sans-serif;
-  padding-left: 8px;
-  line-height: 1.3em;
-}
-
-input,
-select {
-  border-radius: 5px;
-}
-
-textarea,
-input {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  border: 1px solid #bbb;
-  color: #4e4e4e;
-  width: 100%;
-}
-
-
-input {
-  height: 100%;
-}
-
-textarea {
-  resize: none;
-  height: 85%;
-}
-
-select {
-  background-image: url(https://otakedev.com/share/images/css/caret-select.png);
-  background-position: 97% center;
-  background-size: 20px auto;
-  background-repeat: no-repeat;
-  border: 1px solid #bbb;
-  color: #4e4e4e;
-  width: 100%;
-  height: 4ch;
-  appearance: none;
-}
-
 button {
   width: 50%;
-}
-
-span {
-  font-size: 15px;
-  color: #4e4e4e;
 }
 
 .grid-contact-form {

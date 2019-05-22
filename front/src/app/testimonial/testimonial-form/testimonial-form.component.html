@@ -1,28 +1,52 @@
-<h3>
-  Ajout d'un témoignage
-</h3>
-<form class="testimonial-form" [formGroup]="testimonialForm" (ngSubmit)="submit()">
-  Prénom<br>
-  <input class="input-custom" type="text" [formControlName]="'firstName'">
-  <br>
-  Nom<br>
-  <input class="input-custom" type="text" [formControlName]="'lastName'">
-  <br>
-  Email<br>
-  <input class="input-custom" type="text" [formControlName]="'email'">
-  <br>
-  Major<br>
-  <!-- <input class="input-custom" type="text" [formControlName]="'major'"> -->
-  <app-form-input [type]="'text'" [formGroup]="testimonialForm" [formControlName]="'major'"
-    [placeholder]="'major placeholder'" ngDefaultControl>
+<form class="testimonial-form" [formGroup]="testimonialForm">
+  <h3>Ajout d'un témoignage</h3>
+
+  <app-form-input
+    class="formfield"
+    [formGroup]="testimonialForm"
+    [formControlName]="'firstName'"
+    [placeholder]="'Prénom'"
+    ngDefaultControl>
   </app-form-input>
-  <br>
-  Université d'accueil<br>
-  <input class="input-custom" type="text" [formControlName]="'university'">
-  <br>
-  Texte<br>
-  <textarea name="testimonial-text" cols="30" rows="10" type="text"
-    [formControlName]="'text'"></textarea>
-  <br>
-  <button type="submit" class="btn-cst">Soumettre</button>
+  <app-form-input
+    class="formfield"
+    [formGroup]="testimonialForm"
+    [formControlName]="'lastName'"
+    [placeholder]="'Nom'"
+    ngDefaultControl>
+  </app-form-input>
+  <app-form-input
+    class="formfield"
+    [formGroup]="testimonialForm"
+    [formControlName]="'email'"
+    [placeholder]="'E-mail'"
+    ngDefaultControl>
+  </app-form-input>
+  <app-form-input
+    class="formfield"
+    [formGroup]="testimonialForm"
+    [formControlName]="'major'"
+    [placeholder]="'Cursus'"
+    ngDefaultControl>
+  </app-form-input>
+  <app-form-input
+    class="formfield"
+    [formGroup]="testimonialForm"
+    [formControlName]="'university'"
+    [placeholder]="'Université d\'accueil'"
+    ngDefaultControl>
+  </app-form-input>
+  <div class="textarea">
+    <app-form-textarea
+      [formGroup]="testimonialForm"
+      [formControlName]="'text'"
+      [maxlength]="500"
+      ngDefaultControl>
+    </app-form-textarea>
+  </div>
+  <app-form-button
+    [formGroup]="testimonialForm"
+    [label]="'Soumettre'"
+    (submit)="submit()">
+  </app-form-button>
 </form>

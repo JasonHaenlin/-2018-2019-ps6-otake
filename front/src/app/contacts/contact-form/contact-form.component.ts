@@ -62,7 +62,7 @@ export class ContactFormComponent implements OnInit {
       }
     });
     this.category.valueChanges.subscribe(v => {
-      this.categorySwitch = this.category.value;
+      this.categorySwitch = v;
       this.object.reset();
     });
   }
