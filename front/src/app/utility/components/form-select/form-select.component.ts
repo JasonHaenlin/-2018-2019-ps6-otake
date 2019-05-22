@@ -13,10 +13,12 @@ export class FormSelectComponent implements OnInit {
   @Input() label: string;
   @Input() options: string[];
   @Input() key: string;
+  @Input() default: boolean;
 
   constructor() { }
 
   ngOnInit() {
+    this.default = this.default || false;
   }
 
   get object() { return this.formGroup.get(this.formControlName); }

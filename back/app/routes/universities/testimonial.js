@@ -21,5 +21,5 @@ exports.postForm = async (req, res) => {
   }
   await token.blockToken(t);
   await testimonial.insertTestimonial(req.body.form);
-  resHandler.yahResponse(res, { status: true });
+  resHandler.yahResponse(res, { validy: true });
 };

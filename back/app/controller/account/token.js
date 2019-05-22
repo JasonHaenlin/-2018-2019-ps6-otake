@@ -17,8 +17,8 @@ const createToken = (token, time) => ({
 const emailToJson = (email, token) => ({
   emailReceiver: [email],
   object: 'Donnez votre avis',
-  message: 'Vous pouvez soumettre un votre avis grâce à ce formulaire\n' +
-    'https://otakedev.com/testimonial/form/' + token.token + ''
+  message: 'Vous pouvez partager votre avis grâce à ce formulaire\n' +
+    'https://ps.otakedev.com/testimonials/form/' + token.token + ''
 });
 
 const date = () => {

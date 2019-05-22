@@ -71,8 +71,9 @@ export class ContactFormComponent implements OnInit {
   sendMail() {
     let category = this.category.value;
     if (category === 'Echange') {
-      category = category + '-' + this.major.value;
+      category = category + '-' + this.major.value['shorthand'];
     }
+
     const mailToSend = <Mail>{
       firstName: this.firstName.value,
       lastName: this.lastName.value,

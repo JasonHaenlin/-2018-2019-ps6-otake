@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ApplicationHttpClient } from 'src/core/http-client';
 
-const baseEndPoint = 'form/';
+const baseEndPoint = 'account/form/';
 
 
 @Injectable({

@@ -72,8 +72,8 @@ export class UniversityService {
     return this.http.get<University[]>(`${baseEndPoint}search=${terms}`, 'get universities list by terms', []);
   }
 
-  insertTestimonial(testimonial: Testimonial) {
-    console.log(testimonial);
+  insertTestimonial(testimonial: Testimonial, token: string) {
+    return this.http.post<any>(`${baseEndPoint}testimonial`, { token: token, form: testimonial }, 'submit testimonial form');
   }
 
 }

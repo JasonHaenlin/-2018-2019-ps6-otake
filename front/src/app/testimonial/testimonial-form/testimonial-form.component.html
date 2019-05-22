@@ -4,14 +4,14 @@
   <app-form-input
     class="formfield"
     [formGroup]="testimonialForm"
-    [formControlName]="'firstName'"
+    [formControlName]="'first_name'"
     [placeholder]="'Prénom'"
     ngDefaultControl>
   </app-form-input>
   <app-form-input
     class="formfield"
     [formGroup]="testimonialForm"
-    [formControlName]="'lastName'"
+    [formControlName]="'last_name'"
     [placeholder]="'Nom'"
     ngDefaultControl>
   </app-form-input>
@@ -22,25 +22,34 @@
     [placeholder]="'E-mail'"
     ngDefaultControl>
   </app-form-input>
-  <app-form-input
+  <app-form-select
     class="formfield"
+    [default]="'true'"
     [formGroup]="testimonialForm"
-    [formControlName]="'major'"
-    [placeholder]="'Cursus'"
+    [formControlName]="'major_id'"
+    [label]="'Votre Cursus'"
+    [options]="(majors$ | async)"
+    [key]="'shorthand'"
     ngDefaultControl>
-  </app-form-input>
-  <app-form-input
-    class="formfield"
-    [formGroup]="testimonialForm"
-    [formControlName]="'university'"
-    [placeholder]="'Université d\'accueil'"
-    ngDefaultControl>
-  </app-form-input>
+  </app-form-select>
+  <div>
+    <app-search-box (termsEvent)="updateList($event)"></app-search-box>
+    <div class="list-container">
+      <div [ngClass]="{'selected': u.id === selectedUniv.id}"
+        *ngFor="let u of (universities$ | async)" (click)="select(u)">
+        {{u.name}}
+      </div>
+    </div>
+    <div class="selected-obj search-box">Sélectionné :
+      <strong>{{selectedUniv.name}}</strong>
+    </div>
+  </div>
   <div class="textarea">
     <app-form-textarea
       [formGroup]="testimonialForm"
       [formControlName]="'text'"
       [maxlength]="500"
+      [placeholder]="'Votre avis'"
       ngDefaultControl>
     </app-form-textarea>
   </div>

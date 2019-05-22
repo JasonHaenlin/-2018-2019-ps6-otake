@@ -1,7 +1,7 @@
-import { ManagerService } from './../../../services/manage/manager.service';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormValidators } from '../../utility/form.validator';
+import { ManagerService } from 'src/services/manager/manager.service';
 
 @Component({
   selector: 'app-manage-testimonial',
@@ -27,7 +27,7 @@ export class ManageTestimonialComponent implements OnInit {
     const emailsArray = [];
     this.emails.getRawValue().forEach(e => emailsArray.push(e.email));
     this.managerService.sendTestimonialForm(emailsArray).subscribe((r: any) => {
-      if (r.token) {
+      if (r && r.token) {
         this.emailForm.reset();
       }
     });

@@ -5,8 +5,9 @@
       [class.is-invalid]="object.invalid && (object.dirty || object.touched)"
       [class.is-valid]="object.valid && (object.dirty || object.touched)"
       [formControlName]="formControlName">
+      <option *ngIf="default" [ngValue]="" selected> - - - </option>
       <ng-container *ngIf="key; else elseTemplate">
-        <option *ngFor="let opt of options" [ngValue]="opt[key]">
+        <option *ngFor="let opt of options" [ngValue]="opt">
           {{opt[key]}}
         </option>
       </ng-container>
