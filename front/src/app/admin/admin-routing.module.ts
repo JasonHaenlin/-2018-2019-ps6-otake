@@ -22,7 +22,8 @@ const routes: Routes = [
         ]
       }
     ]
-  }
+  },
+  { path: '', redirectTo: '/admin/login', pathMatch: 'full' }
 ];
 
 @NgModule({

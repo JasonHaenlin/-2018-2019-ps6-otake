@@ -1,6 +1,7 @@
+import { FormGuard } from './testimonial/form.guard';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { ContactPageComponent } from './contacts/contact-page/contact-page.component';
 import { FinancialAidPageComponent } from './financial-aid-page/financial-aid-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -39,7 +40,11 @@ const routes: Routes = [
     path: 'testimonials',
     children: [
       { path: '', component: TestimonialPageComponent },
-      { path: 'form/:token', component: TestimonialFormComponent },
+      {
+        path: 'form/:token',
+        component: TestimonialFormComponent,
+        canActivate: [FormGuard]
+      },
     ]
   },
 

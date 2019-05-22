@@ -24,4 +24,8 @@ export class AdminService {
     return this.http.get<any>(`${baseEndPoint}check`, 'check login')
       .pipe(map(response => response.auth));
   }
+
+  checkToken(token: string) {
+    return this.http.post<any>(`${baseEndPoint}token`, { token: token }, 'check token validity');
+  }
 }
