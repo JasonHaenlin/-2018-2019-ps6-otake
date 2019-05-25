@@ -6,12 +6,14 @@ import { MajorDetailsComponent } from './major-details/major-details.component';
 import { SpecialityDetailsComponent } from './speciality-details/speciality-details.component';
 import { UtilityModule } from '../utility/utility.module';
 import { SpecialityCardComponent } from './speciality-card/speciality-card.component';
+import { AccordionComponent } from './accordion/accordion.component';
 
 @NgModule({
   declarations: [
     SpecialityCardComponent,
     MajorDetailsComponent,
     SpecialityDetailsComponent,
+    AccordionComponent
   ],
   imports: [
     MySchoolRoutingModule,

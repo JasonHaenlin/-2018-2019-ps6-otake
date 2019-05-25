@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { SectionSelectorComponent } from './section-selector/section-selector.component';
 import { RouterModule } from '@angular/router';
 import { LoaderService } from './loader/loader.service';
-import { AccordionComponent } from './accordion/accordion.component';
 import { DeadlineComponent } from './deadline/deadline.component';
 import { CoursesHolderComponent } from './courses-holder/courses-holder.component';
 import { SearchBoxComponent } from './search-box/search-box.component';
@@ -18,7 +17,6 @@ import { FormButtonComponent } from './components/form-button/form-button.compon
   declarations: [
     SectionSelectorComponent,
     LoaderComponent,
-    AccordionComponent,
     DeadlineComponent,
     CoursesHolderComponent,
     SearchBoxComponent,
@@ -35,7 +33,6 @@ import { FormButtonComponent } from './components/form-button/form-button.compon
   exports: [
     SectionSelectorComponent,
     LoaderComponent,
-    AccordionComponent,
     DeadlineComponent,
     CoursesHolderComponent,
     SearchBoxComponent,
