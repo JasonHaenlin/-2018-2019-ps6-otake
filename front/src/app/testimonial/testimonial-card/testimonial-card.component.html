@@ -2,7 +2,11 @@
 
   <div class="picture">
     <ng-container *ngIf="testimonial.picture; else defaultPic">
-      <img [src]="testimonial.picture" alt="<(^-^)>">
+      <picture>
+        <source type="image/webp" srcset="{{testimonial.picture}}.webp">
+        <img src="{{testimonial.picture}}.jpg" alt="<(^-^)>">
+      </picture>
+
     </ng-container>
     <ng-template #defaultPic>
       <img src="../../../assets/bubbles.png" alt="<(^-^)>">

@@ -1,7 +1,10 @@
 <a class="grid-card card" [routerLink]="[ 'details', university.id]">
 
   <div class="grid-logo">
-    <img src="{{university.small_picture}}" alt="[x] : university logo" class="contain"/>
+    <picture class="contain">
+      <source type="image/webp" srcset="{{university.small_picture}}.webp">
+      <img src="{{university.small_picture}}.jpg" alt="[x] : university logo">
+    </picture>
   </div>
 
   <div class="grid-title">

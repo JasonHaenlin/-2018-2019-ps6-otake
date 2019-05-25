@@ -16,7 +16,7 @@ module.exports = new BaseModel('testimonial', t => {
     id: 0, university_id: 0, major_id: 6,
     first_name: 'Luc', last_name: 'Armel',
     email: 'luc.armel@etu.univ-cotedazur.fr', nationality: 'FR',
-    picture: 'https://otakedev.com/share/images/users/4.jpg',
+    picture: 'https://otakedev.com/share/images/users/4',
     text: 'Pour les inscriptions, tu choisis tes cours en tout début de semestre et tu prépares toi-même ton emploi du temps.' +
         'Une fois inscrit, j’avais 10 heures de cours par semaine, divisées en 5 ou 6 modules, ' +
         'certains étant plus courts que d’autres. Au niveau du choix, on a essayé de tout concentrer le lundi,' +
@@ -26,7 +26,7 @@ module.exports = new BaseModel('testimonial', t => {
     id: 1, university_id: 19, major_id: 6,
     first_name: 'Anass', last_name: 'Hu',
     email: 'anass.hu@etu.univ-cotedazur.fr', nationality: 'MA',
-    picture: 'https://otakedev.com/share/images/users/1.jpg',
+    picture: 'https://otakedev.com/share/images/users/1',
     text: 'Il y a deux mondes, celui des étudiants qui vivent « On-campus » et celui des étudiants qui vivent « Off-campus ».' +
         ' La vie sur le campus (en dehors des heures d’études) se résume souvent à un grand « party » : ' +
         'beaucoup d’alcool, des amis et de la bonne humeur. À noter, les étudiants français (ou internationaux) ' +
