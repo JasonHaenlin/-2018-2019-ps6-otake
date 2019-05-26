@@ -3,12 +3,11 @@
 .line {
   display: inline-block;
   background-color: $blue4;
-  height: 6.3em;
+  height: 7em;
   width: 0.3em;
   margin-left: -6px;
-  position: relative;
+  position: absolute;
   z-index: -1;
-  top: -23px;
 }
 
 .grid-container {
