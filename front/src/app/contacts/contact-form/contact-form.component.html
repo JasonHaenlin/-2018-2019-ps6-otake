@@ -106,11 +106,5 @@
     (submit)="sendMail()">
   </app-form-button>
 
-  <div [@openClose] class="modal modal-open" *ngIf="active">
-    <div class="modal-box">
-      <div class="modal-body">
-        <h4>E-mail envoyé</h4>
-      </div>
-    </div>
-  </div>
 </form>
+<app-dialog [@fadeAnimation] [text]="'E-mail envoyé'" *ngIf="active"></app-dialog>

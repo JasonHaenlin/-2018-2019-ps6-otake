@@ -14,10 +14,6 @@ button {
   font-weight: bold;
 }
 
-.container {
-  position: relative;
-}
-
 .log-form {
   width: 25em;
   height: 14em;
@@ -63,16 +59,4 @@ input:focus {
 
 .fas {
   vertical-align: middle;
-}
-
-.modal-body {
-  width: 10em;
-  position: absolute;
-  top: 1%;
-  left: -3%;
-  background: $warning2;
-  color: $white;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
-  border-radius: 17px;
-  text-align: center;
 }

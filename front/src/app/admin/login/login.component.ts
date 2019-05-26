@@ -3,22 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdminService } from './../../../services/admin/admin.service';
 import { Router } from '@angular/router';
+import { fadeAnimation } from 'src/app/utility/animations/FadeInOut';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  animations: [
-    trigger('openClose', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('0.4s', style({ opacity: 1 })),
-      ]),
-      transition(':leave', [
-        animate('0.2s', style({ opacity: 0 }))
-      ])
-    ]),
-  ],
+  animations: [fadeAnimation]
 })
 export class LoginComponent implements OnInit {
 

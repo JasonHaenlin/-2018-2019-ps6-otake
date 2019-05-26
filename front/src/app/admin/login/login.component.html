@@ -1,32 +1,27 @@
-<div class="container">
+<form class="log-form" [formGroup]="loginForm" (ngSubmit)="login()">
+  <div class="login-title">Administrateur</div>
 
-  <form class="log-form" [formGroup]="loginForm" (ngSubmit)="login()">
-    <div class="login-title">Administrateur</div>
-
-    <div class="input-holder">
-      <span class="fas fa-user-secret"></span>
-      <input type="text"
-        [class.is-invalid]="username.invalid && (username.dirty || username.touched)"
-        [class.is-valid]="username.valid && (username.dirty || username.touched)"
-        [formControlName]="'username'" name="username" placeholder="Identifiant">
-    </div>
-
-    <div class="input-holder">
-      <span class="fas fa-lock"></span>
-      <input type="password"
-        [class.is-invalid]="password.invalid && (password.dirty || password.touched)"
-        [class.is-valid]="password.valid && (password.dirty || password.touched)"
-        [formControlName]="'password'" name="password" placeholder="Mot de passe">
-    </div>
-
-    <button type="submit" [disabled]="loginForm.invalid" class="btn-cst">Connexion</button>
-
-  </form>
-  <div [@openClose] class="modal modal-open" *ngIf="active">
-    <div class="modal-box">
-      <div class="modal-body">
-        <h4>Erreur de connexion</h4>
-      </div>
-    </div>
+  <div class="input-holder">
+    <span class="fas fa-user-secret"></span>
+    <input type="text"
+      [class.is-invalid]="username.invalid && (username.dirty || username.touched)"
+      [class.is-valid]="username.valid && (username.dirty || username.touched)"
+      [formControlName]="'username'" name="username" placeholder="Identifiant">
   </div>
-</div>
+
+  <div class="input-holder">
+    <span class="fas fa-lock"></span>
+    <input type="password"
+      [class.is-invalid]="password.invalid && (password.dirty || password.touched)"
+      [class.is-valid]="password.valid && (password.dirty || password.touched)"
+      [formControlName]="'password'" name="password" placeholder="Mot de passe">
+  </div>
+
+  <button type="submit" [disabled]="loginForm.invalid" class="btn-cst">Connexion</button>
+
+</form>
+
+<app-dialog [@fadeAnimation] *ngIf="active"
+  [type]="'warning'"
+  [text]="'Erreur de connexion'">
+</app-dialog>

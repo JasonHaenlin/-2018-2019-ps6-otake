@@ -12,6 +12,7 @@ import { LoaderComponent } from './loader';
 import { LoaderService } from './loader/loader.service';
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { SectionSelectorComponent } from './section-selector/section-selector.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SectionSelectorComponent } from './section-selector/section-selector.co
     FormSelectComponent,
     FormTextareaComponent,
     FormButtonComponent,
+    DialogComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -40,6 +42,7 @@ import { SectionSelectorComponent } from './section-selector/section-selector.co
     FormSelectComponent,
     FormTextareaComponent,
     FormButtonComponent,
+    DialogComponent,
   ],
   providers: [
     LoaderService,

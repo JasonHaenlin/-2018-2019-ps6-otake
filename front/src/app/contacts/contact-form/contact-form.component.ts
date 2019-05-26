@@ -1,28 +1,19 @@
-import { Major } from 'src/models/Major';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { Major } from 'src/models/Major';
+import { FormValidators } from '../../../app/utility/form.validator';
+import { Mail } from '../../../models/Mail';
 import { SchoolService } from '../../../services/school/school.service';
 import { UniversityService } from '../../../services/university/university.service';
-import { Mail } from '../../../models/Mail';
-import { Observable } from 'rxjs';
-import { FormValidators } from '../../../app/utility/form.validator';
-import { animate, style, transition, trigger } from '@angular/animations';
+import { fadeAnimation } from 'src/app/utility/animations/FadeInOut';
 
 @Component({
   selector: 'app-contact-form',
   templateUrl: './contact-form.component.html',
   styleUrls: ['./contact-form.component.scss'],
-  animations: [
-    trigger('openClose', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('0.4s', style({ opacity: 1 })),
-      ]),
-      transition(':leave', [
-        animate('0.2s', style({ opacity: 0 }))
-      ])
-    ]),
-  ],
+  animations: [fadeAnimation],
+
 })
 export class ContactFormComponent implements OnInit {
 
@@ -55,7 +46,7 @@ export class ContactFormComponent implements OnInit {
   ngOnInit() {
     this.majors$ = this.universityService.getMajors();
     this.message.valueChanges.subscribe(v => {
-      if ( v == null ) {
+      if (v == null) {
         this.messageLen = 0;
       } else {
         this.messageLen = v.length;

@@ -59,3 +59,7 @@
     (submit)="submit()">
   </app-form-button>
 </form>
+
+<app-dialog [@fadeAnimation]
+  [text]="'Avis Envoyé, Merci !'" *ngIf="active">
+</app-dialog>

@@ -4,10 +4,6 @@
 @import '../../../styles/modal.scss';
 @import '../../../styles/form.scss';
 
-button {
-  width: 50%;
-}
-
 .grid-contact-form {
   overflow: hidden;
   display: grid;
@@ -66,25 +62,4 @@ button {
 
 .grid-submit {
   grid-area: submit;
-}
-
-.modal-body {
-  height: 3em;
-  width: 10em;
-  position: absolute;
-  top: 1%;
-  left: -3%;
-  background: $blue3;
-  color: $white;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
-  border-radius: 17px;
-  text-align: center;
-}
-
-h4 {
-  display: block;
-  font-size: 1.17em;
-  font-weight: bold;
-  margin: 0;
-  padding-top: 12px;
 }

@@ -81,7 +81,7 @@ const sendMails = (emails, tokens) => {
 module.exports = {
 
   async blockToken(token) {
-    await patchToken(token.id, 'blocked');
+    await patchToken(token.id, 'completed');
   },
 
   async submitNewTestimonialsForm(emails) {

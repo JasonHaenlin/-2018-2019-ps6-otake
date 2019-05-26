@@ -69,7 +69,11 @@ export class UniversityService {
   }
 
   getUniversitiesByTerms(terms: string): Observable<University[]> {
-    return this.http.get<University[]>(`${baseEndPoint}search=${terms}`, 'get universities list by terms', []);
+    let search = 'search=...';
+    if (terms.length > 0) {
+      search = `search=${terms}`;
+    }
+    return this.http.get<University[]>(`${baseEndPoint}${search}`, 'get universities list by terms', []);
   }
 
   insertTestimonial(testimonial: Testimonial, token: string) {
