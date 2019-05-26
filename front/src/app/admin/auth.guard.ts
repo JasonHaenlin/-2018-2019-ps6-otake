@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
         }
       }),
       catchError((err) => {
-        this.router.navigate(['/page-not-found']);
+        this.router.navigate(['/admin/login']);
         return of(false);
       }));
   }
