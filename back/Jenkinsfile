@@ -31,7 +31,7 @@ pipeline {
     }
     stage('Migrate') {
       environment {
-        NODE_ENV= 'development'
+        NODE_ENV = 'development'
       }
       steps {
         echo 'Knex migration'
@@ -44,7 +44,7 @@ pipeline {
     }
     stage('Test') {
       environment {
-        NODE_ENV= 'development'
+        NODE_ENV = 'development'
       }
       steps {
         echo 'Test'
@@ -107,6 +107,8 @@ pipeline {
           environment {
             PSQL_USER_LOGIN = "${PSQL_USER_LOGIN_USER}"
             PSQL_AUTH_KEY = "${PSQL_AUTH_KEY_USER}"
+            PULSE_USER = "${PULSE_USER}"
+            PULSE_PSWD = "${PULSE_PSWD}"
           }
           steps {
             echo 'App restarted'
