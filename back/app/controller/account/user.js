@@ -16,6 +16,4 @@ module.exports = {
       .where({ supervisor_id: id })
       .first();
   }
-
-
 };

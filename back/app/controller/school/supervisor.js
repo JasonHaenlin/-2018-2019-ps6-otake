@@ -23,7 +23,7 @@ module.exports = {
 
     return transporter.sendMail({
       from: '"polytech RI" <contact@otakedev.com>',
-      // mock to avoid flooding others
+      // mocked to avoid flooding others
       to: 'jh.notif@gmail.com',
       subject: `polytech RI : ${email.object} -- ${email.firstName} ${email.lastName}`,
       text: `${email.firstName} ${email.lastName} \n${email.emailSender} \n\n${email.message}`

@@ -21,31 +21,31 @@ export class SchoolService {
 
   // SPECIALITIES
 
-  getCardSpecialities(majorShorthand: string): Observable<SpecialityCard[]> {
-    return this.http.get<SpecialityCard[]>(`${baseEndPoint}/specialities-cards/${majorShorthand}`,
+  getSpecialities(majorShorthand: string): Observable<SpecialityCard[]> {
+    return this.http.get<SpecialityCard[]>(`${baseEndPoint}specialities/${majorShorthand}`,
       'getting all specialities of a chosen major', []);
   }
 
-  getSpeciality(majorShorthand: string): Observable<Speciality> {
-    return this.http.get<Speciality>(`${baseEndPoint}specialities/${majorShorthand}`, 'getting a speciality for a chosen major');
+  getSpecialityDetails(majorShorthand: string): Observable<Speciality> {
+    return this.http.get<Speciality>(`${baseEndPoint}speciality/${majorShorthand}`, 'getting a speciality for a chosen major');
   }
 
   // COURSES
 
   getCoursesOf(majorShorthand: string): Observable<Course[]> {
-    return this.http.get<Course[]>(`${baseEndPoint}/courses/${majorShorthand}`,
+    return this.http.get<Course[]>(`${baseEndPoint}courses/${majorShorthand}`,
       'getting all courses of a chosen major', []);
   }
 
   getCoursesOfMajorForThisSemester(majorShorthand, semester: string): Observable<Course[]> {
-    return this.http.get<Course[]>(`${baseEndPoint}/courses/${majorShorthand}/${semester}`,
+    return this.http.get<Course[]>(`${baseEndPoint}courses/${majorShorthand}/${semester}`,
       'getting all courses of a chosen major of a chosen semester', []);
   }
 
   // CONTRACTS
 
   getContractsForAccordion(specialityShort: string) {
-    return this.http.get<ContractArea[]>(`${baseEndPoint}/contracts/${specialityShort}`,
+    return this.http.get<ContractArea[]>(`${baseEndPoint}contracts/${specialityShort}`,
       'getting all contracts of a chosen speciality', []);
   }
 
@@ -58,13 +58,12 @@ export class SchoolService {
   }
 
   getMajorByShorthand(majorShorthand: string): Observable<Major> {
-    return this.http.get<Major>(`${baseEndPoint}/majors/${majorShorthand}`, 'getting a specific major within majors');
+    return this.http.get<Major>(`${baseEndPoint}majors/${majorShorthand}`, 'getting a specific major within majors');
   }
 
   getSupervisors(): Observable<Supervisor[]> {
     return this.http.get<Supervisor[]>(`${baseEndPoint}supervisors`, 'get supervisor list', []);
   }
-
 
   getSupervisorEmailByCategory(category: string): Observable<string[]> {
     return this.http.get<Supervisor[]>(`${baseEndPoint}supervisors/${category}`, 'get supervisor list by category', [])

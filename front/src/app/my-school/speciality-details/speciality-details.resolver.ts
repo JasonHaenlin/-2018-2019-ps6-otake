@@ -14,7 +14,7 @@ export class SpecialityDetailsResolver implements Resolve<Speciality> {
     private router: Router) { }
 
   resolve(route: ActivatedRouteSnapshot): Observable<Speciality> | Observable<never> {
-    return this.schoolService.getSpeciality(route.paramMap.get('name')).pipe(
+    return this.schoolService.getSpecialityDetails(route.paramMap.get('name')).pipe(
       take(1),
       switchMap(spec => {
         if (spec) {

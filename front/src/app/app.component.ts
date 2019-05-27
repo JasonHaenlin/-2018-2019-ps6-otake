@@ -13,7 +13,6 @@ export class AppComponent {
 
   constructor() { }
 
-
   flowActivedEvent(state: boolean) {
     this.flowActived = state;
   }

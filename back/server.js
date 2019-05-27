@@ -18,19 +18,8 @@ const server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-let port = null;
-let host = null;
-
-switch (process.env.NODE_ENV) {
-  case 'production':
-    port = config.production.port;
-    host = config.production.host;
-    break;
-  default:
-    port = config.development.port;
-    host = config.development.host;
-    break;
-}
+let port = config[process.env.NODE_ENV].port || 3000;
+let host = config[process.env.NODE_ENV].host || '127.0.0.1';
 
 server.listen(port, host);
 
@@ -39,9 +28,7 @@ server.listen(port, host);
  */
 
 const onListening = () => {
-  let addr = config.host || '127.0.0.1';
-  let port = config.port || '3000';
-  LogTheInfo('Listening on ' + addr + ':' + port);
+  LogTheInfo('Listening on ' + host + ':' + port);
 };
 
 /**
@@ -53,16 +40,14 @@ const onError = (error) => {
     throw error;
   }
 
-  let bind = config.port || '3000';
-
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
-      logTheError(bind + ' requires elevated privileges');
+      logTheError(port + ' requires elevated privileges');
       process.exit(1);
       break;
     case 'EADDRINUSE':
-      logTheError(bind + ' is already in use');
+      logTheError(port + ' is already in use');
       process.exit(1);
       break;
     default:
@@ -79,4 +64,4 @@ process.on('unhandledRejection', (reason, promise) => {
   logTheError('Unhandled Rejection at : ' + reason);
 });
 
-module.exports = { server, app };
+module.exports = { app };

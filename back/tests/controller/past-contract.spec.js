@@ -3,14 +3,6 @@ const assert = require('assert');
 
 const { pastContract } = require('../../app/controller/school');
 
-const getLinksBySpecialityAndGeographicalArea = (specialityShorthand, geographicalArea) => {
-  return  PastContract.query()
-    .alias('pc')
-    .select('pc.link')
-    .joinRelation('[exchange_university.city.country.geographical_area, speciality')
-    .where({ 'geographical_area.name': geographicalArea }, { 'speciality.shorthand': specialityShorthand})
-};
-
 describe('past contracts controller to database', () => {
   it('should get the list of contracts from the database', async () => {
     const res = await pastContract.getPastContracts();

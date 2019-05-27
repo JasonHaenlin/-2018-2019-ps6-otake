@@ -1,7 +1,7 @@
 require('../../server');
 const assert = require('assert');
 
-const { ExchangeUniversity } = require('../../app/middlewares/orm/models');
+const { ExchangeUniversity } = require('../../app/middlewares/orm');
 
 const { university } = require('../../app/controller/universities');
 

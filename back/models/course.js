@@ -72,7 +72,10 @@ module.exports = new BaseModel('course', t => {
   { id: 61, major_spec_id: 0, ue: '', semester: 'S10', title: 'Virtualized cloud computing', description: '' },
   { id: 62, major_spec_id: 0, ue: '', semester: 'S10', title: 'Ingénierie 3D', description: '' },
   { id: 63, major_spec_id: 6, ue: '', semester: 'S7', title: 'Processus stochastiques', description: '' },
-  { id: 64, major_spec_id: 6, ue: '', semester: 'S7', title: 'Modélisation et optimisation en apprentissage automatique', description: '' },
+  {
+    id: 64, major_spec_id: 6, ue: '', semester: 'S7', title: 'Modélisation et optimisation en apprentissage automatique',
+    description: ''
+  },
   { id: 65, major_spec_id: 6, ue: '', semester: 'S7', title: 'Equations aux Dérivées Partielles', description: '' },
   { id: 66, major_spec_id: 6, ue: '', semester: 'S7', title: 'Analyse Conception orientée Objet', description: '' },
   { id: 67, major_spec_id: 6, ue: '', semester: 'S7', title: 'Bases de Données Relationnelles', description: '' },
@@ -97,5 +100,5 @@ module.exports = new BaseModel('course', t => {
   { id: 86, major_spec_id: 6, ue: '', semester: 'S8', title: 'Anglais 8', description: '' },
   { id: 87, major_spec_id: 6, ue: '', semester: 'S8', title: 'Jeu d’entreprise', description: '' },
   { id: 88, major_spec_id: 6, ue: '', semester: 'S8', title: 'Communication 2', description: '' },
-  { id: 89, major_spec_id: 6, ue: '', semester: 'S8', title: 'Projet 4', description: '' },
+  { id: 89, major_spec_id: 6, ue: '', semester: 'S8', title: 'Projet 4', description: '' }
 ]);

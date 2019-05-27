@@ -1,7 +1,7 @@
 require('../../server');
 const assert = require('assert');
 
-const { City, GeographicalArea, Country } = require('../../app/middlewares/orm/models');
+const { City, GeographicalArea, Country } = require('../../app/middlewares/orm');
 
 
 describe('city controller to database', () => {

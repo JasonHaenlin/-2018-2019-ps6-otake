@@ -1,5 +1,5 @@
 http://unice.fr/polytechnice/fr/international/etudes-a-letranger/partir-a-letranger
-Remplie la base de données avec de vrai information
+
 **Dossier Hors Europe de l'UNS**
 
 - [ ] Brésil Université Fédérale de Rio de Janeiro (UFRJ) Accord bilatéral Tous

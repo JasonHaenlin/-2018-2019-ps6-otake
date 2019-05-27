@@ -1,7 +1,7 @@
 require('../../server');
 const assert = require('assert');
 
-const { Testimonial } = require('../../app/middlewares/orm/models');
+const { Testimonial } = require('../../app/middlewares/orm');
 
 describe('Testimonial controller to database', () => {
   it('should get the list of Testimonials from the database', async () => {

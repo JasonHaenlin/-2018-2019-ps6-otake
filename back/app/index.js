@@ -1,13 +1,13 @@
 const express = require('express');
 const route = require('./routes');
 const cors = require('cors');
-const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const session = require('express-session');
 const auth = require('./controller/auth');
 const { handle404Error, handleDevErrors, handleClientErrors, logErrors } = require('./middlewares/error-handlers');
 const { AccessDeniedError } = require('./utils/errors');
+const { LogTheTransaction } = require('./config/logger');
 const app = express();
 
 const allowedOrigins = ['https://ps.otakedev.com', 'http://localhost:4200'];
@@ -25,7 +25,6 @@ app.use(cors({
   }
 }));
 
-app.use(morgan('combined'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -47,6 +46,14 @@ app.use(session(sess));
 require('./config/passport')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
+
+// log everything that pass to the router
+app.use((req, res, next) => {
+  LogTheTransaction(req.session.passport ? req.session.passport.user : 'none',
+    `${req.originalUrl} - ${req.method} - ${req.ip}`,
+    'info');
+  next();
+});
 
 
 // add all the routes

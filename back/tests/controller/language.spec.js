@@ -1,7 +1,7 @@
 require('../../server');
 const assert = require('assert');
 
-const { Language } = require('../../app/middlewares/orm/models');
+const { Language } = require('../../app/middlewares/orm');
 
 const getLanguages = () => {
   return Language.query();

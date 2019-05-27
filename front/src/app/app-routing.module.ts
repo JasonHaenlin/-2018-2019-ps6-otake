@@ -53,6 +53,8 @@ const routes: Routes = [
   { path: 'contacts', component: ContactPageComponent },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+
+
   // catch all the other routes
   { path: '**', component: PageNotFoundComponent },
 ];

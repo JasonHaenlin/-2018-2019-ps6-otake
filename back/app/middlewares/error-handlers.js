@@ -9,7 +9,7 @@ const { LogTheTransaction } = require('../config/logger');
 module.exports = {
   logErrors(err, req, res, next) {
     /* log the error using winston for all production errors */
-    LogTheTransaction(req.session.passport ? req.session.passport : 'none',
+    LogTheTransaction(req.session.passport ? req.session.passport.user : 'none',
       `${err.status || 500} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`,
       'error');
     next(err);

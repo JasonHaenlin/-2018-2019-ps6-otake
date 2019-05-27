@@ -20,9 +20,6 @@ module.exports = {
       port: 9004
     }
   },
-  backend: {
-    url: 'http://localhost:3000'
-  },
   database,
   logger
 };

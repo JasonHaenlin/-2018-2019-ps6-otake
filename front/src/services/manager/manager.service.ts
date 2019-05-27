@@ -3,7 +3,6 @@ import { ApplicationHttpClient } from 'src/core/http-client';
 
 const baseEndPoint = 'account/form/';
 
-
 @Injectable({
   providedIn: 'root'
 })
