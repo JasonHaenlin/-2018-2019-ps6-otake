@@ -21,7 +21,7 @@ module.exports = {
       message = err.stack || err;
     }
 
-    if (err.name !== 'Error') {
+    if ((err.name).toLowerCase() !== 'error') {
       res.status(err.status).json({ code: err.status, message: message });
     } else {
       next(err);

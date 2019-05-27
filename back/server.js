@@ -18,8 +18,12 @@ const server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-let port = config[process.env.NODE_ENV].port || 3000;
-let host = config[process.env.NODE_ENV].host || '127.0.0.1';
+let port = 3000;
+let host = '127.0.0.1';
+if (config[process.env.NODE_ENV]) {
+  port = config[process.env.NODE_ENV].port;
+  host = config[process.env.NODE_ENV].host;
+}
 
 server.listen(port, host);
 
