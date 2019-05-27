@@ -33,6 +33,8 @@ server.listen(port, host);
 
 const onListening = () => {
   LogTheInfo('Listening on ' + host + ':' + port);
+  LogTheInfo(process.env.PULSE_USER);
+  LogTheInfo(process.env.PULSE_PSWD);
 };
 
 /**
