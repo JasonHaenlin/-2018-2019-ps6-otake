@@ -20,7 +20,7 @@ export class FormTextareaComponent implements OnInit {
   ngOnInit() {
     this.maxlength = this.maxlength || 500;
     this.placeholder = this.placeholder || 'Votre message';
-    this.object.valueChanges.subscribe(v => this.messageLen = v.length);
+    this.object.valueChanges.subscribe(v => this.messageLen = v ? v.length : 0);
   }
 
   get object() { return this.formGroup.get(this.formControlName); }
