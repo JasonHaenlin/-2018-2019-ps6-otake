@@ -16,7 +16,8 @@
     "coverage": "nyc mocha tests/ -R spec --recursive --exit",
     "deploy": "pm2 start server.js --log-date-format \"YYYY-MM-DD HH:mm Z\" --name nodejs-ps6",
     "stop": "pm2 stop nodejs-ps6 || echo 'fail to stop nodejs-ps6 process'",
-    "redeploy": "pm2 restart nodejs-ps6 || npm run deploy"
+    "redeploy": "pm2 restart nodejs-ps6 || npm run deploy",
+    "doc": "apidoc -i  app/routes -o ../doc/express/"
   },
   "contributors": [
     {
@@ -41,6 +42,7 @@
     "lint"
   ],
   "devDependencies": {
+    "apidoc": "^0.17.7",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.15.0",
     "eslint-plugin-promise": "^4.0.1",

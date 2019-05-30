@@ -3,10 +3,6 @@ const { Testimonial } = require('../../middlewares/orm');
 
 
 module.exports = {
-  getTestimonialByUniversity() {
-    return Testimonial.query();
-  },
-
   getTestimonials() {
     return Testimonial.query()
       .alias('t')

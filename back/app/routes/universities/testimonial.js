@@ -9,11 +9,6 @@ exports.getTestimonials = async (req, res) => {
   resHandler.yahResponse(res, testimonials);
 };
 
-exports.getTestimonialByUniversity = async (req, res) => {
-  const testimonials = await testimonial.getTestimonialByUniversity();
-  resHandler.yahResponse(res, testimonials);
-};
-
 exports.postForm = async (req, res) => {
   const t = await token.checkTokenValidy(req.body.token);
   if (!t) {
