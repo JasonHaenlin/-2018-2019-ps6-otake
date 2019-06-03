@@ -436,6 +436,140 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/queue/tickets",
+    "title": "Request tickets",
+    "name": "GetTickets",
+    "group": "Queue",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "uuid",
+            "description": "<p>req query params user uuid to identify how</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "room",
+            "description": "<p>req query params sort by room</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl -i http://localhost:3000/queue/tickets?uuid=f773d9cc72bcd&room=O+123",
+        "type": "curl"
+      }
+    ],
+    "success": {
+      "fields": {
+        "200": [
+          {
+            "group": "200",
+            "type": "json[]",
+            "optional": false,
+            "field": "tickets",
+            "description": "<p>list</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK\n[\n  {\n    \"created_at\": \"1559565201902\",\n    \"supervisor\": \"Eric Macia\",\n    \"availability\": false,\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\",\n    \"major\": \"Informatique\",\n    \"room\": \"O+136\",\n    \"rank\": \"1\"\n  }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "404": [
+          {
+            "group": "404",
+            "type": "json",
+            "optional": false,
+            "field": "NotFoundError",
+            "description": "<p>Element has not been found</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 404 Not Found\n{\n    \"code\": 404,\n    \"message\": \"please check URL\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "app/routes/queue/index.js",
+    "groupTitle": "Queue"
+  },
+  {
+    "type": "post",
+    "url": "/queue/ticket",
+    "title": "Request post new tickets",
+    "name": "PostTickets",
+    "group": "Queue",
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl -d '\n       {\n         \"supervisor_id\": 0,\n         \"student_id\": 1\n       }'\n       -H \"Content-Type: application/json\" -X POST http://localhost:3000/queue/tickets",
+        "type": "curl"
+      }
+    ],
+    "success": {
+      "fields": {
+        "200": [
+          {
+            "group": "200",
+            "type": "json",
+            "optional": false,
+            "field": "Tickets",
+            "description": "<p>submit</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n      \"id\": 3,\n      \"supervisor_id\": 0,\n      \"student_id\": 1,\n      \"timestamp\":23456709871\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "404": [
+          {
+            "group": "404",
+            "type": "json",
+            "optional": false,
+            "field": "NotFoundError",
+            "description": "<p>Element has not been found</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 404 Not Found\n{\n    \"code\": 404,\n    \"message\": \"please check URL\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "app/routes/queue/index.js",
+    "groupTitle": "Queue"
+  },
+  {
+    "type": "get",
     "url": "/school/contracts/",
     "title": "Request all the contracts",
     "name": "GetContracts",
