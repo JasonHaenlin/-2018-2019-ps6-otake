@@ -305,7 +305,7 @@ school.get('/courses/:major/:semester', handleExceptions(course.getCoursesOfMajo
  */
 school.get('/deadlines/:intervalDate', handleExceptions(info.getDeadlineByYears));
 /**
- * @api {get} /school/courses/ Request all supervisors
+ * @api {get} /school/supervisors/ Request all supervisors
  * @apiName GetSupervisors
  * @apiGroup School
  * @apiExample {curl} Example usage:

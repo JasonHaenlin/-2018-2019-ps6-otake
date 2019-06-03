@@ -1104,7 +1104,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/school/courses/",
+    "url": "/school/supervisors/",
     "title": "Request all supervisors",
     "name": "GetSupervisors",
     "group": "School",

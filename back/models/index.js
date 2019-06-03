@@ -16,6 +16,9 @@ const supervisor = require('./supervisor');
 const financialAid = require('./financial-aid');
 const user = require('./user');
 const token = require('./token');
+const room = require('./room');
+const queue = require('./queue');
+const student = require('./student');
 
 /**
  * All the table are sort here
@@ -39,7 +42,10 @@ module.exports = [
   studyDepartement,
   deadline,
   past_contract,
-  supervisor,
   financialAid,
-  user
+  room,
+  supervisor,
+  user,
+  student,
+  queue
 ];
