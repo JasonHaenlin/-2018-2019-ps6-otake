@@ -13,7 +13,7 @@ class Queue extends Model {
       properties: {
         id: { type: 'integer' },
         supervisor_id: { type: 'integer' },
-        student_id: { type: 'integer' },
+        student_id: { type: 'string' },
         created_at: { type: 'integer' }
       }
     };

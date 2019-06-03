@@ -8,6 +8,6 @@ exports.getTickets = async (req, res) => {
 };
 
 exports.postTickets = async (req, res) => {
-  const tickets = await queue.insertTicketsInQueue(body.tickets);
+  const tickets = await queue.insertTicketsInQueue(req.body);
   resHandler.yahResponse(res, tickets);
 };
