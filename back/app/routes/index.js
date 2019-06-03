@@ -2,6 +2,7 @@ const school = require('./school');
 const universities = require('./universities');
 const auth = require('./auth');
 const account = require('./account');
+const queue = require('./queue');
 const express = require('express');
 
 const main = express.Router();
@@ -13,5 +14,6 @@ module.exports = {
   school,
   universities,
   auth,
-  account
+  account,
+  queue
 };
