@@ -65,6 +65,8 @@ app.use('/universities', route.universities);
 // auth url
 app.use('/auth', route.auth);
 // account url
+app.use('/queue', route.queue);
+// account url
 app.use('/account', auth.ensureAuthenticated, route.account);
 
 // catch 404 and forward to error handler

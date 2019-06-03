@@ -7,9 +7,9 @@ module.exports = {
       .alias('q')
       .select(
         'q.created_at',
-        'supervisor.name',
+        'supervisor.name as supervisor',
         'supervisor.availability',
-        'student.first_name as supervisor',
+        'student.first_name',
         'student.last_name',
         'student:major.title as major',
         'supervisor:room.label as room',
@@ -22,7 +22,17 @@ module.exports = {
         if (room) {
           queryBuilder.where('supervisor:room.label', room);
         }
-      })
-      .groupBy('supervisor:room.label');
+      });
+  },
+
+  insertTicketsInQueue(tickets) {
+    if (process.env.NODE_ENV === 'development') {
+      return tickets.reduce(async (previousPromise, nextValue) => {
+        await previousPromise;
+        return Queue.query().insert(nextValue);
+      }, Promise.resolve());
+    }
+    // postgresql can handle array insert
+    return Token.query().insert(tickets);
   }
 };
