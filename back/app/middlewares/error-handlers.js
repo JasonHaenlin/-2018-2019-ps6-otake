@@ -10,7 +10,7 @@ module.exports = {
   logErrors(err, req, res, next) {
     /* log the error using winston for all production errors */
     LogTheTransaction(req.session.passport ? req.session.passport.user : 'none',
-      `${err.status || 500} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`,
+      `${err.status || 500} - ${err.name} -${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`,
       'error');
     next(err);
   },
@@ -20,9 +20,8 @@ module.exports = {
     if (process.env.NODE_ENV === 'development') {
       message = err.stack || err;
     }
-
     if ((err.name).toLowerCase() !== 'error') {
-      res.status(err.status).json({ code: err.status, message: message });
+      res.status(err.status || 400).json({ code: err.status, message: message });
     } else {
       next(err);
     }

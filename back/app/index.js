@@ -64,7 +64,7 @@ app.use('/school', route.school);
 app.use('/universities', route.universities);
 // auth url
 app.use('/auth', route.auth);
-// account url
+// queue url
 app.use('/queue', route.queue);
 // account url
 app.use('/account', auth.ensureAuthenticated, route.account);

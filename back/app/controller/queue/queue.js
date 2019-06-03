@@ -33,6 +33,6 @@ module.exports = {
       }, Promise.resolve());
     }
     // postgresql can handle array insert
-    return Token.query().insert(tickets);
+    return Queue.query().insert(tickets);
   }
 };
