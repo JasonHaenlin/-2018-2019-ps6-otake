@@ -32,4 +32,6 @@ const tickets = require('./queue');
  */
 queue.get('/tickets', handleExceptions(tickets.getTickets));
 
+queue.post('/ticket', handleExceptions(tickets.postTickets));
+
 module.exports = queue;
