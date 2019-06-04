@@ -56,7 +56,6 @@ module.exports = {
       )
       .orderBy('queue.created_at')
       .first();
-    console.log(lastTicket.id);
 
     return Queue.query()
       .delete()
