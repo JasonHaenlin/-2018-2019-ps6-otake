@@ -100,7 +100,28 @@ queue.post('/tickets', handleExceptions(tickets.postTickets));
  */
 queue.post('/student', handleExceptions(student.newStudent));
 
-queue.delete('/tickets/:room/last', tickets.deleteLastTickets);
+/**
+ * @api {delete} /queue/tickets Request first ticket to be deleted
+ * @apiName DeleteTicketsFirst
+ * @apiGroup Queue
+ * @apiParam {string} room req params room id to identify which queue
+ * @apiExample {curl} Example usage:
+ *     curl -i http://localhost:3000/queue/tickets/0/first
+ * @apiSuccess (200) {json} response result
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *      {
+ *        "status": "ok"
+ *      }
+ * @apiError (404) {json} NotFoundError Element has not been found
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 404 Not Found
+ *    {
+ *        "code": 404,
+ *        "message": "please check URL"
+ *    }
+ */
+queue.delete('/tickets/:room/first', tickets.deleteLastTickets);
 /**
  * @api {delete} /queue/tickets Request ticket to delete
  * @apiName DeleteTickets
