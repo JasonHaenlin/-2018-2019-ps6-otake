@@ -11,7 +11,7 @@ class Student extends Model {
       required: ['first_name', 'last_name', 'major_id'],
 
       properties: {
-        id: { type: 'integer' },
+        id: { type: 'string' },
         first_name: { type: 'string', minLength: 5, maxLength: 50 },
         last_name: { type: 'string', minLength: 5, maxLength: 50 },
         major: { type: 'integer' }

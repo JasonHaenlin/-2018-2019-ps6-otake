@@ -4,6 +4,7 @@ const { handleExceptions } = require('../../middlewares/error-handlers');
 const queue = express.Router();
 
 const tickets = require('./queue');
+const student = require('./student');
 
 /**
  * @api {get} /queue/tickets Request tickets
@@ -66,5 +67,37 @@ queue.get('/tickets', handleExceptions(tickets.getTickets));
  *    }
  */
 queue.post('/tickets', handleExceptions(tickets.postTickets));
+/**
+ * @api {post} /queue/student Request post new student
+ * @apiName PostStudent
+ * @apiGroup Queue
+ * @apiExample {curl} Example usage:
+ *     curl -d '
+ *            {
+ *              "first_name": "John",
+ *              "last_name": "Doe",
+ *              "major_id": 1
+ *            }'
+ *            -H "Content-Type: application/json" -X POST http://localhost:3000/queue/student
+ * @apiSuccess (200) {json} student submit
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *    {
+ *        "first_name": "John",
+ *        "last_name": "Doe",
+ *        "major_id": 1,
+ *        "id": "3ec531a0-86a4-11e9-b667-91894690ad38"
+ *    }
+ * @apiError (404) {json} NotFoundError Element has not been found
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 404 Not Found
+ *    {
+ *        "code": 404,
+ *        "message": "please check URL"
+ *    }
+ */
+queue.post('/student', handleExceptions(student.newStudent));
+
+queue.delete('/tickets/:studentId/:ticketId', handleExceptions(tickets.deleteTickets));
 
 module.exports = queue;

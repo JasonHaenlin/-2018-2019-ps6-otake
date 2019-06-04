@@ -34,5 +34,12 @@ module.exports = {
     }
     // postgresql can handle array insert
     return Queue.query().insert(tickets);
+  },
+
+  deleteTickets(id, token) {
+    return Queue.query()
+      .delete()
+      .where({ id: id })
+      .andWhere({ student_id: token });
   }
 };
