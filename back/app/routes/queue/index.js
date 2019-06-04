@@ -97,7 +97,35 @@ queue.post('/tickets', handleExceptions(tickets.postTickets));
  *    }
  */
 queue.post('/student', handleExceptions(student.newStudent));
-
+/**
+ * @api {delete} /queue/tickets Request ticket to delete
+ * @apiName DeleteTickets
+ * @apiGroup Queue
+ * @apiParam {string} studentId req params user id to identify how
+ * @apiParam {string} ticketId req params to define the ticket to delete
+ * @apiExample {curl} Example usage:
+ *     curl -i http://localhost:3000/queue/tickets/bc06b188-5f63-4bdb-bd1e-481ef8e91a3/0
+ * @apiSuccess (200) {json} response result
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *      {
+ *        "status": "ok"
+ *      }
+ * @apiError (404) {json} AccessDeniedError Student id not valid
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 403 Access Denied Error
+ *    {
+ *        "code": 403,
+ *        "message": "AccessDeniedError: student id not valid"
+ *    }
+ * @apiError (404) {json} NotFoundError Element has not been found
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 404 Not Found
+ *    {
+ *        "code": 404,
+ *        "message": "please check URL"
+ *    }
+ */
 queue.delete('/tickets/:studentId/:ticketId', handleExceptions(tickets.deleteTickets));
 
 module.exports = queue;
