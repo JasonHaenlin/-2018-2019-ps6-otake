@@ -4,7 +4,7 @@ const { AccessDeniedError } = require('../../utils/errors');
 
 // using the database
 exports.getTickets = async (req, res) => {
-  const tickets = await queue.getQueue(req.params.uuid, req.params.room);
+  const tickets = await queue.getQueue(req.query.room, req.query.uuid);
   resHandler.yahResponse(res, tickets);
 };
 
@@ -20,4 +20,13 @@ exports.deleteTickets = async (req, res) => {
   }
   const tickets = await queue.deleteTickets(req.params.ticketId, req.params.studentId);
   resHandler.yahResponse(res, tickets === 0 ? { status: 'ko' } : { status: 'ok' });
+};
+
+exports.deleteLastTickets = async (req, res) => {
+  console.log(req.params.room);
+
+  const ticket = await queue.deleteLastTickets(req.params.room);
+  console.log(ticket);
+
+  resHandler.yahResponse(res, !ticket ? { status: 'ko' } : { status: 'ok' });
 };

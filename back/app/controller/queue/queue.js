@@ -22,7 +22,7 @@ module.exports = {
           queryBuilder.where('student.id', studentUuid);
         }
         if (room) {
-          queryBuilder.where('supervisor:room.label', room);
+          queryBuilder.where('supervisor:room.id', room);
         }
       });
   },
@@ -43,5 +43,23 @@ module.exports = {
       .delete()
       .where({ id: id })
       .andWhere({ student_id: token });
+  },
+
+  async deleteLastTickets(room) {
+    const lastTicket = await Queue.query()
+      .select('queue.id')
+      .joinRelation('supervisor.room')
+      .whereExists(
+        Queue.relatedQuery('supervisor')
+          .joinRelation('room')
+          .where('room.id', room)
+      )
+      .orderBy('queue.created_at')
+      .first();
+    console.log(lastTicket.id);
+
+    return Queue.query()
+      .delete()
+      .where({ id: lastTicket.id });
   }
 };

@@ -99,6 +99,8 @@ queue.post('/tickets', handleExceptions(tickets.postTickets));
  *    }
  */
 queue.post('/student', handleExceptions(student.newStudent));
+
+queue.delete('/tickets/:room/last', tickets.deleteLastTickets);
 /**
  * @api {delete} /queue/tickets Request ticket to delete
  * @apiName DeleteTickets
