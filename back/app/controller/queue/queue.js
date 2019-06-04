@@ -7,6 +7,8 @@ module.exports = {
       .alias('q')
       .select(
         'q.created_at',
+        'q.id',
+        'q.student_id',
         'supervisor.name as supervisor',
         'supervisor.availability',
         'student.first_name',
