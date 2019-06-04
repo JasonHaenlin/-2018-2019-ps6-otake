@@ -20,6 +20,8 @@ const student = require('./student');
  *    [
  *      {
  *        "created_at": "1559565201902",
+ *        "id": "7",
+ *        "student_id": "bc06b188-5f63-4bdb-bd1e-481efa8e91a3",
  *        "supervisor": "Eric Macia",
  *        "availability": false,
  *        "first_name": "John",
