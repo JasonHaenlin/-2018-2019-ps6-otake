@@ -28,9 +28,6 @@ module.exports = {
   },
 
   insertTicketsInQueue(tickets) {
-    tickets.forEach(t => {
-      t.created_at = Date.now();
-    });
     if (process.env.NODE_ENV === 'development') {
       return tickets.reduce(async (previousPromise, nextValue) => {
         await previousPromise;
@@ -38,6 +35,7 @@ module.exports = {
       }, Promise.resolve());
     }
     // postgresql can handle array insert
+    tickets.created_at = Date.now();
     return Queue.query().insert(tickets);
   },
 
