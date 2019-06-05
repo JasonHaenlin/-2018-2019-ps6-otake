@@ -15,19 +15,22 @@ module.exports = {
         'student.last_name',
         'student:major.title as major',
         'supervisor:room.label as room',
-        raw('rank() over (order by q.created_at) rank'))
+        raw('rank() over (partition by q.supervisor_id order by q.created_at) rank'))
       .joinRelation('[supervisor.room, student.major]')
       .modify((queryBuilder) => {
-        if (studentUuid) {
-          queryBuilder.where('student.id', studentUuid);
-        }
         if (room) {
           queryBuilder.where('supervisor:room.id', room);
+        }
+        if (studentUuid) {
+          queryBuilder.where('q.student_id', studentUuid);
         }
       });
   },
 
   insertTicketsInQueue(tickets) {
+    tickets.forEach(element => {
+      element.created_at = Date.now();
+    });
     if (process.env.NODE_ENV === 'development') {
       return tickets.reduce(async (previousPromise, nextValue) => {
         await previousPromise;
@@ -35,7 +38,6 @@ module.exports = {
       }, Promise.resolve());
     }
     // postgresql can handle array insert
-    tickets.created_at = Date.now();
     return Queue.query().insert(tickets);
   },
 
