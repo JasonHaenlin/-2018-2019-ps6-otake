@@ -13,7 +13,7 @@ const student = require('./student');
  * @apiParam {string} uuid req query params user uuid to identify how
  * @apiParam {string} room req query params sort by room
  * @apiExample {curl} Example usage:
- *     curl -i http://localhost:3000/queue/tickets?uuid=f773d9cc72bcd&room=O+123
+ *     curl -i http://localhost:3000/queue/tickets?uuid=f773d9cc72bcd&room=0
  * @apiSuccess (200) {json[]} tickets list
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK

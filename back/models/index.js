@@ -19,6 +19,8 @@ const token = require('./token');
 const room = require('./room');
 const queue = require('./queue');
 const student = require('./student');
+const object = require('./object');
+const object_supervisor = require('./object_supervisor');
 
 /**
  * All the table are sort here
@@ -47,5 +49,7 @@ module.exports = [
   supervisor,
   user,
   student,
-  queue
+  queue,
+  object,
+  object_supervisor
 ];

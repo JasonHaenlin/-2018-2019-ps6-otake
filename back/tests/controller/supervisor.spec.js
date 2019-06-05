@@ -13,4 +13,10 @@ describe('supervisor controller to database', () => {
     const res = await supervisor.getSupervisorByCategory('Echange-SI');
     assert.ok(res.length > 0);
   });
+  it('should get the list of supervisors filter by title from the database', async () => {
+    const res = await supervisor.getSupervisorByTitle('Signature');
+    console.log(res);
+
+    assert.ok(res.length > 0);
+  });
 });

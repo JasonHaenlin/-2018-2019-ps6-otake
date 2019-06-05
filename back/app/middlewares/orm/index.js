@@ -19,6 +19,8 @@ const Token = require('./models/token');
 const Student = require('./models/student');
 const Queue = require('./models/queue');
 const Room = require('./models/room');
+const Object = require('./models/object');
+const ObjectSupervisor = require('./models/object-supervisor');
 
 // add all the tables here
 module.exports = {
@@ -42,5 +44,7 @@ module.exports = {
   Token,
   Student,
   Room,
-  Queue
+  Queue,
+  Object,
+  ObjectSupervisor
 };

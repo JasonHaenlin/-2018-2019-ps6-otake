@@ -12,8 +12,8 @@ class Student extends Model {
 
       properties: {
         id: { type: 'string' },
-        first_name: { type: 'string', minLength: 5, maxLength: 50 },
-        last_name: { type: 'string', minLength: 5, maxLength: 50 },
+        first_name: { type: 'string', minLength: 3, maxLength: 50 },
+        last_name: { type: 'string', minLength: 3, maxLength: 50 },
         major: { type: 'integer' }
       }
     };

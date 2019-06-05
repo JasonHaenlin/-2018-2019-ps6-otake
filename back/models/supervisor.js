@@ -56,7 +56,12 @@ module.exports = new BaseModel('supervisor', t => {
     category: 'autres', room_id: 8, availability: true
   },
   {
-    id: 9, name: 'Jason Haenlin', title: 'Administrateur',
+    id: 9, name: 'Igor Litovsky', title: 'Responsable BRI',
+    email: 'Igor.LITOVSKY@univ-cotedazur.fr',
+    category: 'autres', room_id: 8, availability: true
+  },
+  {
+    id: 10, name: 'Jason Haenlin', title: 'Direction Dep. SI',
     email: 'contact@otakedev.com',
     category: 'Technique', room_id: 1, availability: true
   }

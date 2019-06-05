@@ -24,6 +24,7 @@ class Supervisor extends Model {
     // we need this to avoid circular dependency
     const User = require('./user');
     const Room = require('./room');
+    const Object = require('./object');
 
     return {
       user: {
@@ -40,6 +41,18 @@ class Supervisor extends Model {
         join: {
           from: 'room.id',
           to: 'supervisor.room_id'
+        }
+      },
+      object: {
+        relation: Model.ManyToManyRelation,
+        modelClass: Object,
+        join: {
+          from: 'supervisor.id',
+          through: {
+            from: 'object_supervisor.supervisor_id',
+            to: 'object_supervisor.object_id'
+          },
+          to: 'object.id'
         }
       }
     };

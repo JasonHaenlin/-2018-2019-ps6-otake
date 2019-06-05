@@ -12,6 +12,13 @@ module.exports = {
   getSupervisorByCategory(category) {
     return Supervisor.query().where({ 'supervisor.category': category });
   },
+  getSupervisorByTitle(title) {
+    return Supervisor.query()
+      .alias('s')
+      .select()
+      .joinRelation('object')
+      .where('object.title', title);
+  },
   sendMail(email) {
     const { error } = Joi.validate(email, Mail);
     if (error) {
