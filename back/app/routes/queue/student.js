@@ -1,5 +1,6 @@
 const resHandler = require('../../utils/response-handler');
 const { student } = require('../../controller/queue');
+const { AccessDeniedError } = require('../../utils/errors');
 
 
 exports.newStudent = async (req, res) => {
