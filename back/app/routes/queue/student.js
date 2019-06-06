@@ -12,5 +12,5 @@ exports.checkStudent = async (req, res) => {
   if (!s) {
     throw new AccessDeniedError('student id not valid');
   }
-  resHandler.yahResponse(res, { status: 'ok' });
+  resHandler.yahResponse(res, s);
 };

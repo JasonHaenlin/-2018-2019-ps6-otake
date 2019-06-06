@@ -60,6 +60,10 @@ module.exports = {
       .orderBy('queue.created_at')
       .first();
 
+    if (!lastTicket) {
+      return;
+    }
+
     return Queue.query()
       .delete()
       .where({ id: lastTicket.id });
