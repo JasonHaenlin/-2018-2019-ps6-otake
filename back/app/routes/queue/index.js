@@ -194,7 +194,7 @@ queue.delete('/tickets/:studentId/:ticketId', handleExceptions(tickets.deleteTic
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
  *    {
- *        "status": "ok",
+ *        "id": 2,
  *    }
  * @apiError (404) {json} NotFoundError Element has not been found
  * @apiErrorExample Error-Response:

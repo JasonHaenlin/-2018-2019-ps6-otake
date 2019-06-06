@@ -28,6 +28,8 @@ exports.deleteLastTickets = async (req, res) => {
 };
 
 exports.checkRoomId = async (req, res) => {
-  const id = await queue.getRoomId(req.body.room);
-  resHandler.yahResponse(res, id ? { status: 'ok' } : { status: 'ko' });
+  const room = await queue.getRoomId(req.body.room);
+  console.log(room);
+
+  resHandler.yahResponse(res, room ? { id: room.id } : { id: -1 });
 };
