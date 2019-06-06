@@ -1,4 +1,4 @@
-const { Queue } = require('../../middlewares/orm');
+const { Queue, Room } = require('../../middlewares/orm');
 const { raw } = require('objection');
 
 module.exports = {
@@ -63,5 +63,13 @@ module.exports = {
     return Queue.query()
       .delete()
       .where({ id: lastTicket.id });
+  },
+
+  getRoomId(room) {
+    return Room.query()
+      .where('room.label', room)
+      .first();
   }
+
+
 };

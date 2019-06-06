@@ -26,3 +26,8 @@ exports.deleteLastTickets = async (req, res) => {
   const ticket = await queue.deleteLastTickets(req.params.room);
   resHandler.yahResponse(res, !ticket ? { status: 'ko' } : { status: 'ok' });
 };
+
+exports.checkRoomId = async (req, res) => {
+  const id = await queue.getRoomId(req.body.room);
+  resHandler.yahResponse(res, id ? { status: 'ok' } : { status: 'ko' });
+};

@@ -14,5 +14,6 @@ module.exports = new BaseModel('room', t => {
   { id: 6, label: 'O+139' },
   { id: 7, label: 'O+140' },
   { id: 8, label: 'O+141' },
-  { id: 9, label: 'O+142' }
+  { id: 9, label: 'O+142' },
+  { id: 10, label: 'O+205' }
 ]);

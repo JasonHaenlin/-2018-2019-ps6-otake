@@ -10,7 +10,7 @@ const student = require('./student');
  * @api {get} /queue/tickets Request tickets
  * @apiName GetTickets
  * @apiGroup Queue
- * @apiParam {string} uuid req query params user uuid to identify how
+ * @apiParam {string} uuid req query params user uuid to identify who
  * @apiParam {string} room req query params sort by room
  * @apiExample {curl} Example usage:
  *     curl -i http://localhost:3000/queue/tickets?uuid=f773d9cc72bcd&room=0
@@ -99,7 +99,35 @@ queue.post('/tickets', handleExceptions(tickets.postTickets));
  *    }
  */
 queue.post('/student', handleExceptions(student.newStudent));
-
+/**
+ * @api {get} /queue/student/:uuid Request student
+ * @apiName GetStudent
+ * @apiGroup Queue
+ * @apiParam {string} uuid req params user uuid to identify who
+ * @apiExample {curl} Example usage:
+ *     curl -i http://localhost:3000/queue/student/f773d9cc72bcd
+ * @apiSuccess (200) {json} response result
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *      {
+ *        "status": "ok"
+ *      }
+ * @apiError (404) {json} AccessDeniedError Student id not valid
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 403 Access Denied Error
+ *    {
+ *        "code": 403,
+ *        "message": "AccessDeniedError: student id not valid"
+ *    }
+ * @apiError (404) {json} NotFoundError Element has not been found
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 404 Not Found
+ *    {
+ *        "code": 404,
+ *        "message": "please check URL"
+ *    }
+ */
+queue.get('/student/:uuid', handleExceptions(student.checkStudent));
 /**
  * @api {delete} /queue/tickets Request first ticket to be deleted
  * @apiName DeleteTicketsFirst
@@ -126,7 +154,7 @@ queue.delete('/tickets/:room/first', tickets.deleteLastTickets);
  * @api {delete} /queue/tickets Request ticket to delete
  * @apiName DeleteTickets
  * @apiGroup Queue
- * @apiParam {string} studentId req params user id to identify how
+ * @apiParam {string} studentId req params user id to identify who
  * @apiParam {string} ticketId req params to define the ticket to delete
  * @apiExample {curl} Example usage:
  *     curl -i http://localhost:3000/queue/tickets/bc06b188-5f63-4bdb-bd1e-481ef8e91a3/0
@@ -152,5 +180,30 @@ queue.delete('/tickets/:room/first', tickets.deleteLastTickets);
  *    }
  */
 queue.delete('/tickets/:studentId/:ticketId', handleExceptions(tickets.deleteTickets));
+/**
+ * @api {post} /queue/room Request room to check id
+ * @apiName PostRoom
+ * @apiGroup Queue
+ * @apiExample {curl} Example usage:
+ *     curl -d '
+ *            {
+ *              "room": "O+205",
+ *            }'
+ *            -H "Content-Type: application/json" -X POST http://localhost:3000/queue/room
+ * @apiSuccess (200) {json} student submit
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *    {
+ *        "status": "ok",
+ *    }
+ * @apiError (404) {json} NotFoundError Element has not been found
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 404 Not Found
+ *    {
+ *        "code": 404,
+ *        "message": "please check URL"
+ *    }
+ */
+queue.post('/room', handleExceptions(tickets.checkRoomId));
 
 module.exports = queue;
