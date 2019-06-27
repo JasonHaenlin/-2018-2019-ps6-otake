@@ -6,4 +6,20 @@ ignore:
     - '*':
         reason: No patch currently unvailable
         expires: 2019-06-12T20:59:41.927Z
+  SNYK-JS-SETVALUE-450213:
+    - knex > liftoff > findup-sync > micromatch > snapdragon > base > cache-base > union-value > set-value:
+        reason: No update yet
+        expires: '2019-07-27T14:30:54.402Z'
+    - knex > liftoff > findup-sync > micromatch > braces > snapdragon > base > cache-base > union-value > set-value:
+        reason: No update yet
+        expires: '2019-07-27T14:30:54.402Z'
+    - knex > liftoff > findup-sync > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value:
+        reason: No update yet
+        expires: '2019-07-27T14:30:54.402Z'
+    - knex > liftoff > findup-sync > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value:
+        reason: No update yet
+        expires: '2019-07-27T14:30:54.402Z'
+    - knex > liftoff > findup-sync > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value:
+        reason: No update yet
+        expires: '2019-07-27T14:30:54.402Z'
 patch: {}

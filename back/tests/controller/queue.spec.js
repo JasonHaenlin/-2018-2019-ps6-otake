@@ -12,7 +12,7 @@ describe('queue controller to database', () => {
     assert.ok(res.length > 0);
   });
   it('should get the list of queue sort by room from the database', async () => {
-    const res = await queue.getQueue('O+133', null);
+    const res = await queue.getQueue(0, null);
     assert.ok(res.length > 0);
   });
   it('should get the list of queue sort by student from the database', async () => {

@@ -53,12 +53,12 @@ module.exports = new BaseModel('supervisor', t => {
   {
     id: 8, name: 'Joanna Winchcombe', title: 'Responsable BRI',
     email: 'bri@polytech.unice.fr',
-    category: 'autres', room_id: 8, availability: true
+    category: 'autres', room_id: 10, availability: true
   },
   {
     id: 9, name: 'Igor Litovsky', title: 'Responsable BRI',
     email: 'Igor.LITOVSKY@univ-cotedazur.fr',
-    category: 'autres', room_id: 8, availability: true
+    category: 'autres', room_id: 10, availability: true
   },
   {
     id: 10, name: 'Jason Haenlin', title: 'Direction Dep. SI',
