@@ -19,5 +19,5 @@ you can create a new token for a specific user using the admin board
 http://localhost:4200/admin/board/testimonial
 Specify the email address and a email will be send with the new created token
 (P.S. check your SPAM)
-
+Everything is going on another email, you might to change the receiver in the back-end.
 After the testimonial has been submited, the token is blocked
